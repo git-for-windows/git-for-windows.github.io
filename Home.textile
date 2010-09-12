@@ -1,1 +1,10 @@
-Welcome to the git wiki!
+h2. Ncqrs Dev
+
+* "Home":http://ncqrs.org/
+* "Reference documentation": http://ncqrs.org/reference/
+* "Bug reports and patches":http://github.com/ncqrs/framework/issues
+* "Development mailing list":http://groups.google.com/group/ncqrs-dev
+
+h2. Ncqrs suggested readings
+
+* "Getting started":http://ncqrs.org/getting-started/
