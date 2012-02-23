@@ -3,6 +3,11 @@
 	float:right;
 }
 
+.links ul {
+	margin-left: -3em;
+	list-style: none;
+}
+
 div#body {
 	width: 800px;
 	margin-left: auto;
