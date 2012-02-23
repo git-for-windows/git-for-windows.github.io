@@ -20,9 +20,16 @@
 	background: -moz-linear-gradient(top,  #eee,  #888); /* for firefox 3.6+ */
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 .links li a {
 	padding: .1em;
-	text-decoration: none;
 	color: black;
 }
 
