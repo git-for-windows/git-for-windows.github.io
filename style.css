@@ -2,3 +2,9 @@
 	position:relative;
 	float:right;
 }
+
+div#body {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
