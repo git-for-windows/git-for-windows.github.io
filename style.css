@@ -22,9 +22,11 @@
 .links li a {
 	padding: .1em;
 	text-decoration: none;
+	color: black;
 }
 
 .links li:hover a {
+	color: white;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .8);
 }
 
