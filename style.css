@@ -9,12 +9,19 @@
 }
 
 .links li {
+	width: 14em;
+	padding: .1em;
 	border-radius: .2em;
 
 	background: #a8a8a8; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#888888'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#888)); /* for webkit browsers */
 	background: -moz-linear-gradient(top,  #eee,  #888); /* for firefox 3.6+ */
+}
+
+.links li a {
+	padding: .1em;
+	text-decoration: none;
 }
 
 .links li:hover a {
@@ -25,6 +32,7 @@ div#body {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: .5em;
 
 	background: #d1d1d1; /* for non-css3 browsers */
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#e1e1e1'); /* for IE */
