@@ -1,6 +1,7 @@
 .links {
 	position:relative;
 	float:right;
+	padding-left: 1em;
 }
 
 .links ul {
