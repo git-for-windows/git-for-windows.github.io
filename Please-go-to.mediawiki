@@ -1,0 +1,3 @@
+[[https://github.com/msysgit/msysgit/wiki]]
+
+for our wiki.
