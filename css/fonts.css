@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'adelle_basic_rgbold';
+	src: url('../font/adellebasic_bold-webfont.eot');
+	src: url('../font/adellebasic_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../font/adellebasic_bold-webfont.woff') format('woff'),
+		 url('../font/adellebasic_bold-webfont.ttf') format('truetype'),
+		 url('../font/adellebasic_bold-webfont.svg#adelle_basic_rgbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'CapsuulaRegular';
+	src: url('../font/Capsuula-webfont.eot');
+	src: url('../font/Capsuula-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../font/Capsuula-webfont.woff') format('woff'),
+		 url('../font/Capsuula-webfont.ttf') format('truetype'),
+		 url('../font/Capsuula-webfont.svg#CapsuulaRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'OpenSansRegular';
+	src: url('../font/OpenSans-Regular-webfont.eot');
+	src: url('../font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../font/OpenSans-Regular-webfont.woff') format('woff'),
+		 url('../font/OpenSans-Regular-webfont.ttf') format('truetype'),
+		 url('../font/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
