@@ -69,11 +69,11 @@ header h1 {
 
 footer {
 	border-top: solid 1px rgb(240,240,240);
-	 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(225,225,225)), to(rgb(255,255,255))); 
-	 background: -webkit-linear-gradient(top, rgb(200,200,200), rgb(255,255,255)); 
-	 background: -moz-linear-gradient(top, rgb(200,200,200), rgb(255,255,255)); 
-	 background: -ms-linear-gradient(top, rgb(200,200,200), rgb(255,255,255));  
-	 background: -o-linear-gradient(top, rgb(200,200,200), rgb(255,255,255)); 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(225,225,225)), to(rgb(255,255,255)));
+	background: -webkit-linear-gradient(top, rgb(200,200,200), rgb(255,255,255));
+	background: -moz-linear-gradient(top, rgb(200,200,200), rgb(255,255,255));
+	background: -ms-linear-gradient(top, rgb(200,200,200), rgb(255,255,255));
+	background: -o-linear-gradient(top, rgb(200,200,200), rgb(255,255,255));
 }
 
 footer div {
@@ -118,13 +118,13 @@ nav li, footer li {
 	margin-left: 25px;
 }
 
-#feature article {
+.feature article {
 	position: relative;
 	margin-left: 355px;
 	height: 325px;
 }
 
-#feature h2 {
+.feature h2 {
 	padding: 5px 15px;
 	line-height: 65px;
 	margin-bottom: 15px;
@@ -157,14 +157,14 @@ nav li, footer li {
 	margin: 0 1%;
 }
 
-#imagerollover {
+.imagerollover {
 	float: left;
 	position: relative;
 	height: 325px;
 	width: 325px;
 }
 
-#imagerollover img {
+.imagerollover img {
 	width: 325px;
 	height: 325px;
 	position: absolute;
@@ -174,7 +174,7 @@ nav li, footer li {
 	transition: opacity 1s ease-in-out;
 }
 
-#imagerollover img.top:hover {
+.imagerollover img.top:hover {
 	opacity: 0;
 }
 
@@ -195,25 +195,25 @@ nav li, footer li {
 	margin: 45px auto;
 }
 
-#details {
+.details {
 	background-color: rgb(44,102,184);
 }
 
-#details article {
+.details article {
 	border-top: solid 5px rgba(0,0,0,.17);
 	border-bottom: solid 5px rgba(0,0,0,.22);
 }
 
-#details .gittext {
+.details .gittext {
 	color: rgb(255,255,255);
 }
 
-#details p a {
+.details p a {
 	color: rgb(163,207,255);
 	text-decoration: underline;
 }
 
-#details h2 {
+.details h2 {
 	clear: both;
 	padding: 9px 0;
 	border-bottom: solid 5px rgba(255,255,255,.22);
@@ -227,13 +227,13 @@ nav li, footer li {
 	margin-bottom: 30px;
 }
 
-#details h3 {
+.details h3 {
 	color: rgb(245,245,245);
 	text-shadow: 0 -1px rgba(0,0,0,.35);
 	margin-top: 25px;
 }
 
-#details .button {
+.details .button {
 	border: 1px solid rgb(70, 70, 70);
 	background: rgb(184,184,184);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(224,224,224)), color-stop(1, rgb(163,163,163)));
@@ -242,18 +242,18 @@ nav li, footer li {
 	margin-right: 1%;
 }
 
-#details .content {
+.details .content {
 	height: 625px;
 }
 
-#details p {
+.details p {
 	color: rgb(235,235,235);
 	text-shadow: 0 -1px rgba(0,0,0,.35);
 	line-height: 31px;
 	margin-bottom: 5px;
 }
 
-#details .vcentercontainer:first-child {
+.details .vcentercontainer:first-child {
 	margin-right: 5%;
 }
 
@@ -278,7 +278,7 @@ nav li, footer li {
 	width: 35%;
 }
 
-#contributecontent .detailsimg * {
+.contributecontent .detailsimg * {
 	width: 100%;
 }
 
