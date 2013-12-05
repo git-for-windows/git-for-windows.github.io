@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 					'css/pack.css': [
 						'css/reset.css',
 						'css/fonts.css',
-						'lightbox/css/lightbox.css',
+						'css/jquery.fancybox.css',
 						'css/style.css'
 					]
 				}
@@ -30,7 +30,8 @@ module.exports = function(grunt) {
 			compress: {
 				files: {
 					'js/pack.js': [
-						'lightbox/js/lightbox-2.6.min.js'
+						'js/jquery.fancybox.js',
+						'js/jquery.mousewheel.js'
 					]
 				}
 			}
