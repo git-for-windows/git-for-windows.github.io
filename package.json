@@ -1,0 +1,32 @@
+{
+  "name": "msysgit.github.com",
+  "version": "0.1.0",
+  "author": "The Git Development Community",
+  "license": "",
+  "homepage": "https://github.com/msysgit/msysgit.github.com",
+  "description": "The code for <msysgit.github.com>.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msysgit/msysgit.github.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msysgit/msysgit.github.com/issues"
+  },
+  "keywords": [
+    "git",
+    "msys",
+    "github"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.7"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
