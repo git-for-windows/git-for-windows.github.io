@@ -1,8 +1,7 @@
-body {
+html {
 	font: 16px/1 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-li,
 li a {
 	font-size: 14px;
 }
@@ -75,6 +74,7 @@ header h1 {
 
 header h2 {
 	font-size: 40px;
+	margin-top: 0;
 }
 
 footer {
@@ -100,10 +100,6 @@ footer h1 {
 
 footer .gittext {
 	color: #969696;
-}
-
-footer ul {
-	padding-top: 7px;
 }
 
 nav {
@@ -232,6 +228,10 @@ footer li {
 	color: #FFFFFF;
 }
 
+.details p {
+	margin-top: 0;
+}
+
 .details p a {
 	color: #A3CFFF;
 	text-decoration: underline;
@@ -255,6 +255,7 @@ footer li {
 
 .details h3 {
 	color: #F5F5F5;
+	margin-bottom: 0;
 	margin-top: 25px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.35);
 }
@@ -313,6 +314,11 @@ footer li {
 
 .contributecontent .detailsimg * {
 	width: 100%;
+}
+
+.list-unstyled {
+	list-style-type: none;
+	padding-left: 0;
 }
 
 .stud {
