@@ -12,7 +12,6 @@ module.exports = function(grunt) {
 				files: {
 					'css/pack.css': [
 						'css/reset.css',
-						'css/fonts.css',
 						'css/jquery.fancybox.css',
 						'css/style.css'
 					]
