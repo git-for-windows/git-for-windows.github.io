@@ -302,6 +302,8 @@ footer li {
 	-moz-box-shadow: 0 0 2.8125em rgba(0, 0, 0, 0.17);
 	box-shadow: 0 0 2.8125em rgba(0, 0, 0, 0.17);
 	margin: 1.875em auto;
+	width: 100%;
+	height: auto;
 }
 
 .detailstext {
@@ -316,6 +318,7 @@ footer li {
 
 .contributecontent .detailsimg * {
 	width: 100%;
+	height: auto;
 }
 
 .list-unstyled {
