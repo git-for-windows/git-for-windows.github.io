@@ -3,7 +3,7 @@ html {
 }
 
 li a {
-	font-size: 14px;
+	font-size: .875em;
 }
 
 a {
@@ -27,22 +27,22 @@ h3 {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 3.125em;
 }
 
 h1 span {
 	color: #969696;
-	font-size: 21px;
-	margin-left: 10px;
+	font-size: .42em;
+	margin-left: .476em;
 }
 
 h2 {
-	font-size: 48px;
+	font-size: 3em;
 	line-height: 1.3;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 1.875em;
 	line-height: 1.3;
 }
 
@@ -50,8 +50,8 @@ h3 {
 	margin-left: auto;
 	margin-right: auto;
 	width: 65%;
-	min-width: 700px;
-	max-width: 900px;
+	min-width: 43.75em;
+	max-width: 56.25em;
 }
 
 header {
@@ -64,16 +64,16 @@ header {
 	background-image: radial-gradient(ellipse at center, rgba(235, 235, 235, 0.7) 0%, rgba(200, 200, 200, 0.3) 50%, rgba(30, 30, 30, 0.25) 100%);              /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3EBEBEB', endColorstr='#401E1E1E',GradientType=1);                                     /* IE6-9 fallback on horizontal gradient */
 	background-repeat: repeat;
-	height: 485px;
+	height: 30.3125em;
 	padding-top: 0.6em;
 }
 
 header h1 {
-	margin-top: 9px;
+	margin-top: .18em;
 }
 
 header h2 {
-	font-size: 40px;
+	font-size: 2.5em;
 	margin-top: 0;
 }
 
@@ -90,12 +90,12 @@ footer {
 }
 
 footer div {
-	padding-top: 15px;
+	padding-top: 0.9375em;
 }
 
 footer h1 {
-	font-size: 22px;
-	margin-top: -6px;
+	font-size: 1.375em;
+	margin-top: -0.273em;
 }
 
 footer .gittext {
@@ -107,7 +107,7 @@ nav {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	height: 70px;
+	height: 4.375em;
 	margin-bottom: 2em;
 	padding: 0 1.3em;
 }
@@ -122,28 +122,31 @@ footer a {
 }
 
 nav ul {
-	margin-top: 38px;
+	margin-top: 2.375em;
 }
 
 nav li,
 footer li {
 	text-transform: uppercase;
 	float: left;
-	margin-left: 25px;
+	margin-left: 1.5625em;
 }
 
 .feature article {
 	position: relative;
-	margin-left: 355px;
-	height: 325px;
+	padding-right: 0px;
+	width: 49.2%;
+	margin-left: auto;
+	margin-right: 0em;
+	height: 20em;
 }
 
 .feature h2 {
 	border-bottom: solid 1px #BEBEBE;
 	color: #828282;
-	line-height: 65px;
-	margin-bottom: 15px;
-	padding: 5px 15px;
+	line-height: 1.625em;
+	margin-bottom: 0.375em;
+	padding: 0.125em 0.375em;
 }
 
 .button {
@@ -158,14 +161,14 @@ footer li {
 	-webkit-box-shadow: inset 0 1px 0 hsla(0, 100%, 100%, 0.2), inset 0 0 2px hsla(0, 100%, 100%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.29);
 	-moz-box-shadow: inset 0 1px 0 hsla(0, 100%, 100%, 0.2), inset 0 0 2px hsla(0, 100%, 100%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.29);
 	box-shadow: inset 0 1px 0 hsla(0, 100%, 100%, 0.2), inset 0 0 2px hsla(0, 100%, 100%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.29);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 0.238em;
+	-moz-border-radius: 0.238em;
+	border-radius: 0.238em;
 	border: 1px solid #0A3A7D;
 	color: white;
 	display: inline-block;
-	font-size: 21px;
-	padding: 10px 3%;
+	font-size: 1.3125em;
+	padding: 0.476em 3%;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
@@ -179,8 +182,7 @@ footer li {
 .imagerollover {
 	float: left;
 	position: relative;
-	width: 325px;
-	height: 325px;
+	width: 46.5%;
 }
 
 .imagerollover img {
@@ -189,8 +191,8 @@ footer li {
 	-moz-transition: opacity 1s ease-in-out;
 	-o-transition: opacity 1s ease-in-out;
 	transition: opacity 1s ease-in-out;
-	width: 325px;
-	height: 325px;
+	width: 100%;
+	height: auto;
 }
 
 .imagerollover .top:hover {
@@ -212,7 +214,7 @@ footer li {
 }
 
 .vcentercontainer img {
-	margin: 45px auto;
+	margin: 2.8125em auto;
 }
 
 .details {
@@ -220,8 +222,8 @@ footer li {
 }
 
 .details article {
-	border-bottom: solid 5px #00478F;
-	border-top: solid 5px #00478F;
+	border-bottom: solid 0.3125em #00478F;
+	border-top: solid 0.3125em #00478F;
 }
 
 .details .gittext {
@@ -239,16 +241,16 @@ footer li {
 
 .details h2 {
 	background-color: #4A7CC2;
-	border-bottom: solid 5px #7198C1;
-	border-top: solid 5px #7198C1;
-	-webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+	border-bottom: solid 0.104em #7198C1;
+	border-top: solid 0.104em #7198C1;
+	-webkit-box-shadow: 0 0 0.8333em rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 0 0.8333em rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 0.8333em rgba(0, 0, 0, 0.4);
 	clear: both;
 	color: #FFFFFF;
-	margin-bottom: 30px;
-	margin-top: 45px;
-	padding: 9px 0;
+	margin-bottom: 0.625em;
+	margin-top: 0.9375em;
+	padding: 0.1875em 0;
 	text-align: center;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
 }
@@ -256,7 +258,7 @@ footer li {
 .details h3 {
 	color: #F5F5F5;
 	margin-bottom: 0;
-	margin-top: 25px;
+	margin-top: 0.8333em;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.35);
 }
 
@@ -275,13 +277,13 @@ footer li {
 }
 
 .details .content {
-	height: 625px;
+	height: 39.0625em;
 }
 
 .details p {
 	color: #EBEBEB;
-	line-height: 31px;
-	margin-bottom: 5px;
+	line-height: 1.9375em;
+	margin-bottom: 0.3125em;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.35);
 }
 
@@ -295,11 +297,11 @@ footer li {
 }
 
 .verticalgallery img {
-	border: solid 5px #5881BD;
-	-webkit-box-shadow: 0 0 45px rgba(0, 0,0, 0.17);
-	-moz-box-shadow: 0 0 45px rgba(0, 0, 0, 0.17);
-	box-shadow: 0 0 45px rgba(0, 0, 0, 0.17);
-	margin: 30px auto;
+	border: solid 0.3125em #5881BD;
+	-webkit-box-shadow: 0 0 2.8125em rgba(0, 0,0, 0.17);
+	-moz-box-shadow: 0 0 2.8125em rgba(0, 0, 0, 0.17);
+	box-shadow: 0 0 2.8125em rgba(0, 0, 0, 0.17);
+	margin: 1.875em auto;
 }
 
 .detailstext {
