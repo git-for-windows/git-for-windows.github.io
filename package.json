@@ -1,19 +1,20 @@
 {
-  "name": "msysgit.github.com",
+  "name": "git-for-windows.github.io",
   "version": "0.1.0",
-  "author": "The Git Development Community",
+  "author": "The Git for Windows Development Community",
   "license": "",
-  "homepage": "https://github.com/msysgit/msysgit.github.com",
-  "description": "The code for <msysgit.github.com>.",
+  "homepage": "https://github.com/git-for-windows/git-for-windows.github.io",
+  "description": "The code for <git-for-windows.github.io>.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/msysgit/msysgit.github.com.git"
+    "url": "https://github.com/git-for-windows/git-for-windows.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/msysgit/msysgit.github.com/issues"
+    "url": "https://github.com/git-for-windows/git/issues"
   },
   "keywords": [
     "git",
+    "windows",
     "msys",
     "github"
   ],
