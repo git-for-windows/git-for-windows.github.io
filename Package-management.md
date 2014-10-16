@@ -11,7 +11,7 @@ TODO: explain what `mingw-get` is
 ## Bintray
 
 ## Using `mgwport`
-
+Hardcore users might want to have a look at [mp](https://gist.github.com/t-b/7e7af6236e860ca6309a) which is a convenience wrapper for mgwport.
 ### Introduction: the `sdk-packages` project
 
 ### Mgwport parses the filename and infers the package name, version and release from it.
