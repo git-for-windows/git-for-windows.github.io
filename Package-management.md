@@ -42,14 +42,6 @@ pacman -Ql <package-name>
 
 # Technical details
 
-## Repository structure
-
-TBD
-
-## Bintray
-
-TBD
-
 ## Rebuild packages
 
 To build MinGW packages, you need to start the appropriate `MinGW` shell (32-bit or 64-bit – this sets `MSYSTEM=MINGW32` or `MSYSTEM=MINGW64` respectively), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
@@ -73,6 +65,14 @@ Inside the `msys2-runtime` subdirectory, you need to use `makepkg -s` *for the i
 For subsequent builds, after modifying the source files in `src/msys2-runtime/winsup/cygwin/` you can switch to `src/build-<arch>-pc-msys/<arch>-pc-msys/winsup/cygwin` and type `make`. This will generate an `msys0.dll` file in the latter directory that you can then copy to the first MSys2 installation to test.
 
 The process to rebuild the `Bash` is very similar to the `msys2-runtime` one; You will just need to work in the `src/bash-<version>/` subdirectory of `/usr/src/MSYS2-packages/bash/` (both the sources and the generated `bash.exe` live there).
+
+## Repository structure
+
+TBD
+
+## Bintray
+
+TBD
 
 ## How to upload new versions (Git for Windows core developers only)
 
