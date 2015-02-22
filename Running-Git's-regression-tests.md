@@ -60,3 +60,7 @@ case "$(git rev-parse HEAD 2> /dev/null)" in cafebabe*) set -x;; esac
 ### Tracing execution in Perl scripts
 
 Some parts of Git are implemented as Perl scripts. To trigger execution tracing similar to Bash's `set -x` statement, you can add the `-d:Trace` parameter to the shebang line (i.e. to the first line of the Perl script, which reads "#!/usr/bin/perl"). This requires the `Devel::Trace` Perl package to be installed, e.g. by calling `perl -MCPAN -e 'install Devel::Trace'` once.
+
+### `GIT_TRACE=1`
+
+When Git sees that the environment variable `GIT_TRACE` is set, it will print out an internal execution trace when Git wants to call external executables and builtins. This is extremely helpful in particular when debugging posix-to-windows mangling issues with the MSys2 runtime. All you do is to prefix the Git command to be executed in the test script with `GIT_TRACE=1 `, e.g. `GIT_TRACE=1 git difftool --extcmd "$2"`.
