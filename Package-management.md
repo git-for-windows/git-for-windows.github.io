@@ -66,6 +66,20 @@ For subsequent builds, after modifying the source files in `src/msys2-runtime/wi
 
 The process to rebuild the `Bash` is very similar to the `msys2-runtime` one; You will just need to work in the `src/bash-<version>/` subdirectory of `/usr/src/MSYS2-packages/bash/` (both the sources and the generated `bash.exe` live there).
 
+## Perl package management
+
+Perl packages are managed outside of the `pacman` realm, but instead with [CPAN](http://www.cpan.org/):
+
+```bash
+perl -MCPAN -e 'install <package-name>'
+```
+
+CPAN also offers an interactive shell:
+
+```bash
+perl -MCPAN -e shell
+```
+
 ## Repository structure
 
 TBD
