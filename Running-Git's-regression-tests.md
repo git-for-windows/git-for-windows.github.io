@@ -64,3 +64,37 @@ Some parts of Git are implemented as Perl scripts. To trigger execution tracing 
 ### `GIT_TRACE=1`
 
 When Git sees that the environment variable `GIT_TRACE` is set, it will print out an internal execution trace when Git wants to call external executables and builtins. This is extremely helpful in particular when debugging posix-to-windows mangling issues with the MSys2 runtime. All you do is to prefix the Git command to be executed in the test script with `GIT_TRACE=1 `, e.g. `GIT_TRACE=1 git difftool --extcmd "$2"`.
+
+### Interactive Bash/GDB
+
+Sometimes it is a pretty interesting option to investigate an intermediate state of a working directory in the middle of a test regression by starting an interactive shell right at that moment. There is just *one* problem with inserting `bash &&` into the test's code: Git automatically redirects `stdin`/`stdout`/`stderr`. This needs to be switched off explicitly by editing the `test_eval_` function in `t/test-lib.sh`, deleting all those redirections.
+
+To run the GNU debugger (`gdb`), these redirections need to be disabled, too, and in addition it is a good idea to recompile the entire Git sources after removing the `-O2` flag from the `CFLAGS` in the `Makefile`: For years, gdb has problems to identify exact code locations when the code was compiled with optimizations.
+
+### Plain old debug print statements
+
+When all else fails, and in particular when no interactive debugger is available, the only remaining debugging technique is to output print statements, i.e. insert `fprintf(stderr, ...);` (or conveniently `error(...)`) into C code, `echo ... >&2` into shell code, `print(STDERR, ...);` into Perl code etc.
+
+It gets even trickier when there is no `stdout`/`stderr` available (e.g. when debugging issues with the "remote" side of a push/fetch), in which case the debug information should be written (appended) into a file. In C, you would do this via `{ FILE *f = fopen("C:\\log.out", "a"); fprintf(f, ...); fclose(f); }`, in shell via `echo ... >> /c/log.out` and in Perl via `{ my $fh = open(">>c:\\log.out"); print($fh ...); close($fh); }`.
+
+While it is a little cumbersome to add such debug print statements (after all, you typically have to rebuild the executables and run the tests from the top), there is also a big benefit to this technique over single-stepping: the debug output can be made conditional upon the particulars of the problem to be debugged. For example, instead of writing out information *every* time, say, `get_sha1_hex()` is called, it can be written out *only* the third time it is called with an SHA-1 beginning with two specific byte values. This technique can also be combined with single-stepping, by setting a breakpoint on that conditional debug output, saving a lot of time to get back to the same point after modifying and recompiling the source code.
+
+There exist even more problematic situations when working on Git for Windows, though: when trying to figure out issues in the MSys2 runtime, there might not be any `fprintf(...)` functionality available at that point of execution (yet). In this case, you need to revert to the plain Win32 API to write into a file:
+
+```c
+...
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#undef ERROR
+...
+{ HANDLE h = CreateFile("C:\\log.out", FILE_APPEND_DATA, FILE_SHARE_READ, NULL, OPEN_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL); if (h) {
+#undef DDD
+#define DDD(str) WriteFile(h, str, strlen(str), NULL, 0);
+DDD("Hello");
+DDD(...);
+DDD("\n");
+CloseHandle(h);
+} }
+```
+
+Of course, if it is possible to write to `stderr` instead, the code should use `HANDLE h = GetStdHandle(STD_ERROR_HANDLE);` instead of the `CreateFile()` call instead, and *not* close the handle...
