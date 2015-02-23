@@ -27,6 +27,10 @@ As we are in the process of switching away from msysGit as our development envir
 
 6. Build Git. Some dependencies might be missing, still, e.g. subversion, gettext, man, mingw-w64-<arch>-gdb, mingw-w64-<arch>-pcre, binutils or texinfo (these packages were installed manually before the first successful Git for Windows build).
 
+***
+
+_Note_: if you encounter messages like `39 [main] make 7628 child_info_fork::abort:...` while running make, follow the following MSYS2 [Issue](http://sourceforge.net/p/msys2/tickets/74/) post.
+
 # Build the `msys2-⁠runtime`
 
 1. Install the MSys2 Toolchain: `pacman -⁠S gcc binutils make`.
