@@ -19,7 +19,7 @@ As we are in the process of switching away from msysGit as our development envir
 
 2. Clone Git: `cd /usr/src/ && git clone https://github.com/git-for-windows/git`.
 
-3. Install the Toolchain (gcc etc): `pacman -S mingw-w64-<arch>-toolchain`, where `<arch>` is either `i686` or `x86-64`.
+3. Install the Toolchain (gcc etc): `pacman -S mingw-w64-<arch>-toolchain`, where `<arch>` is either `i686` or `x86_64`.
 
 4. Install Git's dependencies: `pacman -S python less openssh patch make perl-Error perl perl-Authen-SASL perl-libwww perl-MIME-tools perl-Net-SMTP-SSL perl-TermReadKey winpty-git mingw-w64-<arch>-curl mingw-w64-<arch>-expat mingw-w64-<arch>-openssl mingw-w64-<arch>-tcl`
 
