@@ -29,7 +29,7 @@ As we are in the process of switching away from msysGit as our development envir
 
 ***
 
-_Note_: if you encounter messages like `39 [main] make 7628 child_info_fork::abort:...` while running make, follow the following MSYS2 [Issue](http://sourceforge.net/p/msys2/tickets/74/) post.
+_Note_: if you encounter messages like `39 [main] make 7628 child_info_fork::abort:...` while running make, follow the following MSYS2 [Issue](http://sourceforge.net/p/msys2/tickets/74/) post, in short: close all MSys2 windows and run the `autorebase.bat` script in the top-level MSys2 directory from a `cmd`.
 
 # Build the `msys2-⁠runtime`
 
