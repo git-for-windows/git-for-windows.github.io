@@ -52,6 +52,8 @@ makepkg-mingw -s
  
 (The `-s` flag tells `makepkg` that it should install dependencies automatically as needed)
 
+Note: To compile 32-bit packages, you might need to set `MINGW_INSTALLS=mingw32` first.
+
 To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=MSYS` before running the Bash), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
