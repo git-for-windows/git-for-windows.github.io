@@ -8,7 +8,7 @@ As we are in the process of switching away from msysGit as our development envir
 
 2. Download and run [this file](https://raw.githubusercontent.com/git-for-windows/build-extra/master/setup-git-sdk.bat) in a `cmd` window in the top-level MSys2 directory (you need to close all MSys2 windows before that, so that the `msys-2.0.dll` file can be updated).
 
-3. After you run the `setup-git-sdk.bat` the custom git-for-windows `msys2-runtime` got installed. Now it is time to fire up the *MinGW* shell and update the rest of the system and install the build dependencies. To update the system run `pacman -Su --noconfirm` and to install the dependencies run `pacman -S --noconfirm python less openssh patch make tar diffutils ca-certificates perl-Error perl perl-Authen-SASL perl-libwww perl-MIME-tools perl-Net-SMTP-SSL perl-TermReadKey winpty-git mingw-w64-<arch>-curl mingw-w64-<arch>-expat mingw-w64-<arch>-openssl mingw-w64-<arch>-tcl mingw-w64-<arch>-pcre`. <arch> is "i686" for the 32bit version.
+3. After you run the `setup-git-sdk.bat` the custom git-for-windows `msys2-runtime` got installed. Now it is time to fire up the *MinGW* shell and update the rest of the system and install the build dependencies. To update the system run `pacman -Su --noconfirm` and to install the dependencies run `pacman -S --noconfirm python less openssh patch make tar diffutils ca-certificates perl-Error perl perl-Authen-SASL perl-libwww perl-MIME-tools perl-Net-SMTP-SSL perl-TermReadKey winpty-git mingw-w64-<arch>-curl mingw-w64-<arch>-expat mingw-w64-<arch>-openssl mingw-w64-<arch>-tcl mingw-w64-<arch>-pcre`. \<arch\> is "i686" for the 32bit version.
 
 # Build Git
 
