@@ -21,7 +21,7 @@ As we are in the process of switching away from msysGit as our development envir
 
 3. Install the Toolchain (gcc etc): `pacman -S mingw-w64-<arch>-toolchain`, where `<arch>` is either `i686` or `x86_64`.
 
-4. Install Git's dependencies: `pacman -S python less openssh patch make tar ca-certificates perl-Error perl perl-Authen-SASL perl-libwww perl-MIME-tools perl-Net-SMTP-SSL perl-TermReadKey winpty-git mingw-w64-<arch>-curl mingw-w64-<arch>-expat mingw-w64-<arch>-openssl mingw-w64-<arch>-tcl mingw-w64-<arch>-pcre`
+4. Install Git's dependencies: `pacman -S python less openssh patch make tar diffutils ca-certificates perl-Error perl perl-Authen-SASL perl-libwww perl-MIME-tools perl-Net-SMTP-SSL perl-TermReadKey winpty-git mingw-w64-<arch>-curl mingw-w64-<arch>-expat mingw-w64-<arch>-openssl mingw-w64-<arch>-tcl mingw-w64-<arch>-pcre`
 
 5. Temporarily: In /usr/src/git/, check out the `update-to-2.3.0` branch: `git remote add -f dscho https://github.com/dscho/git && git checkout -t dscho/update-to-2.3.0`.
 
