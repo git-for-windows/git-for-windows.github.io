@@ -6,7 +6,7 @@ As we are in the process of switching away from msysGit as our development envir
 
 1. Install MSys2 from https://msys2.github.io/, into `C:/msys32` and `C:/msys64` (if you only want to build for one architecture, you can skip the other one). This will install three Shells into the Start Menu: the *MSys*, the *MinGW 32* and the *MinGW 64* Shell. To build Git, you should start the *MinGW* shell corresponding to the architecture of the installed MSys2.
 
-2. Download [setup-git-sdk.bat](https://raw.githubusercontent.com/nalla/build-extra/master/setup-git-sdk.bat) and [setup-git-sdk.sh](https://raw.githubusercontent.com/nalla/build-extra/master/setup-git-sdk.sh) and put them in the the top-level MSys2 directory. Then run the `setup-git-sdk.bat` in a `cmd` window (you need to close all MSys2 windows before that, so that the `msys-2.0.dll` file can be updated). The `setup-git-sdk.bat` updates the `msys2-runtime` and will call the `setup-git-sdk.sh` file that will then install the git build dependencies via `pacman`.
+2. Download [setup-git-sdk.bat](https://raw.githubusercontent.com/nalla/build-extra/master/setup-git-sdk.bat) and put them in the the top-level MSys2 directory. Then run the `setup-git-sdk.bat` in a `cmd` window (you need to close all MSys2 windows before that, so that the `msys-2.0.dll` file can be updated). The `setup-git-sdk.bat` updates the `msys2-runtime` and will call the `setup-git-sdk.sh` file that will then install the git build dependencies via `pacman`.
 
 # Build Git
 
