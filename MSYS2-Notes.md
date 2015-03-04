@@ -1,8 +1,12 @@
 Page for things that pop up while fiddling with MSys2.
 
-1. PS1 script: I had to replace `PS1="$PS1"'\n'` with `PS1="$PS1"$'\n'` within the `profile` file to get the git prompt working. See also [this msys2 ticket page](http://sourceforge.net/p/msys2/tickets/17/)
+# PS1 script
 
-2. When trying to debug environment issues, it can be very helpful to print out the environment as it comes into Git. Unfortunately, `mingw_startup()` – which converts the environment to UTF-8 – is run so early that the `sprintf()` family of functions does not work: the locale has not been initialized yet (because this would require the environment, using the `LC_ALL` environment variable!). Therefore, something like this is required:
+I had to replace `PS1="$PS1"'\n'` with `PS1="$PS1"$'\n'` within the `profile` file to get the git prompt working. See also [this msys2 ticket page](http://sourceforge.net/p/msys2/tickets/17/)
+
+# Debugging the environment conversion to UTF-8
+
+When trying to debug environment issues, it can be very helpful to print out the environment as it comes into Git. Unfortunately, `mingw_startup()` – which converts the environment to UTF-8 – is run so early that the `sprintf()` family of functions does not work: the locale has not been initialized yet (because this would require the environment, using the `LC_ALL` environment variable!). Therefore, something like this is required:
 ```c
 #include <strsafe.h>
 ...
@@ -12,3 +16,7 @@ Page for things that pop up while fiddling with MSys2.
   write(2, buffer, strlen(buffer));
 }
 ``` 
+
+# Changing the colors in the Terminal
+
+See https://github.com/mavnn/mintty-colors-solarized
