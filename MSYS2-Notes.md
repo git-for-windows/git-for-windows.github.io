@@ -20,3 +20,14 @@ When trying to debug environment issues, it can be very helpful to print out the
 # Changing the colors in the Terminal
 
 See https://github.com/mavnn/mintty-colors-solarized
+
+# Building the git documentation
+- pacman -S asciidoc xmlto
+- start a msys shell
+- make doc
+
+In a mingw32 shell asciidoc fails with
+```
+../git/Documentation$ asciidoc git-annotate.txt
+asciidoc: FAILED: configuration file asciidoc.conf missing
+```
