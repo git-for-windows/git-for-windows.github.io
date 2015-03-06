@@ -35,3 +35,8 @@ asciidoc: FAILED: configuration file asciidoc.conf missing
 # Openssh
 
 Complains about world writeable private key files, although that makes no sense on windows.
+Can be fixed with
+
+```
+chmod 600 ~/.ssh/*
+```
