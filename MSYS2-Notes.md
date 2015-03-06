@@ -31,3 +31,7 @@ In a mingw32 shell asciidoc fails with
 ../git/Documentation$ asciidoc git-annotate.txt
 asciidoc: FAILED: configuration file asciidoc.conf missing
 ```
+
+# Openssh
+
+Complains about world writeable private key files, although that makes no sense on windows.
