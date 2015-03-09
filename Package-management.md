@@ -87,7 +87,7 @@ perl -MCPAN -e shell
 Pacman repositories are served via HTTP, as static files in a single directory. The most important file in that directory is the *package index*, called `<name>.db.tar.xz` by convention. This package index can be updated via `repo-add <package-index> <package-file>...` (this updated *only* the package index, it does *not* copy the package files into the same directory). Pacman expects to find the package files referenced in the package index in the same directory as the index.
 
 The *Git for Windows*-specific packages are served from Bintray, see [below](#Bintray).
-We ship packages for two architectures, [`i686`](https://dl.bintray.com/git-for-windows/pacman/msys2/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/msys2/x86_64/).
+We ship MSys2 packages for two architectures, [`i686`](https://dl.bintray.com/git-for-windows/pacman/msys2/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/msys2/x86_64/) and also MinGW packages for [`i686`](https://dl.bintray.com/git-for-windows/pacman/mingw/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/mingw/x86_64/).
 
 ## Bintray
 
@@ -97,6 +97,7 @@ Git for Windows' [most important repository hosted on Bintray](https://bintray.c
 
 ```ini
 [git-for-windows]
+Server = https://dl.bintray.com/$repo/pacman/mingw/$arch^
 Server = https://dl.bintray.com/$repo/pacman/msys2/$arch^
 SigLevel = Optional
 ```
