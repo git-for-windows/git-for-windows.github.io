@@ -24,11 +24,11 @@ _Note_: if you encounter messages like `39 [main] make 7628 child_info_fork::abo
 
 # Build the `msys2-⁠runtime`
 
-1. Install the MSys2 Toolchain: `pacman -⁠S gcc binutils make`.
+1. Start the *MSys* shell (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
 
-2. Clone the MSYS2-packages repository: `cd /usr/src && git clone https://github.com/git-for-windows/MSYS2-packages`.
+2. Install the MSys2 Toolchain: `pacman -⁠S gcc binutils make`.
 
-3. Temporarily: In MSYS2-packages, check out the `msys-runtime` branch: `git remote add -f dscho https://github.com/dscho/MSYS2-packages && git checkout -t dscho/msys-runtime`.
+3. Clone the MSYS2-packages repository: `cd /usr/src && git clone https://github.com/git-for-windows/MSYS2-packages`.
 
 4. Build the package: `makepkg -⁠s`.
 
