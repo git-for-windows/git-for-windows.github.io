@@ -97,8 +97,8 @@ Git for Windows' [most important repository hosted on Bintray](https://bintray.c
 
 ```ini
 [git-for-windows]
-Server = https://dl.bintray.com/$repo/pacman/mingw/$arch^
-Server = https://dl.bintray.com/$repo/pacman/msys2/$arch^
+Server = https://dl.bintray.com/$repo/pacman/mingw/$arch
+Server = https://dl.bintray.com/$repo/pacman/msys2/$arch
 SigLevel = Optional
 ```
 
