@@ -15,15 +15,3 @@ We build Git for Windows using an [MSys2](https://msys2.github.io/) based *Git f
 4. Build Git: `make`.
 
 5. Run the test suite: `make test`
-
-# Build the `msys2-⁠runtime`
-
-1. Start the *MSys* (`msys2_shell.bat`) shell (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
-
-2. Install the MSys2 Toolchain: `pacman -⁠S gcc binutils make`.
-
-3. Clone the MSYS2-packages repository: `cd /usr/src && git clone https://github.com/git-for-windows/MSYS2-packages`.
-
-4. Build the package: `makepkg -⁠s`.
-
-(You might need to call `pacman -S ca-certificates` to reinstall that package, it seems that it was not installed properly at least in one MSys2 32-bit setup.)
