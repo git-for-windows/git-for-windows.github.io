@@ -44,6 +44,12 @@ pacman -Ql <package-name>
 
 ## Rebuild packages
 
+If you want to rebuild a package, the first order of business is to know which repository has the metadata for the package. Git for Windows has three repositories containing such metadata:
+
+- [build-extra](https://github.com/git-for-windows/build-extra) contains the `git-extra` package information,
+- [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MinGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
+- [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](Building-msys2-runtime)).
+
 To build MinGW packages, you need to start the appropriate `MinGW` shell (32-bit or 64-bit – this sets `MSYSTEM=MINGW32` or `MSYSTEM=MINGW64` respectively), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
