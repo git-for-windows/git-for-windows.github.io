@@ -8,8 +8,8 @@
 
 2. Install the MSys2 Toolchain: `pacman -⁠S base-devel`.
 
-3. Clone the MSYS2-packages repository: `cd /usr/src && git clone https://github.com/git-for-windows/MSYS2-packages`.
+3. Initialize the local MSYS2-packages clone: `cd /usr/src/MSYS2-packages && git fetch origin && git checkout master`.
 
-4. Change to the `msys2-runtime` directory: `cd MSYS2-packages/msys2-runtime`
+4. Change to the `msys2-runtime` directory: `cd msys2-runtime`
 
 4. Build the package: `makepkg -⁠s`.
