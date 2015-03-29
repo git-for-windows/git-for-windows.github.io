@@ -64,6 +64,10 @@ To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=
 makepkg -s
 ```
 
+### More details about rebuilding packages
+
+The `makepkg` script is part of the `pacman` package itself. It expects a [`PKGBUILD`](https://wiki.archlinux.org/index.php/PKGBUILD) file in the current directory that contains metadata about the package and functions specifying how to prepare the source code, build the executables, and package all the files.
+
 ## Perl package management
 
 Perl packages are managed outside of the `pacman` realm, but instead with [CPAN](http://www.cpan.org/):
