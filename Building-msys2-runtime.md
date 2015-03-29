@@ -1,6 +1,6 @@
 # Installing a build environment
 
-1. Just install the [net-installer](https://github.com/git-for-windows/build-extra/releases).
+1. Just install the [net-installer](https://git-for-windows.github.io/#download-sdk).
 
 # Build `msys2-⁠runtime`
 
