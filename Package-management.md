@@ -96,11 +96,11 @@ SigLevel = Optional
 To upload new files, a maintainer needs to have permission to write to the `pacman` repository on Bintray. We have a helpful tool in the [`build-extra`](https://github.com/git-for-windows/build-extra) repository to assist in the process, called `pacman-mirror.sh`. After building a new package version (preferably for 32-bit *and* 64-bit), the tool should be used thusly:
 
 ```bash
-/path/to/build-extra/pacman-mirror.sh fetch
-/path/to/build-extra/pacman-mirror.sh add \
+/usr/src/build-extra/pacman-mirror.sh fetch
+/usr/src/build-extra/pacman-mirror.sh add \
     /path/to/<package>-<version>-i686.pkg.tar.xz \
     /path/to/<package>-<version>-x86_64.pkg.tar.xz
-/path/to/build-extra/pacman-mirror.sh push
+/usr/src/build-extra/pacman-mirror.sh push
 ```
 
 The `fetch` step will initialize or synchronize the local mirror of the Pacman repository, the `add` step will copy the packages into the appropriate location, and the `push` step will update the package index, and upload the packages that are not yet on Bintray as well as the package index.
