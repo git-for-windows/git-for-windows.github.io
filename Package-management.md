@@ -58,14 +58,6 @@ To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=
 makepkg -s
 ```
 
-To rebuild the `msys2-runtime` (i.e. `msys-2.0.dll`), you will need to have a *second* MSys2 installation and quit all applications from the first MSys2 installation. In the second installation, as above, start the `MSys` shell and clone `MSYS2-packages` to `/usr/src/`.
-
-Inside the `msys2-runtime` subdirectory, you need to use `makepkg -s` *for the initial build*.
-
-For subsequent builds, after modifying the source files in `src/msys2-runtime/winsup/cygwin/` you can switch to `src/build-<arch>-pc-msys/<arch>-pc-msys/winsup/cygwin` and type `make`. This will generate an `msys0.dll` file in the latter directory that you can then copy to the first MSys2 installation to test.
-
-The process to rebuild the `Bash` is very similar to the `msys2-runtime` one; You will just need to work in the `src/bash-<version>/` subdirectory of `/usr/src/MSYS2-packages/bash/` (both the sources and the generated `bash.exe` live there).
-
 ## Perl package management
 
 Perl packages are managed outside of the `pacman` realm, but instead with [CPAN](http://www.cpan.org/):
