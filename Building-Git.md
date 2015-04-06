@@ -16,22 +16,19 @@ We build Git for Windows using an [MSys2](https://msys2.github.io/) based *Git f
 
 5. Run the test suite: `make test`. If you are a fan of statistics, you can use the following `prove` invocation to run the testsuite. But first we have to change to the test directory with the command `cd t`. After that you can issue `/usr/bin/time prove -j 15 --state=failed,save ./t[0-9]*.sh`. If *15* threads are too many for your system, you can provide the number of threads via the `-j <num>` (j for jobs) parameter.
 
-6. Command Lines for building git and git documents
+# Updating to the newest Git for Windows version
+
+```bash
+cd /usr/src/git
+git pull
+make -j15 install install-html
 ```
-cd /usr/src
-git clone https://github.com/git-for-windows/git.git
-cd git
-# verify that the test suite passes
-make -j5 all
-cd t
+
+## Testing the new Git version
+
+As before:
+
+```bash
+cd /usr/src/git/t
 /usr/bin/time prove -j 5 --state=failed,save ./t[0-9]*.sh
-
-# install the git binaries
-make install
-
-# make & install the html documentation
-cd /usr/src/git/Documentation
-make html
-DIFF='diff' HOME='/mingw64' make install-html #/mingw32 if for 32bit arch
-
 ```
