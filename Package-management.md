@@ -20,6 +20,18 @@ To ensure that the newest package version is installed, it is recommended to pas
 pacman -Sy <package-name>
 ```
 
+To upgrade all packages to their newest versions, call
+
+```bash
+pacman -Syu
+```
+
+### Updating `msys2-runtime`, `pacman` and `bash`
+
+As `pacman.exe` is itself an MSys2 executable, it is strongly suggested to update `msys2-runtime` and `pacman` packages individually if they need to be updated, and let `pacman` quit *immediately* afterwards.
+
+Likewise, if you run `pacman` from a `bash` -- an MSys2 program, too -- you should quit the shell *immediately* (it might show an infinite stream of heap messages instead of quitting, requiring to be force-quit).
+
 ## Remove packages
 
 ```bash
