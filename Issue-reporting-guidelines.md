@@ -6,4 +6,4 @@
 * Be prepared to test fixes!
 * Be polite. You are asking highly competent software developers for help, for free, so you might want to avoid treating them as if they were a commodity or at your free disposal.
 * An example for an outstanding report can be found [here](https://github.com/msysgit/msysgit/issues/206#issuecomment-44574988). You may want to imitate the level of detail.
-* For further inspiration, read reports that were resolved successfully, http://stackoverflow.com/questions/how-to-ask and http://whathaveyoutried.com/.
+* For further inspiration, read reports that were resolved successfully, http://www.chiark.greenend.org.uk/~sgtatham/bugs.html, http://stackoverflow.com/questions/how-to-ask and http://whathaveyoutried.com/.
