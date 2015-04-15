@@ -32,3 +32,5 @@ As before:
 cd /usr/src/git/t
 /usr/bin/time prove -j 5 --state=failed,save ./t[0-9]*.sh
 ```
+
+TODO: mention good practices to develop using Eclipse, MSVC
