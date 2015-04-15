@@ -13,3 +13,5 @@ A lot of documentation wants to be written, still. A good place is [the Git for 
 Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git.
 
 TODO: mention good practices to develop using Eclipse, MSVC, command-line, gdb, test suite (`set -x` and similar tricks)
+
+Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
