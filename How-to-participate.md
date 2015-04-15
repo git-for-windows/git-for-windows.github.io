@@ -10,7 +10,7 @@ A lot of documentation wants to be written, still. A good place is [the Git for 
 
 # Fix bugs or add features in the Git code itself
 
-Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git.
+Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git. Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
 
 TODO: mention good practices to develop using Eclipse, MSVC, command-line, gdb, test suite (`set -x` and similar tricks)
 
