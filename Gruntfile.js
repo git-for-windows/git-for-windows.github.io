@@ -2,6 +2,18 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
+		md2html: {
+			options: {
+				layout: 'markdown-template.html'
+			},
+			governance: {
+				files: [{
+					src: ['governance-model.md'],
+					dest: 'governance-model.html'
+				}]
+			}
+		},
+
 		cssmin: {
 			compress: {
 				options: {
@@ -54,6 +66,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-md2html');
 
-	grunt.registerTask('default', ['cssmin', 'uglify']);
+	grunt.registerTask('default', ['cssmin', 'uglify', 'md2html']);
 };
