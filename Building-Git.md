@@ -12,7 +12,7 @@ We build Git for Windows using an [MSys2](https://msys2.github.io/) based *Git f
 
 2. Change directory to the initial clone: `cd /usr/src/git`.
 
-4. (Optional) build Git: `make`.
+4. (Optional) build Git: `make`, then install it: `make install`
 
 5. Run the test suite: `make test`. If you are a fan of statistics, you can use the following `prove` invocation to run the testsuite. But first we have to change to the test directory with the command `cd t`. After that you can issue `/usr/bin/time prove -j 15 --state=failed,save ./t[0-9]*.sh`. If *15* threads are too many for your system, you can provide the number of threads via the `-j <num>` (j for jobs) parameter.
 
