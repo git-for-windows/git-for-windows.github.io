@@ -1,4 +1,4 @@
-There are several ways to participate in the Git for Windows project. But first off, have a look at the [governance model](http://git-for-windows.github.io/governance-model.html) of the project.
+There are several ways to participate in the Git for Windows project. First off, have a look at the [governance model](http://git-for-windows.github.io/governance-model.html) of the project.
 
 # Help users
 
