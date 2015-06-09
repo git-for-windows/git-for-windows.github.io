@@ -72,9 +72,26 @@ makepkg-mingw -s
 
 To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=MSYS` before running the Bash), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
 
-```bash
+```bas
 makepkg -s
 ```
+
+### Build packages from locally-patched sources
+
+When testing Pull Requests or debugging certain issues, it is convenient to build packages from source code other than the canonical one listed in the `PKGBUILD` file. This can be achieved by switching to the subdirectory of `/usr/src/MINGW-packages` or `/usr/src/MSYS2-packages`, respectively, corresponding to the package you want to build, ensure that the `src/` directory is populated (and call `makepkg-mingw --nobuild -s` or `makepkg --nobuild -s` otherwise), then patch the source code in the `src/` subdirectory and after that call
+
+```bash
+makepkg-mingw --noextract --noprepare
+```
+
+or
+
+
+```bash
+makepkg --noextract --noprepare
+```
+
+to build the package.
 
 ### More details about rebuilding packages
 
