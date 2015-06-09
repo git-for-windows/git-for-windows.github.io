@@ -1,3 +1,5 @@
+***NOTE***: This page probably hints at a bug, tentative ticket [here](https://github.com/git-for-windows/git/issues/184). The following instructions should not be followed, but the bug should be fixed instead:
+
 How to add Git Bash Here properly:
 
 Create a batch file named bash_here.bat in installed directory and contents should be:
