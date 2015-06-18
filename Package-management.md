@@ -52,6 +52,12 @@ To list the contents of a package, call
 pacman -Ql <package-name>
 ```
 
+To find out what package a file belongs to, call
+
+```bash
+pacman -Qo <file-name>
+```
+
 # Technical details
 
 ## Rebuild packages
