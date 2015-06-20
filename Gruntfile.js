@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			compress: {
 				files: {
 					'js/pack.js': [
-						'js/jquery-1.10.2.min.js',
+						'js/jquery-1.11.3.min.js',
 						'js/jquery.fancybox.js',
 						'js/jquery.mousewheel.js'
 					]
