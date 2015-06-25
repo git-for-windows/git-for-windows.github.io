@@ -1,3 +1,26 @@
-This is the Git for Windows wiki. It looks more technical than [our home page](https://git-for-windows.github.io/) because it is the place where you can contribute to the documentation about Git for Windows.
+# Introduction
+The _Git for Windows_ wiki. It looks more technical than [our home page](https://git-for-windows.github.io/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
 
-If you need inspiration what you could write about: document your common work flows. Write a tutorial how to start coding Git for Windows, how to run the test suite. Write a tutorial how to debug a failing test. Write about something you would have wished you had known about Git for Windows a long time ago.
+## About
+_Git for Windows_ is very different from _Git_ for almost everything else in one important respect: Windows does not provide the *POSIX* infrastructure Git expects.
+
+Therefore, it always had to ship with much more than any other Git distribution: provide a `bash`, a `perl`, many *POSIX* tools such as `sed`, `awk`, `tr`, etc.
+
+Git for Windows 1.x did that by starting off from an [MSys](http://www.mingw.org/wiki/msys) installation and just packaging all the required files as-are. _MSys_ did not sport any package manager at the time, so all of the updates were quite manual, and some of the components we shipped were not even part of _MSys_ -- such as `msmtp` or `WhoUses` -- so we had to compile them from scratch, and maintain those components ourselves.
+
+This became really too tedious, so much so that there was not enough time to provide updated Git for Windows installers regularly.
+
+At some stage, it became obvious that there needs to be a better solution. [@sschuberth](https://github.com/sschuberth) had already started a separate project to leverage the package manager that _MSys_ had introduced at that stage, `mingw-get`. However, it turned out that the packages were not maintained all that well, and besides, _MSys_' runtime had not been kept up-to-date with [Cygwin](https://www.cygwin.com/), and was falling behind in terms of features and support.
+
+In a two-hour Skype session about the course of _Git for Windows_ [@dscho](https://github.com/dscho), [@t-b](https://github.com/t-b) and [@sschuberth](https://github.com/sschuberth) decided to give [MSys2](https://msys2.github.io/) a whirl. _MSys2_ was started with the idea to restart the _MSys_ project, frequently updating with _Cygwin_ and just keeping the spirit of _MSys_ to provide a very stripped-down *POSIX* layer, essentially a bare-minimum version of _Cygwin_. _MSys2_ also sports a package manager (`pacman`) and keeps those packages up-to-date very well. Another bonus: _MSys2_ is available for `64-bit` in addition to `32-bit`, while _MSys_ was stuck with `32-bit`.
+
+Thanks to sponsoring of _GitHub_, [@dscho](https://github.com/dscho) could afford to spend the time to investigate the possibilities with _MSys2_. It turned out that _MSys2_ already provided most of the parts needed, and would make maintenance much, much easier. [@dscho](https://github.com/dscho) (and others too) really spent an insane amount of time (thanks GitHub!) to get everything up to speed, even fixing a couple of long-standing bugs in _Git for Windows_. It essentially came down to modifying the `msys2-runtime` to _Git for Windows_ needs. The rest is basically upstream _MSys2_ architecture.
+
+And yes, the idea is still the same as the original one: Update the _MSys2_ setup, together with a _Git_ package built from _Git for Windows_' source code, then bundle the relevant files together with a couple of extra files into an installer. Then I sign it and upload it. And that is _Git for Windows_ 2.x.
+
+Now, keep in mind that _MSys2_ and Linux (The original target for _Git_'s distribution) are very different beasts. Their distributions might include packages that are built from the same source code (i.e. the `binutils`, `gcc` or `bash` package), but the runtime is very, very different: _MSys2_'s runtime is a stripped-down, slightly modified _Cygwin_ runtime running on top of the Windows kernel, while Linux' runtime is the Linux kernel, running as a separate OS altogether.
+
+So if you are missing some packages - feel free to start making one. This is Open Source, however, so everybody interested and capable enough can contribute whatever they need to address their needs. And that includes you: you could imitate e.g. [a simple `PKGBUILD` file](https://github.com/Alexpux/MINGW-packages/blob/master/mingw-w64-assimp-git/PKGBUILD) to build a new package e.g. `msmtp`, the component that _Git for Windows_ 1.x uses to support `sendemail`. Then open a Pull Request so that _Git for Windows_ can ship it. Our documentation will be helpful in that endeavor: [package-management](https://github.com/git-for-windows/git/wiki/Package-management), in particular [package-management#rebuild-packages](https://github.com/git-for-windows/git/wiki/Package-management#rebuild-packages).
+
+# Start documenting
+If you need inspiration what you could write about: document your common work flows. Write a tutorial how to start coding _Git for Windows_, how to run the test suite. Write a tutorial how to debug a failing test. Write about something you would have wished you had known about Git for Windows a long time ago.
