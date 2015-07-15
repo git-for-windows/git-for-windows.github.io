@@ -2,11 +2,11 @@
 
 Note that typically, there is no problem because the solution described [here](#adjusting-msys-20dlls-address-range-manually) is executed preventively upon installation of Git for Windows.
 
-The problem only resurfaces if a `.dll` has been installed *after* Git for Windows' installation and only if that `.dll` interferes with the address range hard-coded into the MSys2 runtime.
+The problem only resurfaces if a `.dll` has been installed *after* Git for Windows' installation and only if that `.dll` [interferes with the address range hard-coded into the MSys2 runtime](#background).
 
 The simplest solution to fix that problem if it rears its ugly head at all is to switch to the 64-bit version of Git for Windows (the 64-bit address range is so large that MSys2's runtime virtually never has any run-in with another `.dll`).
 
-The second-simplest solution is to 
+The second-simplest solution is to [reinstall Git for Windows](#reinstall-git-for-windows).
 
 # Background
 
