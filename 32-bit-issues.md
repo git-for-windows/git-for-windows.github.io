@@ -30,19 +30,19 @@ When there is already a `.dll` interfering with MSys2's runtime's hard-coded add
     865 [main] sh.exe" 17588 open_stackdumpfile: Dumping stack trace to sh.exe.stackdump
 ```
 
-## Solutions
+# Solutions
 
 There are several ways how to get out of this problem:
 
-### Upgrade to the 64-bit version of Git for Windows
+## Upgrade to the 64-bit version of Git for Windows
 
 The address range available in 64-bit Windows is so large as to virtually guarantee that the address range of the MSys2 runtime never has to be adjusted. This is by far the easiest solution, now that Git for Windows 2.x offers a 64-bit version.
 
-### Reinstall Git for Windows
+## Reinstall Git for Windows
 
 If you cannot switch to 64-bit for any reason, reinstalling Git for Windows will typically fix the problem because it [adjusts the address range preemptively](#adjusting-msys-20dlls-address-range-manually).
 
-### Adjusting `msys-2.0.dll`'s address range manually
+## Adjusting `msys-2.0.dll`'s address range manually
 
 To fix the problem of address range overlaps, MSys2 offers a utility called `rebase.exe` (which confusingly has nothing at all to do with `git rebase`) to adjust the address range of a given set of `.dll` files.
 
