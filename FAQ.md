@@ -15,3 +15,6 @@ There are several methods for working around these problems:
  * Run programs that have problems using the [`winpty`](https://github.com/rprichard/winpty) utility. This allows you to keep using the nicer mintty terminal, but can become unwieldy if you need the workaround for many programs.
  * Modify the shortcut for Git Bash to run `bash` directly without `mintty` so it uses the default console host and configure it for "Quick Edit", reasonable size and scroll-back and suitable unicode font. You'll still have to live with the other quirks of console host.
  * Install and use [ConEmu](http://conemu.github.io/).
+
+## I get errors trying to check out files with long path names.
+Windows file paths are by default limited to 255 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property core.longpaths to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/msysgit/msysgit/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
