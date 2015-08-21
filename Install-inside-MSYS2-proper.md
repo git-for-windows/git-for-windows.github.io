@@ -1,6 +1,6 @@
 Git for Windows being based on `MSYS2`, it's possible to install the `git` package into an existing `MSYS2` installation. That means that if you are already using `MSYS2` on your computer, you can use Git for Windows without running the full installer or using the portable version.
 
-Note however that there is some caveats for going this way. Git for Windows created some patches for `msys2-runtime` that have not yet been sent upstream (this is planned, checkout out issue [#285](https://github.com/git-for-windows/git/issues/284) for current status). This means that you have to install Git for Windows customized `msys2-runtime` to have a fully working `git` inside `MSYS2`.
+Note however that there is some caveats for going this way. Git for Windows created some patches for `msys2-runtime` that have not yet been sent upstream (this is planned, checkout out issue [#284](https://github.com/git-for-windows/git/issues/284) for current status). This means that you have to install Git for Windows customized `msys2-runtime` to have a fully working `git` inside `MSYS2`.
 
 Here the steps to take:
 
@@ -21,4 +21,4 @@ Here the steps to take:
 
  5. Since you have updated `msys2-runtime`, you might get strange error messages right after finishing installation like an infinite stream of heap memory related messages. Don't panic, simply close all currently open shells and and program relying on `MSYS2` runtime. Once all close, start a new terminal again. 
 
- 6. Finally, checkout that everything went well by doing `git --version` and it should output `git version 2.5.0.windows.1`
+ 6. Finally, checkout that everything went well by doing `git --version` and it should output something like `git version 2.5.0.windows.1`
