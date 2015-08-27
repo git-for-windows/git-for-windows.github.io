@@ -132,6 +132,13 @@ footer li {
 	margin-left: 1.5625em;
 }
 
+div.version {
+	position: absolute;
+	margin-top: 5em;
+	text-transform: uppercase;
+	color: #646464;
+}
+
 .feature article {
 	position: relative;
 	padding-right: 0px;
