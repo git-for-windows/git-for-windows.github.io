@@ -59,6 +59,7 @@ var autoUpdate = function() {
 		match = regex.exec(timestamp);
 		var latest = new Date(match[1], match[2] - 1, match[3],
 			match[4], match[5], match[6], 0).toUTCString();
+		latest = latest.replace(/GMT$/, 'UTC');
 		var url = lines.findFirst(/"html_url": *"(.*)"/);
 		process.stderr.write('Auto-detected version ' + version
 			+ ' (' + latest + ')\n');
