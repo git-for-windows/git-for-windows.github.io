@@ -16,6 +16,12 @@ Note that the prompt shows that the current directory in the ssh session inside 
 
 To compile and install Git, you will have to run `make clean` first because *Git* will have built *Windows* binaries in the same directory (when we will need *Linux* binaries inside the virtual machine started by Vagrant). After calling `make install` and `export PATH=$HOME/bin:$PATH` you will be able to run the Git version built from the source files in `/vagrant/git/`. 
 
+# Alternative to the Git SDK way
+
+If you cannot download and install the Git SDK for some reason or other, you could also clone [the Git source code](https://github.com/git-for-windows/git) using [Git for Windows](https://git-for-windows.github.io/) instead. If Git for Windows does not even work for you, you could even download the source code [as a `.zip`](https://github.com/git-for-windows/git/archive/master.zip) and unpack it.
+
+After that, continue with the `vagrant up` step above.
+
 # Why?
 
 Git was born on Linux. Over the years, it has become more and more platform-independent, but still support for Linux outshines support for every other platform, including Windows. Therefore it is preferable under certain circumstances to run Git inside Linux in a virtual machine, for example
