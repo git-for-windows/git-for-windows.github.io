@@ -2,7 +2,7 @@
 
 1. Just run the [SDK installer](https://git-for-windows.github.io/#download-sdk).
 
-# Build `msys2-⁠runtime`
+# Build `msys2-runtime`
 
 1. Open the *Git for Windows SDK* *MSys* shell by double clicking `msys2_shell.bat` in the install folder. (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
 
