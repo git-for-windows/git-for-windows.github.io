@@ -82,6 +82,12 @@ To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=
 makepkg -s
 ```
 
+*Note*: Before building the first MSys package, you need to install the base packages for development:
+
+```sh
+pacman -Sy base-devel binutils
+```
+
 ### Build packages from locally-patched sources
 
 When testing Pull Requests or debugging certain issues, it is convenient to build packages from source code other than the canonical one listed in the `PKGBUILD` file. This can be achieved by switching to the subdirectory of `/usr/src/MINGW-packages` or `/usr/src/MSYS2-packages`, respectively, corresponding to the package you want to build, ensure that the `src/` directory is populated (and call `makepkg-mingw --nobuild -s` or `makepkg --nobuild -s` otherwise), then patch the source code in the `src/` subdirectory and after that call
