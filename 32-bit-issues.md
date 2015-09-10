@@ -47,3 +47,14 @@ If you cannot switch to 64-bit for any reason, reinstalling Git for Windows will
 To fix the problem of address range overlaps, MSys2 offers a utility called `rebase.exe` (which confusingly has nothing at all to do with `git rebase`) to adjust the address range of a given set of `.dll` files.
 
 Unfortunately the [symptom](#the-symptom-of-an-address-range-that-needs-adjusting) occurs not all that rarely, therefore there is even a script to make `rebase.exe` more convenient to use: `/usr/bin/rebaseall`. This script is meant to be executed via Dash instead of Bash, to avoid chicken-and-egg problems with Bash not being able to run properly unless the address range is already fixed. Typically it is unnecessary to run this script manually because it is run as part of Git for Windows' installation process. If the [symptom](#the-symptom-of-an-address-range-that-needs-adjusting) occurs at some stage long after Git for Windows was installed, reinstalling Git for Windows is the most convenient way to fix it.
+
+If you still insist on fixing it manually, please understand that this is *not* recommended without knowledge of MSys2 internals (read: if you get stuck, please do not open a ticket to learn more about MSys2; use the recommended way instead: reinstall Git for Windows). The manual way goes like this:
+
+1. close each and every `mintty` window
+2. terminate each and every Bash
+3. terminate even background processes that use the MSys2 runtime, such as `ssh-agent`
+4. open `cmd.exe`, change the directory to Git's top-level one and then run
+
+   ```cmd
+   usr\bin\dash -c '/usr/bin/dash /usr/bin/rebaseall -p'
+   ```
