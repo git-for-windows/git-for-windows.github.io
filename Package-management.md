@@ -82,10 +82,10 @@ To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=
 makepkg -s
 ```
 
-*Note*: Before building the first MSys package, you need to install the base packages for development:
+*Note*: Before building the first MSys package, as per [MSys2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
 
 ```sh
-pacman -Sy base-devel binutils
+pacman -Sy base-devel msys2-devel
 ```
 
 ### Build packages from locally-patched sources
