@@ -18,3 +18,9 @@ There are several methods for working around these problems:
 
 ## I get errors trying to check out files with long path names.
 Windows file paths are by default limited to 255 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/git-for-windows/git/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
+
+## How do I access a repository hosted on a Microsoft Team Foundation Server inside a Windows domain?
+
+The Microsoft Team Foundation Server is capable of hosting git repositories. If the server is a member of a windows domain, and your user account is in that domain, you can use domain authentication to identify yourself to the server, and can access git repositories without having to enter any credentials. For this to work, the server has to be configured to use domain authentication, not NTLM authentication. The repository URL can be obtained from the TFS web interface, it may look like http://server.example.com:8080/tfs/TWA/TeamDev/_git/reponame.
+
+In order to instruct git to use domain authentication, prefix the server name with ':@', like so: http://:@server.example.com:8080/tfs/TWA/TeamDev/_git/reponame. This is a special case of the usual username:password@server' syntax, where bot the 'username' and 'password' fields are empty. This causes git to look up and use your domain credentials.
