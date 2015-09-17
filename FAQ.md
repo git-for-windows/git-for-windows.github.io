@@ -2,6 +2,12 @@
 
 *Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases).
 
+## How do I update *Git for Windows* upon new releases?
+
+This depends on how you installed *Git for Windows*. The bundle installation requires you to download and install the new version. Any customizations you made will be kept as long as you did so in the appropriate configuration folders.
+
+For advanced users working with the *Git for Windows* SDK `pacman` is available as a package manager. See [Package management](Package-management)
+
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
 
