@@ -55,6 +55,7 @@ update.
 * [PKGBuild man page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 * [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)
 * ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
+* [MSYS2 Introduction & Contributing](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/)
 
 ## Origin of 'net installer' concept
 
