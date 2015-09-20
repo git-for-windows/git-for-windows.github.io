@@ -48,6 +48,14 @@ An alternative method is to start `git-cmd.exe` and run `pacman -Sy
 that ensures that no obsolete binary continues to be used after the
 update.
 
+### See Also:
+
+* [G4W Package Management](https://github.com/git-for-windows/git/wiki/Package-management)
+* [pacman man page](https://www.archlinux.org/pacman/pacman.8.html)
+* [PKGBuild man page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
+* [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)
+* ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
+
 ## Origin of 'net installer' concept
 
 The idea for the 'net installer' originated in the Git for Windows
