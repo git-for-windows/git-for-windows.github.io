@@ -8,7 +8,9 @@ compile and run Git for Windows.
 
 When run as executable, it automatically runs `setup-git-sdk.bat` after
 extracting the files. Users who prefer to unpack the archive manually
-with 7-Zip need to run that batch file manually, too.
+with 7-Zip need to run that batch file manually, too. The script is
+extensively commented to assist in understanding the installation process
+and issues.
 
 The files contained in the net installer are parts of MSys2's
 'msys2-runtime', 'pacman' and 'gnupg' packages, carefully selected to
@@ -52,6 +54,7 @@ update.
 * [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)
 * ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
 * [MSYS2 Introduction & Contributing](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/)
+* [SDK's setup-git-sdk.bat script](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat)
 
 ## Origin of 'net installer' concept
 
