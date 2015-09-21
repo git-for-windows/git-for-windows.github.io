@@ -25,23 +25,17 @@ therefore refuse to overwrite the files from above-mentioned packages.
 To keep the development environment up-to-date, developers need to run
 
 	update-core
-	# If one of the packages is updated during update-core you *MUST* restart MSys2
+	# If core-packages are updated during that call you MUST restart MSys2
 	pacman -Syu
 
 from time to time.
 
-### Caution
+### Caution (update-core)
 
-There is one caveat, though: if this wants to update the msys2-runtime
-itself, it is *highly* recommended to close all other MSys2 programs
-(e.g. terminal windows, Bash sessions, etc) and update msys2-runtime
-individually, immediately close the window (i.e. *not* run `exit`) and
-then restart the update in a new window.
-
-The reason: pacman itself is linked to the msys2-runtime, and updating
-the runtime "in flight" results most often in heap corruption as far as
-MSys2 is concerned. For the same reason, updates to Bash and Pacman
-itself should be handled  in the same manner.
+Core packages like the `msys2-runtime`, `bash` or `pacman` itself should be updated
+via the `update-core` script. Because those core packages are linked to the
+`msys2-runtime` (and each other), and updating the runtime "in flight" results most
+often in heap corruption as far as MSys2 is concerned.
 
 ## Alternative Method
 
