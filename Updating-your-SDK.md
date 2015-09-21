@@ -24,6 +24,8 @@ therefore refuse to overwrite the files from above-mentioned packages.
 
 To keep the development environment up-to-date, developers need to run
 
+	update-core
+	# If one of the packages is updated during update-core you *MUST* restart MSys2
 	pacman -Syu
 
 from time to time.
