@@ -35,7 +35,7 @@ from time to time.
 ### Caution (update-core)
 
 Core packages like the `msys2-runtime`, `bash` or `pacman` itself should be updated
-via the `update-core` script. Because those core packages are linked to the
+via the pacman `update-core` script. Because those core packages are linked to the
 `msys2-runtime` (and each other), and updating the runtime "in flight" results most
 often in heap corruption as far as MSys2 is concerned.
 
@@ -55,6 +55,7 @@ update.
 * ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
 * [MSYS2 Introduction & Contributing](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/)
 * [SDK's setup-git-sdk.bat script](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat)
+* [pacman's core-update script](https://github.com/Alexpux/MSYS2-pacman/blob/master/scripts/update-core.sh.in)
 
 ## Origin of 'net installer' concept
 
