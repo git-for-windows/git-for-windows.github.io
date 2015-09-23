@@ -41,9 +41,7 @@ often in heap corruption as far as MSys2 is concerned.
 
 ## Alternative Method
 
-An alternative method is to start `git-cmd.exe` and run `pacman -Sy
-<package>` for `msys2-runtime`, `bash` and `pacman` as needed, because
-that ensures that no obsolete binary continues to be used after the
+An alternative method is to start `git-cmd.exe` and run `pacman -Sy --needed msys2-runtime` and `pacman -S --needed pacman bash`, because that ensures that no obsolete binary continues to be used after the
 update.
 
 ### See Also:
