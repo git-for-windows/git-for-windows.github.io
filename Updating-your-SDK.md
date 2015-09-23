@@ -62,7 +62,4 @@ project when it was still based on MSys 1.x. At that time, MSys 1.x did
 not have a package manager, therefore the original net installer
 (ab-)used Git as a package manager.
 
-Since the new net installer no longer needs to ship with Git (instead
-using Pacman to install the mingw-w64-git package that is current at the
-time the net installer is launched), its versions are no longer tightly
-coupled to the Git version.
+Since the new net installer no longer needs to ship with Git (instead using Pacman to install all the packages (including the `mingw-w64-git` package) that are current at the time the net installer is launched), its versions are no longer tightly coupled to the Git version.
