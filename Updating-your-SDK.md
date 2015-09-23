@@ -6,7 +6,7 @@ The SDK 'net installer' is a self-extracting archive containing a minimal
 set of files needed to bootstrap an entire development environment to
 compile and run Git for Windows.
 
-When run as executable, it automatically runs `setup-git-sdk.bat` after
+When run as executable, it automatically runs [`setup-git-sdk.bat`](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat) after
 extracting the files. Users who prefer to unpack the archive manually
 with 7-Zip need to run that batch file manually, too. The script is
 extensively commented to assist in understanding the installation process
