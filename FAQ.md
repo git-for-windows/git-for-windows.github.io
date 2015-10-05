@@ -30,3 +30,7 @@ Windows file paths are by default limited to 255 characters. Some repositories m
 The Microsoft Team Foundation Server is capable of hosting git repositories. If the server is a member of a windows domain, and your user account is in that domain, you can use domain authentication to identify yourself to the server, and can thus access git repositories without having to enter any credentials. For this to work, the server has to be configured to use domain authentication, _not_ NTLM authentication. The repository URL can be obtained from the TFS web interface, it may look like http://server.example.com:8080/tfs/TWA/TeamDev/_git/reponame.
 
 In order to instruct git to use domain authentication, prefix the server name with `:@`, like so: `http://:@server.example.com:8080/tfs/TWA/TeamDev/_git/reponame`. This is a special case of the usual `username:password@server` syntax, where both the `username` and `password` fields are empty. This causes git to look up and use your domain credentials.
+
+## I get "Permission denied (publickey)." when using git pull
+
+Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcceptedKeyTypes ssh-dss" to ~/.ssh/config helps.
