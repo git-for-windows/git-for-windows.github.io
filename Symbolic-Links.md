@@ -12,3 +12,14 @@ For those reasons, Git for Windows disables support for symbolic links by defaul
 ```sh
 git clone -c core.symlinks=true <URL>
 ```
+
+# Creating symbolic links
+
+By default, the `ln -s` command in *Git Bash* does *not* create symbolic links. Instead, it creates copies.
+
+To create symbolic links (provided your account has permission to do so), use the `mklink.exe` tool, like so:
+
+```cmd
+mklink /d this-link-points-to c:\that-directory
+mklink this-link-points-to c:\that-file
+```
