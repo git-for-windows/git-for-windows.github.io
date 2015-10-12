@@ -114,6 +114,18 @@
 				$(".fancybox-thumb").fancybox({
 					padding: 0
 				});
+
+				/* Replace the download link if a Windows browser was detected */
+				try {
+					var agent = window.navigator.userAgent;
+					var href = $('.version > a')[0].href.match(/^(.*\/)tag(\/.*)$/);
+					var version = $('.version > a')[0].title.match(/^Version ([0-9.]*)/);
+					if (!agent.match(/Windows/) || !href || !version)
+						throw 0;
+					var bitness = agent.match(/(WOW|Win)64/) ? '64' : '32';
+					var url = href[1] + 'download' + href[2] + '/Git-' + version[1] + '-' + bitness + '-bit.exe';
+					$('a.button:contains("Download")')[0].href = url;
+				} catch(e) {}
 			});
 		</script>
 	</body>
