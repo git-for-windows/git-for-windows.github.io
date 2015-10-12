@@ -13,3 +13,5 @@ A lot of documentation wants to be written, still. A good place is [the Git for 
 Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git. Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
 
 Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
+
+After that, submit a Pull Request.
