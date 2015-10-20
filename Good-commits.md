@@ -17,7 +17,7 @@ If you tried several strategies to solve your problem, you will want to describe
 
 Also important:
 - The commit message should always start with a single, short line summarizing the change.
-- [Sign off](https://github.com/git/git/blob/v2.5.0/Documentation/SubmittingPatches#L234-L286) on your change (i.e. state that you release this patch as Open Source, if applicable with your employer's consent).
+- [Sign off](https://github.com/git/git/blob/v2.6.2/Documentation/SubmittingPatches#L234-L286) on your change (i.e. state that you release this patch as Open Source, if applicable with your employer's consent).
 - Format the commit message to wrap at 76 columns per line.
 
 A good example for a commit message is [git-for-windows/build-extra@a64fe115](github.com/git-for-windows/build-extra/commit/a64fe115d901cab775c881bd1624218ac28de4d4):
