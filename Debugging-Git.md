@@ -7,3 +7,14 @@ After that, you can run Git's executables in GDB like so:
 ```sh
 gdb --args ./git.exe --exec-path=/usr/src/git rev-parse HEAD
 ```
+
+## Stopping at certain errors
+
+Sometimes it is useful to ask the debugger to pause the program when the code path is entered that outputs an error message. The functions in Git that output error messages are `error_builtin()` and `die_builtin()`. So you can set the breakpoints
+
+```
+b error_builtin
+b die_builtin
+```
+
+before calling `run` in `gdb` to stop execution at the appropriate time.
