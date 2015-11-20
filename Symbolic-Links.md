@@ -1,3 +1,7 @@
+Short version: there is no exact equivalent for POSIX symlinks on Windows, and the closest thing is unavailable for non-admins by default. Therefore, symlink emulation support is switched off by default and needs to be configured by you, the user, via the `core.symlinks=true` config setting.
+
+# Background
+
 Starting with Windows Vista, there is support for symbolic links. These are not your grandfather's Unix symbolic links; They differ in quite a couple of ways:
 
 - Symbolic links are only available on Windows Vista and later, most notably not on XP
