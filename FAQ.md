@@ -35,9 +35,9 @@ In order to instruct git to use domain authentication, prefix the server name wi
 
 Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcceptedKeyTypes ssh-dss" to ~/.ssh/config helps.
 
-## Switch locale for git-bash launcher in windows
+## Switch locale for git-bash launcher (of Git for Windows SDK)
 
-Some developers want to start git-bash (of Git SDK for Windows) with a different language.
+Some developers want to start git-bash (of Git for Windows SDK) with a different language.
 To achive this in windows following command could be placed inside the launcher:
 C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"
 Replace "en_GB" with your preferred locale. 
