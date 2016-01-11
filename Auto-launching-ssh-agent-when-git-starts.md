@@ -6,6 +6,6 @@ Run the ssh agent:
 
     start-ssh-agent.cmd
 
-This should work in both a `cmd` and `bash` and can be included in `~/.profile` or `~/.bashrc`.
+This should work both in a `cmd` and `bash` shell and can be included in `~/.profile` or `~/.bashrc`.
 
 The [Github instructions](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) are still valid but not needed anymore.
