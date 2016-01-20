@@ -63,7 +63,7 @@ Some parts of Git are implemented as Perl scripts. To trigger execution tracing 
 
 ### `GIT_TRACE=1`
 
-When Git sees that the environment variable `GIT_TRACE` is set, it will print out an internal execution trace when Git wants to call external executables and builtins. This is extremely helpful in particular when debugging posix-to-windows mangling issues with the MSys2 runtime. All you do is to prefix the Git command to be executed in the test script with `GIT_TRACE=1 `, e.g. `GIT_TRACE=1 git difftool --extcmd "$2"`.
+When Git sees that the environment variable `GIT_TRACE` is set, it will print out an internal execution trace when Git wants to call external executables and builtins. This is extremely helpful in particular when debugging posix-to-windows mangling issues with the MSYS2 runtime. All you do is to prefix the Git command to be executed in the test script with `GIT_TRACE=1 `, e.g. `GIT_TRACE=1 git difftool --extcmd "$2"`.
 
 ### Interactive Bash/GDB
 
@@ -79,7 +79,7 @@ It gets even trickier when there is no `stdout`/`stderr` available (e.g. when de
 
 While it is a little cumbersome to add such debug print statements (after all, you typically have to rebuild the executables and run the tests from the top), there is also a big benefit to this technique over single-stepping: the debug output can be made conditional upon the particulars of the problem to be debugged. For example, instead of writing out information *every* time, say, `get_sha1_hex()` is called, it can be written out *only* the third time it is called with an SHA-1 beginning with two specific byte values. This technique can also be combined with single-stepping, by setting a breakpoint on that conditional debug output, saving a lot of time to get back to the same point after modifying and recompiling the source code.
 
-There exist even more problematic situations when working on Git for Windows, though: when trying to figure out issues in the MSys2 runtime, there might not be any `fprintf(...)` functionality available at that point of execution (yet). In this case, you need to revert to the plain Win32 API to write into a file:
+There exist even more problematic situations when working on Git for Windows, though: when trying to figure out issues in the MSYS2 runtime, there might not be any `fprintf(...)` functionality available at that point of execution (yet). In this case, you need to revert to the plain Win32 API to write into a file:
 
 ```c
 ...

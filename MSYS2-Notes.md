@@ -1,4 +1,4 @@
-Page for things that pop up while fiddling with MSys2.
+Page for things that pop up while fiddling with MSYS2.
 
 # PS1 script
 

@@ -12,10 +12,10 @@ with 7-Zip need to run that batch file manually, too. The script is
 extensively commented to assist in understanding the installation process
 and issues.
 
-The files contained in the net installer are parts of MSys2's
+The files contained in the net installer are parts of MSYS2's
 'msys2-runtime', 'pacman' and 'gnupg' packages, carefully selected to
 keep the size of the installer small yet still allowing to use the
-Pacman package manager to initialize a full-fledged MSys2 environment
+Pacman package manager to initialize a full-fledged MSYS2 environment
 plus Git for Windows' packages.
 
 The bootstrap script needs to force-install the packages because the net
@@ -27,7 +27,7 @@ therefore refuse to overwrite the files from above-mentioned packages.
 To keep the development environment up-to-date, developers need to run
 
 	update-core
-	# If core-packages are updated during that call you MUST restart MSys2
+	# If core-packages are updated during that call you MUST restart MSYS2
 	pacman -Syu
 
 from time to time.
@@ -37,7 +37,7 @@ from time to time.
 Core packages like the `msys2-runtime`, `bash` or `pacman` itself should be updated
 via the pacman `update-core` script. Because those core packages are linked to the
 `msys2-runtime` (and each other), and updating the runtime "in flight" results most
-often in heap corruption as far as MSys2 is concerned.
+often in heap corruption as far as MSYS2 is concerned.
 
 ## Alternative Method
 

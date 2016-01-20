@@ -1,4 +1,4 @@
-We build Git for Windows using an [MSys2](https://msys2.github.io/) based *Git for Windows SDK*. This SDK can be installed via the [SDK installer](https://git-for-windows.github.io/#download-sdk)
+We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git for Windows SDK*. This SDK can be installed via the [SDK installer](https://git-for-windows.github.io/#download-sdk)
 
 # Installing a build environment
 

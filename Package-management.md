@@ -1,6 +1,6 @@
 Modern software development relies heavily on a way to manage dependencies, i.e. to keep track of required software libraries and their versions. Examples are `apt-get` for Linux, `homebrew` for MacOSX, `Maven` for Java and `pip` for Python.
 
-Git for Windows is based on [MSys2](https://msys2.github.io/) which bundles Arch Linux' [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool for dependency management.
+Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles Arch Linux' [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool for dependency management.
 
 # How to use `pacman`
 
@@ -28,9 +28,9 @@ pacman -Syu
 
 ### Updating `msys2-runtime`, `pacman` and `bash`
 
-As `pacman.exe` is itself an MSys2 executable, it is strongly suggested to update `msys2-runtime` and `pacman` packages individually if they need to be updated, and let `pacman` quit *immediately* afterwards.
+As `pacman.exe` is itself an MSYS2 executable, it is strongly suggested to update `msys2-runtime` and `pacman` packages individually if they need to be updated, and let `pacman` quit *immediately* afterwards.
 
-Likewise, if you run `pacman` from a `bash` -- an MSys2 program, too -- you should quit the shell *immediately* (it might show an infinite stream of heap messages instead of quitting, requiring to be force-quit).
+Likewise, if you run `pacman` from a `bash` -- an MSYS2 program, too -- you should quit the shell *immediately* (it might show an infinite stream of heap messages instead of quitting, requiring to be force-quit).
 
 ## Remove packages
 
@@ -82,7 +82,7 @@ To build MSys packages, you need to start the `MSys` shell (which sets `MSYSTEM=
 makepkg -s
 ```
 
-*Note*: Before building the first MSys package, as per [MSys2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
+*Note*: Before building the first MSys package, as per [MSYS2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
 
 ```sh
 pacman -Sy base-devel msys2-devel
@@ -128,7 +128,7 @@ perl -MCPAN -e shell
 Pacman repositories are served via HTTP, as static files in a single directory. The most important file in that directory is the *package index*, called `<name>.db.tar.xz` by convention. This package index can be updated via `repo-add <package-index> <package-file>...` (this updated *only* the package index, it does *not* copy the package files into the same directory). Pacman expects to find the package files referenced in the package index in the same directory as the index.
 
 The *Git for Windows*-specific packages are served from Bintray, see [below](#Bintray).
-We ship MSys2 and MinGW packages for two architectures, [`i686`](https://dl.bintray.com/git-for-windows/pacman/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/x86_64/).
+We ship MSYS2 and MinGW packages for two architectures, [`i686`](https://dl.bintray.com/git-for-windows/pacman/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/x86_64/).
 
 ## Bintray
 
