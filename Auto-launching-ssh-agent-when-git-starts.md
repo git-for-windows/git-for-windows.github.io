@@ -9,3 +9,24 @@ Run the ssh agent:
 This should work both in a `cmd` and `bash` shell and can be included in `~/.profile` or `~/.bashrc`.
 
 The [Github instructions](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) are still valid but not needed anymore.
+
+## Manually
+
+To launch, put in `~/.profile` or `~/.bashrc`:
+
+```bash
+# ssh-agent auto-launch (0 = agent running with key; 1 = w/o key; 2 = not run.)
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+if   [ $agent_run_state = 2 ]; then
+  eval $(ssh-agent -s)
+  ssh-add
+elif [ $agent_run_state = 1 ]; then
+  ssh-add
+fi
+```
+
+To close on shell exit, put in `~/.bash_logout`:
+
+```bash
+ssh-agent -k
+```
