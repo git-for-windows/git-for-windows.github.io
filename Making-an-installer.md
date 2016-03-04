@@ -9,4 +9,4 @@ git checkout master
 ./installer/release.sh <version>-test
 ```
 
-where `<version>` is the Git version.
+where `<version>` is the Git version (please note that the `<version>` cannot contain dots after the numerical version: `2.7.2-hello-world` is okay while `2.7.2.hello.world` is not okay).
