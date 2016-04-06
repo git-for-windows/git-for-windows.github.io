@@ -5,7 +5,7 @@ Many users prefer their local Windows graphic editor, such as Notepad++, this no
 
 # Setting Notepad++ as your Core.Editor
 
-Notepad++ provides multiple useful options ([Npp](http://notepad-plus-plus.org) [wiki](http://docs/notepad-plus-lus.org/)). Install as required.
+Notepad++ provides multiple useful options ([Npp](http://notepad-plus-plus.org) [wiki](http://docs.notepad-plus-plus.org/)). Install as required.
 
 The command 
 
