@@ -16,6 +16,18 @@ We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git f
 
 5. Run the test suite: `make test`. If you are a fan of statistics, you can use the following `prove` invocation to run the testsuite. But first we have to change to the test directory with the command `cd t`. After that you can issue `/usr/bin/time prove -j 15 --state=failed,save ./t[0-9]*.sh`. If *15* threads are too many for your system, you can provide the number of threads via the `-j <num>` (j for jobs) parameter.
 
+## Build Git from a Pull Request or another branch
+
+Once the SDK built Git, it is *very* easy to build another revision of Git, such as per a different branch or Pull Request.
+
+1. open the Git Bash of the SDK unless it is still open: execute the `git-bash.exe` binary in the top-level directory of the SDK,
+2. switch the working directory: `cd /usr/src/git`,
+3. fetch the Pull Request's revision or the branch:
+ 1. if you want to test a Pull Request, call `git fetch origin refs/pull/<id>/head`, where `<id>` is the number of the Pull Request (e.g. if you want to test Pull Request #606, you would call `git fetch origin refs/pull/606/head`),
+ 2. if you want to test a custom branch, call `git fetch <url> <branch>` instead, where `<url>` is the URL of the repository and `<branch>` is the name of the branch to test (e.g. if you wanted to test @dscho's `cool-new-feature` branch, you would call `git fetch https://github.com/dscho/git cool-new-feature`),
+4. check out the revision that was just fetched: `git checkout FETCH_HEAD`,
+5. continue as [above](https://github.com/git-for-windows/git/wiki/Building-Git#build-git) either by `make install` or `make test`.
+
 # Updating to the newest Git for Windows version
 
 ```bash
