@@ -19,9 +19,9 @@ To launch, put in `~/.profile` or `~/.bashrc`:
 agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 if   [ $agent_run_state = 2 ]; then
   eval $(ssh-agent -s)
-  ssh-add
+  ssh-add ~/.ssh/id_rsa
 elif [ $agent_run_state = 1 ]; then
-  ssh-add
+  ssh-add ~/.ssh/id_rsa
 fi
 ```
 
