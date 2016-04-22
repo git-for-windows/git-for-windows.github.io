@@ -15,3 +15,5 @@ Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git
 Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
 
 After that, submit a Pull Request.
+
+Sometimes there are good suggestions how to improve the patches in a Pull Request. When that happens, just [rewrite and force-push the branch](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history).
