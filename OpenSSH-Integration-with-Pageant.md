@@ -62,6 +62,15 @@ Assuming that the relevant keys have been loaded into Pageant, you should now be
 
 The most common approach is to create a shortcut pointing to _start\-ssh\-pageant.cmd_, and place it in your startup folder (_Start Menu_ / _Programs_ / _Startup_). Once in place, it should be launched automatically when you logon to Windows and be available to all Git processes.
 
+#### Windows 7
+
+1. Click the *Start* button, right click on *All Programs*, and select *Open*
+2. Navigate into the *Programs* folder, followed by *Startup*
+3. Right-click on an empty spot within *Startup*, and select **New / Shortcut**
+4. Click *Browse*, navigate to the *cmd* folder underneath your Git installation, and select **start-ssh-pageant.cmd**. Click *OK*.
+5. Click *Next*
+6. Enter an alternate name for the shortcut, if desired, and click *Finish*
+
 ## Security Considerations
 
 Since _ssh\-pageant_ (like _ssh\-agent_) is intended to bypass the requirement to repeatedly enter your private key password, it's imperative that its socket file be private in order to use it safely. In other words, you want to be **extremely** careful on multi-user systems to ensure that the **SSH_AUTH_SOCK** file -- and preferably the directory which includes it -- isn't accessible to anyone else. For a normal MSYS2 configuration (which includes Git) this shouldn't be an issue, as _/tmp_ is normally mapped to a private location under your Windows user profile.
