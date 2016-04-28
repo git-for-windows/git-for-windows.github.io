@@ -1,4 +1,4 @@
-# Introduction
+# # Introduction
 The _Git for Windows_ wiki. It looks more technical than [our home page](https://git-for-windows.github.io/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
 
 ## About
