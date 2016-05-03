@@ -38,6 +38,8 @@ If you use Git from Git CMD, or directly from the Windows command prompt, then y
 
 Unlike the Git Bash case above, this scenario **requires** the _SSH\_AUTH\_SOCK_ environment variable to be set before running the script... otherwise it will simply exit without performing any action. This is normally configured as a persistent **USER** variable, with the value specifying the desired socket file path in Unix/MSYS2 format.
 
+NOTE: Since there can only be a single global variable of a given name, this approach may or may not cause conflicts if you have multiple environments which utilize the SSH_AUTH_SOCK setting. Running Git alongside of Cygwin, for example.
+
 #### Windows 7
 
 Launch the Control Panel, and then select _System_ followed by _Advanced system settings_. Click on the _Environment Variables_ button, and finally _New..._ in the _User variables_ (**not** _System variables_) section. Enter **SSH_AUTH_SOCK** for _Variable name_ and **/tmp/.ssh-pageant-%USERNAME%** for _Variable value_, then click _OK_.
