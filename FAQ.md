@@ -8,9 +8,11 @@ This depends on how you installed *Git for Windows*. The bundle installation req
 
 For advanced users working with the *Git for Windows* SDK `pacman` is available as a package manager. See [Package management](Package-management)
 
-## How do I check the release hash
+## How do I check the release hash and release notes
 
-See https://github.com/git-for-windows/git/releases
+For hashes see https://github.com/git-for-windows/git/releases
+
+For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md) or the top level of your installation (e.g. C:\Program Files\Git\ReleaseNotes.html).
 
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
