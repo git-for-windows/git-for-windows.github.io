@@ -1,3 +1,9 @@
+## Should I upgrade to a newer Git for Windows version?
+
+In general, yes: it is a good idea to stay up-to-date.
+
+If you have a version older than 2.7.4, it is *highly* advisable to upgrade. These versions fixed critical bugs, therefore sticking with older Git for Windows versions makes you vulnerable: 2.7.4, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
+
 ## What is the relationship between *Git for Windows* and *msysGit*?
 
 *Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases).
