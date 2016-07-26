@@ -2,7 +2,7 @@
 
 In general, yes: it is a good idea to stay up-to-date.
 
-If you have a version older than 2.7.4, it is *highly* advisable to upgrade. These versions fixed critical bugs, therefore sticking with older Git for Windows versions makes you vulnerable: 2.7.4, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
+If you have a version older than 2.7.4, it is *highly* advisable to upgrade. These versions fixed critical bugs, therefore sticking with older Git for Windows versions makes you vulnerable: 2.7.4, 2.7.0, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
 
 ## What is the relationship between *Git for Windows* and *msysGit*?
 
