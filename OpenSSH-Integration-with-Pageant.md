@@ -32,7 +32,7 @@ Now start a new Git Bash session, or source the profile edited just above, and r
 
 ## Starting ssh\-pageant Automatically at Logon
 
-If you use Git from Git CMD, or directly from the Windows command prompt, then you'll probably want to ensure that _ssh\-pageant\_ is launched automatically at logon time. The _start\-ssh\-pageant.cmd_ script is provided for this purpose, which resides in the **cmd** subdirectory of your Git installation.
+If you use Git from Git CMD, or directly from the Windows command prompt, then you'll probably want to ensure that _ssh\-pageant_ is launched automatically at logon time. The _start\-ssh\-pageant.cmd_ script is provided for this purpose, which resides in the **cmd** subdirectory of your Git installation.
 
 ### Setting the Environment
 
