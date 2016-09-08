@@ -1,3 +1,8 @@
+# _Attention !_ #
+_As of 2016-09-08 the CI services mentioned blow are no longer active. Dscho is currently working on CI based on Visual Studio Team Services. No ETA yet, though..._
+
+***
+
 ## Foreword
 
 We have a [public Jenkins CI server](https://dscho.cloudapp.net/) running on Windows Server 2012 R2 in [Microsoft Azure](http://azure.microsoft.com/). Anonymous users are able to see the job configurations, but not to edit them.
