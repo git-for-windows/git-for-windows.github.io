@@ -1,5 +1,5 @@
 # _Attention !_ #
-_As of 2016-09-08 the CI services mentioned blow are no longer active. Dscho is currently working on CI based on Visual Studio Team Services. No ETA yet, though..._
+_As of 2016-09-08 the CI services mentioned below are no longer active. Dscho is currently working on CI based on Visual Studio Team Services. No ETA yet, though..._
 
 ***
 
