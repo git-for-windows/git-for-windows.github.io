@@ -1,3 +1,14 @@
+## Which versions of Windows are supported?
+
+Git for Windows currently works with all recent, commercially released x86 32 bit and 64 bit versions of Windows, starting with Windows Vista.
+
+***
+
+NOTE: Git for Windows version [2.10.0](https://github.com/git-for-windows/git/releases/tag/v2.10.0.windows.1) was the last version supporting Windows XP and Server 2003.
+
+***
+
+
 ## Should I upgrade to a newer Git for Windows version?
 
 In general, yes: it is a good idea to stay up-to-date.
@@ -53,6 +64,3 @@ Some developers want to start git-bash (of Git for Windows SDK) with a different
 To achieve this in windows following command could be placed inside the launcher:
 C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"
 Replace "en_GB" with your preferred locale. 
-
-
-
