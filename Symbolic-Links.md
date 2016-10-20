@@ -27,3 +27,7 @@ To create symbolic links (provided your account has permission to do so), use th
 mklink /d this-link-points-to c:\that-directory
 mklink this-link-points-to c:\that-file
 ```
+
+# Allowing non-administrators to create symbolic links
+
+Launch `gpedit.msc` (i.e. the group policy editor) and add the account(s) to `Computer configuration\Windows Setting\Security Settings\Local Policies\User Rights Assignment\Create symbolic links`.
