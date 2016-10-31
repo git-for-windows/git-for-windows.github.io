@@ -11,6 +11,12 @@ module.exports = function(grunt) {
 					src: ['governance-model.md'],
 					dest: 'governance-model.html'
 				}]
+			},
+			requirements: {
+				files: [{
+					src: ['requirements.md'],
+					dest: 'requirements.html'
+				}]
 			}
 		},
 
