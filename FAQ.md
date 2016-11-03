@@ -8,6 +8,8 @@ NOTE: Git for Windows version [2.10.0](https://github.com/git-for-windows/git/re
 
 Windows XP and Windows Server 2003 are long past their end of life, hence support for these versions was dropped from Git for Windows 2.10.1 and later. This limitation is inherited by Git's use of MSYS2, which in turn inherited it from [Cygwin](https://cygwin.com/ml/cygwin/2015-08/msg00446.html).
 
+More information here: [Git for Windows' prerequisites](https://git-for-windows.github.io/requirements.html).
+
 ## Should I upgrade to a newer Git for Windows version?
 
 In general, yes: it is a good idea to stay up-to-date.
