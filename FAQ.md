@@ -12,7 +12,7 @@ More information here: [Git for Windows' prerequisites](https://git-for-windows.
 
 ## Is there an MSI for installation via Group Policy?
 
-There is currently no MSI package; there is an exe installer and a portable package. You are welcome to contribute a Pull Request that packages a new installer. Have a look at https://github.com/robmen/gitsetup/issues/1 for an existing attempt.
+There is currently no MSI package; there is an exe installer and a portable package. You are welcome to test the current msi in development, or contribute a Pull Request that packages a new installer. Have a look at https://github.com/robmen/gitsetup/issues/1 for an existing attempt.
 
 In the meantime you could try:
 
