@@ -10,6 +10,17 @@ Windows XP and Windows Server 2003 are long past their end of life, hence suppor
 
 More information here: [Git for Windows' prerequisites](https://git-for-windows.github.io/requirements.html).
 
+## Is there an MSI for installation via Group Policy?
+
+There is currently no MSI package; there is an exe installer and a portable package. You are welcome to contribute a Pull Request that packages a new installer. Have a look at https://github.com/robmen/gitsetup/issues/1 for an existing attempt.
+
+In the meantime you could try:
+
+ * using the portable package
+ * deploying the exe installer with System Center Configuration Manager
+ * deploying the portable package via a script
+ * deploying the <a href="https://chocolatey.org/packages/git">Chocolatey package</a> via Puppet (or something similar)
+
 ## Should I upgrade to a newer Git for Windows version?
 
 In general, yes: it is a good idea to stay up-to-date.
