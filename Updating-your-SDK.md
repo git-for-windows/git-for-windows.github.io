@@ -1,4 +1,4 @@
-Extract from the [Git for Windows SDK release page](https://github.com/git-for-windows/build-extra/releases/tag/net-installer-1.0.0-rc-1). Note the Caution parts! 
+Extract from the [Git for Windows SDK release page](https://github.com/git-for-windows/build-extra/releases/latest). Note the Caution parts! 
 
 # The SDK 'net installer'
 
