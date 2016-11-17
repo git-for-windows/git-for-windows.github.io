@@ -47,20 +47,28 @@ var autoUpdate = function() {
 	};
 
 	var determineVersion = function(body) {
-		var lines = body.replace(/\n/gm, ',').split(',');
-		var tagName = lines.findFirst(/"tag_name": *"(.*)"/);
-		var regex = /^v(\d+\.\d+\.\d+(\.\d+)?)\.windows\.(\d+)$/;
-		var match = regex.exec(tagName);
-		var version = match[1];
-		if (parseInt(match[3]) > 1)
-			version += '(' + match[3] + ')';
-		var timestamp = lines.findFirst(/"published_at": *"(.*)"/);
-		regex = /^(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z$/;
-		match = regex.exec(timestamp);
-		var latest = new Date(match[1], match[2] - 1, match[3],
-			match[4], match[5], match[6], 0).toUTCString();
-		latest = latest.replace(/GMT$/, 'UTC');
-		var url = lines.findFirst(/"html_url": *"(.*)"/);
+		var releases = JSON.parse(body),
+			versionRegex = /^v(\d+\.\d+\.\d+(\.\d+)?)\.windows\.(\d+)/,
+			timeRegex = /^(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z$/,
+			version = false,
+			match, latest, url;
+
+		for (var i = 0; i < releases.length && !version; i++) {
+		    if (match = releases[i].tag_name.match(versionRegex)) {
+				version = match[1];
+
+				if (parseInt(match[3]) > 1) {
+					version += '(' + match[3] + ')';
+				}
+
+				match = releases[i].published_at.match(timeRegex);
+				latest = new Date(match[1], match[2] - 1, match[3],
+					match[4], match[5], match[6], 0).toUTCString();
+				latest = latest.replace(/GMT$/, 'UTC');
+				url = releases[i].html_url;
+		    }
+		}
+
 		process.stderr.write('Auto-detected version ' + version
 			+ ' (' + latest + ')\n');
 		return [ version, latest, url ];
