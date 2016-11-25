@@ -23,6 +23,55 @@ b die_builtin
 
 before calling `run` in `gdb` to stop execution at the appropriate time.
 
+## Debugging crashes (segmentation faults)
+
+When a command crashes (i.e. throws a segmentation fault), running it in `gdb` as described above will stop when the command crashes. Once that is the case, you can obtain a back trace with `bt`. Example:
+
+```
+(gdb) bt
+#0  setup_git_directory_gently_1 (nongit_ok=0x0) at setup.c:846
+#1  0x000000000057dfd8 in setup_git_directory_gently (nongit_ok=0x0)
+    at setup.c:937
+#2  0x000000000057e211 in setup_git_directory () at setup.c:1014
+#3  0x0000000000487bfc in cmd_rev_parse (argc=2, argv=0x1951a88, prefix=0x0)
+    at builtin/rev-parse.c:589
+#4  0x000000000040296a in run_builtin (p=0x5fb8e8 <commands+2184>, argc=2,
+    argv=0x1951a88) at git.c:373
+#5  0x0000000000402c8d in handle_builtin (argc=2, argv=0x1951a88) at git.c:579
+#6  0x0000000000402e2a in run_argv (argcp=0x108fe00, argv=0x108fdb8)
+    at git.c:637
+#7  0x0000000000402fb9 in cmd_main (argc=2, argv=0x1951a88) at git.c:709
+#8  0x000000000049f699 in mingw_main (argc=3, argv=0x1951a80)
+    at common-main.c:40
+#9  0x000000000049f64d in main (argc=3, argv=0x3230498) at common-main.c:25
+```
+
+This back trace shows which functions were called by which other functions. The inner-most code location is `#0`, which was called from `#1`, which was called from `#2`, etc. In the example above, the `main()` function called the `mingw_main()` function which in turn called the `cmd_main()` function, and so on, until eventually the `setup_git_directory_gently()` function was called, which then called the `setup_git_directory_gently_1()` function, where the execution was stopped to let you, the user, inspect the current state in the debugger.
+
+You can inspect the source code at the current code location using the `l` command (or specify a line number or even a file and a line number like so: `l git.c:709`, or a function name, like so: `l run_builtin`).
+
+You can navigate between the different stack frames using `up` and `down` (which is confusingly the opposite direction as in the list above).
+
+You can inspect variables' values using `p <variable>`. This can be a struct, even. Example:
+
+```
+(gdb) p cwd
+$1 = {alloc = 129, len = 30, buf = 0x3236cb8 "C:/git-sdk-64/usr/src/git"}
+(gdb) p cwd.buf
+$2 = 0x3236cb8 "C:/git-sdk-64/usr/src/git"
+```
+
+In some cases, the back trace is not helpful, though, most likely because the stack was somehow messed up. These issues are harder to debug, and require a lot of guess work and patience:
+ 
+1. set a breakpoint on the main function of the command you called, e.g. `cmd_rev_parse` for `git rev-parse ...`: `b cmd_rev_parse`
+2. start the debugging session: `r`
+3. once execution stops in the main function, try to determine a reasonable next breakpoint by looking at the source: `l` (subsequent `l` commands will list more, `l <lineno>` will list from a given line number)
+4. then set another breakpoint and continue: `b <lineno>` and then `c`
+5. If the crash occurs in between those breakpoints, try to figure out a break point between the last two, i.e. go back to step 3 above (with the difference that the debugging session has to be restarted with `r` instead of continued with `c`).
+6. If there is actually no line between the two latest breakpoints, i.e. if the crash occurs in a function that was called from the line on which rests the second-latest breakpoint, restart with `r` and then *step into that function* using `s`. Then repeat as above.
+7. If the crash does *not* occur between those two breakpoints, disable the first  breakpoint (so that subsequent restarts of the debugging session will not stop unnecessarily): `dis <number>` (where `<number>` is the breakpoint's number that was printed when you set it via `b <function-or-line>`.
+8. Then continue with step 3 above.
+
 # Debugging with GDB in Emacs
 
 First, install `emacs` and run it:
