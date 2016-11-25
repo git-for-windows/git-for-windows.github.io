@@ -94,4 +94,3 @@ else if (process.argv.length == 5)
 else
 	die('Usage: node ' + process.argv[1]
 		+ ' <version> <timestamp> <url>\n');
-
