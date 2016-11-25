@@ -6,11 +6,11 @@ The process to build installer is made easy via the `Git for Windows SDK`. The s
 
 # Installing the SDK
 
-Download the [SDK](https://git-for-windows.github.io/#download-sdk) and run it. You will end up with a console window running the `Git for Windows SDK` MSys shell, which you can use for the next steps. Git is already checked out and the latest version build and installed, so if you just want to build an installer from latest master, you are ready to go. 
+Download the [SDK](https://git-for-windows.github.io/#download-sdk) and run it. You will end up with a console window running the `Git for Windows SDK` shell, which you can use for the next steps. Git is already checked out and the latest version build and installed, so if you just want to build an installer from latest master, you are ready to go. 
 
-You can open the `Git for Windows SDK` MSys shell by double clicking `msys2_shell.bat` in the install folder (i.e. not the MinGW 32-bit nor the MinGW 64-bit one).
+You can open the `Git for Windows SDK` shell by double clicking `git-bash.exe` in the install folder.
 
-As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
+As the installer is made by putting together files from the Git for Windows SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
 
 # Hacking on git
 
