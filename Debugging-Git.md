@@ -4,8 +4,7 @@ First of all, Git's `.exe` files should be rebuilt with debugging information, a
 
 1. [install the Git for Windows SDK](https://git-for-windows.github.io/#download-sdk)
 2. edit `/usr/src/git/Makefile` to remove the `-O2` from the `CFLAGS = -g -O2 -Wall` line,
-3. edit `/usr/src/git/config.mak.uname` to remove the line `BASIC_LDFLAGS += -Wl,--dynamicbase`, and then
-4. run `make` in `/usr/src/git/`.
+3. run `make` in `/usr/src/git/`.
 
 After that, you can run Git's executables in GDB like so:
 
