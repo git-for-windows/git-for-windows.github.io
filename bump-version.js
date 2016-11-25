@@ -47,26 +47,24 @@ var autoUpdate = function() {
 	};
 
 	var determineVersion = function(body) {
-		var releases = JSON.parse(body),
+		var release = JSON.parse(body),
 			versionRegex = /^v(\d+\.\d+\.\d+(\.\d+)?)\.windows\.(\d+)/,
 			timeRegex = /^(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z$/,
 			version = false,
 			match, latest, url;
 
-		for (var i = 0; i < releases.length && !version; i++) {
-		    if (match = releases[i].tag_name.match(versionRegex)) {
-				version = match[1];
+		if (match = release.tag_name.match(versionRegex)) {
+			version = match[1];
 
-				if (parseInt(match[3]) > 1) {
-					version += '(' + match[3] + ')';
-				}
+			if (parseInt(match[3]) > 1) {
+				version += '(' + match[3] + ')';
+			}
 
-				match = releases[i].published_at.match(timeRegex);
-				latest = new Date(match[1], match[2] - 1, match[3],
-					match[4], match[5], match[6], 0).toUTCString();
-				latest = latest.replace(/GMT$/, 'UTC');
-				url = releases[i].html_url;
-		    }
+			match = release.published_at.match(timeRegex);
+			latest = new Date(match[1], match[2] - 1, match[3],
+				match[4], match[5], match[6], 0).toUTCString();
+			latest = latest.replace(/GMT$/, 'UTC');
+			url = release.html_url;
 		}
 
 		process.stderr.write('Auto-detected version ' + version
@@ -78,7 +76,7 @@ var autoUpdate = function() {
 	https.body = '';
 	https.get({
 		'hostname': 'api.github.com',
-		'path': '/repos/git-for-windows/git/releases',
+		'path': '/repos/git-for-windows/git/releases/latest',
 		'headers': {
 			'User-Agent': 'Git for Windows version updater'
 		}
