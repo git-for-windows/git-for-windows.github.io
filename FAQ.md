@@ -43,7 +43,9 @@ For advanced users working with the *Git for Windows* SDK `pacman` is available 
 
 For hashes see https://github.com/git-for-windows/git/releases
 
-For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md) or the top level of your installation (e.g. C:\Program Files\Git\ReleaseNotes.html).
+For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md), or the top level of your installation (e.g. C:\Program Files\Git\ReleaseNotes.html).
+
+For extracting 7z/zip archives see [page](https://github.com/git-for-windows/git/wiki/Zip-Archives---extracting-the-released-archives).
 
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
