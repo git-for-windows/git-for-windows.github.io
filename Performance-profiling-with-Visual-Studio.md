@@ -1,14 +1,18 @@
-A very powerful method to identify performance bottlenecks is *performance profiling*. Visual Studio (including the free-of-cost Community edition) offers convenient tools for that via the *Debug>Start Performance Profiler* menu entry.
+A very powerful method to identify performance bottlenecks is *performance profiling*. Visual Studio (including the free-of-cost Community edition) offers convenient tools for that via the *Debug>Performance Pro<u>f</u>iler...* menu entry.
+
+
 
 *This space intentionally left blank for volunteers to fill in walkthroughs with screenshots, and links for further reading*
 
-= Analyze the performance of a Git command specified as a command-line =
+
+
+# Analyze the performance of a Git command specified as a command-line
 
 1. Open the "git.exe" file via *File>Open*
-2. Specify the arguments and the working directory via *Debug>Debug properties*
-3. *Debug>Start Performance Profiler*
+2. Specify the arguments and the working directory via *Debug>git Properties*
+3. *Debug>Performance Profiler...*
 
-== Analyze executables compiled by GCC ==
+## Analyze executables compiled by GCC
 
 Visual Studio obtains the debug information used in the output from ".pdb" files, but GCC does not generate debug information in that format.
 
