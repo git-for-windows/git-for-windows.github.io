@@ -1,5 +1,13 @@
 Under certain circumstances, Git can become very slow on Windows. Here are a couple of hints to figure out why.
 
+# Identify specific Git commands' performance issues
+
+If the problem lies with a specific Git command, the most straight-forward way to investigate is to use profiling tools.
+
+The canonical profiling tool in GCC's tool set is [`gprof`](https://sourceware.org/binutils/docs/gprof/). However, the MINGW version of the GCC tools offered by MSYS2 has been known to produce empty output on occasion.
+
+An more convenient alternative is to use [Visual Studio's Performance Profiler](https://github.com/git-for-windows/git/wiki/Performance-profiling-with-Visual-Studio) (which is available in the free-of-cost Community version) which offers a powerful graphical user interface.
+
 # Trace executions in the Bash startup
 
 When starting Git Bash is already slow, edit the file `<GIT_HOME>/etc/profile` and insert a `set -x` somewhere at the top. This command will tell Bash to echo the commands it is executing so that you can find out which commands are slow and investigate more closely in that direction.
