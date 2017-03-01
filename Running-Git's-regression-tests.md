@@ -21,7 +21,7 @@ When some tests fail, it is best to run them individually. This can be done usin
 - `sh t0001-*.sh -i` will run *t0001* and stop at the first failing test (as opposed to the default, to continue running the rest of the tests in the *t0001* test suite)
 - `sh t0001-*.sh -v` will show the output of the programs called by the tests
 - `sh t0001-*.sh -d` will keep the temporary directory in which the test was run, `trash directory.t0001-init/` (this is useful when comparing the output of tests between Git versions when the tests fail for one Git version but succeed for another).
-- `sh -x t0001-*.sh` will print out the command-line of the programs before they are executed
+- `sh t0001-*.sh -x` will print out the command-line of the programs before they are executed
 
 These options can be combined, too.
 
@@ -32,24 +32,24 @@ These options can be combined, too.
 Often there will be a ton of output and not all of that output is relevant to investigate test failures. In those cases, it makes sense to redirect the output to a file:
 
 ```bash
-sh -x t0001-*.sh -i -v 2>&1 | tee log.out
+sh t0001-*.sh -i -v -x 2>&1 | tee log.out
 ```
 
 Alternatively, the output can be redirected to a pager:
 
 ```bash
-sh -x t0001-*.sh -i -v 2>&1 | less
+sh t0001-*.sh -i -v -x 2>&1 | less
 ```
 
 To enable a quicker round-trip for running tests when running them repeatedly (typically changing the code a tad after each iteration), you can ask the `less` pager to fake key-presses just after starting. For example, the following command-line will always search for the first occurrence of the characters "ERROR:" in the output:
 
 ```bash
-sh -x t0001-*.sh -i -v 2>&1 | less +/ERROR:
+sh t0001-*.sh -i -v -x 2>&1 | less +/ERROR:
 ```
 
 ### `set -x`
 
-The statement `set -x` in a shell script will turn on the execution trace (see the explanation of the `sh -x ...` invocation above), and `set +x` will turn it off. This is not only useful for adding debug output to the regression tests; It is also useful in the parts of Git that are still implemented as shell scripts (such as `git submodule`).
+The statement `set -x` in a shell script will turn on the execution trace (see the explanation of the `sh ... -x` invocation above), and `set +x` will turn it off. This is not only useful for adding debug output to the regression tests; It is also useful in the parts of Git that are still implemented as shell scripts (such as `git submodule`).
 
 For even more sophisticated debugging, the `set -x` statement can be triggered conditionally. The following example would turn on execution tracing only when the current commit name starts with *cafebabe*:
 
