@@ -5,9 +5,9 @@ Short version: there is no exact equivalent for POSIX symlinks on Windows, and t
 Starting with Windows Vista, there is support for symbolic links. These are not your grandfather's Unix symbolic links; They differ in quite a few ways:
 
 - Symbolic links are only available on Windows Vista and later, most notably not on XP
-- You need the `SeCreateSymbolicLinkPrivilege` privilege, which is by default assigned only to Administrators but can be assigned to normal users using Local Security Policy (or via Active Directory). Home Editions of Windows Vista and Windows 7 do not have Local Security Policy, but the freely available Polsedit (http://www.southsoftware.com) can be used on these editions. Note that regardless of privilege assignment, members of the Administrators group will also require UAC elevation (see the full details in *Access Token Changes* just above https://msdn.microsoft.com/en-us/library/bb530410.aspx#vistauac_topic4)
+- You need the `SeCreateSymbolicLinkPrivilege` privilege, which is by default assigned only to Administrators but can be assigned to other users or user groups (see below). Note that regardless of privilege assignment, members of the Administrators group will also require UAC elevation (see the full details in the *Access Token Changes* section in this [document on UAC](https://msdn.microsoft.com/en-us/library/bb530410.aspx)).
 - Symbolic links on remote filesystems are disabled by default (call `fsutil behavior query SymlinkEvaluation` to find out)
-- Symbolic links will only work on NTFS, not on FAT
+- Symbolic links will only work on NTFS, not on FAT nor exFAT
 - Windows' symbolic links are typed: they need to know whether they point to a directory or to a file (for this reason, Git will update the type when it finds that it is wrong)
 - Many programs do not understand symbolic links
 
@@ -30,4 +30,10 @@ mklink this-link-points-to c:\that-file
 
 # Allowing non-administrators to create symbolic links
 
-Launch `gpedit.msc` (i.e. the group policy editor) and add the account(s) to `Computer configuration\Windows Setting\Security Settings\Local Policies\User Rights Assignment\Create symbolic links`.
+The privilege of `Create symbolic links` can be assigned using local policy editors (or via policies from Active Directory in case of domain accounts). Home Editions of Windows Vista and Windows 7 do not have these policy editors, but the freely available [Polsedit](http://www.southsoftware.com) can be used on these editions. 
+
+- Local Group Policy Editor: Launch `gpedit.msc`, navigate to `Computer configuration - Windows Setting - Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
+
+- Local Security Policy: Launch `secpol.msc`, navigate to `Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named  `Create symbolic links`.
+
+- Polsedit: Launch `polseditx32.exe` or `polseditx64.exe` (depending on your Windows version), navigate to `Security Settings - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
