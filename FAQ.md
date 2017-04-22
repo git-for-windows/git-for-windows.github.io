@@ -31,7 +31,7 @@ If you have a version older than 2.7.4, it is *highly* advisable to upgrade. The
 
 ## What is the relationship between *Git for Windows* and *msysGit*?
 
-*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases).
+*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases). See [here](https://github.com/git-for-windows/git/wiki/Updating-your-SDK) to get a copy.
 
 ## How do I update *Git for Windows* upon new releases?
 
