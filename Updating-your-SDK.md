@@ -1,3 +1,11 @@
+# Get your own copy of the SDK
+
+You can initialize your own copy of the SDK via `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste). [#816](https://github.com/git-for-windows/git/issues/816)
+
+
+****
+
+
 Extract from the [Git for Windows SDK release page](https://github.com/git-for-windows/build-extra/releases/latest). Note the Caution parts! 
 
 # The SDK 'net installer'
