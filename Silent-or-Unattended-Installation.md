@@ -18,7 +18,7 @@ An example of a parameter file is:
 ```
 [Setup]
 Lang=default
-Dir=C:\Program Files (x86)\Git
+Dir=C:\Program Files\Git
 Group=Git
 NoIcons=0
 SetupType=default
