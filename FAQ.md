@@ -78,5 +78,22 @@ Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcce
 
 Some developers want to start git-bash (of Git for Windows SDK) with a different language.
 To achieve this in windows following command could be placed inside the launcher:
-C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"
-Replace "en_GB" with your preferred locale. 
+`C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"`
+replace `en_GB` with your preferred locale. 
+ 
+## Licenses
+
+Git is an Open Source project covered by the GNU General Public
+License version 2 (some parts of it are under different licenses,
+compatible with the GPLv2). It was originally written by Linus
+Torvalds with help of a group of hackers around the net.
+
+Git for Windows also contains Embedded CAcert Root Certificates. For
+more information please go to
+https://www.cacert.org/policy/RootDistributionLicense.php.
+
+This package contains software from a number of other projects
+including Bash, zlib, curl, msmtp, tcl/tk, perl, MSYS2 and a number
+of libraries and utilities from the GNU project, licensed under the
+GNU General Public License. Likewise, it contains Perl which is dual
+licensed under the GNU General Public License and the Artistic License. 
