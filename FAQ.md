@@ -83,6 +83,8 @@ replace `en_GB` with your preferred locale.
  
 ## Licenses
 
+Reproduced from [Git for Windows' release notes](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md#licenses):
+
 Git is an Open Source project covered by the GNU General Public License version 2 (some parts of it are under different licenses, compatible with the GPLv2). It was originally written by Linus Torvalds with help of a group of hackers around the net.
 
 Git for Windows also contains Embedded CAcert Root Certificates. For more information please go to https://www.cacert.org/policy/RootDistributionLicense.php.
