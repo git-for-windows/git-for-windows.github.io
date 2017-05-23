@@ -1,4 +1,4 @@
-Please note: this page describes how to compile Git's source code in Visual Studio 2010 or later.
+Please note: this page describes how to compile Git's source code in Visual Studio 2015 or later.
 
 # Checking out `vs/master`
 
