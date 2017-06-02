@@ -100,7 +100,7 @@
 	}
 
 	.feature h2 {
-		font-size: 1.6em;
+		font-size: 1.1em;
 	}
 
 	.feature article {
@@ -115,8 +115,13 @@
 		width: 30%;
 	}
 
+	.featurebutton {
+		width: 40%;
+	}
+
 	nav ul {
-		float: none;
+		float: right;
+		margin-top: 0;
 	}
 	footer h1 {
 		display: none;
@@ -133,7 +138,7 @@
 	}
 
 	.feature h2 {
-		font-size: 1.6em;
+		font-size: 1em;
 	}
 
 	.feature article {
