@@ -1,10 +1,10 @@
 @media screen and (max-width: 700px) {
 	html {
-		font-size: 10px;
+		font-size: 16px;
 	}
 
 	.feature h2 {
-		font-size: 1.2em;
+		font-size: 2.2em;
 	}
 
 	h2 {
@@ -31,16 +31,16 @@
 
 	.feature article {
 		width: 65%;
-		height: auto;
+		height: 12em;
 		padding-bottom: 2%;
 	}
 
 	.detailstext {
-		width: 68%;
+		width: 58%;
 	}
 
 	.detailsimg {
-		width: 25%;
+		width: 35%;
 	}
 
 	.imagerollover {
@@ -54,28 +54,6 @@
 	nav ul,
 	footer a {
 		float: right;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	html {
-		font-size: 16px;
-	}
-
-	.feature h2 {
-		font-size: 2.2em;
-	}
-
-	.feature article {
-		height: 12em;
-	}
-
-	.detailstext {
-		width: 58%;
-	}
-
-	.detailsimg {
-		width: 35%;
 	}
 }
 
