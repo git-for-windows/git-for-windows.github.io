@@ -1,3 +1,15 @@
+@media screen and (max-width: 1050px) {
+	.content {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.content {
+		width: 90%;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	html {
 		font-size: 16px;
