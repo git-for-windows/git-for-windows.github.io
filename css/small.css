@@ -1,10 +1,22 @@
+@media screen and (max-width: 1050px) {
+	.content {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.content {
+		width: 90%;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	html {
-		font-size: 10px;
+		font-size: 16px;
 	}
 
 	.feature h2 {
-		font-size: 1.2em;
+		font-size: 2.2em;
 	}
 
 	h2 {
@@ -21,8 +33,7 @@
 
 	.content {
 		width: 100%;
-		min-width: 700px;
-		max-width: 700px;
+		min-width: 600px;
 	}
 
 	header {
@@ -31,16 +42,16 @@
 
 	.feature article {
 		width: 65%;
-		height: auto;
+		height: 12em;
 		padding-bottom: 2%;
 	}
 
 	.detailstext {
-		width: 68%;
+		width: 58%;
 	}
 
 	.detailsimg {
-		width: 25%;
+		width: 35%;
 	}
 
 	.imagerollover {
@@ -57,32 +68,9 @@
 	}
 }
 
-@media screen and (max-width: 700px) {
-	html {
-		font-size: 16px;
-	}
-
-	.feature h2 {
-		font-size: 2.2em;
-	}
-
-	.feature article {
-		height: 12em;
-	}
-
-	.detailstext {
-		width: 58%;
-	}
-
-	.detailsimg {
-		width: 35%;
-	}
-}
-
-@media screen and (max-width: 601px) {
+@media screen and (max-width: 600px) {
 	.content {
-		min-width: 601px;
-		max-width: 601px;
+		min-width: 380px;
 	}
 
 	html {
@@ -106,14 +94,13 @@
 	}
 }
 
-@media screen and (max-width: 381px) {
+@media screen and (max-width: 380px) {
 	.content {
-		min-width: 381px;
-		max-width: 381px;
+		min-width: 240px;
 	}
 
 	.feature h2 {
-		font-size: 1.8em;
+		font-size: 1.1em;
 	}
 
 	.feature article {
@@ -128,18 +115,22 @@
 		width: 30%;
 	}
 
+	.featurebutton {
+		width: 40%;
+	}
+
 	nav ul {
-		float: none;
+		float: right;
+		margin-top: 0;
 	}
 	footer h1 {
 		display: none;
 	}
 }
 
-@media screen and (max-width: 241px) {
+@media screen and (max-width: 240px) {
 	.content {
-		min-width: 241px;
-		max-width: 241px;
+		min-width: 240px;
 	}
 
 	html {
@@ -147,7 +138,7 @@
 	}
 
 	.feature h2 {
-		font-size: 1.6em;
+		font-size: 1em;
 	}
 
 	.feature article {
