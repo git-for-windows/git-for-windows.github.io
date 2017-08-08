@@ -1,1 +1,0 @@
-This is the _Git for Windows_ wiki. See [how to participate](https://github.com/git-for-windows/git/wiki/How-to-participate).
