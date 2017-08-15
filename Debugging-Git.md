@@ -77,7 +77,7 @@ In some cases, the back trace is not helpful, though, most likely because the st
 First, install `emacs` and run it:
 
 ```sh
-$ pacman -S mingw64/mingw-w64-x86_64-emacs
+$ pacman -Sy mingw64/mingw-w64-x86_64-emacs
 $ emacs
 ```
 
