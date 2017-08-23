@@ -1,3 +1,7 @@
+**This guide is outdated and needs fixing. See [#1277](https://github.com/git-for-windows/git/issues/1277) for *some* details.**
+
+---
+
 **This guide assumes that you want the 64-bit version of Git for Windows. To install the 32-bit version, replace the `x86_64` infix by `i686` in every command included in this document.**
 
 Git for Windows being based on `MSYS2`, it's possible to install the `git` package into an existing `MSYS2` installation. That means that if you are already using `MSYS2` on your computer, you can use Git for Windows without running the full installer or using the portable version.
