@@ -12,6 +12,16 @@ Here the steps to take:
         [git-for-windows]
         Server = https://dl.bintray.com/git-for-windows/pacman/$arch 
 
+and optionally also the MINGW-only repository for the *opposite* architecture (i.e. MINGW32 for 64-bit SDK, MINGW64 for 32-bit SDK):
+
+        [git-for-windows-mingw32]
+        Server = https://dl.bintray.com/git-for-windows/pacman/i686
+
+or
+
+        [git-for-windows-mingw64]
+        Server = https://dl.bintray.com/git-for-windows/pacman/x86_64
+
  3. Then synchronize new repository
 
         pacman -Syu
