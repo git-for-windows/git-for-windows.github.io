@@ -4,7 +4,7 @@
 
 # Build `msys2-runtime`
 
-1. Open the *Git for Windows SDK* *MSys* shell by double clicking `msys2_shell.cmd` in the install folder. (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
+1. Open the *Git for Windows SDK* *MSys* shell by launching `msys2_shell.cmd` with option `-msys` in the install folder. (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
 
 2. Install the MSYS2 Toolchain: `pacman -S msys2-devel base-devel`.
 
