@@ -22,18 +22,24 @@ or
         [git-for-windows-mingw64]
         Server = https://dl.bintray.com/git-for-windows/pacman/x86_64
 
- 3. Then synchronize new repository
+ 3. Authorize signing key (this step may have to be repeated occasionally until https://github.com/msys2/msys2/issues/62 is fixed)
+
+        curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/master/git-for-windows-keyring/git-for-windows.gpg |
+        pacman-key --add - &&
+        pacman-key --lsign-key 1A9F3986
+
+ 4. Then synchronize new repository
 
         pacman -Syu
 
- 4. This implicitly updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open shells and and program relying on `MSYS2` runtime. Once all close, start a new terminal again.
+ 5. This implicitly updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open shells and and program relying on `MSYS2` runtime. Once all close, start a new terminal again.
 
- 5. Then synchronize *again* (updating the non-core part of the packages):
+ 6. Then synchronize *again* (updating the non-core part of the packages):
 
         pacman -Syu
 
- 6. And finally install the Git/cURL packages:
+ 7. And finally install the Git/cURL packages:
 
         pacman -S mingw-w64-x86_64-git mingw-w64-x86_64-git-doc-html mingw-w64-x86_64-git-doc-man mingw-w64-x86_64-curl
 
- 7. Finally, check that everything went well by doing `git --version` and it should output something like `git version 2.14.1.windows.1` (or newer).
+ 8. Finally, check that everything went well by doing `git --version` and it should output something like `git version 2.14.1.windows.1` (or newer).
