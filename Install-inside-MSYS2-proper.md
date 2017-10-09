@@ -30,16 +30,16 @@ or
 
  4. Then synchronize new repository
 
-        pacman -Syu
+        pacboy update
 
  5. This implicitly updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open shells and and program relying on `MSYS2` runtime. Once all close, start a new terminal again.
 
  6. Then synchronize *again* (updating the non-core part of the packages):
 
-        pacman -Syu
+        pacboy update
 
  7. And finally install the Git/cURL packages:
 
-        pacman -S mingw-w64-x86_64-git mingw-w64-x86_64-git-doc-html mingw-w64-x86_64-git-doc-man mingw-w64-x86_64-curl
+        pacboy sync git:x git-doc-html:x git-doc-man:x git-extra: curl:x
 
  8. Finally, check that everything went well by doing `git --version` and it should output something like `git version 2.14.1.windows.1` (or newer).
