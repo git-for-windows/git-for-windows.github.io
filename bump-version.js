@@ -12,12 +12,13 @@ var die = function(err) {
 	process.exit(1);
 };
 
-var updateVersion = function(version, timestamp, url) {
+var updateVersion = function(version, tag, timestamp, url) {
 	var regex = /<div class="version">.*?<\/div>/gm;
 	var replacement = '<div class="version"><a href="' + url
 		+ '" title="Version ' + version + ' was published on '
 		+ timestamp + '">Version ' + version + '</a></div>';
 	fs.writeFile('latest-version.txt', version);
+	fs.writeFile('latest-tag.txt', tag);
 	fs.readFile('index.html', 'utf8', function (err, data) {
 		if (err)
 			die(err);
@@ -70,7 +71,7 @@ var autoUpdate = function() {
 
 		process.stderr.write('Auto-detected version ' + version
 			+ ' (' + latest + ')\n');
-		return [ version, latest, url ];
+		return [ version, release.tag_name, latest, url ];
 	};
 
 	var https = require('https');
@@ -89,15 +90,15 @@ var autoUpdate = function() {
 		});
 		res.on('end', function() {
 			var result = determineVersion(https.body);
-			updateVersion(result[0], result[1], result[2]);
+			updateVersion(result[0], result[1], result[2], result[3]);
 		});
 	});
 };
 
 if (process.argv.length == 3 && '--auto' == process.argv[2])
 	autoUpdate();
-else if (process.argv.length == 5)
-	updateVersion(process.argv[2], process.argv[3], process.argv[4]);
+else if (process.argv.length == 6)
+	updateVersion(process.argv[2], process.argv[3], process.argv[4], process.argv[5]);
 else
 	die('Usage: node ' + process.argv[1]
-		+ ' <version> <timestamp> <url>\n');
+		+ ' <version> <tag> <timestamp> <url>\n');
