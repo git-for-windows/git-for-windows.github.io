@@ -1,6 +1,6 @@
 # Prerequisites
 
-This page lists the prerequisites required to run [Git for Windows](https://git-for-windows.github.io/).
+This page lists the prerequisites required to run [Git for Windows](https://gitforwindows.org/).
 
 ## Windows version
 
