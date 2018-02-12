@@ -20,7 +20,7 @@ prefix=/mingw64 make -C contrib/subtree install-html
 
 >without this second `make` you get an error message about a missing `git-subtree.html` file).
 
-To make an installer, install the [SDK](https://git-for-windows.github.io/#download-sdk) and run it
+To make an installer, install the [SDK](https://gitforwindows.org/#download-sdk) and run it
 
 >Git for Windows SDK MinGW shell can be run by double-clicking either the Shortcut on the desktop Git SDK 32-bit.lnk or by double-clicking mingw32_shell.bat in the install folder. That is Git SDK 64-bit.lnk and mingw64_shell.bat for the 64bit SDK installer.
 

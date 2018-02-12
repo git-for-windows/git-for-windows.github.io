@@ -1,4 +1,4 @@
-There are several ways to participate in the Git for Windows project. First off, have a look at the [governance model](http://git-for-windows.github.io/governance-model.html) of the project.
+There are several ways to participate in the Git for Windows project. First off, have a look at the [governance model](https://gitforwindows.org/governance-model.html) of the project.
 
 # Help users
 
@@ -10,7 +10,7 @@ A lot of documentation wants to be written, still. A good place is [the Git for 
 
 # Fix bugs or add features in the Git code itself
 
-Download [the SDK](http://git-for-windows.github.io/#download-sdk) and build Git. Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
+Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
 
 Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
 

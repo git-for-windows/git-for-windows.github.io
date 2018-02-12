@@ -1,6 +1,6 @@
 # Introduction
 
-[Vagrant](https://www.vagrantup.com/) is a modern way to define the requirements of a project. In the case of [Git for Windows](http://git-for-windows.github.io/), it allows us to set up a minimal virtual Linux machine that makes it easy to run the same revision of Git on Windows as well as on Linux without much effort.
+[Vagrant](https://www.vagrantup.com/) is a modern way to define the requirements of a project. In the case of [Git for Windows](https://gitforwindows.org/), it allows us to set up a minimal virtual Linux machine that makes it easy to run the same revision of Git on Windows as well as on Linux without much effort.
 
 **Note**: while Vagrant makes things easy, quite a bit of bandwidth is required for the setup (roughly a gigabyte will be downloaded in total).
 
@@ -8,7 +8,7 @@
 
 1. Download and install [VirtualBox](https://www.virtualbox.org)
 2. Download and install [Vagrant](https://www.vagrantup.com/)
-3. Install the [Git SDK](http://git-for-windows.github.io/#download-sdk)
+3. Install the [Git SDK](https://gitforwindows.org/#download-sdk)
 4. Run `vagrant up` in the `/usr/src/git` directory
 5. Run `vagrant ssh`
 
@@ -18,7 +18,7 @@ To compile and install Git, you will have to run `make clean` first because *Git
 
 # Alternative to the Git SDK way
 
-If you cannot download and install the Git SDK for some reason or other, you could also clone [the Git source code](https://github.com/git-for-windows/git) using [Git for Windows](https://git-for-windows.github.io/) instead, but make sure that Unix line endings are used: `git clone -c core.autocrlf=false https://github.com/git-for-windows/git vagrant-git`. If Git for Windows does not even work for you, you could also download the source code [as a `.zip`](https://github.com/git-for-windows/git/archive/master.zip) and unpack it.
+If you cannot download and install the Git SDK for some reason or other, you could also clone [the Git source code](https://github.com/git-for-windows/git) using [Git for Windows](https://gitforwindows.org/) instead, but make sure that Unix line endings are used: `git clone -c core.autocrlf=false https://github.com/git-for-windows/git vagrant-git`. If Git for Windows does not even work for you, you could also download the source code [as a `.zip`](https://github.com/git-for-windows/git/archive/master.zip) and unpack it.
 
 After that, continue with the `vagrant up` step above.
 

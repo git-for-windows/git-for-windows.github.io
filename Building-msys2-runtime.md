@@ -1,6 +1,6 @@
 # Installing a build environment
 
-1. Just run the [SDK installer](https://git-for-windows.github.io/#download-sdk).
+1. Just run the [SDK installer](https://gitforwindows.org/#download-sdk).
 
 # Build `msys2-runtime`
 

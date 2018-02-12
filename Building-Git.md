@@ -1,14 +1,14 @@
-We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git for Windows SDK*. This SDK can be installed via the [SDK installer](https://git-for-windows.github.io/#download-sdk)
+We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git for Windows SDK*. This SDK can be installed via the [SDK installer](https://gitforwindows.org/#download-sdk)
 
 # Installing a build environment
 
-1. Just run the [SDK installer](https://git-for-windows.github.io/#download-sdk).
+1. Just run the [SDK installer](https://gitforwindows.org/#download-sdk).
 
 # Build Git
 
-1. An initial `git clone` and `make` should have already occurred when running the [SDK installer](https://git-for-windows.github.io/#download-sdk).
+1. An initial `git clone` and `make` should have already occurred when running the [SDK installer](https://gitforwindows.org/#download-sdk).
 
-2. Open the *Git for Windows SDK* *MinGW* shell by double clicking either the Shortcut on the desktop `Git SDK 32-bit.lnk` or by double clicking `mingw32_shell.bat` in the install folder. That is `Git SDK 64-bit.lnk` and `mingw64_shell.bat` for the `64bit` [SDK installer](https://git-for-windows.github.io/#download-sdk).
+2. Open the *Git for Windows SDK* *MinGW* shell by double clicking either the Shortcut on the desktop `Git SDK 32-bit.lnk` or by double clicking `mingw32_shell.bat` in the install folder. That is `Git SDK 64-bit.lnk` and `mingw64_shell.bat` for the `64bit` [SDK installer](https://gitforwindows.org/#download-sdk).
 
 2. Change directory to the initial clone: `cd /usr/src/git`.
 

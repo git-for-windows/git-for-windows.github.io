@@ -2,7 +2,7 @@
 
 First of all, Git's `.exe` files should be rebuilt with debugging information, and without optimization (because `gdb` has serious troubles single-stepping code compiled using `-O2` for some reason). To this end:
 
-1. [install the Git for Windows SDK](https://git-for-windows.github.io/#download-sdk)
+1. [install the Git for Windows SDK](https://gitforwindows.org/#download-sdk)
 2. edit `/usr/src/git/Makefile` to remove the `-O2` from the `CFLAGS = -g -O2 -Wall` line,
 3. run `make` in `/usr/src/git/`.
 

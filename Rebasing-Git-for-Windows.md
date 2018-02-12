@@ -5,7 +5,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 2. The latest *rebase* was done onto a [upstream](https://github.com/git/git) release tagged as `v2.3.3`
 
 # Preconditions
-1. A working [Git for Windows SDK](https://git-for-windows.github.io/#download-sdk).
+1. A working [Git for Windows SDK](https://gitforwindows.org/#download-sdk).
 2. A fetched build-extra repository.  
     `cd /usr/src/build-extra`  
     `git fetch`  

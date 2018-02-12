@@ -1,5 +1,5 @@
 # Introduction
-The _Git for Windows_ wiki. It looks more technical than [our home page](https://git-for-windows.github.io/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
+The _Git for Windows_ wiki. It looks more technical than [our home page](https://gitforwindows.org/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
 
 ## About
 _Git for Windows_ is very different from _Git_ for almost everything else in one important respect: Windows does not provide the *POSIX* infrastructure Git expects.
