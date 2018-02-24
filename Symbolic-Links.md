@@ -21,7 +21,7 @@ git clone -c core.symlinks=true <URL>
 
 By default, the `ln -s` command in *Git Bash* does *not* create symbolic links. Instead, it creates copies.
 
-To create symbolic links (provided your account has permission to do so), use the `mklink.exe` tool, like so:
+To create symbolic links (provided your account has permission to do so), use the built-in `mklink` command, like so:
 
 ```cmd
 mklink /d this-link-points-to c:\that-directory
