@@ -27,7 +27,7 @@ Start by attempting to ssh from your client to the server. Assuming this is the 
     ECDSA key fingerprint is SHA256:lZPvG6eLvsX6dRxey0ShBlYjQubifOX6yuk3atg7jQ0.
     Are you sure you want to continue connecting (yes/no)? 
 
-Type 'yes' and hit enter. At this moment %USERPROFILE%\.ssh directory will be created for you, if it didn't exist already. In that directory will be a known_hosts file identifying this server as one that you trust. You should be prompted for your password at this point: Enter it in, and you should now have a remote shell on the server (Congratulations if this is your first remote shell on Windows) 
+Type 'yes' and hit enter. At this moment %USERPROFILE%\\.ssh directory will be created for you, if it didn't exist already. In that directory will be a known_hosts file identifying this server as one that you trust. You should be prompted for your password at this point: Enter it in, and you should now have a remote shell on the server (Congratulations if this is your first remote shell on Windows) 
 
 Now exit out of that shell to return to your local machine.  In either a bash window or a cmd.exe window, cd to the .ssh directory found in your home directory.  Type ssh-keygen and you will be prompted like this:
 
