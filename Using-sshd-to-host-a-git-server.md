@@ -1,5 +1,5 @@
 Everything you need to host a git server on Windows is included with Git for Windows.
-In these instructions it is assumed that Git for Windows is installed at %GIT_HOME%
+In these instructions it is assumed that Git for Windows is installed at %GIT_HOME% and that you have %GIT_HOME%\cmd in your path on both client and server machines.
 
 ### Configure sshd
 You need to create a key pair within %GIT_HOME%\etc\ssh for sshd to use as the server identity.
@@ -20,6 +20,24 @@ Mine contains:
 
 ### Test sshd
 Your ultimate goal is probably to be able to ssh into the server where you are running sshd, without having to enter your password. (There are security considerations which probably require you to consult policies within your local organization) I suggest you setup your user account(s) with ssh public key authentication for this.
+
+Start by attempting to ssh from your client to the server. Assuming this is the first time, you will be prompted with:
+    The authenticity of host 'localhost (::1)' can't be established.
+    ECDSA key fingerprint is SHA256:lZPvG6eLvsX6dRxey0ShBlYjQubifOX6yuk3atg7jQ0.
+    Are you sure you want to continue connecting (yes/no)? 
+Type 'yes' and hit enter. At this moment %USERPROFILE%\.ssh directory will be created for you, if it didn't exist already. In that directory will be a known_hosts file identifying this server as one that you trust. You should be prompted for your password at this point: Enter it in, and you should now have a remote shell on the server (Congratulations if this is your first remote shell on Windows) 
+
+Now exit out of that shell to return to your local machine.  In either a bash window or a cmd.exe window, cd to the .ssh directory found in your home directory.  Type ssh-keygen and you will be prompted like this:
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/Users/yourname/.ssh/id_rsa): 
+    Enter passphrase (empty for no passphrase): 
+    Enter same passphrase again: 
+Depending on how physically secure your client machine is and your local security policies, you may choose to use an empty passphrase.  The passphrase is used to gain access to your local key store, so if you use an empty passphrase anyone who has access to your client machine can impersonate you.
+
+Two files will have been generated, id_rsa which contains your private key and id_rsa.pub which contains your public key.  Protect your private key and never share it with anyone. Append the contents of the id_rsa.pub file generated on the client to your ~/.ssh/authorized_keys on the server (create it if it doesn't exist)
+
+If you configure multiple client machines for you can copy your .ssh directory from client to client, and thus you would only need one public key in ~/.ssh/authorized_keys on the server. Just make sure you protect the contents of .ssh directory on each client. 
+
 
 ### Adding projects 
 I create projects directly on the server in %GIT_HOME% with:
