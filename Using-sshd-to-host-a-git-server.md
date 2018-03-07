@@ -13,9 +13,8 @@ A simple way to start sshd automatically when you log in is to put a .BAT script
 
 Mine contains:
 
-`cd /d %GIT_HOME%
-
-%GIT_HOME%\usr\bin\sshd.exe`
+> cd /d %GIT_HOME%
+> %GIT_HOME%\usr\bin\sshd.exe
 
 ### Test sshd
 Your ultimate goal is probably to be able to ssh into the server where you are running sshd, without having to enter your password. (There are security considerations which probably require you to consult policies within your local organization) I suggest you setup your user account(s) with ssh public key authentication for this.
