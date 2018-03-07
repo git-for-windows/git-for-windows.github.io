@@ -14,6 +14,7 @@ A simple way to start sshd automatically when you log in is to put a .BAT script
 Mine contains:
 
 `cd /d %GIT_HOME%
+
 %GIT_HOME%\usr\bin\sshd.exe`
 
 ### Test sshd
