@@ -20,7 +20,7 @@ Mine contains:
 Your ultimate goal is probably to be able to ssh into the server where you are running sshd, without having to enter your password. (There are security considerations which probably require you to consult policies within your local organization) I suggest you setup your user account(s) with ssh public key authentication for this.
 
 ### Adding projects 
-I create projects directly in %GIT_HOME% with:
+I create projects directly on the server in %GIT_HOME% with:
 
 `git init --bare yourproject.git`
 
