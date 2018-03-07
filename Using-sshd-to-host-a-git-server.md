@@ -40,7 +40,7 @@ Depending on how physically secure your client machine is and your local securit
 
 Two files will have been generated, id_rsa which contains your private key and id_rsa.pub which contains your public key.  Protect your private key and never share it with anyone. Append the contents of the id_rsa.pub file generated on the client to your ~/.ssh/authorized_keys on the server (create it if it doesn't exist)
 
-At this time you should be able to ssh from the client to the server without entering a password (but if you chose a non-empty passphrase the client will prompt you for that).  When non-empty passphrase are used, there is also the option of running ssh-agent to keep the passphrase in-memory for you, but I'll not cover that here.
+At this time you should be able to ssh from the client to the server without entering a password (but if you chose a non-empty passphrase the client will prompt you for that).  When a non-empty passphrase is used, there is also the option of running ssh-agent to keep the passphrase in-memory for you, but I'll not cover that here.
 
 If you configure multiple client machines for you can copy your .ssh directory from client to client, and thus you would only need one public key in ~/.ssh/authorized_keys on the server. Just make sure you protect the contents of .ssh directory on each client. 
 
