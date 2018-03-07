@@ -31,9 +31,11 @@ Note: Creating them there is probably not ideal when it comes time to upgrading 
 ### Connect with git
 From your client machine (which may or may not be the same machine as the server)
 Checkout projects via git clone with an ssh-protocol URL:
+
 `git clone ssh://your.server/yourproject.git`
 
 Or if your local username on the client is different than on the server:
+
 `git clone ssh://you@your.server/yourproject.git`
 
 If you have chosen to use public key authentication, you should not have to enter a password.
