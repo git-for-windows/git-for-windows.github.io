@@ -5,7 +5,9 @@ In these instructions it is assumed that Git for Windows is installed at %GIT_HO
 You need to create a key pair within %GIT_HOME%\etc\ssh for sshd to use as the server identity.
 e.g., ssh_host_rsa_key and ssh_host_rsa_key.pub
 
-TODO: How to create the key pair
+Here is a good description of how to create the key pair:
+
+http://www.geekride.com/how-to-generate-ssh-host-keys/
 
 ### Run sshd
 A simple way to start sshd automatically when you log in is to put a .BAT script in:
