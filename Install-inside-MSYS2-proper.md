@@ -10,17 +10,17 @@ Here the steps to take:
  2. Edit `/etc/pacman.conf` and just before `[mingw32]` (line #71 on my machine), add the `git-for-windows` packages repository:
         
         [git-for-windows]
-        Server = https://dl.bintray.com/git-for-windows/pacman/$arch 
+        Server = https://wingit.blob.core.windows.net/$arch 
 
 and optionally also the MINGW-only repository for the *opposite* architecture (i.e. MINGW32 for 64-bit SDK, MINGW64 for 32-bit SDK):
 
         [git-for-windows-mingw32]
-        Server = https://dl.bintray.com/git-for-windows/pacman/i686
+        Server = https://wingit.blob.core.windows.net/i686
 
 or
 
         [git-for-windows-mingw64]
-        Server = https://dl.bintray.com/git-for-windows/pacman/x86_64
+        Server = https://wingit.blob.core.windows.net/x86-64
 
  3. Authorize signing key (this step may have to be repeated occasionally until https://github.com/msys2/msys2/issues/62 is fixed)
 
