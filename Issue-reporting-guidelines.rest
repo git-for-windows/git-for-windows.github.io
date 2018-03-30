@@ -1,0 +1,5 @@
+
+* If your issue stems from a particular repository include its URL. If the repository is proprietary try 
+* Be prepared to test fixes!
+* Be polite. You are asking highly competent software developers for help, for free, so you might want to avoid treating them as if they were a commodity or  You may want to imitate the level of detail.
+
