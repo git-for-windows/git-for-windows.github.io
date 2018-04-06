@@ -1,12 +1,12 @@
 **This guide assumes that you want the 64-bit version of Git for Windows.**
 
-Git for Windows being based on `MSYS2`, it's possible to install the `git` package into an existing `MSYS2` installation. That means that if you are already using `MSYS2` on your computer, you can use Git for Windows without running the full installer or using the portable version.
+Git for Windows being based on MSYS2, it's possible to install the `git` package into an existing MSYS2 installation. That means that if you are already using MSYS2 on your computer, you can use Git for Windows without running the full installer or using the portable version.
 
-Note however that there are some caveats for going this way. Git for Windows created some patches for `msys2-runtime` that have not been sent upstream. (This had been planned, but it was determined in issue [#284](/git-for-windows/git/issues/284) that it would probably not be happening.) This means that you have to install Git for Windows customized `msys2-runtime` to have a fully working `git` inside `MSYS2`.
+Note however that there are some caveats for going this way. Git for Windows created some patches for `msys2-runtime` that have not been sent upstream. (This had been planned, but it was determined in issue [#284](/git-for-windows/git/issues/284) that it would probably not be happening.) This means that you have to install Git for Windows customized `msys2-runtime` to have a fully working `git` inside MSYS2.
 
 Here the steps to take:
 
- 1. Open an `MSYS2` terminal.
+ 1. Open an MSYS2 terminal.
  2. Edit `/etc/pacman.conf` and just before `[mingw32]` (line #71 on my machine), add the `git-for-windows` packages repository:
         
         [git-for-windows]
