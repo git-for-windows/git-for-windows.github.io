@@ -3,7 +3,17 @@
 First of all, Git's `.exe` files should be rebuilt with debugging information, and without optimization (because `gdb` has serious troubles single-stepping code compiled using `-O2` for some reason). To this end:
 
 1. [install the Git for Windows SDK](https://gitforwindows.org/#download-sdk)
-2. edit `/usr/src/git/Makefile` to remove the `-O2` from the `CFLAGS = -g -O2 -Wall` line,
+2. Create `/usr/src/git/config.mak` with the following contents to disable compiler optimization and ASLR:
+
+```
+DEVELOPER=1
+ifndef NDEBUG
+CFLAGS := $(filter-out -O2,$(CFLAGS))
+ASLR_OPTION := -Wl,--dynamicbase
+BASIC_LDFLAGS := $(filter-out $(ASLR_OPTION),$(BASIC_LDFLAGS))
+endif
+```
+
 3. run `make` in `/usr/src/git/`.
 
 After that, you can run Git's executables in GDB like so:
