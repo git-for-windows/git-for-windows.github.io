@@ -33,6 +33,29 @@ b die_builtin
 
 before calling `run` in `gdb` to stop execution at the appropriate time.
 
+## Debugging bugs with redirected stdin
+
+When standard input is redirected (e.g. `echo "Hello" | gdb -args git ...`), `gdb` will not be able to receive your commands, and therefore you cannot debug. One little trick to get around this is to insert debug statements into the C code such as:
+
+```c
+{
+    int ddd = 1;
+    fprintf(stderr, "Waiting for gdb on pid %d", (int)getpid());
+    while (ddd)
+        sleep(1);
+}
+```
+
+When running this (without prefixing the command with `gdb -args`), it will print the process ID and then wait. To attach `gdb` to this process, simply call
+
+```
+gdb git <pid>
+```
+
+then use `gdb`'s `up` command until you are in that loop, and call `set ddd = 0` and `continue` after setting whatever breakpoints you want to set. Or call `finish` until the point where you want to single-step (`u` to single-step, `s` to single-step into called functions).
+
+The same trick also helps with debugging processes that are spawned from processes that are spawned from the main process.
+
 ## Debugging crashes (segmentation faults)
 
 When a command crashes (i.e. throws a segmentation fault), running it in `gdb` as described above will stop when the command crashes. Once that is the case, you can obtain a back trace with `bt`. Example:
