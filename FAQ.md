@@ -94,6 +94,13 @@ Some developers want to start git-bash (of Git for Windows SDK) with a different
 To achieve this in windows following command could be placed inside the launcher:
 `C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"`
 replace `en_GB` with your preferred locale. 
+
+## I have errors while building the solution in Visual studio 
+(i.e. `fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory`)
+
+Try to open the console and invoke `git\compat\vcbuild\vcpkg_install.bat`. Make sure that it has completed successfully, then clean and rebuild the solution.
+
+Ensure also that you are using proper Build Tools (v140). It's going by default in VS 2015. If you are using VS 2017, you need to install them manually. Do not upgrade the project to v141 - it can't be done automatically.
  
 ## Licenses
 
