@@ -6,7 +6,7 @@ Git's source code (and hence also Git for Windows' source code) is [usually buil
 
 However, as of Git for Windows v2.11.0, a much more convenient way is available: by cloning https://github.com/git-for-windows/git and checking out the `vs/master` branch, you will automatically have project definitions ready to go with Visual Studio.
 
-Simply open the `git.sln` file and build the solution.
+Simply open the `git.sln` file and build the solution. DO NOT upgrade Build Tools to v141 - it will not work. If you are using VS 2017 or later, you need to install Build Tools v140 manually. 
 
 # Running the tests
 
