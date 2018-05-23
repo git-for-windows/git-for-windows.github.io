@@ -4,7 +4,7 @@ You need to make 2 calls to create new process in Linux: `fork()` and then `exec
 
 ## Before start
 
-All information about Linux is a brief retelling of Robert Love's book: Linux Kernel Development. 
+All information about Linux is a brief retelling of Robert Love's book: [Linux Kernel Development](https://doc.lagout.org/operating%20system%20/linux/Linux%20Kernel%20Development%2C%203rd%20Edition.pdf). 
 I definitely recommend to read this book by yourself, especially if this article wasn't enough for you. I will oversimplify, otherwise I need to put whole book here.
 
 # Process vs thread
