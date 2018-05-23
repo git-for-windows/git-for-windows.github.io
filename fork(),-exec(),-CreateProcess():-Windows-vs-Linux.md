@@ -1,6 +1,6 @@
 # tl ; dr
 
-You need to make 2 calls to create new process in Linux: `fork()` and then `exec()`. Windows has only one: `CreateProcess()`. Architecture differs so much, that's why it was so hard to implement `fork()` on Windows, and it still works dramatically slower. Please think twice before using `fork()` on Windows, and do not use `fork()` + `exec()`: you are doing tons of useless job, you have `CreateProcess()` for it.
+You need to make 2 calls to create new process in Linux: [`fork()`](http://man7.org/linux/man-pages/man2/fork.2.html) and then [`exec()`](http://man7.org/linux/man-pages/man3/exec.3.html). Windows has only one: [`CreateProcess()`](https://msdn.microsoft.com/en-us/library/windows/desktop/ms682425(v=vs.85).aspx). Architecture differs so much, that's why it was so hard to implement `fork()` on Windows, and it still works dramatically slower. Please think twice before using `fork()` on Windows, and do not use `fork()` + `exec()`: you are doing tons of useless job, you have `CreateProcess()` for it.
 
 ## Before start
 
@@ -31,7 +31,7 @@ Actually, we have enough information to guess the reason.
 
 At first, process on Windows and on Linux means different things: we need to create both process and at least one thread to start executing smth on Windows. COW can't be done without headache because of different ways of working with memory. We also have tons of other problems that are behind the scene for this article. 
 
-In short, *All* programs linking to the MSYS2 runtime essentially perform the check "was I just forked?" at startup. If that is the case, the regular code path is completely disabled and a special "fork mode" is spun up.
+In short, *All* programs linking to the [MSYS2 runtime](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2) essentially perform the check "was I just forked?" at startup. If that is the case, the regular code path is completely disabled and a special "fork mode" is spun up.
 
 As a result, it really copies the entire address accessible space of the original process. It tries as best as it can to open the original file descriptors and sockets. It reinstates the current working directory (even if it does not exist anymore). And it does this and that, and that and this, and basically spends a whole lot of time that Linux' kernel would give the programs for free.
 
