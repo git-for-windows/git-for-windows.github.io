@@ -7,6 +7,8 @@ You need to make 2 calls to create new process in Linux: [`fork()`](http://man7.
 All information about Linux is a brief retelling of Robert Love's book: [Linux Kernel Development](https://doc.lagout.org/operating%20system%20/linux/Linux%20Kernel%20Development%2C%203rd%20Edition.pdf). 
 I definitely recommend to read this book by yourself, especially if this article wasn't enough for you. I will oversimplify, otherwise I need to put whole book here.
 
+`fork()` on Windows is emulated by MSYS, while there is no `fork()` in MINGW. That is partially what makes [MSYS much slower than MINGW](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2).
+
 # Process vs thread
 
 In Windows, process is a container for threads, while thread is an executing instance of program with corresponding resources. Process can have any number of threads that you want. 0 threads is possible, but useless; many threads give an opportunity to make multithreading application. All threads in one process share same piece of memory and need to use synchronisation mechanisms.
