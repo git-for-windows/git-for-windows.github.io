@@ -6,7 +6,7 @@ The process to build installer is made easy via the `Git for Windows SDK`. The s
 
 # Installing the SDK
 
-Download the [SDK](https://gitforwindows.org/#download-sdk) and run it (using "Run as Administrator"). You will end up with a console window running the `Git for Windows SDK` shell, which you can use for the next steps. You need to fetch the latest version of the Git sources - just run the command `sdk install git`. After that, if you just want to build an installer from latest master, you are ready to go. 
+Download the [SDK](https://gitforwindows.org/#download-sdk) and run it (using "Run as Administrator"). You will end up with a console window running the `Git for Windows SDK` shell, which you can use for the next steps. You need to fetch the latest version of the Git sources - just run the command `sdk init git`. After that, if you just want to build an installer from latest master, you are ready to go. 
 
 You can open the `Git for Windows SDK` shell by double clicking `git-bash.exe` in the install folder.
 
