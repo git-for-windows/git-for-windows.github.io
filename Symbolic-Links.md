@@ -32,9 +32,9 @@ mklink this-link-points-to c:\that-file
 
 The privilege of `Create symbolic links` can be assigned using local policy editors (or via policies from Active Directory in case of domain accounts). Home Editions of Windows do not have these policy editors, but the freely available [Polsedit](http://www.southsoftware.com) can be used on these editions. 
 
-- Local Group Policy Editor: Launch `gpedit.msc`, navigate to `Computer configuration - Windows Setting - Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
+- Local Group Policy Editor: Launch `gpedit.msc`, navigate to `Computer Configuration - Windows Settings - Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
 
-- Local Security Policy: Launch `secpol.msc`, navigate to `Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named  `Create symbolic links`.
+- Local Security Policy: Launch `secpol.msc`, navigate to `Local Policies - User Rights Assignment` and add the account(s) to the list named  `Create symbolic links`.
 
 - Polsedit: Launch `polseditx32.exe` or `polseditx64.exe` (depending on your Windows version), navigate to `Security Settings - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
 
