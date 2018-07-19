@@ -58,3 +58,14 @@ If you still insist on fixing it manually, please understand that this is *not* 
    ```cmd
    usr\bin\dash -c '/usr/bin/dash /usr/bin/rebaseall -p'
    ```
+
+In the case that the MSYS2 runtime needs to be rebased, too, you will need to call something like this:
+
+```cmd
+copy usr\bin\msys-2.0.dll copy-msys-2.0.dll
+usr\bin\rebase.exe -b 0x67000000 copy-msys-2.0.dll
+copy copy-msys-2.0.dll usr\bin\msys-2.0.dll
+usr\bin\dash.exe  -c 'cd / && /usr/bin/dash.exe /usr/bin/rebaseall'
+```
+
+These commands need to be executed in the top-level directory, and the address (0x67000000) might need to be adjusted.
