@@ -27,7 +27,7 @@ and optionally also the MINGW-only repository for the *opposite* architecture (i
 
         pacboy update
 
- 5. This updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open MSYS2 shells and MSYS2 programs. Once all are closed, start a new terminal again.
+ 5. This updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open MSYS2 shells and MSYS2 programs. Double-check Task Manager and kill `pacman.exe` it's still running after the window is closed, because it can linger. Once all are closed, start a new terminal again.
 
  6. Then synchronize *again* (updating the non-core part of the packages):
 
