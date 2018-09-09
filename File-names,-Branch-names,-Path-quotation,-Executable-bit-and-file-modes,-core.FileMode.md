@@ -24,6 +24,15 @@ Linux attaches a mode word to each file, with bits that indicate if the file is 
 
 Users may need to directly manipulate the mode bits where necessary - the [stackoverflow page](https://stackoverflow.com/a/38285462/717355) shows how to use the `--chmod` option while adding or updating files.
 
+# core.FileMode
+
+The core.FileMode configuration records, for the locally cloned repository, the local file system semantics (i.e. is it case sensitive / case preserving or not). DO NOT change this, unless it is actually set wrong. Git will trust this setting and miss-setting it may cause unexpected effects and damage - Don't do it, the internet, as ever, is probably wrong.
+
+From https://git-scm.com/docs/git-config#git-config-corefileMode
+> Tells Git if the executable bit of files in the working tree is to be honored.
+
+> Some filesystems lose the executable bit when a file that is marked as executable is checked out, or checks out a non-executable file with executable bit on. git-clone[1] or git-init[1] probe the filesystem to see if it handles the executable bit correctly and this variable is automatically set as necessary.
+
 
 
 
