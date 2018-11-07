@@ -10,7 +10,7 @@ E.g. `Master` branch and `master` branch are different, even though, on Windows,
 
 Likewise Windows will not be able to check out both an upper case and lower case version of a file(s). Apparently the vim repository has this 'two versions' Vim/vim problem.
 
-Windows alsao cannot checkout files which contain special characters, such as colon(:) etc. This can cause cross system management issues.
+Windows also cannot checkout files which contain special characters, such as colon(:) etc. This can cause cross system management issues.
 
 # Path Quotation
 
