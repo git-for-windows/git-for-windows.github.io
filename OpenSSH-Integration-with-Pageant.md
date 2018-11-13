@@ -38,7 +38,7 @@ If you use Git from Git CMD, or directly from the Windows command prompt, then y
 
 Unlike the Git Bash case above, this scenario **requires** the _SSH\_AUTH\_SOCK_ environment variable to be set before running the script... otherwise it will simply exit without performing any action. This is normally configured as a persistent **USER** variable, with the value specifying the desired socket file path in Unix/MSYS2 format.
 
-NOTE: Since there can only be a single global variable of a given name, this approach may or may not cause conflicts if you have multiple environments which utilize the SSH_AUTH_SOCK setting. Running Git alongside of Cygwin, for example.
+NOTE: Since there can only be a single global variable of a given name, this approach may or may not cause conflicts if you have multiple environments which utilize the SSH_AUTH_SOCK setting. Running Git alongside of Cygwin, or MSYS2, for example. One way to address this is to use a fully-qualified Windows path for the socket instead of an environment-specific Unix/MSYS2 path.
 
 #### Windows 7
 
@@ -48,6 +48,8 @@ Now launch a new Git CMD or Windows command prompt (pre-existing sessions won't 
 
     C:\Users\heinz.doofenshmirtz> set SSH_AUTH_SOCK
     SSH_AUTH_SOCK=/tmp/.ssh-pageant-heinz.doofenshmirtz
+
+NOTE: the cross-environment-compatible (git for windows, msys2, and cygwin) equivalent would require a fully qualified windows path like `C:\Users\MYUSERNAME\AppData\Local\Temp\.ssh-pageant-MYUSERNAME`. The correct value can be determined by running a command like `cygpath --windows /tmp/.ssh-pageant-%USERNAME%` in a Git Bash window.
 
 ### Launch ssh\-pageant
 
@@ -75,4 +77,4 @@ The most common approach is to create a shortcut pointing to _start\-ssh\-pagean
 
 ## Security Considerations
 
-Since _ssh\-pageant_ (like _ssh\-agent_) is intended to bypass the requirement to repeatedly enter your private key password, it's imperative that its socket file be private in order to use it safely. In other words, you want to be **extremely** careful on multi-user systems to ensure that the **SSH_AUTH_SOCK** file -- and preferably the directory which includes it -- isn't accessible to anyone else. For a normal MSYS2 configuration (which includes Git) this shouldn't be an issue, as _/tmp_ is normally mapped to a private location under your Windows user profile.
+Since _ssh\-pageant_ (like _ssh\-agent_) is intended to bypass the requirement to repeatedly enter your private key password, it's imperative that its socket file be private in order to use it safely. In other words, you want to be **extremely** careful on multi-user systems to ensure that the **SSH_AUTH_SOCK** file -- and preferably the directory which includes it -- isn't accessible to anyone else. For a normal Git for Windows configuration this shouldn't be an issue, as _/tmp_ is normally mapped to a private location under your Windows user profile.
