@@ -34,8 +34,9 @@ therefore refuse to overwrite the files from above-mentioned packages.
 
 To keep the development environment up-to-date, developers need to run
 
-	update-core
-	# If core-packages are updated during that call you MUST restart MSYS2
+	pacman -Syuu
+	# If core-packages are updated during that call you MUST restart MSYS2,
+	# follow instructions and repeat.
 	pacman -Syu
 
 from time to time.
@@ -43,9 +44,11 @@ from time to time.
 ### Caution (update-core)
 
 Core packages like the `msys2-runtime`, `bash` or `pacman` itself should be updated
-via the pacman `update-core` script. Because those core packages are linked to the
+via the `pacman -Syuu` command [was X`update-core` script X]. Because those core packages are linked to the
 `msys2-runtime` (and each other), and updating the runtime "in flight" results most
 often in heap corruption as far as MSYS2 is concerned.
+
+The old `update-core` script has been retired, see https://github.com/msys2/MSYS2-packages/issues/524
 
 ## Alternative Method
 
@@ -61,7 +64,6 @@ update.
 * ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
 * [MSYS2 Introduction & Contributing](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/)
 * [SDK's setup-git-sdk.bat script](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat)
-* [pacman's core-update script](https://github.com/Alexpux/MSYS2-pacman/blob/master/scripts/update-core.sh.in)
 
 ## Origin of 'net installer' concept
 
