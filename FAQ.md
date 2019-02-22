@@ -14,7 +14,7 @@ More information here: [Git for Windows' prerequisites](https://gitforwindows.or
 
 There is currently no MSI package; there is an exe installer and a portable package. You are welcome to contribute a Pull Request that packages a new installer.
 
-There is an existing Pull Request in development and looking for testers, please try out https://github.com/robmen/gitsetup/issues/1 and give feedback.
+~There is an existing Pull Request in development and looking for testers, please try out https://github.com/robmen/gitsetup/issues/1 and give feedback.~ It's closed by now. Future development is happening [here](https://github.com/git-for-windows/build-extra/tree/master/msi/).
 
 In the meantime you could try:
 
