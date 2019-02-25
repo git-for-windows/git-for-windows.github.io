@@ -89,6 +89,8 @@ The Microsoft Team Foundation Server is capable of hosting git repositories. If 
 
 In order to instruct git to use domain authentication, prefix the server name with `:@`, like so: `http://:@server.example.com:8080/tfs/TWA/TeamDev/_git/reponame`. This is a special case of the usual `username:password@server` syntax, where both the `username` and `password` fields are empty. This causes git to look up and use your domain credentials.
 
+See also: [Clone an existing Git repo - Azure Repos](https://docs.microsoft.com/en-us/azure/devops/repos/git/clone)
+
 ## I get "Permission denied (publickey)." when using git pull
 
 Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcceptedKeyTypes ssh-dss" to ~/.ssh/config helps.
