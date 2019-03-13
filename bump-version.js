@@ -16,7 +16,7 @@ var updateVersion = function(version, tag, timestamp, url) {
 	var regex = /<div class="version">.*?<\/div>/gm;
 	var replacement = '<div class="version"><a href="' + url
 		+ '" title="Version ' + version + ' was published on '
-		+ timestamp + '">Version ' + version + '</a></div>';
+		+ timestamp + '" tabindex="3">Version ' + version + '</a></div>';
 	fs.writeFile('latest-version.txt', version);
 	fs.writeFile('latest-tag.txt', tag);
 	fs.readFile('index.html', 'utf8', function (err, data) {
