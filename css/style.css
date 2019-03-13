@@ -247,8 +247,8 @@ div.version {
 	margin-top: 0;
 }
 
-.details p a {
-	color: #A3CFFF;
+.details p a, .bottom-left-link {
+	color: #8dfcd7;
 	text-decoration: underline;
 }
 
