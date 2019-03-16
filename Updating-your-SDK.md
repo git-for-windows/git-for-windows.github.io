@@ -2,23 +2,23 @@
 
 The [Git for Windows SDK release](https://github.com/git-for-windows/build-extra/releases/latest) is a self extracting and auto executing 7-zip archive that clones the latest version of files in [Git for Windows SDK 64 repository](https://github.com/git-for-windows/git-sdk-64`) using a temporary bundled git. For the [32 bit version](https://github.com/git-for-windows/git-sdk-32`) it also performs a run time optimisation on cloned DLLs (rebase).
 
-This was previously called the 'net installer', see below. It provides everyhting required to bootstrap a development environment, even if no git is available (or a unstable one is being worked on).
+This was previously called the 'net installer', see below. It provides everything required to bootstrap a development environment, even if no git is available (or a unstable one is being worked on).
 
 It is also possible to manually extract the archive and then run `./setup-git-sdk.bat` in the Msys2 terminal window.
  
-Alternatively, you can also clone your own copy of the 64 bit SDK with `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste) (See #816).
+Alternatively, you can also clone your own copy of the 64 bit SDK with `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste) (See #816). The repository contains exes and DLLS so you should run the rebase script for the 32 bit version.
 
-The SDK contains core parts of MSYS2'Runtime, MinGW, 'pacman' and 'gnupg' packages, carefully selected to
-keep the size small yet still allowing to use the Pacman package manager to initialize a full-fledged MSYS2 environment
+The SDK contains core parts of MSYS2 Runtime, MinGW, 'pacman' and 'gnupg' packages, carefully selected to
+keep the size small yet still allowing use of the 'pacman' package manager to initialize a full-fledged MSYS2 environment
 plus Git for Windows' packages.
 
 # Updating the installed SDK
 
 To keep the SDK up-to-date, periodically run
 
-	pacman -Syuu
-	# If core-packages are updated during that call you are promted to
- 	# restart MSYS2 with exiting back to the shell.
+	pacman -Syu
+	# If core-packages are updated by this you are promted
+ 	# to restart MSYS2 without exiting back to the shell.
 	# Follow these instructions and repeat:
 	pacman -Syu
 
