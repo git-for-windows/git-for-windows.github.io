@@ -1,50 +1,31 @@
-# Get your own copy of the SDK
+# Installing the SDK
 
-You can initialize your own copy of the SDK via `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste). [#816](https://github.com/git-for-windows/git/issues/816)
+The [Git for Windows SDK release](https://github.com/git-for-windows/build-extra/releases/latest) is a self extracting and auto executing 7-zip archive that clones the latest version of files in [Git for Windows SDK 64 repository](https://github.com/git-for-windows/git-sdk-64`) using a temporary bundled git. For the [32 bit version](https://github.com/git-for-windows/git-sdk-32`) it also performs a run time optimisation on cloned DLLs (rebase).
 
+This was previously called the 'net installer', see below. It provides everyhting required to bootstrap a development environment, even if no git is available (or a unstable one is being worked on).
 
-****
+It is also possible to manually extract the archive and then run `./setup-git-sdk.bat` in the Msys2 terminal window.
+ 
+Alternatively, you can also clone your own copy of the 64 bit SDK with `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste) (See #816).
 
-
-Extract from the [Git for Windows SDK release page](https://github.com/git-for-windows/build-extra/releases/latest). Note the Caution parts! 
-
-# The SDK 'net installer'
-
-The SDK 'net installer' is a self-extracting archive containing a minimal
-set of files needed to bootstrap an entire development environment to
-compile and run Git for Windows.
-
-When run as executable, it automatically runs [`setup-git-sdk.bat`](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat) after
-extracting the files. Users who prefer to unpack the archive manually
-with 7-Zip need to run that batch file manually, too. The script is
-extensively commented to assist in understanding the installation process
-and issues.
-
-The files contained in the net installer are parts of MSYS2's
-'msys2-runtime', 'pacman' and 'gnupg' packages, carefully selected to
-keep the size of the installer small yet still allowing to use the
-Pacman package manager to initialize a full-fledged MSYS2 environment
+The SDK contains core parts of MSYS2'Runtime, MinGW, 'pacman' and 'gnupg' packages, carefully selected to
+keep the size small yet still allowing to use the Pacman package manager to initialize a full-fledged MSYS2 environment
 plus Git for Windows' packages.
 
-The bootstrap script needs to force-install the packages because the net
-installer comes without any package information and Pacman would
-therefore refuse to overwrite the files from above-mentioned packages.
+# Updating the installed SDK
 
-# To keep the development environment up-to-date
-
-To keep the development environment up-to-date, developers need to run
+To keep the SDK up-to-date, periodically run
 
 	pacman -Syuu
-	# If core-packages are updated during that call you MUST restart MSYS2,
-	# follow instructions and repeat.
+	# If core-packages are updated during that call you are promted to
+ 	# restart MSYS2 with exiting back to the shell.
+	# Follow these instructions and repeat:
 	pacman -Syu
 
-from time to time.
-
-### Caution (update-core)
+## Explanation
 
 Core packages like the `msys2-runtime`, `bash` or `pacman` itself should be updated
-via the `pacman -Syuu` command [was X`update-core` script X]. Because those core packages are linked to the
+with the `pacman -Syu` command [was X`update-core` script X]. Because those core packages are linked to the
 `msys2-runtime` (and each other), and updating the runtime "in flight" results most
 often in heap corruption as far as MSYS2 is concerned.
 
@@ -52,7 +33,7 @@ The old `update-core` script has been retired, see https://github.com/msys2/MSYS
 
 ## Alternative Method
 
-An alternative method is to start `git-cmd.exe` and run `pacman -Sy --needed msys2-runtime` and `pacman -S --needed pacman bash`, because that ensures that no obsolete binary continues to be used after the
+An alternative method is to start `git-cmd.exe` from within the MSYS2 shell and run `pacman -Sy --needed msys2-runtime && pacman -S --needed pacman bash`. This ensures that no obsolete binary continues to be used after the
 update.
 
 ### See Also:
