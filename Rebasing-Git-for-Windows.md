@@ -10,6 +10,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
     `cd /usr/src/build-extra`  
     `git fetch`  
     `git checkout master`
+    (`git pull` if your branch is behind the upstream)
 3. Working directory set to current *Git for Windows* source.  
     `cd /usr/src/git`
 4. Added [upstream](https://github.com/git/git) as a remote.  
@@ -22,6 +23,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 2. Run the `shears.sh` script to build up the actual *rebase* script.  
     `../build-extra/./shears.sh --merging --onto v2.3.4 $BASE`  
     Note: `v2.3.4` is a `tag` in the remote `git`.
+    See the script if you are testing changes initiated in a local branch of the git upstream.
 3. The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts and then continue the rebase.  
     `git rebase --continue`
 
