@@ -19,10 +19,13 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 
 # Starting the *rebase*
 1. Find the commit of the last *rebase* and remember it.  
-    `BASE="$(git rev-parse ":/Start the merging-rebase")"`
+    `BASE="$(git rev-parse ":/Start the merging-rebase")"` or possibly  
+    `BASE="$(git rev-parse HEAD^{"/Start the merging-rebase}")"` if there have been  
+    trial merging rebases on other branches. Check with  
+    `git log -1 $BASE` and `git branch -a --contains $BASE`.
 2. Run the `shears.sh` script to build up the actual *rebase* script.  
     `../build-extra/./shears.sh --merging --onto v2.3.4 $BASE`  
-    Note: `v2.3.4` is a `tag` in the remote `git`.
+    Note: `v2.3.4` is a `tag` in the remote `git`.  
     See the script if you are testing changes initiated in a local branch of the git upstream.
 3. The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts and then continue the rebase.  
     `git rebase --continue`
@@ -40,3 +43,5 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
     >So meta.  
     >When there is a line that starts with a `-` or a `+` but then continues with a space, that's good!  
     >It means that the context of our changes changed.
+
+The newer `git range-diff` may also be used.
