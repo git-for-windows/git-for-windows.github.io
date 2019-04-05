@@ -3,6 +3,8 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 # Assumptions
 1. You want to *rebase* onto a new [upstream](https://github.com/git/git) release tagged as `v2.3.4`
 2. The latest *rebase* was done onto a [upstream](https://github.com/git/git) release tagged as `v2.3.3`
+3. the `origin/master` below means remote https://github.com/git-for-windows/git, its `master` branch.   
+   You may have them named differently.  
 
 # Preconditions
 1. A working [Git for Windows SDK](https://gitforwindows.org/#download-sdk).
