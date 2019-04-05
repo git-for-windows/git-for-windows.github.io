@@ -15,7 +15,8 @@ The documentation is terse, so let's also point to some on-line articles:
 * [Are there any downsides to enabling git rerere?](https://stackoverflow.com/q/5519244/717355) Not really, but read and learn.
 * [7.9 Git Tools (book) - Rerere](https://git-scm.com/book/en/v2/Git-Tools-Rerere).
 
-So, enable `rerere` - `git config --global rerere.enabled true`.
+So, enable `rerere` - `git config --global rerere.enabled true`,  
+consider setting `git config --global rerere.autoupdate true` and away you go!
 
 Determine a previous Git-for-Windows merging-rebase end points and run the `contrib/rerere-train.sh`
 
