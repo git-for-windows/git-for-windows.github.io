@@ -27,7 +27,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
     `../build-extra/./shears.sh --merging --onto v2.3.4 $BASE`  
     Note: `v2.3.4` is a `tag` in the remote `git`.  
     See the script if you are testing changes initiated in a local branch of the git upstream.
-3. The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts and then continue the rebase.  
+3. The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts (see also [Merge Conflicts Resolving and Remembering them](https://github.com/git-for-windows/git/wiki/Merge-Conflicts---Resolving-and-Remembering-them)) and then continue the rebase.  
     `git rebase --continue`
 
 # Verifying the *rebase*
