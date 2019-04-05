@@ -13,10 +13,13 @@ The documentation is terse, so let's also point to some on-line articles:
 * [Do you even rerere?](https://blog.theodo.fr/2015/01/do-you-even-rerere/) Good discussion, including `rerere-train`.
 * [rerere-train.sh](https://github.com/git/git/blob/master/contrib/rerere-train.sh) use the 'blame' button for extra commit info.
 * [Are there any downsides to enabling git rerere?](https://stackoverflow.com/q/5519244/717355) Not really, but read and learn.
+* [Smarter rebase avoiding redundant work?](https://stackoverflow.com/q/10601541/717355) more rerere-train answers
 * [7.9 Git Tools (book) - Rerere](https://git-scm.com/book/en/v2/Git-Tools-Rerere).
 
 So, enable `rerere` - `git config --global rerere.enabled true`,  
 consider setting `git config --global rerere.autoupdate true` and away you go!
 
 Determine a previous Git-for-Windows merging-rebase end points and run the `contrib/rerere-train.sh`
+
+Remember the parameters passed to rerere-train are `<rev-list-args>` (apparently) for selecting the training set.
 
