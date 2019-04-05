@@ -9,8 +9,8 @@ The magic is in the [REuse REcorded REsolution (rerere)](https://git-scm.com/doc
 
 The documentation is terse, so let's also point to some on-line articles:
 * [Fun with rerere](https://gitster.livejournal.com/41795.html) from the Git maintainer
-* [Fix conflicts only once with git rerere](https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67)
-* [Do you even rerere?](https://blog.theodo.fr/2015/01/do-you-even-rerere/)
+* [Fix conflicts only once with git rerere](https://medium.com/@porteneuve/fix-conflicts-only-once-with-git-rerere-7d116b2cec67) Nice graphs and examples.
+* [Do you even rerere?](https://blog.theodo.fr/2015/01/do-you-even-rerere/) Good discussion, including `rerere-train`.
 * [rerere-train.sh](https://github.com/git/git/blob/master/contrib/rerere-train.sh) use the 'blame' button for extra commit info.
 * [Are there any downsides to enabling git rerere?](https://stackoverflow.com/q/5519244/717355) Not really, but read and learn.
 * [7.9 Git Tools (book) - Rerere](https://git-scm.com/book/en/v2/Git-Tools-Rerere).
