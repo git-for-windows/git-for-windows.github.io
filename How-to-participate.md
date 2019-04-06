@@ -6,11 +6,14 @@ On [the mailing list](http://groups.google.com/group/git-for-windows) or on [the
 
 # Add documentation
 
-A lot of documentation wants to be written, still. A good place is [the Git for Windows wiki](https://github.com/git-for-windows/git/wiki). Tutorials, step by step instructions and general background information, etc.
+A lot of documentation wants to be written, still. A good place is [the Git for Windows wiki](https://github.com/git-for-windows/git/wiki). Tutorials, step by step instructions and general background information, etc. Even just keep the links up to date and reporting inconsistencies is helpful.
 
 # Fix bugs or add features in the Git code itself
 
-Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
+Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. See the [CONTRIBUTING.md](https://github.com/git-for-windows/git/blob/master/CONTRIBUTING.md) page/file
+
+
+Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
 
 Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
 
