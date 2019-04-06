@@ -1,4 +1,4 @@
-Work in Progress as I try and work out how to do this (05-04-2019)..  
+Work in Progress as I try and work out how to do this (06-04-2019)..  
 
 When building a new release for Git-for-Windows, the full range of Windows patches the maintainer applies need to be moved ([`rebase`](https://git-scm.com/docs/git-rebase)d) from being on top of the old upstream Git, to being on top of the new upstream release. 
 
@@ -23,3 +23,10 @@ Determine a previous Git-for-Windows merging-rebase end points and run the `cont
 
 Remember the parameters passed to rerere-train are `<rev-list-args>` (apparently) for selecting the training set.
 
+### From the git List
+Threads about the internal workings:  
+
+[saving and replaying multiple variants with rerere](https://public-inbox.org/git/1442275050-30497-1-git-send-email-gitster@pobox.com/) 2015-09-14  
+[Should rerere auto-update a merge resolution?](https://public-inbox.org/git/CACPiFCJH7RSb_rz6M6ADuGi0q+oeWYhE1fNMQC0EUcCn_kCJwg@mail.gmail.com/) 2017-08-23  
+[rebase: use OPT_RERERE_AUTOUPDATE()](https://public-inbox.org/git/20190319190317.6632-4-phillip.wood123@gmail.com/#r) 2019-03-19  
+[git/Documentation/technical/rerere.txt](https://github.com/git/git/blob/master/Documentation/technical/rerere.txt)
