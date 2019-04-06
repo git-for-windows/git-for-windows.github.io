@@ -32,3 +32,18 @@ Threads about the internal workings:
 [git/Documentation/technical/rerere.txt](https://github.com/git/git/blob/master/Documentation/technical/rerere.txt) committed on 5 Aug 2018  
 [Make git-rerere a builtin](https://public-inbox.org/git/Pine.LNX.4.63.0612201738000.19693@wbgn013.biozentrum.uni-wuerzburg.de/) 2006-12-20 convert from a perl script    
 
+### Patch series, Rebase and Merge conflicts: When and where
+
+For the rerere (redo) database, it is worth taking a few moments to consider the difference between the conflict resolution that you would perform during a rebase when a patch fails to merge cleanly, and the conflict resolution for a merge. 
+
+For a subsequent rebase, of the repeating merging-rebase kind, it is easy to forget that the _patches_ being forward ported to the new base commit _already_ contain the previous resolution, so will not conflict next time, unless the upstream has changed, whereupon you have a _new_ conflict to resolve. 
+
+This partially extends to the merges _within_ the merging-rebase. If previous rebases have tidied the merging branches to avoid merge conflicts then there will be no resolutions to record. However if the cleanest approach was to resolve at merge, then the merge resolution can (should) be learned. Further, if you also had upstream changes and resolutions in the branches being merged, there may still be further residual merge resolutions to be performed. So unless the merges were clean then these are all **new** merge resolutions that should be learned (or relearned) for later reuse in redoing the next merging rebase.
+
+Moreover, if you are rebasing a series that has temporary merges from upstream or other independent side merges (?Cousins?), then these resolutions will need to be remembered for future merging-rebase is repeated (after dropping those merges from the 'todo' list)
+
+### merging-rebase, as used in Git for Windows.
+ 
+When upstream provides a tagged release, we create a commit with duplicated content tree (same oid hash) that has parents of: the upstream release and our _previous_ release. This 'fake merge', with commit message title `Start the merging-rebase`, along with its predecessor fake merge, provides anchors for the rebase of the patch series.
+
+A side effect is that, via the second parent line we have many repetitions of the same patch series when searching via `blame` or `grep`, or doing a `git bisect`. The effect can be mitigated by inserting a temporary `git replace` of the `Start the merging-rebase`merge commit, by its first (upstream) parent, making the merge disappear, along with all those historical duplicate patches. It becomes: upstream Git with Windows patches on top - simple. 
