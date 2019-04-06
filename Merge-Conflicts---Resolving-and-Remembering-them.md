@@ -29,4 +29,4 @@ Threads about the internal workings:
 [saving and replaying multiple variants with rerere](https://public-inbox.org/git/1442275050-30497-1-git-send-email-gitster@pobox.com/) 2015-09-14  
 [Should rerere auto-update a merge resolution?](https://public-inbox.org/git/CACPiFCJH7RSb_rz6M6ADuGi0q+oeWYhE1fNMQC0EUcCn_kCJwg@mail.gmail.com/) 2017-08-23  
 [rebase: use OPT_RERERE_AUTOUPDATE()](https://public-inbox.org/git/20190319190317.6632-4-phillip.wood123@gmail.com/#r) 2019-03-19  
-[git/Documentation/technical/rerere.txt](https://github.com/git/git/blob/master/Documentation/technical/rerere.txt)
+[git/Documentation/technical/rerere.txt](https://github.com/git/git/blob/master/Documentation/technical/rerere.txt) committed on 5 Aug 2018  
