@@ -30,7 +30,9 @@ Threads about the internal workings:
 [Should rerere auto-update a merge resolution?](https://public-inbox.org/git/CACPiFCJH7RSb_rz6M6ADuGi0q+oeWYhE1fNMQC0EUcCn_kCJwg@mail.gmail.com/) 2017-08-23  
 [rebase: use OPT_RERERE_AUTOUPDATE()](https://public-inbox.org/git/20190319190317.6632-4-phillip.wood123@gmail.com/#r) 2019-03-19  
 [git/Documentation/technical/rerere.txt](https://github.com/git/git/blob/master/Documentation/technical/rerere.txt) committed on 5 Aug 2018  
-[Make git-rerere a builtin](https://public-inbox.org/git/Pine.LNX.4.63.0612201738000.19693@wbgn013.biozentrum.uni-wuerzburg.de/) 2006-12-20 convert from a perl script    
+[git rerere unresolve file](https://public-inbox.org/git/200911211958.40872.j6t@kdbg.org/) 2009-11-21 patch series  
+[Make git-rerere a builtin](https://public-inbox.org/git/Pine.LNX.4.63.0612201738000.19693@wbgn013.biozentrum.uni-wuerzburg.de/) 2006-12-20 convert from a perl script  
+[Add a test for git-rerere](https://public-inbox.org/git/Pine.LNX.4.63.0612201737190.19693@wbgn013.biozentrum.uni-wuerzburg.de/) 2006-12-20  
 
 ### Patch series, Rebase and Merge conflicts: When and where
 
