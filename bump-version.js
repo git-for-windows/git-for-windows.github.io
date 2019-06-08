@@ -17,13 +17,13 @@ var updateVersion = function(version, tag, timestamp, url) {
 	var replacement = '<div class="version"><a href="' + url
 		+ '" title="Version ' + version + ' was published on '
 		+ timestamp + '">Version ' + version + '</a></div>';
-	fs.writeFile('latest-version.txt', version);
-	fs.writeFile('latest-tag.txt', tag);
+	fs.writeFileSync('latest-version.txt', version);
+	fs.writeFileSync('latest-tag.txt', tag);
 	fs.readFile('index.html', 'utf8', function (err, data) {
 		if (err)
 			die(err);
 		data = data.replace(regex, replacement);
-		fs.writeFile('index.html', data);
+		fs.writeFileSync('index.html', data);
 	});
 };
 
