@@ -7,19 +7,19 @@
 
 var fs = require('fs');
 
-var die = function(err) {
+var die = (err) => {
 	process.stderr.write(err + '\n');
 	process.exit(1);
 };
 
-var updateVersion = function(version, tag, timestamp, url) {
+var updateVersion = (version, tag, timestamp, url) => {
 	var regex = /<div class="version">.*?<\/div>/gm;
 	var replacement = '<div class="version"><a href="' + url
 		+ '" title="Version ' + version + ' was published on '
 		+ timestamp + '">Version ' + version + '</a></div>';
 	fs.writeFileSync('latest-version.txt', version);
 	fs.writeFileSync('latest-tag.txt', tag);
-	fs.readFile('index.html', 'utf8', function (err, data) {
+	fs.readFile('index.html', 'utf8', (err, data) => {
 		if (err)
 			die(err);
 		data = data.replace(regex, replacement);
@@ -27,28 +27,28 @@ var updateVersion = function(version, tag, timestamp, url) {
 	});
 };
 
-var autoUpdate = function() {
-	Array.prototype.lastElement = function() {
+var autoUpdate = () => {
+	Array.prototype.lastElement = () => {
 		return this[this.length - 1];
 	}
 
-	Array.prototype.filterRegex = function(regex) {
-		return this.map(function(value) {
+	Array.prototype.filterRegex = (regex) => {
+		return this.map((value) => {
 			var match = value.match(regex);
 			if (!match)
 				return undefined;
 			return match.lastElement();
-		}).filter(function (value) {
+		}).filter((value) => {
 			return value !== undefined;
 		});
 	};
 
-	Array.prototype.findFirst = function(regex) {
+	Array.prototype.findFirst = (regex) => {
 		var matches = this.filterRegex(regex);
 		return matches && matches[0];
 	};
 
-	var determineVersion = function(body) {
+	var determineVersion = (body) => {
 		var release = JSON.parse(body),
 			versionRegex = /^v(\d+\.\d+\.\d+(\.\d+)?)\.windows\.(\d+)/,
 			timeRegex = /^(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z$/,
@@ -82,13 +82,13 @@ var autoUpdate = function() {
 		'headers': {
 			'User-Agent': 'Git for Windows version updater'
 		}
-	}, function(res) {
+	}, (res) => {
 		if (res.statusCode != 200)
 			die(res);
-		res.on('data', function(data) {
+		res.on('data', (data) => {
 			https.body += data.toString();
 		});
-		res.on('end', function() {
+		res.on('end', () => {
 			var result = determineVersion(https.body);
 			updateVersion(result[0], result[1], result[2], result[3]);
 		});
