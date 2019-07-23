@@ -28,7 +28,7 @@ In some cases, the change you want to make is not in git itself, but in the addi
 
 You can build both a normal setup installer and a portable one.
 
-The installers are basically created by collecting files from the `Git for Windows SDK` Msys environment, not from any checked out source code! It's therefore important to make any changed files available to the installer (the `make` calls in the "Hacking on git" step)!
+The installers are basically created by collecting files from the `Git for Windows SDK` Msys environment, not from any checked out source code! It's therefore important to make any changed files available to the installer (the `make` calls in the "[Hacking on git](https://github.com/git-for-windows/git/wiki/Technical-overview#hacking-on-git)" step)!
 
 As a one time step, you need to prepare the extra files which contain the helper scripts:
 
