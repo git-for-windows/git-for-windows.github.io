@@ -39,3 +39,11 @@ The privilege of `Create symbolic links` can be assigned using local policy edit
 - Polsedit: Launch `polseditx32.exe` or `polseditx64.exe` (depending on your Windows version), navigate to `Security Settings - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
 
 Note that regardless of privilege assignment, members of the Administrators group will also require UAC elevation (see the full details in the *Access Token Changes* section in this [document on UAC](https://msdn.microsoft.com/en-us/library/bb530410.aspx)). Since Windows 10 version 1703 (*Creators Update*), [enabling Developer Mode](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) will disable this restriction and [allow creating symlinks without UAC elevation](https://blogs.windows.com/buildingapps/2016/12/02/symlinks-windows-10/) (although Git for Windows still requires UAC elevation up to and including v2.13.0).
+
+# Creating directory junctions
+
+Directory junctions can be created by non-administrator users by default. Therefore, they are a popular alternative to symbolic links. To create a directory junction, use the `mklink` command with the `/j` option:
+
+```cmd
+mklink /j this-link-points-to c:\that-directory
+```
