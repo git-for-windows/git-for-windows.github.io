@@ -15,7 +15,7 @@ Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. See t
 
 Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
 
-Please also sign off your work, as [asked by the Git project](https://github.com/git/git/blob/v2.3.5/Documentation/SubmittingPatches#L234-L286)
+Please also sign off your work, as [asked by the Git project](https://git-scm.com/docs/SubmittingPatches#sign-off)
 
 After that, submit a Pull Request.
 
