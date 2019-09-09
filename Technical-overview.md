@@ -1,4 +1,4 @@
-The process to build installer is made easy via the `Git for Windows SDK`. The steps are basically:
+The process to build an instance of the Git for Windows installer is made easier with the `Git for Windows SDK`. Basically, the steps are as follows:
 
 1. Download and install the SDK, which installs the sources for `git`, additional msys and mingw packages, and helpers to build the installer. It also provides the `Git for Windows SDK` MSys shell
 2. [optional] Hack in the changes you want and make these changes available to the installer.
