@@ -1,1 +1,1 @@
-v2.23.0.windows.1
+v2.24.0.windows.1
