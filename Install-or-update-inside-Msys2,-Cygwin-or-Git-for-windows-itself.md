@@ -2,6 +2,8 @@
 
 Instead of configuring and installing `Git-for-windows` using `Pacman`, this guide introduces another approach to properly install or update `git-for-windows` inside `Msys2`, `Cygwin` or even `Git-for-windows` itself. The only thing you need is a `bash` interpreter on windows and a `curl`.
 
+## How to
+
 With the script `getgit` introduced by [git-for-windows/build-extra#261](https://github.com/git-for-windows/build-extra/pull/261), you can download and run the script or just run `curl https://raw.githubusercontent.com/git-for-windows/build-extra/gitupdate/git-extra/getgit | bash`.
 
 The script would gather information about the current system ( *Msys / Cygwin* ), bitness, version of an already existed git-for-windows, version of the latest released git-for-windows... and then forge a proper download URL targeting a proper version of the `PortableGit` installer.
