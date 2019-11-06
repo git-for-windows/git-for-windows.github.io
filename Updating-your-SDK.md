@@ -4,7 +4,7 @@ The [Git for Windows SDK release](https://github.com/git-for-windows/build-extra
 
 This was previously called the 'net installer', see below. It provides everything required to bootstrap a development environment, even if no git is available (or a unstable one is being worked on).
 
-It is also possible to manually extract the archive and then run `./setup-git-sdk.bat` in the Msys2 terminal window.
+It is also possible to manually extract the archive and then run `./setup-git-sdk.bat` in the MSYS2 terminal window.
  
 Alternatively, you can also clone your own copy of the 64 bit SDK with `git clone --depth=1 https://github.com/git-for-windows/git-sdk-64` (or `...-32` for 32-bit)... (select depth to taste) (See #816). The repository contains exes and DLLS so you should run the rebase script for the 32 bit version.
 
