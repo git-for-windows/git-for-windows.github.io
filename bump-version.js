@@ -59,7 +59,7 @@ var autoUpdate = () => {
 			version = match[1];
 
 			if (parseInt(match[3]) > 1) {
-				version += '(' + match[3] + ')';
+				version += '.' + match[3];
 			}
 
 			match = release.published_at.match(timeRegex);
