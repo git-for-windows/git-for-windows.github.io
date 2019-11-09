@@ -26,7 +26,7 @@ Users may need to directly manipulate the mode bits where necessary - the [stack
 
 # core.FileMode
 
-The core.FileMode configuration records, for the locally cloned repository, the local file system semantics (i.e. is it case sensitive / case preserving or not). DO NOT change this, unless it is actually set wrong. Git will trust this setting and miss-setting it may cause unexpected effects and damage - Don't do it, the internet, as ever, is probably wrong.
+The core.FileMode configuration records, for the locally cloned repository, the local file system semantics (i.e. is it case sensitive / case preserving or not). DO NOT change this, unless it is actually set wrong. Git will trust this setting and mis-setting it may cause unexpected effects and damage - Don't do it, the internet, as ever, is probably wrong.
 
 From https://git-scm.com/docs/git-config#git-config-corefileMode
 > Tells Git if the executable bit of files in the working tree is to be honored.
