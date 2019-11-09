@@ -68,7 +68,7 @@ These often 'fix' (or attempt fixes) recent issues before a new formal release. 
 
 *Git for Windows* defaults to using [mintty](https://code.google.com/p/mintty/) terminal. Compared to default Windows console host, it provides normal multi-line cut&paste, working resizing, defaults to unicode font and avoids some bugs in the default console host. However it does not present itself as console to native applications (those *not* built with MSys or Cygwin), so in these applications:
 
- * Non-ascii output may be corrupted due to mismatch in character sets (MSys and Cygwin use utf-8 while Windows will fall back to the legacy dos codepages in this case).
+ * Non-ASCII output may be corrupted due to mismatch in character sets (MSYS2 and Cygwin use UTF-8 while Windows will fall back to the legacy DOS codepages in this case).
  * Interactive and full-screen applications won't work at all.
 
 There are several methods for working around these problems:
