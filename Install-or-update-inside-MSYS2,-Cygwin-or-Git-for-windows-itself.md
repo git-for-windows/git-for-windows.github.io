@@ -4,7 +4,7 @@ Instead of configuring and installing `Git-for-windows` using `Pacman`, this gui
 
 ## How to
 
-With the script `getgit` introduced by [git-for-windows/build-extra#261](https://github.com/git-for-windows/build-extra/pull/261), you can download and run the script or just run `curl https://raw.githubusercontent.com/git-for-windows/build-extra/gitupdate/git-extra/getgit | bash`.
+With the script `getgit` introduced by [git-for-windows/build-extra#261](https://github.com/git-for-windows/build-extra/pull/261), you can download and run the script or just run `curl https://raw.githubusercontent.com/git-for-windows/build-extra/master/git-extra/getgit | bash`.
 
 The script would gather information about the current system ( *Msys / Cygwin* ), bitness, version of an already existed git-for-windows, version of the latest released git-for-windows... and then forge a proper download URL targeting a proper version of the `PortableGit` installer.
 With all the information prepared, the script would download the installer and unpack it to `/tmp`. After that, all the necessary files will be copied to a proper place inside the ( *Msys's / Cygwin's* ) file system without touching any existing **non-git-for-windows-exclusive** files.
