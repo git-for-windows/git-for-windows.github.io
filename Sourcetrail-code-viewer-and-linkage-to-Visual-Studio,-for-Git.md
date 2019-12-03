@@ -1,4 +1,4 @@
-[Sourcetrail](https://www.sourcetrail.com) is an interactive source explorer that simplifies navigation in existing source code. It is [now open source](https://www.sourcetrail.com/blog/open_source/).
+[Sourcetrail](https://www.sourcetrail.com) is an interactive source explorer that simplifies navigation in existing source code. It is [now open source](https://www.sourcetrail.com/blog/open_source/). You can support them on Patreon.
 
 This note is a quick start to setting up a Sourcetrail project for exploring the Git source code in conjunction with Visual Studio. Source trail is configurable and some parameter need to be set on initial project setup.  
 
@@ -21,12 +21,13 @@ Now let's create the Sourcetrail project
 3. Switch back to Sourcetrail "New Source Group" window.
 
 Headers & directories to index: click 'select from Compilation database', then tick './' only (leave all the 'Windows Kits' unchecked). scroll down, "exluded's" left blank; 
-"additional compile flags" selecting the scribble pen icon, paste in the "Preprocessor Definitions" (one per line) prepared above.
+"Additional Compile Flags" selecting the scribble pen icon, paste in the "Preprocessor Definitions" (one per line) prepared above. 
 Next
 
-(flicks back to the New Project dialog, but as it is still selecting the source groups (C/C++ from Comp Db) its looks unchanged), select "General" in top left side, and update the project name to (e.g.) "Git_sourcetrail". location is "ok C:/git-sdk-64/usr/src/git".
-"Create" !
-switch back to the other Sourcetrail window (now active, with a fresh blue 'start Indexing' dialog). "All files" (dot in circle) should already be selected.
-Click 'Start', wait ~one minute (00:01:38).
+(flicks back to the New Project dialog, but as it is still selecting the source groups (C/C++ from Compilation Database) its looks unchanged), 
+select "General" in top left side, and update the project name to (e.g.) "Git_sourcetrail". Location is usually ok e.g."C:/git-sdk-64/usr/src/git".
+"Create" ! 
+switch back to the other Sourcetrail window (now active, with a fresh blue 'start Indexing' dialog). "All files" (dot in circle) should already be selected. 
+Click 'Start', wait ~one minute (00:01:38). 
 
 Should work.
