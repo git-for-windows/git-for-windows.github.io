@@ -1,3 +1,7 @@
+# **Please note that this scenario is not officially supported by Git for Windows**
+
+(The reason this is unsupported is that there are no volunteers to support that scenario.)
+
 **This guide assumes that you want the 64-bit version of Git for Windows.**
 
 Git for Windows being based on MSYS2, it's possible to install the `git` package into an existing MSYS2 installation. That means that if you are already using MSYS2 on your computer, you can use Git for Windows without running the full installer or using the portable version.
