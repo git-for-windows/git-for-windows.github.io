@@ -33,3 +33,8 @@ You can use the `prove` tool (which *mostly* works reliably, sometimes you will 
 ```sh
 prove --timer --jobs 15 ./t[0-9]*.sh
 ```
+
+
+# Browsing the code
+
+You can also use the Sourcetrail code browser (now open source) in conjunction with Visual Studio, see [Sourcetrail code viewer](https://github.com/git-for-windows/git/wiki/Sourcetrail-code-viewer-and-linkage-to-Visual-Studio,-for-Git) page.
