@@ -10,24 +10,26 @@ This note is a quick start to setting up a Sourcetrail project for exploring the
 
 For Git, Sourcetrail will need it's pre-processor dependencies which are numerous, so let's extract them from Visual Studio. We need to collect the main preprocessor directives from `libgit` (which everything depends on) and `git`.
 
-1. Browse the VS project properties. Find the C/C++ tab list, open find 'Preprocessor', then (see top of list) "Preprocessor Definitions" with a long list of ";" separated values. Copy them for both `git` and `libgit`. 
-2. Change ";" to "\n-D " (i.e. newline then -D ), with a `-D ` for the first value as well, etc.
-3. Add `-std=C99` and `-nologo` options to the option list, which now should be one per line.
-4. don't worry about duplicates. Internally Sourcetrail uses a Clang compiler with a 'last one wins' where required.
+1. Browse the VS project properties. Find the `C/C++` tab list, open, find 'Preprocessor', then (see top of list) "Preprocessor Definitions" with a long list of ";" separated values. Copy them for both `git` and `libgit` into your favourite editor. 
+2. Change ";" to "\n-D " (i.e. newline then -D ), with a `-D ` for the first value from each original line as well, etc.
+3. Remove the "-D %(additional..)" lines.
+4. Add `-std=c99` and `-nologo` options to the end of the option list, which now should be one per line.
+5. Don't worry about duplicates. Internally Sourcetrail uses a Clang compiler with a 'last one wins' where required.
 
 Now let's create the Sourcetrail project
 1. Open Sourcetrail. Leave at the initial prompt.
 2. In VS, from the Sourcetrail menu, export the compile database, selecting C99 standard.
 3. Switch back to Sourcetrail "New Source Group" window.
 
-Headers & directories to index: click 'select from Compilation database', then tick './' only (leave all the 'Windows Kits' unchecked). scroll down, "exluded's" left blank; 
-"Additional Compile Flags" selecting the scribble pen icon, paste in the "Preprocessor Definitions" (one per line) prepared above. 
-Next
+4. "Headers & directories to index": click 'select from Compilation database', then tick './' only (leave all the 'Windows Kits' unchecked). scroll down, "exluded's" left blank; Next.
 
-(flicks back to the New Project dialog, but as it is still selecting the source groups (C/C++ from Compilation Database) its looks unchanged), 
-select "General" in top left side, and update the project name to (e.g.) "Git_sourcetrail". Location is usually ok e.g."C:/git-sdk-64/usr/src/git".
-"Create" ! 
-switch back to the other Sourcetrail window (now active, with a fresh blue 'start Indexing' dialog). "All files" (dot in circle) should already be selected. 
-Click 'Start', wait ~one minute (00:01:38). 
+(flicks back to the New Project dialog, but as it is still selecting the source groups (C/C++ from Compilation Database) its looks unchanged),
+ 
+5. scroll down, "Additional Compile Flags" selecting the scribble pen icon, paste in the "Preprocessor Definitions" (one per line) prepared above. 
+6. select "General" in top left side, and update the project name to (e.g.) "Git_sourcetrail". Location is usually ok e.g."C:/git-sdk-64/usr/src/git".
+"Create" ! (or maybe Next)
+
+* switch back to the other Sourcetrail window (now active, with a fresh blue 'start Indexing' dialog). "All files" (dot in circle) should already be selected. 
+* Click 'Start', wait ~one minute (00:01:38). 
 
 Should work.
