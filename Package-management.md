@@ -1,6 +1,6 @@
-Modern software development relies heavily on a way to manage dependencies, i.e. to keep track of required software libraries and their versions. Examples are `apt-get` for Linux, `homebrew` for MacOSX, `Maven` for Java and `pip` for Python.
+Modern software development relies heavily on a way to manage dependencies, i.e. to keep track of required software libraries and their versions. Examples are `apt` for Linux, `homebrew` for macOS, `maven` for Java and `pip` for Python.
 
-Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles Arch Linux' [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool for dependency management.
+Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles the [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool (known from Arch Linux) for dependency management.
 
 # How to use `pacman`
 
@@ -65,10 +65,10 @@ pacman -Qo <file-name>
 If you want to rebuild a package, the first order of business is to know which repository has the metadata for the package. Git for Windows has three repositories containing such metadata:
 
 - [build-extra](https://github.com/git-for-windows/build-extra) contains the `git-extra` package information,
-- [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MinGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
+- [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MINGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
 - [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](Building-msys2-runtime)).
 
-To build MinGW packages, you need to start the appropriate `MinGW` shell (32-bit or 64-bit – this sets `MSYSTEM=MINGW32` or `MSYSTEM=MINGW64` respectively), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
+To build MINGW packages, you need to start the appropriate *MINGW* shell (32-bit or 64-bit – this sets `MSYSTEM=MINGW32` or `MSYSTEM=MINGW64` respectively), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg-mingw -s
@@ -76,7 +76,7 @@ makepkg-mingw -s
  
 (The `-s` flag tells `makepkg` that it should install dependencies automatically as needed)
 
-To build MSys packages, you need to start the `MSys` shell (e.g. `C:\git-sdk-64\msys2_shell.cmd -msys`, which sets `MSYSTEM=MSYS` before running the Bash), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
+To build MSYS packages, you need to start the *MSYS* shell (e.g. `C:\git-sdk-64\msys2_shell.cmd -msys`, which sets `MSYSTEM=MSYS` before running the Bash), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg -s
@@ -84,7 +84,7 @@ makepkg -s
 
 If you have modified any files (like `PKGBUILD`) you need to update the checksums using the `updpkgsums` command before running `makepkg` or `makepkg-mingw`.
 
-*Note*: Before building the first MSys package, as per [MSYS2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
+*Note*: Before building the first MSYS package, as per [MSYS2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
 
 ```sh
 pacman -Sy base-devel msys2-devel
@@ -99,7 +99,6 @@ makepkg-mingw --noextract --noprepare
 ```
 
 or
-
 
 ```bash
 makepkg --noextract --noprepare
