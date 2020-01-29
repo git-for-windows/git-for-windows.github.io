@@ -2,9 +2,7 @@
 The _Git for Windows_ wiki. It looks more technical than [our home page](https://gitforwindows.org/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
 
 ## About
-_Git for Windows_ is very different from _Git_ for almost everything else in one important respect: Windows does not provide the *POSIX* infrastructure Git expects.
-
-Therefore, it always had to ship with much more than any other Git distribution: provide a `bash`, a `perl`, many *POSIX* tools such as `sed`, `awk`, `tr`, etc.
+_Git for Windows_ is very different from _Git_ in one very important respect: As Windows does not provide the *POSIX* infrastructure Git expects, Git for Windows  always had to ship with much more than any other Git distribution: provide a `bash`, a `perl`, many *POSIX* tools such as `sed`, `awk`, `tr`, etc.
 
 Git for Windows 1.x did that by starting off from an [MSys](http://www.mingw.org/wiki/msys) installation and just packaging all the required files as-are. _MSys_ did not sport any package manager at the time, so all of the updates were quite manual, and some of the components we shipped were not even part of _MSys_ -- such as `msmtp` or `WhoUses` -- so we had to compile them from scratch, and maintain those components ourselves.
 
