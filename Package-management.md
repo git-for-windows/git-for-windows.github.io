@@ -28,7 +28,7 @@ pacman -Syu
 
 ### Updating `msys2-runtime`, `pacman` and `bash`
 
-As `pacman.exe` is itself an MSYS2 executable, it is strongly suggested to update `msys2-runtime` and `pacman` packages individually if they need to be updated, and let `pacman` quit *immediately* afterwards.
+As `pacman.exe` is itself an MSYS2 executable, it is strongly suggested to update `msys2-runtime`, `bash` and `pacman` packages separately from other packages if they need to be updated, and let `pacman` quit *immediately* afterwards.
 
 Likewise, if you run `pacman` from a `bash` -- an MSYS2 program, too -- you should quit the shell *immediately* (it might show an infinite stream of heap messages instead of quitting, requiring to be force-quit).
 
