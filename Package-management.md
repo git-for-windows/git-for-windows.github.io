@@ -128,33 +128,4 @@ perl -MCPAN -e shell
 
 Pacman repositories are served via HTTP, as static files in a single directory. The most important file in that directory is the *package index*, called `<name>.db.tar.xz` by convention. This package index can be updated via `repo-add <package-index> <package-file>...` (this updated *only* the package index, it does *not* copy the package files into the same directory). Pacman expects to find the package files referenced in the package index in the same directory as the index.
 
-The *Git for Windows*-specific packages are served from Bintray, see [below](#Bintray).
-We ship MSYS2 and MinGW packages for two architectures, [`i686`](https://dl.bintray.com/git-for-windows/pacman/i686/) and [`x86_64`](https://dl.bintray.com/git-for-windows/pacman/x86_64/).
-
-## Bintray
-
-[Bintray](https://bintray.com) hosts repositories of binary files, much like GitHub hosts repositories of source files. Git for Windows' binary files are [hosted on Bintray](https://bintray.com/git-for-windows/).
-
-Git for Windows' [most important repository hosted on Bintray](https://bintray.com/git-for-windows/pacman) contains the Pacman repositories [described above](#Repository_structure). The section to add to `pacman.conf` to access this repository is:
-
-```ini
-[git-for-windows]
-Server = https://dl.bintray.com/$repo/pacman/$arch
-SigLevel = Optional
-```
-
-## How to upload new versions (*Git for Windows* maintainers only)
-
-To upload new files, a maintainer needs to have permission to write to the `pacman` repository on Bintray. We have a helpful tool in the [`build-extra`](https://github.com/git-for-windows/build-extra) repository to assist in the process, called `pacman-mirror.sh`. After building a new package version (preferably for 32-bit *and* 64-bit), the tool should be used thusly:
-
-```bash
-/usr/src/build-extra/pacman-mirror.sh fetch
-/usr/src/build-extra/pacman-mirror.sh add \
-    /path/to/<package>-<version>-i686.pkg.tar.xz \
-    /path/to/<package>-<version>-x86_64.pkg.tar.xz
-/usr/src/build-extra/pacman-mirror.sh push
-```
-
-The `fetch` step will initialize or synchronize the local mirror of the Pacman repository, the `add` step will copy the packages into the appropriate location, and the `push` step will update the package index, and upload the packages that are not yet on Bintray as well as the package index.
-
-Note: The `pacman-mirror.sh` tool takes no precaution against simultaneous use. You *will* want to coordinate with your fellow maintainers to avoid running it at the same time as somebody else.
+The *Git for Windows*-specific packages are served by [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/), see below. We ship MSYS2 and MINGW packages for two architectures, `i686` and `x86_64`. Pacman is configured to use these in `/etc/pacman.conf`.
