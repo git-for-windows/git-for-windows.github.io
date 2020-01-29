@@ -84,7 +84,7 @@ makepkg -s
 
 If you have modified any files (like `PKGBUILD`) you need to update the checksums using the `updpkgsums` command before running `makepkg` or `makepkg-mingw`.
 
-*Note*: Before building the first MSYS package, as per [MSYS2's own documentation](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/) you need to install the development packages for development:
+*Note*: Before building the first MSYS package, as per [MSYS2's own documentation](https://github.com/msys2/msys2/wiki/Creating-Packages) you need to install the development packages for development:
 
 ```sh
 pacman -Sy base-devel msys2-devel
