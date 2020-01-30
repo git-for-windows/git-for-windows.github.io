@@ -1,3 +1,5 @@
+Git for Windows is essentially a subset of [MSYS2](https://msys2.github.io/) with a defined set of installed packages of which a subset is included in the installer.
+
 The process to build an instance of the Git for Windows installer is made easier with the `Git for Windows SDK`. Basically, the steps are as follows:
 
 1. Download and install the SDK, which installs the sources for `git`, additional msys and mingw packages, and helpers to build the installer. It also provides the `Git for Windows SDK` MSys shell
@@ -57,5 +59,6 @@ The last line of the log shows where the installer packages were created (usuall
 See also: 
 * [Debugging git](Debugging-Git) with gdb
 * Running Git's [regression tests](Running-Git's-regression-tests) 
-* Msys/Mingw [package management](Package-management#technical-details)
+* MSYS/MINGW [package management](Package-management#technical-details)
 * [Updating the SDK](https://github.com/git-for-windows/git/wiki/Updating-your-SDK)
+* [MSYS2](https://msys2.github.io/)
