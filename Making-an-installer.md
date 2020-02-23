@@ -33,3 +33,21 @@ git pull master
 ```
 
 where `<version>` is the Git version (please note that the `<version>` cannot contain dots after the numerical version: `2.7.2-hello-world` is okay while `2.7.2.hello.world` is not okay).
+
+# Why is this installer so much larger than the official installer?
+
+Short version: you will need to run `make strip` in `/usr/src/git` before `make install`, and you will also need to run to call `pacman -S git-extra` afterwards.
+
+## Why `make strip`?
+
+The `make strip` command removes the debug information from the `.exe` files. That is not quite the same as the official release process does: it calls `cv2pdb` which splits out the debug information from the `.exe` files into separate `.pdb` files, but that processing is not defined in `/usr/src/git/Makefile`, but instead in `/usr/src/MINGW-packages/mingw-w64-git/PKGBUILD`.
+
+## Why `pacman -S git-extra`?
+
+The `pacman -S git-extra` part is defined elsewhere yet: in `/usr/src/build-extra/please.sh`. Its purpose is to replace many hardlinked copies in `/mingw64/libexec/git-core/git-*.exe` with what Git for Windows calls the "Git wrapper": a small executable that does nothing else but call `git.exe` with the appropriate subcommand name.
+
+You see, many "built-in" commands are implemented right there in `git.exe`, with no need to actually execute anything else. For example, when you call `git show`, the show part is executed inside `git.exe` itself.
+
+This is in contrast to, say, `git send-email`, which actually executes `/mingw64/libexec/git-core/git-send-email` (a Perl script). For historical reasons, Git wants to provide also `git-show.exe` in `/mingw64/libexec/git-core/`, even if that is not at all necessary because the show command is a built-in command. Therefore, Git has this quirk where it first looks at the name of the executable via which it was called (e.g. if it was called via `/mingw64/libexec/git-core/git-show.exe`, it extracts the show part and knows that it should internally execute `git show` instead. And then, Git simply installs hardlinked copies of `git.exe` in `/mingw64/libexec/git-core/` for all built-in commands.
+
+Since they are hard-links, they only use a minuscule amount of disk space. However, too many Git for Windows users looked at the disk usage of those hard-linked copies using the Windows Explorer, which historically completely ignored the fact that hard-linked copies did not use additional disk space (apart from the directory entry). As a consequence, we had many reports that Git for Windows occupied way too much space. That was not true, of course, but those reports took so much time to address that it was easier to install the Git wrapper (which is copied, but it is tiny compared to git.exe).
