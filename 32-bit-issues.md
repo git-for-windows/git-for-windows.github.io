@@ -69,3 +69,19 @@ usr\bin\dash.exe  -c 'cd / && /usr/bin/dash.exe /usr/bin/rebaseall'
 ```
 
 These commands need to be executed in the top-level directory, and the address (0x67000000) might need to be adjusted.
+
+# What's with this `Cwd.dll` problem?
+
+Under some circumstances, `/usr/bin/rebaseall` seems not to rebase the Perl `.dll` files "enough", and the symptom is something like this:
+
+```
+      1 [main] perl 297 child_info_fork::abort: address space needed by 'Cwd.dll' (0x1D0000) is already occupied
+```
+
+A work-around that appears to help in most of those cases is to call
+
+```sh
+/usr/bin/rebase -b 0x63070000 /usr/lib/perl5/core_perl/auto/*/{*,*/*}.dll
+```
+
+Your mileage may vary: it might be necessary to play with the base address a bit.
