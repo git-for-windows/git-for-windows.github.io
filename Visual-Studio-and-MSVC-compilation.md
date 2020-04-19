@@ -16,21 +16,21 @@ The main remaining issue is to include the auto post-build steps to install the 
 Acronyms
 --------
 
-###MSVC (Micro Soft Visual studio Compiler)
+### MSVC (Micro Soft Visual studio Compiler)
 MSVC is used to refer to Microsoft's compiler that lies beneath the VS IDE. Exactly what is compiled, and where it is targeted depends on the normal pre-processor #defines and #includes. MSVC already includes a number of pre-defined windows library functions.
 
-###VSyyyy IDE (Visual Studio (some year) Integrated Development Environment
+### VSyyyy IDE (Visual Studio (some year) Integrated Development Environment
 The full windows treatment of the graphics front end which allows the navigation of your source code within its own project.
 
-###GIT_WINDOWS_NATIVE
+### GIT_WINDOWS_NATIVE
 This is the environment variable used to indicate that this is not a CYGWIN compilation, but that we are in Windows land.
 
-###WIN32_LEAN_AND_MEAN
+### WIN32_LEAN_AND_MEAN
 see https://blogs.msdn.microsoft.com/oldnewthing/20091130-00/?p=15863 This controls what additional libraries windows will import, particularly winsock which would otherwise be multiply defined.
 
-###MSYS2
+### MSYS2
 part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2)
 
-###MinGW
+### MinGW
 part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2)
 
