@@ -2,7 +2,7 @@
 
 The [Git for Windows SDK release](https://github.com/git-for-windows/build-extra/releases/latest) is a self extracting and auto executing 7-zip archive that clones the latest version of files in [Git for Windows SDK 64 repository](https://github.com/git-for-windows/git-sdk-64`) using a temporary bundled git. For the [32 bit version](https://github.com/git-for-windows/git-sdk-32`) it also performs a run time optimisation on cloned DLLs (rebase).
 
-This was previously called the 'net installer', see below. It provides everything required to bootstrap a development environment, even if no git is available (or a unstable one is being worked on).
+This was previously called the 'net installer', see below. It provides everything required to bootstrap a development environment, even if no git is available (or an unstable one is being worked on).
 
 It is also possible to manually extract the archive and then run `./setup-git-sdk.bat` in the MSYS2 terminal window.
  
