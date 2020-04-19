@@ -68,26 +68,26 @@ If you want to rebuild a package, the first order of business is to know which r
 - [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MINGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
 - [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](Building-msys2-runtime)).
 
-To build MINGW packages, you need to start the appropriate *MINGW* shell (32-bit or 64-bit – this sets `MSYSTEM=MINGW32` or `MSYSTEM=MINGW64` respectively), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
+To build MINGW packages, you need to start the *MSYS* shell, clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg-mingw -s
 ```
  
-(The `-s` flag tells `makepkg` that it should install dependencies automatically as needed)
+(The `-s` flag tells `makepkg` that it should install dependencies automatically as needed.)
 
-To build MSYS packages, you need to start the *MSYS* shell (e.g. `C:\git-sdk-64\msys2_shell.cmd -msys`, which sets `MSYSTEM=MSYS` before running the Bash), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
+To build MSYS packages, you need to start the *MSYS* shell, clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg -s
 ```
 
-If you have modified any files (like `PKGBUILD`) you need to update the checksums using the `updpkgsums` command before running `makepkg` or `makepkg-mingw`.
+If you have modified any source files you need to update the checksums using the `updpkgsums` command before running `makepkg` or `makepkg-mingw`.
 
-*Note*: Before building the first MSYS package, as per [MSYS2's own documentation](https://github.com/msys2/msys2/wiki/Creating-Packages) you need to install the development packages for development:
+*Note*: Before building the first package, as per [MSYS2's own documentation](https://github.com/msys2/msys2/wiki/Creating-Packages) you need to install the development packages for development:
 
 ```sh
-pacman -Sy base-devel msys2-devel
+pacman -Sy base-devel msys2-devel mingw-w64-x86_64-toolchain mingw-w64-i686-toolchain
 ```
 
 ### Build packages from locally-patched sources
