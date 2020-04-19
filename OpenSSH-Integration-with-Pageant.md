@@ -1,5 +1,3 @@
-# OpenSSH Integration with Pageant
-
 For some users, it may be desirable to tie OpenSSH in to the PuTTY authentication agent (Pageant) using [ssh\-pageant](https://github.com/cuviper/ssh-pageant). This is a drop-in replacement for _ssh\-agent_, which simply builds a connection between OpenSSH and Pageant for key-based authentication. The tool makes it easy to leverage OpenSSH for remote repository access, which tends to be the most reliable choice within the specific context of Git for Windows (Git), without the need to run multiple agents which don't interoperate.
 
 This functionality became available with the release of Git 2.8.2.
