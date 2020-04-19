@@ -1,5 +1,5 @@
-Many Windows users are not familiar with vi/vim/emacs style command line terminal editors 
-[To quit: try `:q` to change out of text mode into command mode to allow the quit action].
+Many Windows users are not familiar with vi/vim/emacs style command line terminal editors.
+[To quit: type `:q` in the bottom bar and press Enter. If you're typing into the file contents, press Esc first.]
 
 Many users prefer their local Windows graphic editor, such as Notepad++, this note shows how.
 
@@ -27,9 +27,5 @@ window is closed.
 Some users prefer not to use the '-notabbar', as it may become a preferred option if you didn't 
 have an Npp session already open, though the -nosession should prevent this.
 
-The canonical discussion is at [stackoverflow/1634161](http://stackoverflow.com/questions/1634161/how-do-i-use-notepad-or-other-with-msysgit)
-
-Note that in Git4Windows, with its MSYS2 underpinnings, we do pass paths that are 
-understandable by Npp, so there should be no need for any of the cygwin path mangling trickery discussed in the SO thread.
-
-#Other Editor Instructions - to be added here
+The canonical discussion is at [stackoverflow/1634161](http://stackoverflow.com/questions/1634161/how-do-i-use-notepad-or-other-with-msysgit). Note that in Git for Windows, with its MSYS2 underpinnings, we do pass paths that are 
+understandable by Npp, so there should be no need for any of the Cygwin path mangling trickery discussed in the SO thread.
