@@ -68,7 +68,7 @@ If you want to rebuild a package, the first order of business is to know which r
 - [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MINGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
 - [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](Building-msys2-runtime)).
 
-To build MINGW packages, you need to start the *MSYS* shell, clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
+To build MINGW packages, start a shell (a *MINGW* shell is recommended), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg-mingw -s
@@ -76,7 +76,7 @@ makepkg-mingw -s
  
 (The `-s` flag tells `makepkg` that it should install dependencies automatically as needed.)
 
-To build MSYS packages, you need to start the *MSYS* shell, clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
+To build MSYS packages, start a shell (the *MSYS* shell is recommended), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call
 
 ```bash
 makepkg -s
