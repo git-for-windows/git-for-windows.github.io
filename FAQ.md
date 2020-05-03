@@ -31,7 +31,7 @@ If you have a version older than 2.26.1, it is *highly* advisable to upgrade. A 
 
 ## What is the release cadence of Git for Windows?
 
-Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details here: http://tinyurl.com/gitCal). Typically, Git for Windows will follow suit within a day.
+Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details here: https://tinyurl.com/gitCal). Typically, Git for Windows will follow suit within a day.
 
 Other than that, Git for Windows follows the *newest* Git version's maintenance releases (read: after Git for Windows v2.15.0 was released, no new Git for Windows v2.14.x version would be released). Indicators for imminent maintenance releases of Git are:
 
@@ -54,7 +54,7 @@ For advanced users working with the *Git for Windows* SDK `pacman` is available 
 
 For hashes see https://github.com/git-for-windows/git/releases
 
-For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md), or the top level of your installation (e.g. [C:\Program Files\Git\ReleaseNotes.html](http://www.example.com/Program%20Files/Git/ReleaseNotes.html) - via manual browsing).
+For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md), or the top level of your installation (e.g. [C:\Program Files\Git\ReleaseNotes.html](https://www.example.com/Program%20Files/Git/ReleaseNotes.html) - via manual browsing).
 
 For extracting 7z/zip archives see [page](https://github.com/git-for-windows/git/wiki/Zip-Archives---extracting-the-released-archives).
 
@@ -75,7 +75,7 @@ There are several methods for working around these problems:
 
  * Run programs that have problems using the [`winpty`](https://github.com/rprichard/winpty) utility. This allows you to keep using the nicer mintty terminal, but can become unwieldy if you need the workaround for many programs.
  * Modify the shortcut for Git Bash to run `bash` directly without `mintty` so it uses the default console host and configure it for "Quick Edit", reasonable size and scroll-back and suitable unicode font. You'll still have to live with the other quirks of console host.
- * Install and use [ConEmu](http://conemu.github.io/).
+ * Install and use [ConEmu](https://conemu.github.io/).
 
 ## I get errors trying to check out files with long path names.
 Windows file paths are by default limited to 255 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/git-for-windows/git/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
