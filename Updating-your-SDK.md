@@ -14,9 +14,18 @@ plus Git for Windows' packages.
 
 # Updating the installed SDK
 
-The SDK ships with the script `update-via-pacman.bat` that you can run (but you need to make sure that all Git SDK Bash windows are closed first, i.e. that no processes are running that might lock files that want to be updated)
+The SDK ships with the script `update-via-pacman.bat` that you can:
 
-Alternatively:
+1. 	Make sure that all Git SDK Bash windows are closed first,
+ i.e. that no processes are running that might lock files that want to be updated
+1. 	Start a `cmd` window
+1. 	Run `update-via-pacman.bat` in the command window
+1. 	Review/log the changes.
+
+While 'double-clicking' the file in the explorer will work, the cmd window will auto-close on completion limiting you options for reviewing the updates.
+
+* Alternatively:
+
 To keep the SDK up-to-date, periodically run
 
 	pacman -Syu
