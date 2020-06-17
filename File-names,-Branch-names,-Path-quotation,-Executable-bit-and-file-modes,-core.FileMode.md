@@ -6,7 +6,7 @@ In addition Git branch names are stored as filenames.
 
 This means that in normal usage, Git will have difficulty when it meets a changed case file or branch. Lower case is common for Linux usage!
 
-E.g. `Master` branch and `master` branch are different, even though, on Windows, Git will often mistake one for the other (because Windows will read the 'other' case version of the file.
+E.g. `Main` branch and `main` branch are different, even though, on Windows, Git will often mistake one for the other (because Windows will read the 'other' case version of the file.
 
 Likewise Windows will not be able to check out both an upper case and lower case version of a file(s). Apparently the vim repository has this 'two versions' Vim/vim problem.
 

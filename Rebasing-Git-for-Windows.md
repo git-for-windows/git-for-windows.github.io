@@ -3,7 +3,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 # Assumptions
 1. You want to *rebase* onto a new [upstream](https://github.com/git/git) release tagged as `v2.3.4`
 2. The latest *rebase* was done onto a [upstream](https://github.com/git/git) release tagged as `v2.3.3`
-3. the `origin/master` below means remote https://github.com/git-for-windows/git, its `master` branch.   
+3. the `origin/main` below means remote https://github.com/git-for-windows/git, its `main` branch.
    You may have them named differently.  
 
 # Preconditions
@@ -11,7 +11,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 2. A fetched build-extra repository.  
     `cd /usr/src/build-extra`  
     `git fetch`  
-    `git checkout master`
+    `git checkout main`
     (`git pull` if your branch is behind the upstream)
 3. Working directory set to current *Git for Windows* source.  
     `cd /usr/src/git`
@@ -33,9 +33,9 @@ Note: the `merging-rebase` argument is a special placeholder that is interpreted
 
 # Verifying the *rebase*
 1. Generate a *diff* of the previous state.  
-    `git diff v2.3.3..origin/master > prev.diff`
+    `git diff v2.3.3..origin/main > prev.diff`
 2. Generate a *diff* of the current state.  
-    `git diff v2.3.4..master > curr.diff`
+    `git diff v2.3.4..main > curr.diff`
 3. *Diff* the *diffs*.  
     `git diff --no-index prev.diff curr.diff`
 

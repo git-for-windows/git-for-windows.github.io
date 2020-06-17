@@ -2,7 +2,7 @@
 
 This note is a quick start to setting up a Sourcetrail project for exploring the Git source code in conjunction with Visual Studio. Source trail is configurable and some parameter need to be set on initial project setup.  
 
-1. Git-for-Windows is available as a Visual Studio .sln in the `vs/master` [branch](https://github.com/git-for-windows/git/tree/vs/master) . It comprise ~19 sub-projects including `git` and `libgit`.
+1. Git-for-Windows is available as a Visual Studio .sln in the `vs/main` [branch](https://github.com/git-for-windows/git/tree/vs/main) . It comprises ~19 sub-projects including `git` and `libgit`.
 2. This was tested with the free VS2017 community edition.
 3. Build the solution(.sln) in Visual Studio so that it's `vcpkg` dependencies are downloaded and compiled (may take some time).
 4. Download and install the Sourcetrail software. Check the [documentation](https://www.sourcetrail.com/documentation/), especially the [intro video](https://youtu.be/7fguPwKR_7Y).

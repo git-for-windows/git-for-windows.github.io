@@ -28,7 +28,7 @@ then issue the following commands:
 
 ```bash
 cd /usr/src/build-extra
-git pull master
+git pull main
 ./installer/release.sh <version>-test
 ```
 

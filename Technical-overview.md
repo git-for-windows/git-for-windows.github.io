@@ -8,7 +8,7 @@ The process to build an instance of the Git for Windows installer is made easier
 
 # Installing the SDK
 
-Download the [SDK](https://gitforwindows.org/#download-sdk) and run it (using "Run as Administrator"). You will end up with a console window running the `Git for Windows SDK` shell, which you can use for the next steps. You need to fetch the latest version of the Git sources - just run the command `sdk init git`. After that, if you just want to build an installer from latest master, you are ready to go. 
+Download the [SDK](https://gitforwindows.org/#download-sdk) and run it (using "Run as Administrator"). You will end up with a console window running the `Git for Windows SDK` shell, which you can use for the next steps. You need to fetch the latest version of the Git sources - just run the command `sdk init git`. After that, if you just want to build an installer from the latest development, you are ready to go.
 
 You can open the `Git for Windows SDK` shell by double clicking `git-bash.exe` in the install folder.
 
@@ -16,7 +16,7 @@ As the installer is made by putting together files from the Git for Windows SDK,
 
 # Hacking on git
 
-If you only want an installer of the latest version of git (master), then you can skip this step.
+If you only want an installer of the latest development version of git, then you can skip this step.
 
 The sources of git are checked out in `/usr/src/git`. [Hack in (and test)](Building-Git) the changes you want...
 
@@ -24,7 +24,7 @@ Afterwards you need to install git to make these changes available to the instal
 
 If you made any documentation changes, you need to install the documentation too: `make install-html && prefix=/mingw64 make -C contrib/subtree install-html` (the second make invocation installs the `git-subtree.html` which is otherwise missing and leads to an error by the portable installer).
 
-In some cases, the change you want to make is not in git itself, but in the additional files needed to emulate the *ix environment git expects (things like `grep`, `find`, `cat`,...), or in additional helper files (e.g. `start-ssh-agent.cmd`). These files come from [Msys](https://github.com/git-for-windows/MSYS2-packages) and [Mingw](https://github.com/git-for-windows/MINGW-packages) packages. Please see the documentation for how to make [changes to these packages](Package-management#technical-details). Some files are also in the `build-extras` repo in the subdir [`git-extra`](https://github.com/git-for-windows/build-extra/tree/HEAD/git-extra) (the script which calls notepad as a commit message editor, diff filter for word files,...). The source code for these files are also under `/usr/src` but need to be checked out first (e.g. `cd /usr/src/MINGW-packages && git fetch && git checkout master`).
+In some cases, the change you want to make is not in git itself, but in the additional files needed to emulate the *ix environment git expects (things like `grep`, `find`, `cat`,...), or in additional helper files (e.g. `start-ssh-agent.cmd`). These files come from [Msys](https://github.com/git-for-windows/MSYS2-packages) and [Mingw](https://github.com/git-for-windows/MINGW-packages) packages. Please see the documentation for how to make [changes to these packages](Package-management#technical-details). Some files are also in the `build-extras` repo in the subdir [`git-extra`](https://github.com/git-for-windows/build-extra/tree/HEAD/git-extra) (the script which calls notepad as a commit message editor, diff filter for word files,...). The source code for these files are also under `/usr/src` but need to be checked out first (e.g. `cd /usr/src/MINGW-packages && git fetch && git checkout main`).
 
 # Building an installer
 
@@ -37,7 +37,7 @@ As a one time step, you need to prepare the extra files which contain the helper
 ```bash
 cd /usr/src/build-extra
 git fetch
-git checkout master
+git checkout main
 ```
 
 The next step depends on whether you want a normal setup-based installer or a portable installer:

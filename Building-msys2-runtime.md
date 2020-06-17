@@ -8,7 +8,7 @@
 
 2. Install the MSYS2 Toolchain: `pacman -S msys2-devel base-devel`.
 
-3. Initialize the local MSYS2-packages clone: `cd /usr/src/MSYS2-packages && git fetch origin && git checkout master`.
+3. Initialize the local MSYS2-packages clone: `cd /usr/src/MSYS2-packages && git fetch origin && git checkout main`.
 
 4. Change to the `msys2-runtime` directory: `cd msys2-runtime`
 

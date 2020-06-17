@@ -5,7 +5,7 @@ To package the portable Git, install the [SDK](https://gitforwindows.org/#downlo
 ```bash
 cd /usr/src/build-extra
 git fetch
-git checkout master
+git checkout main
 ./portable/release.sh <version>-test
 ```
 
