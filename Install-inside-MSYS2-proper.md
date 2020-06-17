@@ -10,7 +10,7 @@ Note however that there are some caveats for going this way. Git for Windows cre
 
 Here the steps to take:
 
- 1. Open an MSYS2 terminal.
+ 1. Open an MSYS2 terminal with `msys2_shell.cmd`.
  2. Edit `/etc/pacman.conf` and just before `[mingw32]` (line #71 on my machine), add the `git-for-windows` packages repository:
         
         [git-for-windows]
