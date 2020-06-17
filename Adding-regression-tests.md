@@ -1,4 +1,4 @@
-Git comes with an extensive regression test suite. It lives in the [`t/` subdirectory](https://github.com/git/git/tree/master/t) of the source code repository and is organized into test scripts, e.g. `t8002-blame.sh`, which contain multiple test cases. The test scripts themselves are shell scripts.
+Git comes with an extensive regression test suite. It lives in the [`t/` subdirectory](https://github.com/git/git/tree/HEAD/t) of the source code repository and is organized into test scripts, e.g. `t8002-blame.sh`, which contain multiple test cases. The test scripts themselves are shell scripts.
 
 The best documentation how to add tests is the test suite itself, by example.
 
@@ -33,7 +33,7 @@ Every script creates a test repository with a test working tree in a new directo
 
 Traditionally, the first “test case” is the setup, where you set up files and commits common to multiple test cases in the same script.
 
-There are a bunch of really useful functions for use in test scripts, e.g. `test_commit`, which not only abbreviates the common “write a file, add it, commit it, tag the commit” stanza, but also increments the timestamp from a fixed first timestamp, so that the commits are reproducible (read: so you can reliably debug even if the bug depends on some side effect of some compression or some such). You will find a comprehensive list in [`t/README`](https://github.com/git/git/blob/master/t/README) under the “Test harness library” heading.
+There are a bunch of really useful functions for use in test scripts, e.g. `test_commit`, which not only abbreviates the common “write a file, add it, commit it, tag the commit” stanza, but also increments the timestamp from a fixed first timestamp, so that the commits are reproducible (read: so you can reliably debug even if the bug depends on some side effect of some compression or some such). You will find a comprehensive list in [`t/README`](https://github.com/git/git/blob/HEAD/t/README) under the “Test harness library” heading.
 
 There are also a bunch of useful test helpers in `t/helper/` (automatically added to the `PATH`) e.g. `test-chmtime`. If you need to test native functions, you can introduce a new test helper, or piggy-back onto an existing one.
 

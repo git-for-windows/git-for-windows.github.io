@@ -18,7 +18,7 @@ To compile and install Git, you will have to run `make clean` first because *Git
 
 # Alternative to the Git SDK way
 
-If you cannot download and install the Git SDK for some reason or other, you could also clone [the Git source code](https://github.com/git-for-windows/git) using [Git for Windows](https://gitforwindows.org/) instead, but make sure that Unix line endings are used: `git clone -c core.autocrlf=false https://github.com/git-for-windows/git vagrant-git`. If Git for Windows does not even work for you, you could also download the source code [as a `.zip`](https://github.com/git-for-windows/git/archive/master.zip) and unpack it.
+If you cannot download and install the Git SDK for some reason or other, you could also clone [the Git source code](https://github.com/git-for-windows/git) using [Git for Windows](https://gitforwindows.org/) instead, but make sure that Unix line endings are used: `git clone -c core.autocrlf=false https://github.com/git-for-windows/git vagrant-git`. If Git for Windows does not even work for you, you could also download the source code [as a `.zip`](https://github.com/git-for-windows/git/archive/HEAD.zip) and unpack it.
 
 After that, continue with the `vagrant up` step above.
 

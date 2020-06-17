@@ -27,7 +27,7 @@ If you are comfortable with command line and the `sed` command, the step 2 can b
 
  3. Authorize signing key with:
 
-        curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/master/git-for-windows-keyring/git-for-windows.gpg |
+        curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/HEAD/git-for-windows-keyring/git-for-windows.gpg |
         pacman-key --add - &&
         pacman-key --lsign-key 1A9F3986
 

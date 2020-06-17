@@ -56,7 +56,7 @@ update.
 * [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)
 * ArchLinux articles - [Creating Packages](https://wiki.archlinux.org/index.php/Creating_packages) and [PKGBuild](https://wiki.archlinux.org/index.php/PKGBUILD)
 * [MSYS2 Introduction & Contributing](http://sourceforge.net/p/msys2/wiki/Contributing%20to%20MSYS2/)
-* [SDK's setup-git-sdk.bat script](https://github.com/git-for-windows/build-extra/blob/master/sdk-installer/setup-git-sdk.bat)
+* [SDK's setup-git-sdk.bat script](https://github.com/git-for-windows/build-extra/blob/HEAD/sdk-installer/setup-git-sdk.bat)
 
 ## Origin of 'net installer' concept
 

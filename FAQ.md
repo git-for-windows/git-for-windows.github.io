@@ -14,7 +14,7 @@ More information here: [Git for Windows' prerequisites](https://gitforwindows.or
 
 There is currently no MSI package; there is an exe installer and a portable package. You are welcome to contribute a Pull Request that packages a new installer.
 
-~There is an existing Pull Request in development and looking for testers, please try out https://github.com/robmen/gitsetup/issues/1 and give feedback.~ It's closed by now. Future development is happening [here](https://github.com/git-for-windows/build-extra/tree/master/msi/).
+~There is an existing Pull Request in development and looking for testers, please try out https://github.com/robmen/gitsetup/issues/1 and give feedback.~ It's closed by now. Future development is happening [here](https://github.com/git-for-windows/build-extra/tree/HEAD/msi/).
 
 In the meantime you could try:
 
@@ -54,7 +54,7 @@ For advanced users working with the *Git for Windows* SDK `pacman` is available 
 
 For hashes see https://github.com/git-for-windows/git/releases
 
-For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md), or the top level of your installation (e.g. [C:\Program Files\Git\ReleaseNotes.html](https://www.example.com/Program%20Files/Git/ReleaseNotes.html) - via manual browsing).
+For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/HEAD/ReleaseNotes.md), or the top level of your installation (e.g. [C:\Program Files\Git\ReleaseNotes.html](https://www.example.com/Program%20Files/Git/ReleaseNotes.html) - via manual browsing).
 
 For extracting 7z/zip archives see [page](https://github.com/git-for-windows/git/wiki/Zip-Archives---extracting-the-released-archives).
 
@@ -114,7 +114,7 @@ Ensure also that you are using proper Build Tools (v140). It's going by default 
  
 ## Licenses
 
-Reproduced from [Git for Windows' release notes](https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md#licenses):
+Reproduced from [Git for Windows' release notes](https://github.com/git-for-windows/build-extra/blob/HEAD/ReleaseNotes.md#licenses):
 
 Git is an Open Source project covered by the GNU General Public License version 2 (some parts of it are under different licenses, compatible with the GPLv2). It was originally written by Linus Torvalds with help of a group of hackers around the net.
 
