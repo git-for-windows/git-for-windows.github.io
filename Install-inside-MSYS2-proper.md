@@ -25,7 +25,7 @@ If you are comfortable with command line and the `sed` command, the step 2 can b
 
         sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n|; }' /etc/pacman.conf
 
- 3. Authorize signing key (this step may have to be repeated occasionally until https://github.com/msys2/msys2/issues/62 is fixed)
+ 3. Authorize signing key with:
 
         curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/master/git-for-windows-keyring/git-for-windows.gpg |
         pacman-key --add - &&
