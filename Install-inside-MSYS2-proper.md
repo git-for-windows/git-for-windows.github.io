@@ -33,7 +33,7 @@ If you are comfortable with command line and the `sed` command, the step 2 can b
 
  4. Then synchronize new repository with
 
-        pacman -Syu
+        pacman -Syyu
 
  5. This updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open MSYS2 shells and MSYS2 programs. Double-check Task Manager and kill `pacman.exe` it's still running after the window is closed, because it can linger. Once all are closed, start a new terminal again.
 
