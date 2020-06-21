@@ -1,6 +1,6 @@
 # **Please note that this scenario is not officially supported by Git for Windows**
 
-(The reason this is unsupported is that there are no volunteers to support that scenario.)
+If you need help with the installation steps, you can contact @Elieux on the `git-for-windows/git` Gitter room or on the `#msys2` IRC channel.  Please don't file issues with Git for Windows installed this way until you verify them in an official Git for Windows distribution.
 
 **This guide assumes that you want the 64-bit version of Git for Windows.**
 
