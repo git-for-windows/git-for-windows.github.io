@@ -45,4 +45,6 @@ If you are comfortable with command line and the `sed` command, the step 2 can b
 
         pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man,curl} git-extra
 
- 8. Finally, check that everything went well by doing `git --version` in a MINGW64 shell and it should output something like `git version 2.14.1.windows.1` (or newer).
+ 8. Close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`).
+
+ 9. Finally, check that everything went well by doing `git --version` and it should output something like `git version 2.14.1.windows.1` (or newer).
