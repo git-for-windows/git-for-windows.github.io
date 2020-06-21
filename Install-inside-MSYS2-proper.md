@@ -16,12 +16,12 @@ Here the steps to take:
         [git-for-windows]
         Server = https://wingit.blob.core.windows.net/x86-64 
 
-and optionally also the MINGW-only repository for the *opposite* architecture (i.e. MINGW32 for 64-bit SDK):
+    and optionally also the MINGW-only repository for the *opposite* architecture (i.e. MINGW32 for 64-bit SDK):
 
         [git-for-windows-mingw32]
         Server = https://wingit.blob.core.windows.net/i686
 
-If you are comfortable with command line and the `sed` command, the step 2 can be done with the following `sed` command (make sure to do proper backup before trying it):
+    If you are comfortable with command line and the `sed` command, the step 2 can be done with the following `sed` command (make sure to do proper backup before trying it):
 
         sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n|; }' /etc/pacman.conf
 
