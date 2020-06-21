@@ -33,13 +33,15 @@ If you are comfortable with command line and the `sed` command, the step 2 can b
 
  4. Then synchronize new repository with
 
-        pacman -Syyu
+        pacman -Syyuu
 
  5. This updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open MSYS2 shells and MSYS2 programs. Double-check Task Manager and kill `pacman.exe` it's still running after the window is closed, because it can linger. Once all are closed, start a new terminal again.
 
+    It might happen that the packages are downgrades.  This is unfortunate but if you want the authentic Git for Windows experience, it's necessary.
+
  6. Then synchronize *again* (updating the non-core part of the packages):
 
-        pacman -Su
+        pacman -Suu
 
  7. And finally install the Git/cURL packages:
 
