@@ -129,3 +129,8 @@ perl -MCPAN -e shell
 Pacman repositories are served via HTTP, as static files in a single directory. The most important file in that directory is the *package index*, called `<name>.db.tar.xz` by convention. This package index can be updated via `repo-add <package-index> <package-file>...` (this updated *only* the package index, it does *not* copy the package files into the same directory). Pacman expects to find the package files referenced in the package index in the same directory as the index.
 
 The *Git for Windows*-specific packages are served by [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/), see below. We ship MSYS2 and MINGW packages for two architectures, `i686` and `x86_64`. Pacman is configured to use these in `/etc/pacman.conf`.
+
+# Further reading
+
+- [Building new package versions](Building-new-package-versions)
+- [Upgrading the `perl` component to a new version](Upgrading-the-%60perl%60-component-to-a-new-version)
