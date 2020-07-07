@@ -4,7 +4,7 @@ Upgrading to a new Perl version is unfortunately a bit more involved than only f
 
 # Making sure that the DLL has the correct version in its file name
 
-This is important, and it is a manual step required on top of [the usual adjustments to the patches](https://github.com/git-for-windows/git/wiki/Building-new-package-versions#adjusting-patches-when-they-no-longer-apply-to-new-versions): In the [`PKGBUILD`](https://github.com/msys2/MSYS2-packages/blob/HEAD/perl/PKGBUILD file, the line `-Dlibperl=msys-perl5_<N>.dll` needs to be adjusted.
+This is important, and it is a manual step required on top of [the usual adjustments to the patches](https://github.com/git-for-windows/git/wiki/Building-new-package-versions#adjusting-patches-when-they-no-longer-apply-to-new-versions): In the [`PKGBUILD`](https://github.com/msys2/MSYS2-packages/blob/HEAD/perl/PKGBUILD) file, the line `-Dlibperl=msys-perl5_<N>.dll` needs to be adjusted.
 
 # Rebuilding dependencees
 
