@@ -20,4 +20,21 @@ However, many a time this automation fails, for a variety of reasons, including,
 
 # Adjusting patches when they no longer apply to new versions
 
-TBD
+The way `makepkg` works is unfortunately not very integrated with Git (as it was invented _before_ Git), therefore the way it works is to specify the URL to the archive (or to the branch in a repository) as `source`, together with any patches needed to compile it in MSYS2. The archive will be unpacked in the `src/` directory automatically, but the patches need to be applied specifically as part of the `prepare` step in the `PKGBUILD`.
+
+When these patches no longer apply after upgrading to a newer version of the component, it can be a challenge to fix that.
+
+The strategy that worked best for the Git for Windows maintainer goes like this:
+
+1. initialize a new Git repository in `src/playground`
+2. use `/usr/src/git/contrib/fast-import/import-tars.perl` to import the _previous_ version (i.e. the one where the patches still apply)
+3. create a new branch from the import tag (`git switch -c rebase-to-<version> import-tars`)
+4. if the patches are actually in mbox format, they can be imported using `git am ../../*.patch`; otherwise they need to be manually applied and committed (something like `srcdir=../..; grep "patch -p" $srcdir/PKGBUILD | while read line; do patch="${line##*/}" && eval "$line" && git commit -m "$patch" || break; done`)
+5. import the new version using `import-tars.perl`
+6. create a new branch from the current one (`git switch -c rebase-to-<new-version>`)
+7. rebase the patches (`git rebase -i --onto <component>-<new-version> <component>-<version>`)
+8. export the patches (if they were in mbox format, `git format-patch -<N> -o ../..`, otherwise a variation of `for commit in $(git rev-list HEAD); do patch="$(git show -s --format=%s $commit)" && git diff $commit^! >../../"$patch" || break; done`)
+9. test (`cd ../.. && sdk build`)
+10. commit, push (and open a PR unless pushing directly to `main`)
+
+Caveat: this strategy needs manual adjustments if the archive in question contains files with DOS line endings (I am looking at you, [Perl](https://github.com/git-for-windows/git/wiki/Upgrading-the-%60perl%60-component-to-a-new-version) _shakes fist_): `import-tars.perl` will happily import those verbatim, but the `bsdtar` used by `makepkg` to unpack the archive will convert them to Unix line endings, and if the patches expect DOS line endings, they won't apply.
