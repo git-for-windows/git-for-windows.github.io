@@ -1,4 +1,6 @@
-One of the many components included in Git for Windows' SDK is the `perl` package. Upgrading to a new Perl version is unfortunately a bit more involved than only following the advice in [Building new package versions](Building-new-package-versions). In addition to adjusting the patches applied via the `PKGBUILD` script, the major problem with Perl is that its DLL embeds the Perl version in its file name.
+One of the many components included in Git for Windows' SDK is the `perl` package. Part of its components are included in Git for Windows' installer and Portable Git versions, to allow for running Perl scripts. The two most prominent Perl scripts in Git for Windows are, of course, `git svn` and `git send-email`.
+
+Upgrading to a new Perl version is unfortunately a bit more involved than only following the advice in [Building new package versions](Building-new-package-versions). In addition to adjusting the patches applied via the `PKGBUILD` script, the major problem with Perl is that its DLL embeds the Perl version in its file name.
 
 As a consequence, _all_ native Perl modules are broken immediately after upgrading to a new major Perl version. As far as Git for Windows is concerned, the affected components are:
 
