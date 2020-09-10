@@ -50,3 +50,7 @@ Here the steps to take:
  8. Close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`).
 
  9. Finally, check that everything went well by doing `git --version` and it should output something like `git version 2.14.1.windows.1` (or newer).
+
+#### Troubleshooting
+
+If you encounter error "*error: wrong number of arguments, should be from 1 to 2*" with `git add -p`, set `add.interactive.useBuiltin` to `true`.
