@@ -9,10 +9,10 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 		<link rel="stylesheet" href="css/pack.css">
 		<link rel="shortcut icon" href="favicon.ico">
-		<!--[if lt IE 9]>
+		[if lt IE 9]
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.js"></script>
-		<![endif]-->
+		[endif]
 	</head>
 	<body>
 		<header>
@@ -133,7 +133,7 @@
 						version[1] += '.' + version[3];
 					var url = href[1] + 'download' + href[2] + '/Git-' + version[1] + '-' + bitness + '-bit.exe';
 					$('a.button:contains("Download")')[0].href = url;
-				} catch(e) {}
+				  } catch(e) {}
 			});
 		</script>
 	</body>
