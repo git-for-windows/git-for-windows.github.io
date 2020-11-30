@@ -2,6 +2,16 @@ html {
 	font: 16px/1 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+body {
+	padding-top: 56px;
+  }
+  
+section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+  
+
 li a {
 	font-size: .875em;
 }
@@ -118,9 +128,9 @@ nav {
 	padding: 0 1.3em;
 }
 
-nav h1 {
+/* nav h1 {
 	float: left;
-}
+} */
 
 nav ul,
 footer a {
