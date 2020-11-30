@@ -1,101 +1,101 @@
 body {
-    padding-top: 56px;
-  }
-  
-  section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  
-  .lnr {
-    display: inline-block;
-    fill: currentColor;
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.05em;
-    stroke-width: 1;
-  }
-  
-  .services-icon {
-    margin-bottom: 20px;
-    font-size: 30px;
-  }
-  
-  .quote-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
+  padding-top: 56px;
+}
 
-  .gittext {
-	color: #646464;
-	font-weight: bold;
-  }
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 
-  .lowercase {
-	text-transform: lowercase;
+.lnr {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.05em;
+  stroke-width: 1;
+}
+
+.services-icon {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.quote-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.gittext {
+  color: #646464;
+  font-weight: bold;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 h1 {
-	font-size: 2.500em;
+  font-size: 2.5em;
 }
 
 h1 span {
-	color: #969696;
-	font-size: .42em;
-	margin-left: .476em;
+  color: #969696;
+  font-size: 0.42em;
+  margin-left: 0.476em;
 }
 
 h2 {
-	font-size: 3em;
-	line-height: 1.3;
+  font-size: 3em;
+  line-height: 1.3;
 }
 
 h3 {
-	font-size: 1.875em;
-	line-height: 1.3;
+  font-size: 1.875em;
+  line-height: 1.3;
 }
 
 h4 {
-	font-size: 1.5em;
-	line-height: 1.1;
+  font-size: 1.5em;
+  line-height: 1.1;
 }
 
-/* p {
-    margin-top: 0em ;
-    margin-bottom: 10em ;
-} */
-
 li.borderless {
-    border-top: 0 none;
-    border-bottom: 0 none;
-    border-right: 0 none;
-    border-left: 0 none;
-  }
+  border-top: 0 none;
+  border-bottom: 0 none;
+  border-right: 0 none;
+  border-left: 0 none;
+}
 
-  .copyright {
-    padding: 28px 0;
-    margin-top: 55px;
-    background-color: #202020; }
-    .copyright span,
-    .copyright a {
-      color: #878787;
-      -webkit-transition: all 0.3s linear;
-      -o-transition: all 0.3s linear;
-      transition: all 0.3s linear; }
-    .copyright a:hover {
-      color:#007bff; }
-  
-  .copyright-menu ul {
-    text-align: right;
-    margin: 0; }
-  
-  .copyright-menu li {
-    display: inline-block;
-    padding-left: 20px; }
+.copyright {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #202020;
+}
+.copyright span,
+.copyright a {
+  color: #878787;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.copyright a:hover {
+  color: #007bff;
+}
+
+.copyright-menu ul {
+  text-align: right;
+  margin: 0;
+}
+
+.copyright-menu li {
+  display: inline-block;
+  padding-left: 20px;
+}
