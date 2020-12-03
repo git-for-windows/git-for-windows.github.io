@@ -39,4 +39,4 @@ Further reading on commit messages:
 - http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 - http://gitforteams.com/resources/commit-granularity.html
 - http://chris.beams.io/posts/git-commit/
-- http://ablogaboutcode.com/2011/03/23/proper-git-commit-messages-and-an-elegant-git-history/
+- http://ablogaboutcode.com/2011/03/23/proper-git-commit-messages-and-an-elegant-git-history
