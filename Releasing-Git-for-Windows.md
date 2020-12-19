@@ -77,6 +77,13 @@ $ git gfw-range-diff origin/main HEAD |
   clip.exe
 ```
 
+For convenience, this can be automated via this alias:
+
+```ini
+[alias]
+	pre-release-pr-range-diff = "!set -x && x=\"$(git range-diff -s origin/main^{/^Start.the}..origin/main origin/main^{/^Start.the}^..HEAD^{/^Start.the}^ | sed -n 's/^[ 0-9]*:  \\([0-9a-f][0-9a-f]*\\) [=!] [ 0-9]*:  \\([0-9a-f][0-9a-f]*\\).*/-e \"s\\/\\1\\/\\1 (upstream: \\2)\\/\"/p')\" && git gfw-range-diff origin/main HEAD | sed -e 's/^[ 0-9]*:  [0-9a-f]* [=!]/ &/' -e 's/^[ 0-9]*:  [0-9a-f]* </-&/' -e 's/^[ 0-9]*:  [0-9a-f]* >/+&/' | eval sed ${x:-\\'\\'} | clip.exe"
+```
+
 # Kicking off the "Git Artifacts" Azure Pipeline
 
 Direct your browser to https://dev.azure.com/git-for-windows/git/_build?definitionId=34&_a=summary and queue a new build ("Run pipeline") with the build variable `use.branch` set to something like `rebase-to-v2.27.0@https://github.com/dscho/git` and `Branch/tag` set to the PR's tip commit (e.g. `refs/pull/2645/head`).
