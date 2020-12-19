@@ -73,7 +73,7 @@ $ git gfw-range-diff origin/main HEAD |
   sed -e 's/^[ 0-9]*:  [0-9a-f]* [=!]/ &/' \
       -e 's/^[ 0-9]*:  [0-9a-f]* </-&/' \
       -e 's/^[ 0-9]*:  [0-9a-f]* >/+&/' |
-  eval sed $x |
+  eval sed ${x:-\'\'} |
   clip.exe
 ```
 
