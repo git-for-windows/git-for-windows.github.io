@@ -14,7 +14,7 @@
 
 Note that the prompt shows that the current directory in the ssh session inside the virtual machine is `/vagrant/` and that the files in that directory are suspiciously identical to the `/usr/src/git/` directory in your Git SDK installation. This is not by accident. In fact, the `/vagrant/` directory inside the virtual machine *is* the `/usr/src/git` directory of the hosting Git SDK. Note: This implies that the file names are case-insensitive, still, even if running inside a Linux VM.
 
-To compile and install Git, you will have to run `make clean` first because *Git* will have built *Windows* binaries in the same directory (when we will need *Linux* binaries inside the virtual machine started by Vagrant). After calling `make install` and `export PATH=$HOME/bin:$PATH` you will be able to run the Git version built from the source files in `/vagrant/git/`. 
+To compile and install Git, you will have to run `make clean` first because *Git* will have built *Windows* binaries in the same directory (when we will need *Linux* binaries inside the virtual machine started by Vagrant). After calling `make install` and `export PATH=$HOME/bin:$PATH` you will be able to run the Git version built from the source files in `/vagrant/git/`.
 
 # Alternative to the Git SDK way
 

@@ -1,18 +1,18 @@
 As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
 
-If you want to test Git changes or make an installer from your own Git fork, you need to call 
+If you want to test Git changes or make an installer from your own Git fork, you need to call
 
 ```bash
 cd /usr/src/git
 make install
-``` 
+```
 for documentation changes:
 
 ```bash
 make install-html
 ```
 
-and *afterwards* 
+and *afterwards*
 
 ```bash
 prefix=/mingw64 make -C contrib/subtree install-html

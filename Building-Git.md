@@ -47,7 +47,7 @@ cd /usr/src/git/t
 
 ## See also Regression Testing
 
-Single tests, block of tests, or the whole test suite can be run, as detailed in 
+Single tests, block of tests, or the whole test suite can be run, as detailed in
 [Running Git's regression-tests](https://github.com/git-for-windows/git/wiki/Running-Git's-regression-tests)
 
 

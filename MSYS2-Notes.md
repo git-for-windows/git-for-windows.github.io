@@ -36,7 +36,7 @@ When trying to debug environment issues, it can be very helpful to print out the
   StringCbPrintf(buffer, sizeof(buffer), "env %d is '%s'\n", i, environ[i]);
   write(2, buffer, strlen(buffer));
 }
-``` 
+```
 
 # Changing the colors in the Terminal
 

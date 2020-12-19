@@ -12,9 +12,9 @@ Here the steps to take:
 
  1. Open an MSYS2 terminal with `msys2_shell.cmd`.
  2. Edit `/etc/pacman.conf` and just before `[mingw32]` (line #71 on my machine), add the `git-for-windows` packages repository:
-        
+
         [git-for-windows]
-        Server = https://wingit.blob.core.windows.net/x86-64 
+        Server = https://wingit.blob.core.windows.net/x86-64
 
     and optionally also the MINGW-only repository for the *opposite* architecture (i.e. MINGW32 for 64-bit SDK):
 

@@ -31,7 +31,7 @@ It still required a two-month effort to bring everything to a state where Git's 
 In order to support Git fully, Git for Windows needs a way to execute the shell scripts that are *still* a core part of Git.
 To do so, we use a stripped-down MSYS2 (which in turn is a modified version of Cygwin - [read more here](https://github.com/msys2/msys2/wiki/How-does-MSYS2-differ-from-Cygwin)).
 
-Now, to understand the packages' names better, we need to understand how MSYS2 packages are compared to MINGW packages. 
+Now, to understand the packages' names better, we need to understand how MSYS2 packages are compared to MINGW packages.
 
 MSYS2's runtime is `<SDK>\usr\bin\msys-2.0.dll`. It is an implicit dependency of all MSYS2 executables (most of which live in <SDK>\usr\bin). This runtime provides emulation for all POSIX functionality enjoyed e.g. by Linux software. This means that it is *a lot* easier to port Linux projects to MSYS2 than it is to straight Windows. So when porting Bash or OpenSSH, it is much, much easier to port them to an MSYS2 package.
 
@@ -39,7 +39,7 @@ So why don't we just make all packages MSYS2 ones? The POSIX emulation is *slow*
 So it is much preferred to port Linux software to pure Win32 calls, without going the POSIX emulation route. Of course, this is a ton more work *per project*. That is the reason why this is not done for all packages. You may want to read [this article](https://github.com/git-for-windows/git/wiki/Windows-vs-Linux-fork()/exec()-semantics) for getting an acquaintance of just a part of underlying problems.
 
 Normally, we use Visual C++ compiler on Windows. When building Windows software using GCC, it is necessary to have all the support headers and libraries. They are not provided by Microsoft, but by a separate project called MINGW ("Minimal GNU on Windows"). MSYS2 uses these MINGW libraries (and MINGW GCC compiler) to build pure Win32 packages, and those are called MINGW packages.
- 
+
 That is the difference between `<SDK>\usr\src\MSYS2-packages` and `<SDK>\usr\src\MINGW-packages`. To discern those packages from one another, the MINGW packages all start with the prefix `mingw-w64-`.
 
 
@@ -51,7 +51,7 @@ A 64-bit MSYS2 process always uses the 64-bit MSYS2 runtime, and this runtime ne
 So when you try to upgrade Bash in a 32-bit Git for Windows SDK (which is a slightly modified version of MSYS2, specifically crafted to support Git for Windows' development), it is clear that `pacman -Sy bash` will only upgrade a 32-bit Bash, not a 64-bit one.
 
 However, if you want to install a 32-bit *MINGW* package, you have to be able to discern that from a 64-bit MINGW package.
- 
+
 For example, you could install MINGW cURL in both 32-bit and 64-bit versions. To enable that, there is a further convention that the MINGW packages have not only the prefix `mingw-w64-` but also the infix `i686-` for 32-bit, and `x86_64-` for 64-bit packages. The 32-bit MINGW cURL is offered, therefore, in the `mingw-w64-i686-curl` package, the 64-bit one in `mingw-w64-x86_64-curl`.
 
 To allow for side-by-side installation, the 32-bit MINGW files are installed into the `<SDK>\mingw32` root, the 64-bit ones into `<SDK>\mingw64`. Hence, the 64-bit curl.exe lives in `<SDK>\mingw64\bin\curl.exe`. Git for Windows wants to be as fast as possible, so git.exe is compiled as a MINGW executable.

@@ -49,7 +49,7 @@ The trick is not just to run `/usr/src/build-extra/shears.sh --merging --onto <v
 
   ```ini
   [alias]
-      	gfw-range-diff = "!sh -c 'a=; while case \"$1\" in -*) a=\"${a:+$a }$1\";; *) break;; esac; do shift; done; git range-diff --creation-factor=95 $a \"$1^{/^Start.the.merging-rebase}..$1\" \"$2^{/^Start.the.merging-rebase}..$2\"' -"
+	gfw-range-diff = "!sh -c 'a=; while case \"$1\" in -*) a=\"${a:+$a }$1\";; *) break;; esac; do shift; done; git range-diff --creation-factor=95 $a \"$1^{/^Start.the.merging-rebase}..$1\" \"$2^{/^Start.the.merging-rebase}..$2\"' -"
   ```
 
   With this alias, one can conveniently generate that range-diff. For example, after rebasing Git for Windows to v2.28.0, `git gfw-range-diff v2.27.0.windows.1 HEAD | clip.exe` would generate the range-diff and put it into the clipboard, ready to paste into the PR.
@@ -76,7 +76,7 @@ $ git gfw-range-diff origin/main HEAD |
   eval sed $x |
   clip.exe
 ```
-  
+
 # Kicking off the "Git Artifacts" Azure Pipeline
 
 Direct your browser to https://dev.azure.com/git-for-windows/git/_build?definitionId=34&_a=summary and queue a new build ("Run pipeline") with the build variable `use.branch` set to something like `rebase-to-v2.27.0@https://github.com/dscho/git` and `Branch/tag` set to the PR's tip commit (e.g. `refs/pull/2645/head`).

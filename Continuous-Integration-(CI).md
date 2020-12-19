@@ -16,4 +16,3 @@ If you just want to update your existing SDK installation, you can do so by runn
 ## Git user installer builds
 
 The job that builds snapshots of the latest user is [here](https://dscho.cloudapp.net/job/gfw-msys2-build-user-installer/). Use this installer *only* if you need to verify that any bugs are fixed. Do *not* use the snapshot for production use but please wait for the [latest release](https://github.com/git-for-windows/git/releases/latest) instead.
-

@@ -20,7 +20,7 @@ If you only want an installer of the latest development version of git, then you
 
 The sources of git are checked out in `/usr/src/git`. [Hack in (and test)](Building-Git) the changes you want...
 
-Afterwards you need to install git to make these changes available to the installer build: `cd /usr/src/git && make install`. 
+Afterwards you need to install git to make these changes available to the installer build: `cd /usr/src/git && make install`.
 
 If you made any documentation changes, you need to install the documentation too: `make install-html && prefix=/mingw64 make -C contrib/subtree install-html` (the second make invocation installs the `git-subtree.html` which is otherwise missing and leads to an error by the portable installer).
 
@@ -56,9 +56,9 @@ To build a portable installer, use:
 ```
 The last line of the log shows where the installer packages were created (usually in your user directory: `c:\Users\<login-name> `).
 
-See also: 
+See also:
 * [Debugging git](Debugging-Git) with gdb
-* Running Git's [regression tests](Running-Git's-regression-tests) 
+* Running Git's [regression tests](Running-Git's-regression-tests)
 * MSYS/MINGW [package management](Package-management#technical-details)
 * [Updating the SDK](https://github.com/git-for-windows/git/wiki/Updating-your-SDK)
 * [MSYS2](https://msys2.github.io/)

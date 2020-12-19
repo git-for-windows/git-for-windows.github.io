@@ -73,7 +73,7 @@ To build MINGW packages, start a shell (a *MINGW* shell is recommended), clone t
 ```bash
 makepkg-mingw -s
 ```
- 
+
 (The `-s` flag tells `makepkg` that it should install dependencies automatically as needed.)
 
 To build MSYS packages, start a shell (the *MSYS* shell is recommended), clone the [`MSYS2-packages`](https://github.com/git-for-windows/MSYS2-packages) repository (recommended location: `/usr/src/MSYS2-packages`), `cd` to the appropriate subdirectory and call

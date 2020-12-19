@@ -6,7 +6,7 @@ Note that there's a newer, single call method on Linux ([`posix_spawn()`](http:/
 
 ## Before start
 
-All information about Linux is a brief retelling of Robert Love's book: [Linux Kernel Development](https://doc.lagout.org/operating%20system%20/linux/Linux%20Kernel%20Development%2C%203rd%20Edition.pdf). 
+All information about Linux is a brief retelling of Robert Love's book: [Linux Kernel Development](https://doc.lagout.org/operating%20system%20/linux/Linux%20Kernel%20Development%2C%203rd%20Edition.pdf).
 I definitely recommend you to read this book by yourself, especially if this article wasn't enough for you. I will oversimplify, otherwise I'd need to put the whole book here.
 
 `fork()` on Windows is emulated by *MSYS*, while there is no `fork()` in *MINGW*. That is partially what makes [MSYS much slower than MINGW](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2).

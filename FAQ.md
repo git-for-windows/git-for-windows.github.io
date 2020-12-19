@@ -84,7 +84,7 @@ Windows file paths are by default limited to 255 characters. Some repositories m
 All the apparent copies are simply hard links - see Issue  1997 [Use symbolic links for libexec](https://github.com/git-for-windows/git/issues/1997) for more details.
 
 ## Excel file modifications not always noticed.
-Excel (and some other apps) do not update the *modified time* of its files which is used by Git to quickly detect changes. Rather Excel used the *change time* field. Git will notice the modifications if a `git status` is performed. See [issue 1000](https://github.com/git-for-windows/git/issues/1000#issuecomment-301611003) if you need more background. 
+Excel (and some other apps) do not update the *modified time* of its files which is used by Git to quickly detect changes. Rather Excel used the *change time* field. Git will notice the modifications if a `git status` is performed. See [issue 1000](https://github.com/git-for-windows/git/issues/1000#issuecomment-301611003) if you need more background.
 
 ## How do I access a repository hosted on a Microsoft Team Foundation Server inside a Windows domain?
 
@@ -103,15 +103,15 @@ Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcce
 Some developers want to start git-bash (of Git for Windows SDK) with a different language.
 To achieve this in windows following command could be placed inside the launcher:
 `C:\Windows\System32\cmd.exe /c "set LANG=en_GB && start C:\git-sdk-64\git-bash.exe && exit"`
-replace `en_GB` with your preferred locale. 
+replace `en_GB` with your preferred locale.
 
-## I have errors while building the solution in Visual studio 
+## I have errors while building the solution in Visual studio
 (i.e. `fatal error C1083: Cannot open include file: 'openssl/ssl.h': No such file or directory`)
 
 Try to open the console and invoke `git\compat\vcbuild\vcpkg_install.bat`. Make sure that it has completed successfully, then clean and rebuild the solution.
 
 Ensure also that you are using proper Build Tools (v140). It's going by default in VS 2015. If you are using VS 2017, you need to install them manually. Do not upgrade the project to v141 - it can't be done automatically.
- 
+
 ## Licenses
 
 Reproduced from [Git for Windows' release notes](https://github.com/git-for-windows/build-extra/blob/HEAD/ReleaseNotes.md#licenses):

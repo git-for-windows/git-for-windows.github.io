@@ -1,4 +1,4 @@
-If you want your passphrase to be 'remembered' for a session (or configurable timeout period) you will need to setup an ssh-agent process to handle this key.  
+If you want your passphrase to be 'remembered' for a session (or configurable timeout period) you will need to setup an ssh-agent process to handle this key.
 
 Recent versions of git for windows 2.x come with an ssh agent startup script and the installer also checks if an ssh agent is currently running and asks you to kill this process.
 

@@ -24,7 +24,7 @@ A good example for a commit message is [git-for-windows/build-extra@a64fe115](gi
 
 ```
 Install 7-Zip without confirmation if it is missing
-    
+
 This is to allow unattended CI builds for the SFX installers. Once we have
 released a new net-installer for the SDK we can remove the check for 7za
 altogether as the SDK ships 7-Zip by default since the previous commit.

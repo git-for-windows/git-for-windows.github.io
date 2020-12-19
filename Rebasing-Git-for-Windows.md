@@ -4,45 +4,45 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
 1. You want to *rebase* onto a new [upstream](https://github.com/git/git) release tagged as `v2.3.4`
 2. The latest *rebase* was done onto a [upstream](https://github.com/git/git) release tagged as `v2.3.3`
 3. the `origin/main` below means remote https://github.com/git-for-windows/git, its `main` branch.
-   You may have them named differently.  
+   You may have them named differently.
 
 # Preconditions
 1. A working [Git for Windows SDK](https://gitforwindows.org/#download-sdk).
-2. A fetched build-extra repository.  
-    `cd /usr/src/build-extra`  
-    `git fetch`  
+2. A fetched build-extra repository.
+    `cd /usr/src/build-extra`
+    `git fetch`
     `git checkout main`
     (`git pull` if your branch is behind the upstream)
-3. Working directory set to current *Git for Windows* source.  
+3. Working directory set to current *Git for Windows* source.
     `cd /usr/src/git`
-4. Added [upstream](https://github.com/git/git) as a remote.  
-    `git remote add git https://github.com/git/git`  
+4. Added [upstream](https://github.com/git/git) as a remote.
+    `git remote add git https://github.com/git/git`
     `git fetch git`
 
 # Starting the *rebase*
-Run the `shears.sh` script to build up the actual *rebase* script.  
+Run the `shears.sh` script to build up the actual *rebase* script.
     `/usr/src/build-extra/shears.sh --merging --onto v2.3.4 merging-rebase`
-    Note: `v2.3.4` is a `tag` in the remote `git`.  
+    Note: `v2.3.4` is a `tag` in the remote `git`.
     See the script if you are testing changes initiated in a local branch of the git upstream.
 
-The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts (see also [Merge Conflicts Resolving and Remembering them](https://github.com/git-for-windows/git/wiki/Merge-Conflicts---Resolving-and-Remembering-them)) and then continue the rebase.  
+The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts (see also [Merge Conflicts Resolving and Remembering them](https://github.com/git-for-windows/git/wiki/Merge-Conflicts---Resolving-and-Remembering-them)) and then continue the rebase.
     `git rebase --continue`
 
 Note: the `merging-rebase` argument is a special placeholder that is interpreted by the `shears.sh` script to find the commit that started the previous merging-rebase. You can find the commit yourself like this:
     `BASE="$(git rev-parse HEAD^{/^"Start the merging-rebase"})"`
 
 # Verifying the *rebase*
-1. Generate a *diff* of the previous state.  
+1. Generate a *diff* of the previous state.
     `git diff v2.3.3..origin/main > prev.diff`
-2. Generate a *diff* of the current state.  
+2. Generate a *diff* of the current state.
     `git diff v2.3.4..main > curr.diff`
-3. *Diff* the *diffs*.  
+3. *Diff* the *diffs*.
     `git diff --no-index prev.diff curr.diff`
 
-    >Ideally, the resulting output will show changes only in the `@@` lines of `prev.diff` vs `curr.diff`.  
-    >It's a bit hard to read, though, because it is a diff of a diff.  
-    >So meta.  
-    >When there is a line that starts with a `-` or a `+` but then continues with a space, that's good!  
+    >Ideally, the resulting output will show changes only in the `@@` lines of `prev.diff` vs `curr.diff`.
+    >It's a bit hard to read, though, because it is a diff of a diff.
+    >So meta.
+    >When there is a line that starts with a `-` or a `+` but then continues with a space, that's good!
     >It means that the context of our changes changed.
 
 In addition to that, you can also use the `range-diff` command to verify the rebase:
@@ -70,6 +70,6 @@ To verify that everything worked as intended, you need to watch out for lines th
 The output is color-coded in two levels: the familiar green/red (as in `git diff`'s output) corresponds to added/removed lines. The second level is dim/bright: if green/red lines are dim, that indicates that this is the pre-rebase version of the patch; conversely, any bright green/red lines indicate post-rebase versions.
 
 More notes on reading the output of this `range-diff` command:
-- It is quite common that the context changes, e.g. when a new `#include` line was introduced both in the rebased patch as well as upstream (in which case, the upstream line would be marked with an outer diff marker, but the line itself would be uncolored because it is in the context of the post-rebase version of the patch). 
+- It is quite common that the context changes, e.g. when a new `#include` line was introduced both in the rebased patch as well as upstream (in which case, the upstream line would be marked with an outer diff marker, but the line itself would be uncolored because it is in the context of the post-rebase version of the patch).
 - When whole commits are marked in red, they have been dropped during the rebase. This is quite normal when patches were "upstreamed".
 - Sometimes, commits are marked in red, as if they were removed, but there are also green lines that "re-introduce" them. That happens when `range-diff` fails to detect that the pre-rebase and post-rebase versions of the commit correspond to one another. This can be fixed by passing a `--creation-factor` to the `range-diff` command (sensible values are between 60, the default, and 100).

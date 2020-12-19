@@ -95,7 +95,7 @@ $2 = 0x3236cb8 "C:/git-sdk-64/usr/src/git"
 ```
 
 In some cases, the back trace is not helpful, though, most likely because the stack was somehow messed up. These issues are harder to debug, and require a lot of guess work and patience:
- 
+
 1. set a breakpoint on the main function of the command you called, e.g. `cmd_rev_parse` for `git rev-parse ...`: `b cmd_rev_parse`
 2. start the debugging session: `r`
 3. once execution stops in the main function, try to determine a reasonable next breakpoint by looking at the source: `l` (subsequent `l` commands will list more, `l <lineno>` will list from a given line number)
@@ -134,8 +134,8 @@ Working directory e:\testrepo.
 Working directory e:\testrepo.
 (gdb) b main
 Breakpoint 1 at 0x4018da: file test-dump-index.c, line 57.
-(gdb) r 
-Starting program: c:\git-sdk-64\mingw64\libexec\git-core\git-test-dump-index.exe 
+(gdb) r
+Starting program: c:\git-sdk-64\mingw64\libexec\git-core\git-test-dump-index.exe
 [New Thread 13028.0x3a50]
 
 Breakpoint 1, 0x00000000004018da in main (argc=1, argv=0x6e0498) at test-dump-index.c:57

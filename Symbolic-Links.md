@@ -30,7 +30,7 @@ mklink this-link-points-to c:\that-file
 
 # Allowing non-administrators to create symbolic links
 
-The privilege of `Create symbolic links` can be assigned using local policy editors (or via policies from Active Directory in case of domain accounts). Home Editions of Windows do not have these policy editors, but the freely available [Polsedit](http://www.southsoftware.com) can be used on these editions. 
+The privilege of `Create symbolic links` can be assigned using local policy editors (or via policies from Active Directory in case of domain accounts). Home Editions of Windows do not have these policy editors, but the freely available [Polsedit](http://www.southsoftware.com) can be used on these editions.
 
 - Local Group Policy Editor: Launch `gpedit.msc`, navigate to `Computer Configuration - Windows Settings - Security Settings - Local Policies - User Rights Assignment` and add the account(s) to the list named `Create symbolic links`.
 

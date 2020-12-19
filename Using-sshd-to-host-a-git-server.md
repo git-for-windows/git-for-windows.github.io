@@ -22,16 +22,16 @@ Start by attempting to ssh from your client to the server. Assuming this is the 
 
     The authenticity of host 'localhost (::1)' can't be established.
     ECDSA key fingerprint is SHA256:lZPvG6eLvsX6dRxey0ShBlYjQubifOX6yuk3atg7jQ0.
-    Are you sure you want to continue connecting (yes/no)? 
+    Are you sure you want to continue connecting (yes/no)?
 
 Type 'yes' and hit enter. At this moment `%USERPROFILE%\.ssh` directory will be created for you, if it didn't exist already. In that directory will be a `known_hosts` file identifying this server as one that you trust. You should be prompted for your password at this point. Enter it in, and you should now have a remote shell on the server (congratulations if this is your first remote shell on Windows).
 
 Now exit out of that shell to return to your local machine.  In either a bash window or a cmd window, enter the `.ssh` directory found in your home directory.  Type `ssh-keygen` and you will be prompted like this:
 
     Generating public/private rsa key pair.
-    Enter file in which to save the key (/Users/yourname/.ssh/id_rsa): 
-    Enter passphrase (empty for no passphrase): 
-    Enter same passphrase again: 
+    Enter file in which to save the key (/Users/yourname/.ssh/id_rsa):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
 
 Depending on how physically secure your client machine is and your local security policies, you may choose to use an empty passphrase.  The passphrase is used to gain access to your local key store, so if you use an empty passphrase anyone who has access to your client machine can impersonate you.
 
@@ -39,9 +39,9 @@ Two files will have been generated, `id_rsa` which contains your private key, an
 
 At this time you should be able to ssh from the client to the server without entering a password (but if you chose a non-empty passphrase the client will prompt you for that).  When a non-empty passphrase is used, there is also the option of running ssh-agent to keep the passphrase in-memory for you, but I'll not cover that here.
 
-If you configure multiple client machines for you can copy your `.ssh` directory from client to client, and thus you would only need one public key in `~/.ssh/authorized_keys` on the server (this is discouraged though). In any case, make sure you protect the contents of `.ssh` directory on each client. 
+If you configure multiple client machines for you can copy your `.ssh` directory from client to client, and thus you would only need one public key in `~/.ssh/authorized_keys` on the server (this is discouraged though). In any case, make sure you protect the contents of `.ssh` directory on each client.
 
-### Adding projects 
+### Adding projects
 I create projects directly on the server in `%GIT_HOME%` with:
 
 `git init --bare yourproject.git`

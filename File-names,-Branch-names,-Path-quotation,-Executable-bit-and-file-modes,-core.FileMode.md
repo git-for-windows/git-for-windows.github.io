@@ -1,6 +1,6 @@
 # Case Preservation, Case insensitivity
 
-Windows is case insensitive, but case preserving for filenames. Meanwhile Linux/Posix, for which Git is designed, is case sensitive. 
+Windows is case insensitive, but case preserving for filenames. Meanwhile Linux/Posix, for which Git is designed, is case sensitive.
 
 In addition Git branch names are stored as filenames.
 
@@ -20,7 +20,7 @@ Many Git commands do not report errors in the way that maybe expected by Windows
 
 # Executable and Mode Bits
 
-Linux attaches a mode word to each file, with bits that indicate if the file is executable, readable, writable, and other ownership aspects (`chmod`). This does not map well to Windows semantics, especially for the executable bit. The existing mode bits are retained in the repository tree meta data, which is then held locally in the index. 
+Linux attaches a mode word to each file, with bits that indicate if the file is executable, readable, writable, and other ownership aspects (`chmod`). This does not map well to Windows semantics, especially for the executable bit. The existing mode bits are retained in the repository tree meta data, which is then held locally in the index.
 
 Users may need to directly manipulate the mode bits where necessary - the [stackoverflow page](https://stackoverflow.com/a/38285462/717355) shows how to use the `--chmod` option while adding or updating files.
 
@@ -32,7 +32,3 @@ From https://git-scm.com/docs/git-config#git-config-corefileMode
 > Tells Git if the executable bit of files in the working tree is to be honored.
 
 > Some filesystems lose the executable bit when a file that is marked as executable is checked out, or checks out a non-executable file with executable bit on. git-clone[1] or git-init[1] probe the filesystem to see if it handles the executable bit correctly and this variable is automatically set as necessary.
-
-
-
-
