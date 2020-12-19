@@ -19,6 +19,18 @@ There are essentially three-and-a-half venues where Git for Windows bugs are rep
 - The Git mailing list at https://public-inbox.org/git/
 - Twitter. Yep: ugh. Git for Windows is actually that popular that a couple of its users seriously think that Twitter would make for a perfectly fine way to report bugs. As if 280 characters were enough to make for a good bug report. Therefore, sometimes, when the Git for Windows maintainer feels particularly masochistic, they go to https://twitter.com/search?q=%23git-for-windows and see whether there is any valid bug report (one really has to pick out the needles between all that hay).
 
+## In case last-minute component updates are needed
+
+What if, say, a new Git Credential Manager Core version needs to be snuck in at the last minute (where "last minute" is anything within the past 24h)?
+
+To integrate such an updated component, depending on the component type (MINGW or MSYS?) either the [`Build and publish MINGW Pacman package`](https://dev.azure.com/git-for-windows/git/_build?definitionId=32) or the [`Build and publish MSYS Pacman package` Pipeline](https://dev.azure.com/git-for-windows/git/_build?definitionId=33) need to be triggered (specifying the component name via the `package.to.build` variable at queue time).
+
+Once the component has been built and uploaded to Git for Windows' Pacman repositories (i.e. once that triggered Pipeline finished), the [`SyncSDKs` Pipeline](https://dev.azure.com/Git-for-Windows/git-sdk-64/_build?definitionId=9&_a=summary) must be triggered, manually. This Pipeline is responsible for installing the updated Pacman packages into the [`git-sdk-64`](https://github.com/git-for-windows/git-sdk-64) and [`git-sdk-32`](https://github.com/git-for-windows/git-sdk-64) repositories.
+
+Once the `git-sdk-64`/`git-sdk-32` repositories are updated, the [`git-sdk-64-extra-artifacts`](https://dev.azure.com/git-for-windows/git/_build?definitionId=29&_a=summary) and the [`git-sdk-32-extra-artifacts` Pipeline](https://dev.azure.com/git-for-windows/git/_build?definitionId=30&_a=summary) are triggered automatically, publishing certain subsets of the Git for Windows SDK as Pipeline Artifacts. The purpose of these artifacts is to accelerate the `Git Artifacts` Pipeline (see the _Kicking off the "Git Artifacts" Azure Pipeline_ section below), therefore we can only proceed with that Pipeline once both `git-sdk-64-extra-artifacts` and `git-sdk-32-extra-artifacts` runs are finished; Ironically, having to re-build the artifacts slows us down if we need to accommodate for last-minute component updates.
+
+It is important to wait for the Pipelines mentioned above to finish before moving on to the respective next Pipeline, otherwise the last-minute component update won't make it into the final Git artifacts.
+
 # Rebasing Git for Windows' patches
 
 Note: this section assumes that the reader is _very_ familiar with interactive rebases, in particular with the `--rebase-merges` variant thereof. Readers without much experience in this are highly advised to read up on https://git-scm.com/docs/git-rebase#_rebasing_merges before going any further.
