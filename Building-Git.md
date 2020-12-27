@@ -10,7 +10,7 @@ We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git f
 
 2. Open the *Git for Windows SDK* *MinGW* shell by double clicking either the Shortcut on the desktop `Git SDK 32-bit.lnk` or by double clicking `mingw32_shell.bat` in the install folder. That is `Git SDK 64-bit.lnk` and `mingw64_shell.bat` for the `64bit` [SDK installer](https://gitforwindows.org/#download-sdk).
 
-2. Change directory to the initial clone: `cd /usr/src/git`.
+2. Change directory to the initial clone: `cd /usr/src/git`. If the directory is empty you may have the `master` branch checked out: `git checkout main`.
 
 4. (Optional) build Git: `make install`
 
