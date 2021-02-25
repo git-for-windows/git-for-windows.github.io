@@ -1,4 +1,4 @@
-Short version: there is no exact equivalent for POSIX symlinks on Windows, and the closest thing is unavailable for non-admins by default. Therefore, symlink emulation support is switched off by default and needs to be configured by you, the user, via the `core.symlinks=true` config setting.
+Short version: there is no exact equivalent for POSIX symlinks on Windows, and the closest thing is unavailable for non-admins by default unless Developer Mode is enabled and a relatively recent Windows 10 version is used. Therefore, symlink emulation support is only turned on by default when that scenario is detected. Support can be enabled by the user, via the `core.symlinks=true` config setting.
 
 # Background
 
