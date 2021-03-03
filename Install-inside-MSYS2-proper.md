@@ -45,7 +45,7 @@ Here the steps to take:
 
  7. And finally install the Git/cURL packages:
 
-        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man,curl} git-extra
+        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man,curl} git-extras
 
  8. Close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`).
 
