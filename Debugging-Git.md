@@ -116,7 +116,7 @@ $ emacs
 
 Then type: `ESC-x gdb RETURN`
 
-It should then prompt you to enter the name of an executable. Give it the full path to the actual executable (such as `C:\git-sdk-64\mingw64\libexec\git-core\git-test-dump-index.exe` or just `git.exe` if you want to debug a builtin).
+It should then prompt you to enter the name of an executable. Give it the full path to the actual executable (such as `C:/git-sdk-64/mingw64/libexec/git-core/git-test-dump-index.exe` or just `git.exe` if you want to debug a builtin).
 
 You should get the usual gdb startup banner. At the first prompt, type `pwd`. For some reason it starts up in the exe's directory rather than the CWD of the shell. So you can cd to the root of the repo you want to work with.
 
