@@ -35,7 +35,7 @@ Official Git for Windows versions mainly follow Git's release cycle: every 12 we
 
 Other than that, Git for Windows follows the *newest* Git version's maintenance releases (read: after Git for Windows v2.15.0 was released, no new Git for Windows v2.14.x version would be released). Indicators for imminent maintenance releases of Git are:
 
-- The Git maintainer sometimes talks about this in the preamble of the ["What's cooking in git.git" mails](https://public-inbox.org/git/?q=s%3A%22what%27s+cooking%22+AND+f%3Agitster%40pobox.com).
+- The Git maintainer sometimes talks about this in the preamble of the ["What's cooking in git.git" mail](https://public-inbox.org/git/?q=s%3A%22what%27s+cooking%22+AND+f%3Agitster%40pobox.com).
 - The [`maint` in git.git](https://github.com/git/git/commits/maint) accumulates critical patches.
 
 Finally, Git for Windows is sometimes released in "out-of-band" versions, when critical fixes specific to Git for Windows necessitate it. These out-of-band versions are indicated by appending a `(2)` to the latest release (or `(3)`, `(4)`, etc). Examples for such out-of-band versions include: [Git for Windows v2.15.1(2)](https://github.com/git-for-windows/git/releases/tag/v2.15.1.windows.2) and [Git for Windows v2.16.1(4)](https://github.com/git-for-windows/git/releases/tag/v2.16.1.windows.4).
