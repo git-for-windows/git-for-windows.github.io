@@ -19,6 +19,15 @@ var updateVersion = (version, tag, timestamp, url) => {
 		+ timestamp + '">Version ' + version + '</a></div>';
 	fs.writeFileSync('latest-version.txt', version);
 	fs.writeFileSync('latest-tag.txt', tag);
+	const urlPrefix = `https://github.com/git-for-windows/git/releases/download/${tag}`;
+	for (const bitness of ['64', '32']) {
+		fs.writeFileSync(`latest-${bitness}-bit-installer.url`,
+				 `${urlPrefix}/Git-${version}-${bitness}-bit.exe`);
+		fs.writeFileSync(`latest-${bitness}-bit-portable-git.url`,
+				 `${urlPrefix}/PortableGit-${version}-${bitness}-bit.7z.exe`);
+		fs.writeFileSync(`latest-${bitness}-bit-mingit.url`,
+				 `${urlPrefix}/MinGit-${version}-${bitness}-bit.zip`);
+	}
 	fs.readFile('index.html', 'utf8', (err, data) => {
 		if (err)
 			die(err);
