@@ -1,1 +1,0 @@
-Ciao io mi chiamo emanuele.
