@@ -36,9 +36,11 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
     This installs a new `msys2-runtime` and therefore will ask you to terminate all MSYS2 processes.  Save what you need from other open MSYS2 shells and programs, exit them and confirm the Pacman prompt. 
  Double-check Task Manager and kill `pacman.exe` if it's still running after the window is closed.  Start a new MSYS2 terminal.
 
- 4. Then synchronize *again* (updating the non-core part of the packages):
+ 4. Then synchronize *again* to install the rest:
 
         pacman -Suu
+
+    It might happen that some packages are downgraded, this is expected.
 
  5. And finally install the packages containing Git, its documentation and some environment modifications[2]:
 
@@ -58,4 +60,4 @@ If you encounter error "*error: wrong number of arguments, should be from 1 to 2
 
 Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see issue [#284](/git-for-windows/git/issues/284) for more details.  It's possible to keep the stock MSYS2 runtime by reordering the repositories in `/etc/pacman.conf`.  The steps above do install the custom version to ensure you have a fully working Git.  In either case it's possible to run into issues, although not common.
 
-It might happen that some packages are downgraded compared to upstream MSYS2.  This is unfortunate but if you want the authentic Git for Windows experience, it's necessary.
+Git for Windows also patches some other packages like cURL and OpenSSL.  It unfortunately sometimes causes some packages to be behind in terms of their version, but keeping the upstream packages would most probably lead to a severely broken Git.
