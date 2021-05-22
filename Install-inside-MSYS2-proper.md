@@ -37,15 +37,15 @@ Here the steps to take:
 
  5. This updates `msys2-runtime` and therefore will ask you to close the window (*not* just exit the pacman process). Don't panic, simply close all currently open MSYS2 shells and MSYS2 programs. Double-check Task Manager and kill `pacman.exe` it's still running after the window is closed, because it can linger. Once all are closed, start a new terminal again.
 
-    It might happen that the packages are downgrades.  This is unfortunate but if you want the authentic Git for Windows experience, it's necessary.
+    It might happen that some packages are downgraded.  This is unfortunate but if you want the authentic Git for Windows experience, it's necessary.
 
  6. Then synchronize *again* (updating the non-core part of the packages):
 
         pacman -Suu
 
- 7. And finally install the Git/cURL packages:
+ 7. And finally install the packages containing Git, its documentation and some environment modifications:
 
-        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man,curl} git-extra
+        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} git-extra
 
  8. Close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`).
 
