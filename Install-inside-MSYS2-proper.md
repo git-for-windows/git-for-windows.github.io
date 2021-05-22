@@ -42,7 +42,7 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
     It might happen that some packages are downgraded, this is expected.
 
- 5. And finally install the packages containing Git, its documentation and some environment modifications[2]:
+ 5. And finally install the packages containing Git, its documentation and some extra things:
 
         pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} git-extra
 
@@ -61,3 +61,19 @@ If you encounter error "*error: wrong number of arguments, should be from 1 to 2
 Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see issue [#284](/git-for-windows/git/issues/284) for more details.  It's possible to keep the stock MSYS2 runtime by reordering the repositories in `/etc/pacman.conf`.  The steps above do install the custom version to ensure you have a fully working Git.  In either case it's possible to run into issues, although not common.
 
 Git for Windows also patches some other packages like cURL and OpenSSL.  It unfortunately sometimes causes some packages to be behind in terms of their version, but keeping the upstream packages would most probably lead to a severely broken Git.
+
+The `git-extra` package modifies the MSYS2 environment heavily (sometimes in ways that are tedious to undo).  The package can be skipped if you want to keep your MSYS2 pristine.  As of this writing, the package:
+
+- brings the `git-for-windows-keyring` package as its dependency, but you can install it manually
+- adds the `sdk` command intended for developing Git for Windows
+- installs some update helpers (`update-via-pacman`, `git update-git-for-windows`) but you can still use the regular `pacman -Syu`
+- installs various other helpers: `blocked-file-util`, `create-shortcut`, `git-askyesno`, `git-credential-helper-selector`, `proxy-lookup`, `WhoUses`, `astextplain`, `notepad`, `vi`, `wordpad`
+- changes configuration for Pacman, Bash/Sh, Vim, Nano, Readline, OpenSSH and Git itself (`/etc/gitconfig`, `/etc/gitattributes`)
+- changes the MSYS2-to-Windows integration settings in `/etc/nsswitch.conf` and `/etc/fstab` and inherits outside `PATH` by default
+- may create a `.bash_profile` in your home directory
+- may delete, modify or replace `/msys2.ico`, `/usr/bin/start`, `/mingw/*-w64-mingw32/include/pthread_unistd.h`, `/ssl`
+- deletes, modifies and replaces some files in `/mingw??/bin/` and `/mingw??/libexec/git-core/`
+- changes the terminal window title, changes the shell prompt
+- enables a GUI SSH password prompt
+- automatically wraps some interactive non-msys programs using `winpty`: Node, Python, PHP, PostgreSQL
+- adds support for ARM64
