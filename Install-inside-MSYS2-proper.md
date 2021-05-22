@@ -46,6 +46,8 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
 Now you can close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`) to check that everything went well.  Run `git --version` and it should output something like `git version 2.31.0.windows.1` (or newer).
 
+If you want to run Git from outside the shells, add `C:\msys64\cmd` to your `PATH`, e.g. by using *Edit environment variables for your account* from the Start menu.  It has to come before any other entry pointing inside your MSYS2 installation. If you have installed your MSYS2 into a different directory, correct the path accordingly.
+
 
 #### Troubleshooting
 
