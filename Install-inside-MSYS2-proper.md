@@ -58,7 +58,7 @@ If you encounter error "*error: wrong number of arguments, should be from 1 to 2
 
 #### Notes
 
-Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see issue [#284](/git-for-windows/git/issues/284) for more details.  It's possible to keep the stock MSYS2 runtime by reordering the repositories in `/etc/pacman.conf`.  The steps above do install the custom version to ensure you have a fully working Git.  In either case it's possible to run into issues, although not common.
+Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see [issue #284](https://github.com/git-for-windows/git/issues/284) for more details.  You can run into some rare issues with programs other than Git due to this.  It's possible to keep the stock MSYS2 runtime by moving the `msys` repository above the `git-for-windows` repository in `/etc/pacman.conf`.  There are known issues with Git in that case, although not common.
 
 Git for Windows also patches some other packages like cURL and OpenSSL.  It unfortunately sometimes causes some packages to be behind in terms of their version, but keeping the upstream packages would most probably lead to a severely broken Git.
 
