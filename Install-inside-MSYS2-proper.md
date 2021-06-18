@@ -50,6 +50,9 @@ Now you can close the current shell and open a MINGW64 shell (`msys2_shell.cmd -
 
 If you want to run Git from outside the shells, add `C:\msys64\cmd` to your `PATH`, e.g. by using *Edit environment variables for your account* from the Start menu.  It has to come before any other entry pointing inside your MSYS2 installation. If you have installed your MSYS2 into a different directory, correct the path accordingly.
 
+To integrate with the Windows Credential Manager, install the package `git-credential-manager`, then tell git to use it with
+
+        git config --global credential.helper manager
 
 #### Troubleshooting
 
