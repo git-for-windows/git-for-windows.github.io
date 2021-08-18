@@ -1,20 +1,16 @@
 # Installing a build environment
 
-1. Just run the [SDK installer](https://gitforwindows.org/#download-sdk).
+1. Download and run the [Windows SDK installer](https://gitforwindows.org/#download-sdk).
 
-# Build `msys2-runtime`
+# Building msys2-runtime
 
-1. Open the *Git for Windows SDK* *MSys* shell by launching `msys2_shell.cmd` with option `-msys` in the install folder. (i.e. not the *MinGW 32-bit* nor the *MinGW 64-bit* one).
+2. Open the Git for Windows SDK MSys shell by double-clicking the `msys2_shell.cmd` script in the install folder (by default `C:\git-sdk-<arch>`).
 
-2. Install the MSYS2 Toolchain: `pacman -S msys2-devel base-devel`.
+3. From the MSys shell do: `sdk build msys2-runtime`
 
-3. Initialize the local MSYS2-packages clone: `cd /usr/src/MSYS2-packages && git fetch origin && git checkout main`.
+This last step may take a while, so please be patient!
 
-4. Change to the `msys2-runtime` directory: `cd msys2-runtime`
-
-5. Build the package: `makepkg -s`.
-
-# Rebuild the msys2-runtime
+# Rebuilding the msys2-runtime
 
 When there are bugs in the msys2-runtime (e.g. problems with the POSIX-to-Windows path mangling), you need to rebuild the `msys-2.0.dll`, possibly frequently.
 
