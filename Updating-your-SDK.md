@@ -14,6 +14,20 @@ plus Git for Windows' packages.
 
 # Updating the installed SDK
 
+The most simple was to update git is to open the git-shell and type the command
+```
+git update
+```
+The shown response is this:
+```
+Warning! `git update` has been deprecated;
+Please use `git update-git-for-windows` instead.
+```
+Depending on the version you still have the option to follow this deprecated command by typing `y` for yes or just interrupt it by typing `n` for no.  
+Either the old command or the new command `git update-git-for-windows`, both offer to install the new version and do the update without problems usually.  
+
+Alternative ways to update are shown below (they might be outdated perhaps):
+
 The SDK ships with the script `update-via-pacman.bat` that you can:
 
 1. 	Make sure that all Git SDK Bash windows are closed first,
