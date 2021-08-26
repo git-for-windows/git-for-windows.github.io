@@ -14,7 +14,7 @@ plus Git for Windows' packages.
 
 # Updating the installed SDK
 
-The most simple was to update git is to open the git-shell and type the command
+The most simple way to update git is to open the git-shell and type the command
 ```
 git update
 ```
