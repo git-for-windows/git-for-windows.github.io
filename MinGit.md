@@ -22,7 +22,6 @@ Further, a conscious decision was made to exclude Perl. It is a *large* contribu
 
 * `git add -i` (interactive, hence not needed)
 * `git send-email` (highly unlikely that 3rd-party applications want to use *that*...)
-* `git relink` (an old, old relic of the olden days before pack files, probably a good candidate for retirement to Git's own `contrib/` folder)
 * CVS/Subversion adapters
 
 The only really contentious part of that list is the Subversion adapter, `git svn`. However, the space savings are substantial enough, and Subversion is no longer *that* prevalent enough, to ask third-party applications that *do* want to call `git svn` to bundle a full-fledged portable Git.
