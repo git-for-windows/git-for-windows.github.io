@@ -48,6 +48,19 @@ The old `update-core` script has been retired, see https://github.com/msys2/MSYS
 An alternative method is to start `git-cmd.exe` from within the MSYS2 shell and run `pacman -Sy --needed msys2-runtime && pacman -S --needed pacman bash`. This ensures that no obsolete binary continues to be used after the
 update.
 
+## If All Else Fails
+
+Occasionally, particularly if infrequently updated, you may find some blocking issue prevents update, e.g. some `gpg` key has 'expired'.
+
+One option is a re-install, having saved your working repositories. 
+
+1. ensure any repositories you have worked on in `usr/src/` are up to date (e.g. `git fetch --all`, or your preferred invocation).
+2. rename the top level SDK (e.g. `C:\git-sdk-64-Nov21\`).
+3. install the SDK afresh.
+4. copy your old `usr\src\git` repo, and others you worked on (as per 1. above), across to the new `usr\src\` location, having moved/renamed the SDK's copies out of the way.
+5. you should now be able to hack on your git with the updated SDK.
+6. at some later time, clean up the old copies.
+
 ### See Also:
 
 * [G4W Package Management](https://github.com/git-for-windows/git/wiki/Package-management)
