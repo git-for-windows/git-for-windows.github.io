@@ -29,7 +29,7 @@ It still required a two-month effort to bring everything to a state where Git's 
 # Difference between MSYS2 and MINGW: going into details
 
 In order to support Git fully, Git for Windows needs a way to execute the shell scripts that are *still* a core part of Git.
-To do so, we use a stripped-down MSYS2 (which in turn is a modified version of Cygwin - [read more here](https://www.msys2.org/wiki/How-does-MSYS2-differ-from-Cygwin/)).
+To do so, we use a stripped-down MSYS2 (which in turn is a modified version of Cygwin - read more [here](https://www.msys2.org/wiki/How-does-MSYS2-differ-from-Cygwin/) and [here](https://github.com/msys2/msys2/wiki/How-does-MSYS2-differ-from-Cygwin))).
 
 Now, to understand the packages' names better, we need to understand how MSYS2 packages are compared to MINGW packages.
 
