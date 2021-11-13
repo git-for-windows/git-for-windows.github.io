@@ -1,5 +1,5 @@
 body {
-  padding-top: 56px;
+  padding-top: 5%;
 }
 
 section {
@@ -44,6 +44,7 @@ h4 {
 
 h1 {
   font-size: 2.5em;
+  text-align: center;
 }
 
 h1 span {
@@ -74,28 +75,36 @@ li.borderless {
   border-left: 0 none;
 }
 
-.copyright {
+.img-git-logo {
+  width: 40%;
+}
+
+.img-other-logos {
+  width: 90%
+}
+
+.footer {
   padding: 28px 0;
   margin-top: 55px;
   background-color: #202020;
 }
-.copyright span,
-.copyright a {
+.footer span,
+.footer a {
   color: #878787;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-.copyright a:hover {
+.footer a:hover {
   color: #007bff;
 }
 
-.copyright-menu ul {
+.footer-menu ul {
   text-align: right;
   margin: 0;
 }
 
-.copyright-menu li {
+.footer-menu li {
   display: inline-block;
   padding-left: 20px;
 }
