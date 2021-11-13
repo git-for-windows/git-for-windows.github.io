@@ -13,10 +13,10 @@ var die = (err) => {
 };
 
 var updateVersion = (version, tag, timestamp, url) => {
-	var regex = /<div class="version">.*?<\/div>/gm;
-	var replacement = '<div class="version"><a href="' + url
+	var regex = /<p class="h2" id="version">.*?<\/p>/gm;
+	var replacement = '<p class="h2" id="version"><a href="' + url
 		+ '" title="Version ' + version + ' was published on '
-		+ timestamp + '">Version ' + version + '</a></div>';
+		+ timestamp + '">Version ' + version + '</a></p>';
 	fs.writeFileSync('latest-version.txt', version);
 	fs.writeFileSync('latest-tag.txt', tag);
 	const urlPrefix = `https://github.com/git-for-windows/git/releases/download/${tag}`;
