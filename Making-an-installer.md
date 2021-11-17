@@ -1,3 +1,11 @@
+# The quick way
+
+Download the [Git for Windows SDK](https://gitforwindows.org/#download-sdk), install it and run `sdk build installer`.
+
+If you need to include a Git version built with custom patches, call `sdk cd git`, then make sure that it is at the commit you want, then call `sdk build git-and-installer`.
+
+# Detailed overview
+
 As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
 
 If you want to test Git changes or make an installer from your own Git fork, you need to call
