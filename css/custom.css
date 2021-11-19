@@ -29,6 +29,7 @@ section {
 .gittext {
   color: #646464;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .lowercase {
@@ -76,7 +77,11 @@ li.borderless {
 }
 
 .img-git-logo {
-  width: 40%;
+  width: 80%;
+}
+
+.img-git-sdk-logo {
+  width: 30%;
 }
 
 .img-other-logos {
@@ -97,14 +102,4 @@ li.borderless {
 }
 .footer a:hover {
   color: #007bff;
-}
-
-.footer-menu ul {
-  text-align: right;
-  margin: 0;
-}
-
-.footer-menu li {
-  display: inline-block;
-  padding-left: 20px;
 }

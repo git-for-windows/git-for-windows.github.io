@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="all,follow">
 	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+		  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<!-- Custom Stylesheet -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -33,29 +34,31 @@
 			class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 		<div id="navbarSupportedContent" class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a style="font-weight:bold" href="https://github.com/git-for-windows/git/wiki/FAQ"
-						target="_blank" class="nav-link">FAQ</a></li>
-				<li class="nav-item"><a href="https://github.com/git-for-windows/git" target="_blank"
-						class="nav-link">Repository</a></li>
-				<li class="nav-item"><a href="https://groups.google.com/group/git-for-windows" target="_blank"
-						class="nav-link">Mailing List</a></li>
-				<li class="nav-item"><a href="https://gitter.im/git-for-windows/git" target="_blank"
-						class="nav-link">Gitter</a></li>
-				<li class="nav-item"><a href="https://groups.google.com/g/git-mentoring" target="_blank"
-						class="nav-link">Git Mentoring</a></li>
+				<li class="nav-item">
+					<a href="https://github.com/git-for-windows/git/wiki/FAQ" target="_blank" class="nav-link">FAQ</a></li>
+				<li class="nav-item">
+					<a href="https://github.com/git-for-windows/git" target="_blank" class="nav-link">Repository</a></li>
+				<li class="nav-item">
+					<a href="https://github.com/git-for-windows/git/issues" target="_blank" class="nav-link">Issues</a></li>
+				<li class="nav-item">
+					<a href="https://groups.google.com/group/git-for-windows" target="_blank" class="nav-link">Mailing List</a></li>
+				<li class="nav-item">
+					<a href="https://gitter.im/git-for-windows/git" target="_blank" class="nav-link">Gitter</a></li>
+				<li class="nav-item">
+					<a href="https://groups.google.com/g/git-mentoring" target="_blank" class="nav-link">Git Mentoring</a></li>
 			</ul>
 		</div>
 	</nav>
 	<section class="bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 order-2 order-lg-1">
-					<img src="img/gwindows_logo.png" alt="Git Logo" class="img-fluid">
+				<div class="col-lg-6 order-1 order-lg-1">
+					<img src="img/gwindows_logo.svg" alt="Git Logo" class="img-fluid">
 				</div>
-				<div class="col-md-6 col-md-offset-3 col-md-push-3">
+				<div class="col-lg-6 col-md-offset-3 col-md-push-3">
 					<div class="text-right">
 						<p class="lead">
-							<h2>We bring the awesome <span class="gittext">Git</span> SCM to Windows</h2>
+							<h2>We bring Git to Windows</h2>
 						</p>
 						<p>
 							<a name="download" /><a class="btn btn-primary shadow mr-2"
@@ -81,23 +84,23 @@
 				providing appropriate user interfaces for experienced Git users and novices alike.</p>
 			<div class="row">
 				<div class="col-sm-6 col-lg-4 mb-3">
-					<img src="img/gw1web_thumb.png" alt="Git BASH" class="img-other-logos">
-					<h3>Git BASH</h3>
-					<p>Git for Windows provides a BASH emulation used to run Git from the command line. *NIX users
-						should feel right at home, as the BASH emulation behaves just like the "git" command in LINUX
+					<img src="img/gw1web_thumb.png" alt="Git Bash" class="img-other-logos">
+					<h3>Git Bash</h3>
+					<p>Git for Windows provides a Bash emulation used to run Git from the command line. *NIX users
+						should feel right at home, as the Bash emulation behaves just like the "git" command in LINUX
 						and UNIX environments.</p>
 				</div>
 				<div class="col-sm-6 col-lg-4 mb-3">
 					<img src="img/gw2web_thumb.png" alt="Git GUI" class="img-other-logos">
 					<h3>Git GUI</h3>
 					<p>As Windows users commonly expect graphical user interfaces, Git for Windows also provides the Git
-						GUI, a powerful alternative to Git BASH, offering a graphical version of just about every Git
+						GUI, a powerful alternative to Git Bash, offering a graphical version of just about every Git
 						command line function, as well as comprehensive visual diff tools.</p>
 				</div>
 				<div class="col-sm-6 col-lg-4 mb-3">
 					<img src="img/gw3web_thumb.png" alt="Gitk: Exploring Commits" class="img-other-logos">
 					<h3>Shell Integration</h3>
-					<p>Simply right-click on a folder in Windows Explorer to access the BASH or GUI.</p>
+					<p>Simply right-click on a folder in Windows Explorer to access the Bash or GUI.</p>
 				</div>
 			</div>
 		</div>
@@ -114,57 +117,52 @@
 				project further down the road are described in detail.</p>
 			<h3><a name="issues"></a>Bug Reports &amp; Feature Requests</h3>
 			<p>If you've noticed a bug or simply have an idea that you'd like to see become real, why not work on it?
-				Bug reports and feature requests are typically submitted to the issue tracker on our GitHub repository.
+				Bug reports and feature requests are typically submitted to the
+				<a href="https://github.com/git-for-windows/git/issues"
+				   target="_blank">issue tracker on our GitHub repository</a>.
 			</p>
-			<a class="btn btn-primary shadow mr-2" href="https://github.com/git-for-windows/git/issues"
-				target="_blank">Issue Tracker</a>
 			<br>
-			<img src="img/details_contribute.png" class="rounded float-left img-git-logo" alt="Git for Windows Logo">
+			<img src="img/details_contribute.svg" class="rounded float-left img-git-sdk-logo" alt="Git for Windows Logo">
 			<h3><span class="gittext">Git for Windows SDK</span> : Contributing Code</h3>
 			<p>The <i>Git for Windows SDK</i> is a build environment that includes all the tools necessary for
 				developers who want to contribute by writing code for Git for Windows.</p>
 			<p>Please look at the <a href="https://github.com/git-for-windows/git/wiki/Technical-overview">technical
 					overview</a> of the Git for Windows packaging and how to include your changes in your own custom
 				installer.</p>
-			<a name="download-sdk" /><a class="btn btn-outline-primary shadow mr-2"
+			<a name="download-sdk" /><a class="btn btn-outline-primary shadow mb-2"
 				href="https://github.com/git-for-windows/build-extra/releases/latest" target="_blank">Download <span
 					class="gittext">Git for Windows SDK</span></a>
 			<p>To contribute/update this web page, see its <a
 					href=" https://github.com/git-for-windows/git-for-windows.github.io">Repository</a>.</p>
 		</div>
 	</section>
-	<footer id="dk-footer" class="dk-footer">
+	<footer id="dk-footer" class="page-footer">
 		<div class="footer">
-			<div class="container">
+			<div class="container text-center text-md-left">
 				<div class="row">
-					<div class="col-md-6">
-						<span>Copyright © 2020 Johannes Schindelin and contributors. All rights reserved.</span>
+					<div class="col-md-2 mx-auto">
+						<a href="https://github.com/git-for-windows/git/releases/"><h5 class="font-weight-bold">All Releases</h5></a>
 					</div>
-					<!-- End Col -->
-					<div class="col-md-6">
-						<div class="footer-menu">
-							<ul>
-								<li>
-									<a href="https://github.com/git-for-windows/git/releases/">All Releases</a>
-								</li>
-								<li>
-									<a href="https://wingit.blob.core.windows.net/files/index.html">Snapshots</a>
-								</li>
-								<li>
-									<a
-										href="https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md#licenses">Licenses</a>
-								</li>
-							</ul>
-						</div>
+					<hr class="clearfix w-100 d-md-none">
+					<div class="col-md-2 mx-auto">
+						<a href="https://wingit.blob.core.windows.net/files/index.html"><h5 class="font-weight-bold">Snapshots</h5></a>
+					</div>
+					<hr class="clearfix w-100 d-md-none">
+					<div class="col-md-2 mx-auto">
+						<a href="https://github.com/git-for-windows/build-extra/blob/master/ReleaseNotes.md#licenses">
+							<h5 class="font-weight-bold">Licenses</h5></a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
 	<!-- JavaScript files-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-</body>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"
+			integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8="
+			crossorigin="anonymous"></script>
+  </body>
 
 </html>
