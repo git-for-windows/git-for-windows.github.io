@@ -2,6 +2,10 @@ body {
   padding-top: 5%;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: #b2b8bd;
+}
+
 section {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -94,11 +98,11 @@ li.borderless {
 }
 .footer span,
 .footer a {
-  color: #878787;
+  color: #BBBBBB;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 .footer a:hover {
-  color: #007bff;
+  color: #80BDFF;
 }
