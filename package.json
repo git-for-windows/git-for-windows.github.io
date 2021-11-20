@@ -30,5 +30,8 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "devDependencies": {
+    "jimp": "^0.16.1"
   }
 }
