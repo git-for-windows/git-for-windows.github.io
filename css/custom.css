@@ -6,6 +6,14 @@ body {
   color: #b2b8bd;
 }
 
+.lcolor{
+  color: #07488f;
+}
+
+.ncolor {
+  color: #0b6bd3;
+}
+
 section {
   padding-top: 5rem;
   padding-bottom: 5rem;
