@@ -1,0 +1,116 @@
+body {
+  padding-top: 5%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #b2b8bd;
+}
+
+.lcolor{
+  color: #07488f;
+}
+
+.ncolor {
+  color: #0b6bd3;
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.lnr {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.05em;
+  stroke-width: 1;
+}
+
+.services-icon {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.quote-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.gittext {
+  color: #646464;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+h1 span {
+  color: #969696;
+  font-size: 0.42em;
+  margin-left: 0.476em;
+}
+
+h2 {
+  font-size: 3em;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.875em;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
+li.borderless {
+  border-top: 0 none;
+  border-bottom: 0 none;
+  border-right: 0 none;
+  border-left: 0 none;
+}
+
+.img-git-logo {
+  width: 80%;
+}
+
+.img-git-sdk-logo {
+  width: 30%;
+}
+
+.img-other-logos {
+  width: 90%
+}
+
+.footer {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #00478f;
+}
+.footer span,
+.footer a {
+  color: #BBBBBB;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.footer a:hover {
+  color: #80BDFF;
+}

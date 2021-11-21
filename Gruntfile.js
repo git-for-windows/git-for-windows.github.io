@@ -31,8 +31,8 @@ module.exports = function(grunt) {
 					'css/pack.css': [
 						'css/normalize.css',
 						'css/jquery.fancybox.css',
-						'css/style.css',
-						'css/small.css'
+						'css/small.css',
+						'css/custom.css'
 					]
 				}
 			}
