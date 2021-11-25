@@ -7,7 +7,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
    You may have them named differently.
 
 # Preconditions
-1. A working [Git for Windows SDK](https://gitforwindows.org/#download-sdk).
+1. A working [Git for Windows SDK](https://linkify.me/V4ib5FG).
 2. A fetched build-extra repository.
     `cd /usr/src/build-extra`
     `git fetch`
