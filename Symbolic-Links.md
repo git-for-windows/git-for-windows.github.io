@@ -2,7 +2,7 @@ Short version: there is no exact equivalent for POSIX symlinks on Windows, and t
 
 # Background
 
-Starting with Windows Vista, there is support for symbolic links. These are not your grandfather's Unix symbolic links; They differ in quite a few ways:
+Starting with Windows Vista, there is support for symbolic links. These are not your grandfather's Unix symbolic links; they differ in quite a few ways:
 
 - Symbolic links are only available on Windows Vista and later, most notably not on XP
 - You need the `SeCreateSymbolicLinkPrivilege` privilege, which is by default assigned only to Administrators and guarded by UAC, but can be assigned to other users or user groups (see below).
