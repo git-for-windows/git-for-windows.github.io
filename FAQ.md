@@ -66,7 +66,7 @@ These often 'fix' (or attempt fixes) recent issues before a new formal release. 
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
 
-*Git for Windows* defaults to using [mintty](https://code.google.com/p/mintty/) terminal. Compared to default Windows console host, it provides normal multi-line cut&paste, working resizing, defaults to unicode font and avoids some bugs in the default console host. However it does not present itself as console to native applications (those *not* built with MSys or Cygwin), so in these applications:
+*Git for Windows* defaults to using [mintty](http://mintty.github.io/) terminal. Compared to default Windows console host, it provides normal multi-line cut&paste, working resizing, defaults to unicode font and avoids some bugs in the default console host. However it does not present itself as console to native applications (those *not* built with MSys or Cygwin), so in these applications:
 
  * Non-ASCII output may be corrupted due to mismatch in character sets (MSYS2 and Cygwin use UTF-8 while Windows will fall back to the legacy DOS codepages in this case).
  * Interactive and full-screen applications won't work at all.
