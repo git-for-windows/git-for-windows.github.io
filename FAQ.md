@@ -48,6 +48,8 @@ Finally, Git for Windows is sometimes released in "out-of-band" versions, when c
 
 This depends on how you installed *Git for Windows*. The bundle installation requires you to download and install the new version. Any customizations you made will be kept as long as you did so in the appropriate configuration folders.
 
+*Git for Windows* comes with a tool to check for updates and offer to install them. Whether or not you enabled auto-updates during installation, you can manually run `git update-git-for-windows`. (For help, run `git update-git-for-windows -h`.)
+
 For advanced users working with the *Git for Windows* SDK `pacman` is available as a package manager. See [Package management](Package-management)
 
 ## How do I check the release hash and release notes
