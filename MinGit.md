@@ -8,7 +8,7 @@ However, for third-party applications it can be quite important to target certai
 
 Bundling a complete portable Git for such cases may very well be overkill, as the applications that want to call Git usually do not require *all* of Git for Windows' functionality, *especially* not the interactive features including Git GUI and Git Bash.
 
-Enter MinGit.
+[Enter MinGit](https://devblogs.microsoft.com/devops/whats-new-in-git-for-windows-2-10/#mingit-git-for-windows-applications).
 
 MinGit is an intentionally minimal, non-interactive distribution of Git for Windows, with third-party applications as its intended audience.
 
