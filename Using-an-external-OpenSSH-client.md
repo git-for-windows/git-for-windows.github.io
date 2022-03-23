@@ -14,7 +14,7 @@ As per [this discussion](https://github.com/git-for-windows/git/discussions/3451
 
 Post-installation, or if using the portable version, to make Git For Windows utilise an external OpenSSH client, remove the bundled OpenSSH binaries. They are typically located in `/usr/bin/`, relative to the installation directory or root folder of the portable version. The bundled OpenSSH implementation is represented by the binaries listed below. On Windows they will have the `.exe` extension.
 
-**NOTE:** The Windows implementation of OpenSSH does _not_ include replacements for all if these. At time of writing, it is missing those indicated below.
+**NOTE:** The Windows implementation of OpenSSH does _not_ include replacements for all of these. At time of writing, it is missing those indicated below.
 
 * `scp`
 * `sftp`
