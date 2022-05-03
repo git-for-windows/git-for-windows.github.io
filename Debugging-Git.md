@@ -105,6 +105,12 @@ In some cases, the back trace is not helpful, though, most likely because the st
 7. If the crash does *not* occur between those two breakpoints, disable the first  breakpoint (so that subsequent restarts of the debugging session will not stop unnecessarily): `dis <number>` (where `<number>` is the breakpoint's number that was printed when you set it via `b <function-or-line>`.
 8. Then continue with step 3 above.
 
+## Source code highlighting in GDB
+GDB (since version 10.1) can use the [Pygments](https://pygments.org/) Python library, if installed, to syntax-highlight source code, both in the output of the `list` command as well as in the [TUI](https://sourceware.org/gdb/onlinedocs/gdb/TUI.html). To benefit from that feature, simply install Pygments using `pacman`:
+~~~bash
+pacman -Syy mingw-w64-x86_64-python-pygments
+~~~
+
 # Debugging with GDB in Emacs
 
 First, install `emacs` and run it:
