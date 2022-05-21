@@ -32,3 +32,7 @@ From https://git-scm.com/docs/git-config#git-config-corefileMode
 > Tells Git if the executable bit of files in the working tree is to be honored.
 
 > Some filesystems lose the executable bit when a file that is marked as executable is checked out, or checks out a non-executable file with executable bit on. git-clone[1] or git-init[1] probe the filesystem to see if it handles the executable bit correctly and this variable is automatically set as necessary.
+
+# Windows Drive (C:) paths vs Bash rooted (/) paths
+
+In the Git for Windows bash, the classic `C:` drive letter is replaced by the the implicit `/c/` directory path. This conversion is commonly used in the `git config` paths that need to be absolute.
