@@ -23,6 +23,12 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
         sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n[git-for-windows-mingw32]\nServer = https://wingit.blob.core.windows.net/i686\n\n|; }' /etc/pacman.conf
 
+    To avoid the future signature related issues, run the following commands first
+
+`rm -r /etc/pacman.d/gnupg/
+pacman-key --init
+pacman-key --populate msys2`
+
  2. Authorize the signing key with:
 
         curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/HEAD/git-for-windows-keyring/git-for-windows.gpg |
