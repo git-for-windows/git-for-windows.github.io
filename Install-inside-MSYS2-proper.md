@@ -25,9 +25,9 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
     To avoid the future signature related issues, run the following commands first
 
-    rm -r /etc/pacman.d/gnupg/
-    pacman-key --init
-    pacman-key --populate msys2`
+        rm -r /etc/pacman.d/gnupg/
+        pacman-key --init
+        pacman-key --populate msys2
 
  2. Authorize the signing key with:
 
