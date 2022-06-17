@@ -82,6 +82,13 @@ For convenience, this can be automated via this alias:
 	pre-release-pr-range-diff = "!set -x && x=\"$(git range-diff -s origin/main^{/^Start.the}..origin/main origin/main^{/^Start.the}^..HEAD^{/^Start.the}^ | sed -n 's/^[ 0-9]*:  \\([0-9a-f][0-9a-f]*\\) [=!] [ 0-9]*:  \\([0-9a-f][0-9a-f]*\\).*/-e \"s\\/\\1\\/\\1 (upstream: \\2)\\/\"/p')\" && git gfw-range-diff origin/main HEAD | sed -e 's/^[ 0-9]*:  [0-9a-f]* [=!]/ &/' -e 's/^[ 0-9]*:  [0-9a-f]* </-&/' -e 's/^[ 0-9]*:  [0-9a-f]* >/+&/' | eval sed ${x:-\\'\\'} | clip.exe"
 ```
 
+# Linking the "New git version" issue
+
+When a new version is tagged in [upstream git](https://github.com/git/git), the "Monitor Component Updates" pipeline in Git for Windows creates an issue for the version ([example](https://github.com/git-for-windows/git/issues/3515)). For tracking & automation purposes, you should:
+
+- link the issue to the pull request created in the previous step
+- add the issue to the current "Next release" milestone ([example](https://github.com/git-for-windows/git/milestone/67))
+
 # Kicking off the "Git Artifacts" Azure Pipeline
 
 Direct your browser to https://dev.azure.com/git-for-windows/git/_build?definitionId=34&_a=summary and queue a new build ("Run pipeline") with the build variable `use.branch` set to something like `rebase-to-v2.27.0@https://github.com/dscho/git` and `Branch/tag` set to the PR's tip commit (e.g. `refs/pull/2645/head`).
