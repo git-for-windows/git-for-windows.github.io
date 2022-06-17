@@ -112,6 +112,8 @@ The idea here is to download the `Git-<version>-64-bit.exe` artifact from the Pi
 
 This one is _really_ easy (as long as nothing is broken...): https://dev.azure.com/git-for-windows/git/_release?definitionId=1&_a=releases
 
+Note: The `pacman` upload always takes this long.
+
 Sadly, things are broken a lot. In those cases, the logs have to be analyzed, and the Pipeline needs to be edited (when it asks whether you want to edit for this release only, do say that you want that), and the deployment has to be restarted. Examples for failures that happened in the past:
 
 - Timeouts while uploading the GitHub Release. In that case, the partially-populated draft release has to be deleted manually (first delete the assets, or it won't delete the release), and then re-deploy.
