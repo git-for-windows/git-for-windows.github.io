@@ -122,11 +122,16 @@ Sadly, things are broken a lot. In those cases, the logs have to be analyzed, an
 
 - Something was pushed to the `main` branch in the meantime, and the Release Pipeline could not handle that. In this instance, the Pipeline was edited to `git pull && git push` if the `git push` failed. More complex scenarios might involve pulling a branch from a personal fork, e.g. if merge conflicts had to be resolved.
 
-# Pushing directly to `main` to close the PR and set the stage for the Azure Pipeline
+# Pushing directly to `main` to close the PR and set the stage for uploading the release as a new snapshot
 
-This step is trivial: `git push origin main`
+This step is trivial: `git push origin <branch>:main` where `<branch>` is something like `rebase-to-v2.37.0`.
 
-Note: traditionally, we do _not_ do that for `-rc0` releases, as they typically happen something like two-and-a-half weeks before the final release, and in rare cases we might need the flexibility to allow for a _real_ quick release (e.g. if a security vulnerability was not disclosed responsibly). The idea going forward, however, is to push to `main` relatively soon after the Release Pipeline finished, to keep the Pacman repository, the [snapshots](https://wingit.blob.core.windows.net/files/index.html) and the `main` branches as aligned as possible.
+This will trigger another "Git artifacts" run, which will figure out that there is a GitHub Release for that commit, download those artifacts, then trigger a run of [the `Snapshots` Release Pipeline](https://dev.azure.com/git-for-windows/git/_release?definitionId=2&view=mine&_a=releases), which will then upload [the snapshot](https://wingit.blob.core.windows.net/files/index.html).
+
+It is important to wait with pushing to `main` until there is a GitHub Release, otherwise the "Git artifacts" Pipeline would build _another_ set of artifacts and upload those, but we do want to use the same artifacts as were uploaded to GitHub Releases.
+
+Note: The idea is to push to `main` relatively soon after the Release Pipeline finished, to keep the Pacman repository, the [snapshots](https://wingit.blob.core.windows.net/files/index.html) and the `main` branches as aligned as possible.
+
 
 # How to release a quick-fix release
 
