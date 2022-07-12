@@ -8,7 +8,7 @@ Run the ssh agent:
 
 This should work both in a `cmd` and `bash` shell and can be included in `~/.profile` or `~/.bashrc`.
 
-The [Github instructions](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) are still valid but not needed anymore.
+The [GitHub instructions](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) are still valid but not needed anymore.
 
 ## Manually
 
