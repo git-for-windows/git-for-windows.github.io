@@ -1,6 +1,10 @@
 ## Which versions of Windows are supported?
 
-Git for Windows currently works with all recent, commercially released x86 32 bit and 64 bit versions of Windows, starting with Windows Vista.
+Git for Windows currently works with all recent, commercially released x86 32 bit and 64 bit versions of Windows, starting with Windows 7 SP1.
+
+***
+NOTE: Git for Windows version [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) was the last version supporting Windows Vista and Server 2008.
+***
 
 ***
 NOTE: Git for Windows version [2.10.0](https://github.com/git-for-windows/git/releases/tag/v2.10.0.windows.1) was the last version supporting Windows XP and Server 2003.
