@@ -100,9 +100,25 @@ In order to instruct git to use domain authentication, prefix the server name wi
 
 See also: [Clone an existing Git repo - Azure Repos](https://docs.microsoft.com/en-us/azure/devops/repos/git/clone)
 
-## I get "Permission denied (publickey)." when using git pull
+## I get "Permission denied (publickey)." when using git pull or git clone
 
+### DSA keys
 Some DSA keys are not considered secure anymore by OpenSSH 7. Adding "PubkeyAcceptedKeyTypes ssh-dss" to ~/.ssh/config helps.
+
+### Running without Git Bash
+If you choose to use OpenSSH that comes with git during installation (default option) and wish to work from Windows' Command Prompt (cmd) or PowerShell instead of Git Bash you should make sure:
+
+1. You're calling the correct executables.  
+Windows comes with a different OpenSSH distribution and by default you might be calling it while git commands use its own.
+Set the environment PATH to use the git installation ssh commands first, those are usually at `C:\Program Files\Git\usr\bin`.  
+In CMD: `set PATH=C:\Program Files\Git\usr\bin;%PATH%`  
+In PowerShell: `$Env:PATH = "C:\Program Files\Git\usr\bin;$Env:PATH"`  
+This will make sure, for example, that you add the private keys to the correct _ssh-agent service_ when calling `ssh-add`.
+Otherwise you might be asked to introduce the passphrase on each git command call that connects to a remote repository.
+
+2. Git's ssh is able to connect to the ssh-agent.  
+In order to connect to the _ssh-agent service_, git's ssh needs to know _how_. This is accomplished by two environment variables called `SSH_AGENT_PID` and `SSH_AUTH_SOCK`.
+Luckily, there is a convenient script `start-ssh-agent.cmd` included with the git installation you can call to set this up. The values are dynamic and only valid after calling the script. Forgetting to set them will fail silently, so be sure to call the script each time you open a new command prompt.
 
 ## Switch locale for git-bash launcher (of Git for Windows SDK)
 
