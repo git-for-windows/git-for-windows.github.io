@@ -53,15 +53,15 @@ where `<version>` is the Git version (please note that the `<version>` cannot co
 
 # Why is this installer so much larger than the official installer?
 
-Short version: you will need to run `make strip` in `/usr/src/git` before `make install`, and you will also need to run to call `pacman -S git-extra` afterwards.
+Short version: you will need to run `make strip` in `/usr/src/git` before `make install`, and you will also need to run to call `pacman -S mingw-w64-x86_64-git-extra` (or `mingw-w64-clang-aarch64-git-extra` for arm64, or `mingw-w64-i686-git-extra` for x86) afterwards.
 
 ## Why `make strip`?
 
 The `make strip` command removes the debug information from the `.exe` files. That is not quite the same as the official release process does: it calls `cv2pdb` which splits out the debug information from the `.exe` files into separate `.pdb` files, but that processing is not defined in `/usr/src/git/Makefile`, but instead in `/usr/src/MINGW-packages/mingw-w64-git/PKGBUILD`.
 
-## Why `pacman -S git-extra`?
+## Why `pacman -S mingw-w64-x86_64-git-extra`?
 
-The `pacman -S git-extra` part is defined elsewhere yet: in `/usr/src/build-extra/please.sh`. Its purpose is to replace many hardlinked copies in `/mingw64/libexec/git-core/git-*.exe` with what Git for Windows calls the "Git wrapper": a small executable that does nothing else but call `git.exe` with the appropriate subcommand name.
+The `pacman -S mingw-w64-x86_64-git-extra` part is defined elsewhere yet: in `/usr/src/build-extra/please.sh`. Its purpose is to replace many hardlinked copies in `/mingw64/libexec/git-core/git-*.exe` with what Git for Windows calls the "Git wrapper": a small executable that does nothing else but call `git.exe` with the appropriate subcommand name.
 
 You see, many "built-in" commands are implemented right there in `git.exe`, with no need to actually execute anything else. For example, when you call `git show`, the show part is executed inside `git.exe` itself.
 

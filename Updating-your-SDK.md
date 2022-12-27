@@ -19,7 +19,7 @@ The SDK ships with the script `update-via-pacman.bat` that you can:
 1. 	Make sure that all Git SDK Bash windows are closed first,
  i.e. that no processes are running that might lock files that want to be updated
 1. 	Start a `cmd` window
-1. 	Run `update-via-pacman.bat` in the command window (it will always re-install the `git-extra` package at the end)
+1. 	Run `update-via-pacman.bat` in the command window (it will always re-install the `mingw-w64-git-extra` package at the end)
 1. 	Review/log the changes located in `/var/log/pacman.log`.
 
 While 'double-clicking' the file in the explorer will work, the cmd window will auto-close on completion limiting you options for reviewing the updates. Thus start a cmd window and run the .bat file from there.
