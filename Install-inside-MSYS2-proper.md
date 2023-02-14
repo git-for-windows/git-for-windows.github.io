@@ -51,7 +51,7 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
  5. And finally install the packages containing Git, its documentation and some extra things:
 
-        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} git-extra
+        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} mingw-w64-x86_64-git-extra
 
 Now you can close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`) to check that everything went well.  Run `git --version` and it should output something like `git version 2.31.0.windows.1` (or newer).
 
@@ -72,7 +72,7 @@ Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see [i
 
 Git for Windows also patches some other packages like cURL and OpenSSL.  It unfortunately sometimes causes some packages to be behind in terms of their version, but keeping the upstream packages would most probably lead to a severely broken Git.
 
-The `git-extra` package modifies the MSYS2 environment heavily (sometimes in ways that are tedious to undo).  The package can be skipped if you want to keep your MSYS2 pristine.  As of this writing, the package:
+The `mingw-w64-git-extra` package modifies the MSYS2 environment heavily (sometimes in ways that are tedious to undo).  The package can be skipped if you want to keep your MSYS2 pristine.  As of this writing, the package:
 
 - brings the `git-for-windows-keyring` package as its dependency, but you can install it manually
 - adds the `sdk` command intended for developing Git for Windows
