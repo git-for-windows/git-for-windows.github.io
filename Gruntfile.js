@@ -17,6 +17,12 @@ module.exports = function(grunt) {
 					src: ['requirements.md'],
 					dest: 'requirements.html'
 				}]
+			},
+			"32-bit": {
+				files: [{
+					src: ['32-bit.md'],
+					dest: '32-bit.html'
+				}]
 			}
 		},
 
