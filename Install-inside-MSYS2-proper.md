@@ -4,7 +4,7 @@ Git for Windows being based on MSYS2, it's possible to install the `mingw-w64-gi
 
 This guide assumes you are comfortable using the command line and you are willing to completely re-install your MSYS2 if something goes wrong.  You can contact @Elieux for advice in the `git-for-windows/git` Gitter room or through the contact channels for MSYS2.  Please don't file issues with Git for Windows installed this way until you verify them in an official Git for Windows distribution.
 
-**note, current package collisions break https-remotes. So if you need them, this method is as-of-now, not suited for you. There is no ETA for a fix, if you would like to contribute and have experience with pacman packages & openssl, please come gitter**
+**Warning: an openssl package-collision breaks https-remotes. So if you have repositories that pull from https: this method is -- as-of-now -- not suited for you. There is no ETA for a fix, if you would like to contribute and have experience with pacman packages & openssl, please come to our gitter channel.**
 
 
 #### The steps
