@@ -4,8 +4,6 @@ Git for Windows being based on MSYS2, it's possible to install the `mingw-w64-gi
 
 This guide assumes you are comfortable using the command line and you are willing to completely re-install your MSYS2 if something goes wrong.  You can contact @Elieux for advice in the `git-for-windows/git` Gitter room or through the contact channels for MSYS2.  Please don't file issues with Git for Windows installed this way until you verify them in an official Git for Windows distribution.
 
-**Warning: an openssl package-collision breaks https-remotes. So if you have repositories that pull from https: this method is -- as-of-now -- not suited for you. There is no ETA for a fix, if you would like to contribute and have experience with pacman packages & openssl, please come to our gitter channel.**
-
 
 #### The steps
 
@@ -57,24 +55,22 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
 Now you can close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`) to check that everything went well.  Run `git --version` and it should output something like `git version 2.31.0.windows.1` (or newer).
 
+
+#### Enhancements, modifications, troubleshooting
+
 If you want to run Git from outside the shells, add `C:\msys64\cmd` to your `PATH`, e.g. by using *Edit environment variables for your account* from the Start menu.  It has to come before any other entry pointing inside your MSYS2 installation. If you have installed your MSYS2 into a different directory, correct the path accordingly.
 
-To integrate with the Windows Credential Manager, install the package `git-credential-manager`.
+To integrate with the Windows Credential Manager, install the package `mingw-w64-x86_64-git-credential-manager`.
 
 To be able to view the git man pages when invoking help with `git help X` or `git X --help` (in addition to `man git-X`), add the line `export MSYS2_ENV_CONV_EXCL=MANPATH` to your shell configuration, and set the man pages as default help format with `git config --global help.format man` (or append `-m` to the git help invocation).
 
-#### Troubleshooting
-
 If you encounter error "*error: wrong number of arguments, should be from 1 to 2*" with `git add -p`, set `add.interactive.useBuiltin` to `true` in Git's configuration.
 
-
-#### Notes
+If you encounter DLL errors (*The code execution cannot proceed because libsomething.dll was not found.*), this is most likely an incompatibility between the DLL versions from Git for Windows and upstream MSYS2.  Usually this is caused by cURL, GnuTLS and OpenSSL.  Replacing the packages with the ones from upstream seems to work best, but no guarantees for what that actually does with Git: `pacman -S mingw64/mingw-w64-x86_64-curl mingw-w64-x86_64-gnutls mingw64/mingw-w64-x86_64-openssl`
 
 Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see [issue #284](https://github.com/git-for-windows/git/issues/284) for more details.  You can run into some rare issues with programs other than Git due to this.  It's possible to keep the stock MSYS2 runtime by moving the `msys` repository above the `git-for-windows` repository in `/etc/pacman.conf`.  There are known issues with Git in that case, although not common.
 
-Git for Windows also patches some other packages like cURL and OpenSSL.  It unfortunately sometimes causes some packages to be behind in terms of their version, but keeping the upstream packages would most probably lead to a severely broken Git.
-
-The `mingw-w64-git-extra` package modifies the MSYS2 environment heavily (sometimes in ways that are tedious to undo).  The package can be skipped if you want to keep your MSYS2 pristine.  As of this writing, the package:
+The `mingw-w64-x86_64-git-extra` package modifies the MSYS2 installation heavily (sometimes in ways that are tedious to undo).  The package can be skipped if you want to keep your MSYS2 pristine.  As of this writing, the package:
 
 - brings the `git-for-windows-keyring` package as its dependency, but you can install it manually
 - adds the `sdk` command intended for developing Git for Windows
