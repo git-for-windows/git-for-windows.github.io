@@ -1,6 +1,6 @@
 # **Please note that this scenario is not officially supported by Git for Windows**
 
-Git for Windows being based on MSYS2, it's possible to install the `mingw-w64-git` package into an existing MSYS2 installation.  That means that if you are already using MSYS2 on your computer, you can use Git for Windows without running the full installer or using the portable version.  There are some caveats for going this way, details below.
+Git for Windows being based on MSYS2, it's possible to install the `mingw-w64-git` package into an existing MSYS2 installation.  That means that if you are already using MSYS2 on your computer, you can use Git for Windows without running the full installer or using the portable version.  There are some caveats for going this way, details below.  Reading the whole guide before starting is recommended.
 
 This guide assumes you are comfortable using the command line and you are willing to completely re-install your MSYS2 if something goes wrong.  You can contact @Elieux for advice in the `git-for-windows/git` Gitter room or through the contact channels for MSYS2.  Please don't file issues with Git for Windows installed this way until you verify them in an official Git for Windows distribution.
 
