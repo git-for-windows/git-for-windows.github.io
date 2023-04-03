@@ -66,7 +66,7 @@ To be able to view the git man pages when invoking help with `git help X` or `gi
 
 If you encounter error "*error: wrong number of arguments, should be from 1 to 2*" with `git add -p`, set `add.interactive.useBuiltin` to `true` in Git's configuration.
 
-If you encounter DLL errors (*The code execution cannot proceed because libsomething.dll was not found.*), this is most likely an incompatibility between the DLL versions from Git for Windows and upstream MSYS2.  Usually this is caused by cURL, GnuTLS and OpenSSL.  Replacing the packages with the ones from upstream seems to work best, but no guarantees for what that actually does with Git: `pacman -S mingw64/mingw-w64-x86_64-curl mingw-w64-x86_64-gnutls mingw64/mingw-w64-x86_64-openssl`
+If you encounter DLL errors (*The code execution cannot proceed because libsomething.dll was not found.*), this is most likely an incompatibility between the DLL versions from Git for Windows and upstream MSYS2.  Usually this is caused by cURL, GnuTLS and OpenSSL.  Replacing the packages with the ones from upstream seems to work best, but no guarantees for what that actually does with Git: `pacman -S mingw64/mingw-w64-x86_64-curl mingw64/mingw-w64-x86_64-gnutls mingw64/mingw-w64-x86_64-openssl`
 
 Git for Windows carries an `msys2-runtime` different from upstream MSYS2, see [issue #284](https://github.com/git-for-windows/git/issues/284) for more details.  You can run into some rare issues with programs other than Git due to this.  It's possible to keep the stock MSYS2 runtime by moving the `msys` repository above the `git-for-windows` repository in `/etc/pacman.conf`.  There are known issues with Git in that case, although not common.
 
