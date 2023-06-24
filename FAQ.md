@@ -84,7 +84,7 @@ There are several methods for working around these problems:
  * Install and use [ConEmu](https://conemu.github.io/).
 
 ## I get errors trying to check out files with long path names.
-Windows file paths are by default limited to 255 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/git-for-windows/git/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
+Windows file paths are by default limited to 260 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/git-for-windows/git/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
 
 ## The installed files are duplicated and look massive - Why?
 All the apparent copies are simply hard links - see Issue  1997 [Use symbolic links for libexec](https://github.com/git-for-windows/git/issues/1997) for more details.
