@@ -6,13 +6,13 @@
 
 @media screen and (max-width: 880px) {
 	.content {
-		width: 90%;
+		width: 100%;
 	}
 }
 
 @media screen and (max-width: 750px) {
 	html {
-		font-size: 16px;
+		font-size: 64px;
 	}
 
 	.feature h2 {
@@ -24,7 +24,7 @@
 	}
 
 	.button {
-		font-size: 1em;
+		font-size: 25em;
 	}
 
 	.featurebutton {
@@ -82,11 +82,11 @@
 	}
 
 	.feature article {
-		height: 12em;
+		height: 48em;
 	}
 
 	.detailstext {
-		width: 58%;
+		width: 65%;
 	}
 
 	.detailsimg {
