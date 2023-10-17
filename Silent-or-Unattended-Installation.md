@@ -10,7 +10,7 @@ Git-<version>-<bitness>.exe /VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICAT
 
 You can also load install parameters from a file with `/LOADINF="filename"`, and you can record parameters to a file using `/SAVEINF="filename"`.
 
-Example for saving selected options to a file:
+Example for saving selected options to a file during an interactive run started from the command-line:
 
 ```
 Git-<version>-<bitness>.exe /SAVEINF=git_options.ini
