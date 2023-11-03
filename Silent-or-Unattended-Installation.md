@@ -58,7 +58,7 @@ You can find all of the possible flags to use by calling the installer with the 
 
 A list of installer custom options as of Git for Windows v2.42.0.windows.2 is below:
 
-| Key | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default | Remark |
+| Key | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Default | Remark |
 | - | - | - | - |
 | `EditorOption` | `Nano`, `VIM`, `Notepad++`, `VisualStudioCode`, `VisualStudioCodeInsiders`, `SublimeText`, `Atom`, `VSCodium`, `Notepad`, `Wordpad`, `CustomEditor` | `VIM` | |
 | `CustomEditorPath` | | | Path and options for custom text editor (only in combination with `EditorOption=CustomEditor`) |
