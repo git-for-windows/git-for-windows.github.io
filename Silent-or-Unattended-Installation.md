@@ -58,25 +58,25 @@ You can find all of the possible flags to use by calling the installer with the 
 
 A list of installer custom options as of Git for Windows v2.42.0.windows.2 is below:
 
-| Key                                | Values | Default | Remark |
-| ---------------------------------- | -------| ------- | ------ |
-| EditorOption                       | Nano, VIM, Notepad++, VisualStudioCode, VisualStudioCodeInsiders, SublimeText, Atom, VSCodium, Notepad, Wordpad, CustomEditor | VIM |   |
-| CustomEditorPath                   |   |   | Path and options for custom text editor (only in combination with EditorOption=CustomEditor) |
-| DefaultBranchOption                |   |   | Default branch name |
-| PathOption                         | BashOnly, Cmd, CmdTools | Cmd |   |
-| SSHOption                          | OpenSSH, ExternalOpenSSH, Plink | OpenSSH |   |
-| TortoiseOption                     | true, false | false | Only in combination with SSHOption=Plink |
-| CurlOption                         | OpenSSL, WinSSL | OpenSSL |   |
-| CRLFOption                         | LFOnly, CRLFAlways, CRLFCommitAsIs | CRLFAlways |   |
-| BashTerminalOption                 | MinTTY, ConHost | MinTTY |   |
-| GitPullBehaviorOption              | Merge, Rebase, FFOnly | Merge |   |
-| UseCredentialManager               | Enabled, Disabled, Core | Enabled | Core does exactly the same as Enabled and exists for historical reasons |
-| PerformanceTweaksFSCache           | Enabled, Disabled | Enabled |   |
-| EnableSymlinks                     | Auto, Enabled, Disabled | Auto |   |
-| AddmandatoryASLRsecurityexceptions | Auto, Enabled, Disabled | Auto |   |
-| EnableBuiltinDifftool              | Auto, Enabled, Disabled | Auto |   |
-| EnableBuiltinRebase                | Auto, Enabled, Disabled | Auto |   |
-| EnableBuiltinStash                 | Auto, Enabled, Disabled | Auto |   |
-| EnableBuiltinInteractiveAdd        | Auto, Enabled, Disabled | Auto |   |
-| EnablePseudoConsoleSupport         | Auto, Enabled, Disabled | Auto |   |
-| EnableFSMonitor                    | Auto, Enabled, Disabled | Auto |   |
+| Key | Values | Default | Remark |
+| - | - | - | - |
+| `EditorOption` | `Nano`, `VIM`, `Notepad++`, `VisualStudioCode`, `VisualStudioCodeInsiders`, `SublimeText`, `Atom`, `VSCodium`, `Notepad`, `Wordpad`, `CustomEditor` | `VIM` | |
+| `CustomEditorPath` | | | Path and options for custom text editor (only in combination with `EditorOption=CustomEditor`) |
+| `DefaultBranchOption` | | | Default branch name |
+| `PathOption` | `BashOnly`, `Cmd`, `CmdTools` | `Cmd` | |
+| `SSHOption` | `OpenSSH`, `ExternalOpenSSH`, `Plink` | `OpenSSH` | |
+| `TortoiseOption` | `true`, `false` | `false` | Only in combination with `SSHOption=Plink` |
+| `CurlOption` | `OpenSSL`, `WinSSL` | `OpenSSL` | |
+| `CRLFOption` | `LFOnly`, `CRLFAlways`, `CRLFCommitAsIs` | `CRLFAlways` | |
+| `BashTerminalOption` | `MinTTY`, `ConHost` | `MinTTY` | |
+| `GitPullBehaviorOption` | `Merge`, `Rebase`, `FFOnly` | `Merge` | |
+| `UseCredentialManager` | `Enabled`, `Disabled`, `Core` | `Enabled` | `Core` does exactly the same as `Enabled` and exists for historical reasons |
+| `PerformanceTweaksFSCache` | `Enabled`, `Disabled` | `Enabled` | |
+| `EnableSymlinks` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `AddmandatoryASLRsecurityexceptions` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnableBuiltinDifftool` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnableBuiltinRebase` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnableBuiltinStash` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnableBuiltinInteractiveAdd` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnablePseudoConsoleSupport` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
+| `EnableFSMonitor` | `Auto`, `Enabled`, `Disabled` | `Auto` | |
