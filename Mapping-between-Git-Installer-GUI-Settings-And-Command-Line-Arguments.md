@@ -17,4 +17,4 @@ The following table maps Git GUI Installation settings to corresponding Git Comm
 
 <br/>
 
-The full list of command line arguments [can be found here](https://github.com/git-for-windows/git/wiki/Silent-or-Unattended-Installation).
+For a full list of command line arguments [see here](https://github.com/git-for-windows/git/wiki/Silent-or-Unattended-Installation).
