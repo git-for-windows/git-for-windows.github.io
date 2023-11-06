@@ -1,6 +1,6 @@
 The following table maps Git GUI Installation settings to corresponding Git Command Line Installation arguments:
 
-| Screenshot | Available Arguments (in sequence) | Example Arguments |
+| Screenshot | Available Arguments<br/>(in sequence) | Example Arguments |
 | - | - | - |
 | ![Git 01](https://github.com/git-for-windows/git/assets/9283914/ca0ae5e8-77ed-4a46-ac4b-b8b2f29e1504) | <br/>`Components=`<br/><br/><ul><li>`icons`</li><li>`ext\reg\shellhere`</li><li>`gitlfs`</li><li>`assoc`</li><li>`assoc_sh`</li><li>`windowsterminal`</li><li>`scalar`</li></ul><br/> | `Components=gitlfs,scalar` |
 | ![Git 02](https://github.com/git-for-windows/git/assets/9283914/44547320-012f-4a14-9c20-657a67a45813) | <br/>`EditorOption=`<br/><br/><ul><li>`Nano`</li><li>`VIM`</li><li>`Notepad++`</li><li>`VisualStudioCode`</li><li>`VisualStudioCodeInsiders`</li><li>`SublimeText`</li><li>`Atom`</li><li>`VSCodium`</li><li>`Notepad`</li><li>`Wordpad`</li><li>`CustomEditor`</li></ul><br/> | `EditorOption=VisualStudioCode` |
