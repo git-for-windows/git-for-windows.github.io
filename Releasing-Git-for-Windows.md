@@ -3,9 +3,9 @@ The release process of Git for Windows is ever-evolving. For now, it consists of
 - Making sure that there are no unaddressed issues
 - Rebasing Git for Windows' patches
 - Opening a PR to kick off a PR build (and waiting for it to succeed)
-- Kicking off the "Git Artifacts" Azure Pipeline
+- Kicking off the `/git-artifacts` slash command
 - Verifying that the resulting installer works
-- Kicking off the Azure Release Pipeline that publishes the release
+- Kicking off the `/release` slash command that publishes the release
 - Pushing directly to `main` to close the PR and set the stage for the Azure Pipeline (at some stage during the `-rc<N>` cycle)
 
 Note: the hardest part is traditonally preparing `-rc0` of every major release.
@@ -104,7 +104,7 @@ Add a PR comment with [the slash command `/git-artifacts`](https://github.com/gi
 
 The idea here is to download the `Git-<version>-64-bit.exe` artifact from the workflow run, install it, and run through the "pre-flight check list" at https://github.com/git-for-windows/build-extra/blob/HEAD/installer/checklist.txt.
 
-# Kicking off the Azure Release Pipeline that publishes the release
+# Kicking off the `/release` slash command that publishes the release
 
 This one is _really_ easy (as long as nothing is broken...): add a PR comment with [the `/release` slash command](https://github.com/git-for-windows/gfw-helper-github-app?tab=readme-ov-file#release).
 
