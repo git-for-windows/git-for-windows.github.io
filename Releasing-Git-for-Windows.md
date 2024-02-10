@@ -89,32 +89,28 @@ When a new version is tagged in [upstream git](https://github.com/git/git), the 
 - link the issue to the pull request created in the previous step
 - add the issue to the current "Next release" milestone ([example](https://github.com/git-for-windows/git/milestone/67))
 
-# Kicking off the "Git Artifacts" Azure Pipeline
+# Kicking off the "Git Artifacts" automation
 
-Direct your browser to https://dev.azure.com/git-for-windows/git/_build?definitionId=34&_a=summary and queue a new build ("Run pipeline") with the build variable `use.branch` set to something like `rebase-to-v2.27.0@https://github.com/dscho/git` and `Branch/tag` set to the PR's tip commit (e.g. `refs/pull/2645/head`).
+Add a PR comment with [the slash command `/git-artifacts`](https://github.com/git-for-windows/gfw-helper-github-app?tab=readme-ov-file#git-artifacts). This will kick off several GitHub workflow runs in https://github.com/git-for-windows/git-for-windows-automation: one to create the tag and adjust the release notes, and then one each for every CPU architecture supported by Git for Windows generating:
 
-That will pull down the PR branch of https://github.com/git-for-windows/git (technically, this is not necessary, because `use.branch` will make sure that the correct branch is used, but it makes the output nicer, as the Azure Pipeline will then show the correct commit in the summary), then look at the tags of https://github.com/git/git to determine the name of the new tag (read: the upcoming Git for Windows version), then fetch `main` of https://github.com/git-for-windows/build-extra, use the latter's `ReleaseNotes.md` to generate the message for the new tag, and then generate:
-
-- The 32-bit/64-bit installers
-- The 32-bit/64-bit Portable Gits
-- The 32-bit/64-bit `.tar.bz2` archives
-- The 32-bit/64-bit MinGits
-- The 32-bit/64-bit BusyBox-based MinGits
-- The NuGet packages (both full and minimal version)
-
-and publish them as a build artifact.
+- The installer
+- The Portable Git
+- The `.tar.bz2` archive
+- The MinGit
+- The BusyBox-based MinGit
+- The NuGet packages (x86_64-only)
 
 # Verifying that the resulting installer works
 
-The idea here is to download the `Git-<version>-64-bit.exe` artifact from the Pipeline, install it, and run through the "pre-flight check list" at https://github.com/git-for-windows/build-extra/blob/HEAD/installer/checklist.txt.
+The idea here is to download the `Git-<version>-64-bit.exe` artifact from the workflow run, install it, and run through the "pre-flight check list" at https://github.com/git-for-windows/build-extra/blob/HEAD/installer/checklist.txt.
 
 # Kicking off the Azure Release Pipeline that publishes the release
 
-This one is _really_ easy (as long as nothing is broken...): https://dev.azure.com/git-for-windows/git/_release?definitionId=1&_a=releases
+This one is _really_ easy (as long as nothing is broken...): add a PR comment with [the `/release` slash command](https://github.com/git-for-windows/gfw-helper-github-app?tab=readme-ov-file#release).
 
 Note: The `pacman` upload always takes this long.
 
-Sadly, things are broken a lot. In those cases, the logs have to be analyzed, and the Pipeline needs to be edited (when it asks whether you want to edit for this release only, do say that you want that), and the deployment has to be restarted. Examples for failures that happened in the past:
+Sadly, things are broken a lot. In those cases, the logs have to be analyzed, and the GitHub workflow definition needs to be edited (on the `release` branch of https://github.com/git-for-windows/git-for-windows-automation), and the failing jobs of the workflow run have to be rerunExamples for failures that happened in the past:
 
 - Timeouts while uploading the GitHub Release. In that case, the partially-populated draft release has to be deleted manually (first delete the assets, or it won't delete the release), and then re-deploy.
 
