@@ -33,21 +33,6 @@ In general, yes: it is a good idea to stay up-to-date.
 
 If you have a version older than 2.40.1, it is *highly* advisable to upgrade. A couple of Git versions came with important fixes to security-relevant vulnerabilities: 2.40.1, 2.39.2, 2.39.1, 2.38.1, 2.37.1, 2.36.0, 2.35.3, 2.35.3, 2.30.2, 2.30.0(2), 2.29.2(3), 2.29.2(2), 2.26.1, 2.24.1(2), 2.17.1(2), 2.14.1, 2.7.4, 2.7.0, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
 
-## What is the release cadence of Git for Windows?
-
-Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details here: https://tinyurl.com/gitCal). Typically, Git for Windows will follow suit within a day.
-
-Other than that, Git for Windows follows the *newest* Git version's maintenance releases (read: after Git for Windows v2.15.0 was released, no new Git for Windows v2.14.x version would be released). Indicators for imminent maintenance releases of Git are:
-
-- The Git maintainer sometimes talks about this in the preamble of the ["What's cooking in git.git" mails](https://public-inbox.org/git/?q=s%3A%22what%27s+cooking%22+AND+f%3Agitster%40pobox.com).
-- The [`maint` in git.git](https://github.com/git/git/commits/maint) accumulates critical patches.
-
-Finally, Git for Windows is sometimes released in "out-of-band" versions, when critical fixes specific to Git for Windows necessitate it. These out-of-band versions are indicated by appending a `(2)` to the latest release (or `(3)`, `(4)`, etc). Examples for such out-of-band versions include: [Git for Windows v2.15.1(2)](https://github.com/git-for-windows/git/releases/tag/v2.15.1.windows.2) and [Git for Windows v2.16.1(4)](https://github.com/git-for-windows/git/releases/tag/v2.16.1.windows.4).
-
-## What is the relationship between *Git for Windows* and *msysGit*?
-
-*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases). See [here](https://github.com/git-for-windows/git/wiki/Updating-your-SDK) to get a copy.
-
 ## How do I update *Git for Windows* upon new releases?
 
 This depends on how you installed *Git for Windows*. The bundle installation requires you to download and install the new version. Any customizations you made will be kept as long as you did so in the appropriate configuration folders.
@@ -69,6 +54,21 @@ For extracting 7z/zip archives see [page](https://github.com/git-for-windows/git
 The Git for Windows builds are not quite that frequent, but there are Snapshot builds listed at https://wingit.blob.core.windows.net/files/index.html
 
 These often 'fix' (or attempt fixes) recent issues before a new formal release. Check their commit notes and links to issues to see if your problem is included.
+
+## What is the release cadence of Git for Windows?
+
+Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details here: https://tinyurl.com/gitCal). Typically, Git for Windows will follow suit within a day.
+
+Other than that, Git for Windows follows the *newest* Git version's maintenance releases (read: after Git for Windows v2.15.0 was released, no new Git for Windows v2.14.x version would be released). Indicators for imminent maintenance releases of Git are:
+
+- The Git maintainer sometimes talks about this in the preamble of the ["What's cooking in git.git" mails](https://public-inbox.org/git/?q=s%3A%22what%27s+cooking%22+AND+f%3Agitster%40pobox.com).
+- The [`maint` in git.git](https://github.com/git/git/commits/maint) accumulates critical patches.
+
+Finally, Git for Windows is sometimes released in "out-of-band" versions, when critical fixes specific to Git for Windows necessitate it. These out-of-band versions are indicated by appending a `(2)` to the latest release (or `(3)`, `(4)`, etc). Examples for such out-of-band versions include: [Git for Windows v2.15.1(2)](https://github.com/git-for-windows/git/releases/tag/v2.15.1.windows.2) and [Git for Windows v2.16.1(4)](https://github.com/git-for-windows/git/releases/tag/v2.16.1.windows.4).
+
+## What is the relationship between *Git for Windows* and *msysGit*?
+
+*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases). See [here](https://github.com/git-for-windows/git/wiki/Updating-your-SDK) to get a copy.
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
 
