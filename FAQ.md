@@ -31,7 +31,7 @@ In the meantime you could try:
 
 In general, yes: it is a good idea to stay up-to-date.
 
-If you have a version older than 2.40.1, it is *highly* advisable to upgrade. A couple of Git versions came with important fixes to security-relevant vulnerabilities: 2.40.1, 2.39.2, 2.39.1, 2.38.1, 2.37.1, 2.36.0, 2.35.3, 2.35.3, 2.30.2, 2.30.0(2), 2.29.2(3), 2.29.2(2), 2.26.1, 2.24.1(2), 2.17.1(2), 2.14.1, 2.7.4, 2.7.0, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
+If you have a version older than 2.45.1, it is *highly* advisable to upgrade. A couple of Git versions came with important fixes to security-relevant vulnerabilities: 2.45.1, 2.40.1, 2.39.2, 2.39.1, 2.38.1, 2.37.1, 2.36.0, 2.35.3, 2.35.3, 2.30.2, 2.30.0(2), 2.29.2(3), 2.29.2(2), 2.26.1, 2.24.1(2), 2.17.1(2), 2.14.1, 2.7.4, 2.7.0, 2.6.1, 2.5.2, 1.9.5-preview20150319, and 1.9.5-preview20141217.
 
 ## How do I update *Git for Windows* upon new releases?
 
