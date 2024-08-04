@@ -76,6 +76,18 @@
 					</div>
 				</div>
 				<div class="stud"></div>
+				<h2>Installation</h2>
+				<div class="content" style="height: unset;">
+					<h3 id="installer">Installer executable</h3>
+					<p>A conventional installer for the latest version is <a href="https://github.com/git-for-windows/git/releases/latest" target="_blank">available for download</a>.</p>
+					<h3 id="winget">winget</h3>
+					<p>To install the latest version of Git for Windows using the Windows Package Manager:</p>
+					<ol>
+						<li><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">Install the winget CLI tool</a>, if you haven't already.</li>
+						<li>Run the following command in a terminal:<br><code>winget install --source winget -e --id Git.Git</code></li>
+					</ol>
+					<p>Please note that the winget package may occasionally lag behind the very latest release, due to the required extra packaging procedures.</p>
+				</div>
 				<h2 id="contribute">Contribute</h2>
 				<div class="content contributecontent">
 					<div class="vcentercontainer detailsimg">

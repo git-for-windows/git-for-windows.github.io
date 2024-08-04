@@ -247,7 +247,8 @@ div.version {
 	margin-top: 0;
 }
 
-.details p a {
+.details p a,
+.details li a {
 	color: #A3CFFF;
 	text-decoration: underline;
 }
@@ -300,7 +301,8 @@ div.version {
 	height: 39.0625em;
 }
 
-.details p {
+.details p,
+.details ol {
 	color: #EBEBEB;
 	line-height: 1.9375em;
 	margin-bottom: 0.3125em;
