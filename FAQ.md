@@ -18,7 +18,7 @@ NOTE: Git for Windows version [2.37.1](https://github.com/git-for-windows/git/re
 NOTE: Git for Windows version [2.10.0](https://github.com/git-for-windows/git/releases/tag/v2.10.0.windows.1) was the last version supporting Windows XP and Server 2003.
 ***
 
-Windows XP and Windows Server 2003 are long past their end of life, hence support for these versions was dropped from Git for Windows 2.10.1 and later. This limitation is inherited by Git's use of MSYS2, which in turn inherited it from [Cygwin](https://cygwin.com/ml/cygwin/2015-08/msg00446.html).
+Windows 7, 8, XP and Windows Server 2003 are long past their end of life, hence support for these versions was dropped from Git for Windows 2.47.0 and later. This limitation is inherited by Git's use of MSYS2, which in turn inherited it from Cygwin (see [this](https://inbox.sourceware.org/cygwin/announce.20150826093214.GA1136@calimero.vinschen.de/) and [this](https://inbox.sourceware.org/cygwin/Zae9oMoQX5vyP6Gh@calimero.vinschen.de/) mail).
 
 More information here: [Git for Windows' prerequisites](https://gitforwindows.org/requirements.html).
 
