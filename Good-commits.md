@@ -36,6 +36,7 @@ Please note how it summarizes nicely *what* the change is about ("Install ... wi
 
 Further reading on commit messages:
 
+- https://github.blog/developer-skills/github/write-better-commits-build-better-projects/
 - http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 - http://gitforteams.com/resources/commit-granularity.html
 - http://chris.beams.io/posts/git-commit/
