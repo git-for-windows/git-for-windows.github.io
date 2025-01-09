@@ -7,7 +7,7 @@ Starting with Windows Vista, there is support for symbolic links. These are not 
 - Symbolic links are only available on Windows Vista and later, most notably not on XP
 - You need the `SeCreateSymbolicLinkPrivilege` privilege, which is by default assigned only to Administrators and guarded by UAC, but can be assigned to other users or user groups (see below).
 - Symbolic links on remote filesystems are disabled by default (call `fsutil behavior query SymlinkEvaluation` to find out)
-- Symbolic links will only work on NTFS, not on FAT nor exFAT
+- Symbolic links will only work on NTFS, [ReFS (Resilient File System)](https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview), but not on FAT nor exFAT
 - Windows' symbolic links are typed: they need to know whether they point to a directory or to a file (for this reason, Git will update the type when it finds that it is wrong)
 - Many programs do not understand symbolic links
 
