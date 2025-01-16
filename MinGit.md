@@ -26,6 +26,12 @@ Further, a conscious decision was made to exclude Perl. It is a *large* contribu
 
 The only really contentious part of that list is the Subversion adapter, `git svn`. However, the space savings are substantial enough, and Subversion is no longer *that* prevalent enough, to ask third-party applications that *do* want to call `git svn` to bundle a full-fledged portable Git.
 
+## What about aliases/hooks?
+
+There is limited support in MinGit to run aliases and hooks (Git expects to be able to run both via a Unix shell). The shell is available as `/bin/sh`, but there is no `/usr/bin/bash`, for example (and therefore scripts starting with `#!/usr/bin/bash` do not work). Also, while some tools are included that users coming from Linux/macOS might expect to be present (e.g. `sed`, `awk`), some users were surprised to see tools like Perl being excluded from MinGit (for size reasons).
+
+tl;dr most aliases and hooks work in MinGit.
+
 # Experimental: BusyBox-based MinGit
 
 [BusyBox](https://busybox.net) is a project providing a single executable that implements small versions of a multitude of Unix utilities such as `sed`, `awk`, and even a Unix shell called `ash`. BusyBox tries to strike a balance between size and functionality, not aiming for complete POSIX compliance. [BusyBox-w32](https://github.com/rmyorston/busybox-w32) is a pure Win32 port of BusyBox, i.e. a single `.exe` file implementing those utilities without using the MSYS2 runtime.
