@@ -12,6 +12,9 @@ That being said, long paths support for C-based git commands can be enabled by s
 git config core.longpaths true
 ```
 
+> [!NOTE]
+> In addition to setting the git configuration the OS also needs to be configured to have longpaths enabled via the [Registry](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#registry-setting-to-enable-long-paths) or group policy.
+
 # Technical background
 
 The root cause of the technical limitation of 260 chars lies deeply within the Win32 API.
