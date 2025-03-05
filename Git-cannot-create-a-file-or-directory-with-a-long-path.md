@@ -1,6 +1,6 @@
 # The problem
 
-Windows does not properly support files and directories longer than 260 characters. This applies to Windows Explorer, `cmd.exe` and many other applications (including many IDEs as well as bash, perl and tcl that come with Git for Windows).
+Windows does not properly support files and directories longer than 260 characters. This applies to Windows Explorer, and several other applications (including some IDEs, perl and tcl that come with Git for Windows).
 
 # Opt-In configuration
 
@@ -20,4 +20,4 @@ Git's source code itself does not have the limitation, it is Windows-only.
 
 # Implementation details
 
-Originally [introduced into Git for Windows 1.9.0](https://github.com/msysgit/git/pull/122), the idea to overcome the length limitation is to convert them into UNC paths (i.e. network paths of the form `\\?\...`). Such paths are accepted by many of the Win32 API's functions accepting UTF-16 strings (many functions in the Win32 API are available as ASCII and UTF-16 functions, marked by an `A` and a `W` suffix, respectively) and are allowed to have a length up to 32,767 wide characters. See e.g. [this commit](https://github.com/git-for-windows/git/commit/38b94fe15fb60e3871a166eec8cfd4265fee727f) for more details.
+Originally [introduced into Git for Windows 1.9.0](https://github.com/msysgit/git/pull/122), the idea to overcome the length limitation is to convert them into extended length paths (i.e. paths of the form `\\?\...`). Such paths are accepted by many of the Win32 API's functions accepting UTF-16 strings (many functions in the Win32 API are available as ASCII and UTF-16 functions, marked by an `A` and a `W` suffix, respectively) and are allowed to have a length up to 32,767 wide characters. See e.g. [this commit](https://github.com/git-for-windows/git/commit/38b94fe15fb60e3871a166eec8cfd4265fee727f) for more details.
