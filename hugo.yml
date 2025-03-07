@@ -1,0 +1,17 @@
+---
+languageCode: en
+title: GitGitGadget
+relativeURLs: true
+uglyURLs: true
+disableKinds:
+- taxonomy
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+module:
+  mounts:
+  - source: content
+    target: content
+params:
+  hugo_version: 0.145.0
