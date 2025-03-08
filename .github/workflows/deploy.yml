@@ -1,0 +1,48 @@
+name: Deploy to Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: configure Hugo
+        run: |
+          set -x &&
+          echo "HUGO_VERSION=$(sed -n 's/^ *hugo_version: *//p' <hugo.yml)" >>$GITHUB_ENV
+      - name: install Hugo ${{ env.HUGO_VERSION }}
+        run: |
+          set -x &&
+          deb=hugo_extended_${HUGO_VERSION}_linux-amd64.deb &&
+          curl -LO https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/$deb &&
+          sudo dpkg -i $deb
+      - uses: actions/configure-pages@v5
+        id: pages
+      - name: run Hugo to build the pages
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          HUGO_RELATIVEURLS: false
+        run: hugo config && hugo --minify --baseURL '${{ steps.pages.outputs.base_url }}/'
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+      - uses: actions/deploy-pages@v4
+        id: deployment
