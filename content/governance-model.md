@@ -1,3 +1,6 @@
+---
+title: governance-model
+---
 # Git for Windows governance model
 
 ## Overview

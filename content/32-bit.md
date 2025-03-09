@@ -1,3 +1,6 @@
+---
+title: 32-bit
+---
 # 32-bit support of Git for Windows
 
 While Git for Windows v1.x was only ever offered as 32-bit installer (i.e. targeting the i686 CPU architecture), with the switch of Git for Windows v2.x in August 2015 to depend on [MSYS2](https://www.msys2.org/), there have been two variants: the 32-bit and the 64-bit (x86\_64) one.
