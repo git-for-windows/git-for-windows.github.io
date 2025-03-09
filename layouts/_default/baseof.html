@@ -7,7 +7,7 @@
 		<meta name="description" content="We bring the awesome Git VCS to Windows">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-		{{- $style := resources.Get "sass/pack.css" | resources.ExecuteAsTemplate "pack.css" . | css.Sass }}
+		{{- $style := resources.Get "sass/pack.scss" | resources.ExecuteAsTemplate "pack.scss" . | css.Sass | resources.Minify }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 		<style type="text/css">
 			body {
