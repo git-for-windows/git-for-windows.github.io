@@ -13,9 +13,15 @@ mediaTypes:
   application/vnd.curl:
     suffixes:
       - url
+  application/vnd.latest:
+    suffixes:
+      - txt
 outputFormats:
   url:
     mediaType: application/vnd.curl
+    noUgly: false
+  latest:
+    mediaType: application/vnd.latest
     noUgly: false
 module:
   mounts:
