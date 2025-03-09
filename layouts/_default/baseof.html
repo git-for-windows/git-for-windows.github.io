@@ -60,7 +60,11 @@
 				<div class="stud"></div>
 			</div>
 		</footer>
-		<script src="js/pack.js"></script>
+		{{- $jquery := resources.Get "js/jquery-1.10.2.min.js" -}}
+		{{- $fancybox := resources.Get "js/jquery.fancybox.js" -}}
+		{{- $mousewheel := resources.Get "js/jquery.mousewheel.js" -}}
+		{{- $js := slice $jquery $fancybox $mousewheel | resources.Concat "js/pack.js" }}
+		<script src="{{ $js.RelPermalink }}"></script>
 		<script>
 			$(document).ready(function() {
 				$(".fancybox-thumb").fancybox({
