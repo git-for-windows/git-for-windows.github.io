@@ -10,10 +10,6 @@
 		{{- $style := resources.Get "sass/pack.scss" | resources.ExecuteAsTemplate "pack.scss" . | css.Sass | resources.Minify }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 		<link rel="shortcut icon" href="favicon.ico">
-		<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
-		<script src="js/respond.js"></script>
-		<![endif]-->
 	</head>
 	<body{{ if ne "home" .Kind }} class="page"{{ end }}>
 		{{ if eq "home" .Kind -}}
