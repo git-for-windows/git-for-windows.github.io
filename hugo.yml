@@ -1,0 +1,35 @@
+---
+languageCode: en
+title: GitGitGadget
+relativeURLs: true
+uglyURLs: true
+disableKinds:
+- taxonomy
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+mediaTypes:
+  application/vnd.curl:
+    suffixes:
+      - url
+  application/vnd.latest:
+    suffixes:
+      - txt
+outputFormats:
+  url:
+    mediaType: application/vnd.curl
+    noUgly: false
+  latest:
+    mediaType: application/vnd.latest
+    noUgly: false
+module:
+  mounts:
+  - source: content
+    target: content
+params:
+  hugo_version: 0.145.0
+  version: 2.48.1
+  tag_name: v2.48.1.windows.1
+  publish_date: "Thu, 13 Feb 2025 12:50:46 UTC"
+  url: "https://github.com/git-for-windows/git/releases/tag/v2.48.1.windows.1"

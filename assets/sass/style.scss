@@ -247,7 +247,7 @@ div.version {
 	margin-top: 0;
 }
 
-.details p a {
+.details p a:not(.button) {
 	color: #A3CFFF;
 	text-decoration: underline;
 }
@@ -348,4 +348,17 @@ div.version {
 
 .stud {
 	clear: both;
+}
+body.page {
+	color: #FFF;
+
+	h1 {
+		text-align: center;
+	}
+
+	article p,h3,ul {
+		margin-left: auto;
+		margin-right: auto;
+		width: 65%;
+	}
 }

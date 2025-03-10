@@ -13,26 +13,15 @@ var die = (err) => {
 };
 
 var updateVersion = (version, tag, timestamp, url) => {
-	var regex = /<div class="version">.*?<\/div>/gm;
-	var replacement = '<div class="version"><a href="' + url
-		+ '" title="Version ' + version + ' was published on '
-		+ timestamp + '">Version ' + version + '</a></div>';
-	fs.writeFileSync('latest-version.txt', version);
-	fs.writeFileSync('latest-tag.txt', tag);
-	const urlPrefix = `https://github.com/git-for-windows/git/releases/download/${tag}`;
-	for (const suffix of ['64-bit', '32-bit', 'arm64']) {
-		fs.writeFileSync(`latest-${suffix}-installer.url`,
-				 `${urlPrefix}/Git-${version}-${suffix}.exe`);
-		fs.writeFileSync(`latest-${suffix}-portable-git.url`,
-				 `${urlPrefix}/PortableGit-${version}-${suffix}.7z.exe`);
-		fs.writeFileSync(`latest-${suffix}-mingit.url`,
-				 `${urlPrefix}/MinGit-${version}-${suffix}.zip`);
-	}
-	fs.readFile('index.html', 'utf8', (err, data) => {
+	fs.readFile('hugo.yml', 'utf8', (err, data) => {
 		if (err)
 			die(err);
-		data = data.replace(regex, replacement);
-		fs.writeFileSync('index.html', data);
+		data = data
+			.replace(/^(  version: ).*/, `$1${version}`)
+			.replace(/^(  tag_name: ).*/, `$1${tag}`)
+			.replace(/^(  publish_date: ).*/, `$1"${timestamp}"`)
+			.replace(/^(  url: ).*/, `$1"${url}"`);
+		fs.writeFileSync('hugo.yml', data);
 	});
 };
 

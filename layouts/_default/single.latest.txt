@@ -1,0 +1,5 @@
+{{- if eq "tag" .Params.type -}}
+{{- .Site.Params.tag_name -}}
+{{- else if eq "version" .Params.type -}}
+{{- .Site.Params.version -}}
+{{- end -}}
