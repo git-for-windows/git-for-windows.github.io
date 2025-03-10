@@ -51,7 +51,7 @@ Contributors are community members who either have no desire to become committer
 yet been given the opportunity by the benevolent dictator. They make valuable contributions, such as
 those outlined in the list below, but generally do not have the authority to make direct changes to the
 project code. Contributors engage with the project through communication tools, such as the
-[mailing list](https://groups.google.com/forum/#!forum/git-for-windows),
+[Git mailing list](mailto:git@vger.kernel.org),
 [GitHub](https://github.com/git-for-windows), via [reports of issues](https://github.com/git-for-windows/git/issues)
 and via [pull requests](https://github.com/git-for-windows/git/pulls) in the issue tracker, as detailed in our
 [how to participate](https://github.com/git-for-windows/git/wiki/How-to-participate) document.
