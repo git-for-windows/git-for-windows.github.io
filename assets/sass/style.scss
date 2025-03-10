@@ -247,7 +247,7 @@ div.version {
 	margin-top: 0;
 }
 
-.details p a {
+.details p a:not(.button) {
 	color: #A3CFFF;
 	text-decoration: underline;
 }
