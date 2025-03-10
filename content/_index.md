@@ -82,5 +82,7 @@ To contribute/update this web page, see its [Repository]( https://github.com/git
 </div>
 </div>
 <div class="stud">
-<a href="https://twitter.com/GitForWindows" rel="publisher">Twitter</a>
+
+<a href="https://bsky.app/profile/gitforwindows.org" rel="publisher">Bluesky</a>
+
 </div>
