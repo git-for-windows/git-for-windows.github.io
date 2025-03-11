@@ -156,4 +156,4 @@ Breakpoint 1, 0x00000000004018da in main (argc=1, argv=0x6e0498) at test-dump-in
 You can then debug like normal (for gdb), but with a split screen and the source in the other panel.  there are some toolbar helpers and you can set breakpoints using the left gutter.
 
 Screenshot:
-![GDB in Emacs (screenshot)](https://raw.githubusercontent.com/wiki/git-for-windows/git/emacs-gdb.png)
+![GDB in Emacs (screenshot)](img/emacs-gdb.png)
