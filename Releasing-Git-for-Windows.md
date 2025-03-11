@@ -15,9 +15,8 @@ Note: the hardest part is traditonally preparing `-rc0` of every major release.
 There are essentially three-and-a-half venues where Git for Windows bugs are reported:
 
 - The Git for Windows bug tracker at https://github.com/git-for-windows/git/issues
-- The Git for Windows mailing list at https://groups.google.com/forum/#!forum/git-for-windows
-- The Git mailing list at https://public-inbox.org/git/
-- Twitter. Yep: ugh. Git for Windows is actually that popular that a couple of its users seriously think that Twitter would make for a perfectly fine way to report bugs. As if 280 characters were enough to make for a good bug report. Therefore, sometimes, when the Git for Windows maintainer feels particularly masochistic, they go to https://twitter.com/search?q=%23git-for-windows and see whether there is any valid bug report (one really has to pick out the needles between all that hay).
+- The Git mailing list at https://lore.kernel.org/git/
+- [Bluesky](https://bsky.app/search?q=git-for-windows).
 
 ## In case last-minute component updates are needed
 

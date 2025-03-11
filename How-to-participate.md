@@ -2,7 +2,7 @@ There are several ways to participate in the Git for Windows project. First off,
 
 # Help users
 
-On [the mailing list](http://groups.google.com/group/git-for-windows) or on [the issue tracker](https://github.com/git-for-windows/git/issues), help is always welcome.
+In [Git for Windows' discussions](https://github.com/git-for-windows/git/discussions/) or on [the issue tracker](https://github.com/git-for-windows/git/issues), help is always welcome.
 
 # Add documentation
 
