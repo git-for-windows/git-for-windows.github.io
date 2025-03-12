@@ -25,7 +25,7 @@ Also important:
 - [Sign off](https://github.com/git/git/blob/v2.8.1/Documentation/SubmittingPatches#L234-L286) on your change (i.e. state that you release this patch as Open Source, if applicable with your employer's consent).
 - Format the commit message to wrap at 76 columns per line.
 
-A good example for a commit message is [git-for-windows/build-extra@a64fe115](github.com/git-for-windows/build-extra/commit/a64fe115d901cab775c881bd1624218ac28de4d4):
+A good example for a commit message is [git-for-windows/build-extra@a64fe115](https://github.com/git-for-windows/build-extra/commit/a64fe115d901cab775c881bd1624218ac28de4d4):
 
 ```
 Install 7-Zip without confirmation if it is missing
