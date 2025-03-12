@@ -3,17 +3,19 @@ title: "How to participate"
 aliases:
   - "How-to-participate"
 ---
+# You want to contribute? Great. Here's how!
+
 There are several ways to participate in the Git for Windows project. First off, have a look at the [governance model](https://gitforwindows.org/governance-model.html) of the project.
 
-# Help users
+## Help users
 
 In [Git for Windows' discussions](https://github.com/git-for-windows/git/discussions/) or on [the issue tracker](https://github.com/git-for-windows/git/issues), help is always welcome.
 
-# Add documentation
+## Add documentation
 
 A lot of documentation wants to be written, still. A good place is [the Git for Windows wiki](https://github.com/git-for-windows/git/wiki). Tutorials, step by step instructions and general background information, etc. Even just keep the links up to date and reporting inconsistencies is helpful.
 
-# Fix bugs or add features in the Git code itself
+## Fix bugs or add features in the Git code itself
 
 Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. See the [CONTRIBUTING.md](https://github.com/git-for-windows/git/blob/HEAD/CONTRIBUTING.md) page/file
 

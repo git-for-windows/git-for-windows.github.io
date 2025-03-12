@@ -3,6 +3,8 @@ title: "Releasing Git for Windows"
 aliases:
   - "Releasing-Git-for-Windows"
 ---
+# Git for Windows' release process
+
 The release process of Git for Windows is ever-evolving. For now, it consists of these steps:
 
 - Making sure that there are no unaddressed issues
@@ -15,7 +17,7 @@ The release process of Git for Windows is ever-evolving. For now, it consists of
 
 Note: the hardest part is traditonally preparing `-rc0` of every major release.
 
-# Making sure that there are no unaddressed issues
+## Making sure that there are no unaddressed issues
 
 There are essentially three-and-a-half venues where Git for Windows bugs are reported:
 
@@ -33,7 +35,7 @@ Once the component has been built and uploaded to Git for Windows' Pacman reposi
 
 Note: Historically, we used the artifacts of the [`git-sdk-64-extra-artifacts`](https://dev.azure.com/git-for-windows/git/_build?definitionId=29&_a=summary) and the [`git-sdk-32-extra-artifacts` Pipeline](https://dev.azure.com/git-for-windows/git/_build?definitionId=30&_a=summary) Pipelines that were triggered automatically by pushes to `git-sdk-64` and `git-sdk-32`, respectively, and we had to wait for them to complete before proceeding. As of June 17th, 2022, this is no longer necessary.
 
-# Rebasing Git for Windows' patches
+## Rebasing Git for Windows' patches
 
 Note: this section assumes that the reader is _very_ familiar with interactive rebases, in particular with the `--rebase-merges` variant thereof. Readers without much experience in this are highly advised to read up on https://git-scm.com/docs/git-rebase#_rebasing_merges before going any further.
 
@@ -59,7 +61,7 @@ The trick is not just to run `/usr/src/build-extra/shears.sh --merging --onto <v
 
 Note: internally, the `shears.sh` script runs `git rebase --rebase-merges --interactive` with one quirk: a first line is injected into the todo list that creates a "dummy" merge commit: it is a merge that pulls in the pre-rebase commits, but it uses `-s ours` so that the tree remains unchanged relative to the onto commit. The effect is that the patches got rebased, _and_ the end result still fast-forwards from the previous tip of the main branch.
 
-# Opening a PR to kick off a PR build
+## Opening a PR to kick off a PR build
 
 This is easy: just push a branch to your fork and then go to https://github.com/git-for-windows/git/pull/new/main and select that branch from your fork.
 
@@ -86,14 +88,14 @@ For convenience, this can be automated via this alias:
 	pre-release-pr-range-diff = "!set -x && x=\"$(git range-diff -s origin/main^{/^Start.the}..origin/main origin/main^{/^Start.the}^..HEAD^{/^Start.the}^ | sed -n 's/^[ 0-9]*:  \\([0-9a-f][0-9a-f]*\\) [=!] [ 0-9]*:  \\([0-9a-f][0-9a-f]*\\).*/-e \"s\\/\\1\\/\\1 (upstream: \\2)\\/\"/p')\" && git gfw-range-diff origin/main HEAD | sed -e 's/^[ 0-9]*:  [0-9a-f]* [=!]/ &/' -e 's/^[ 0-9]*:  [0-9a-f]* </-&/' -e 's/^[ 0-9]*:  [0-9a-f]* >/+&/' | eval sed ${x:-\\'\\'} | clip.exe"
 ```
 
-# Linking the "New git version" issue
+## Linking the "New git version" issue
 
 When a new version is tagged in [upstream git](https://github.com/git/git), the "Monitor Component Updates" pipeline in Git for Windows creates an issue for the version ([example](https://github.com/git-for-windows/git/issues/3515)). For tracking & automation purposes, you should:
 
 - link the issue to the pull request created in the previous step
 - add the issue to the current "Next release" milestone ([example](https://github.com/git-for-windows/git/milestone/67))
 
-# Kicking off the "Git Artifacts" automation
+## Kicking off the "Git Artifacts" automation
 
 Add a PR comment with [the slash command `/git-artifacts`](https://github.com/git-for-windows/gfw-helper-github-app?tab=readme-ov-file#git-artifacts). This will kick off several GitHub workflow runs in https://github.com/git-for-windows/git-for-windows-automation: one to create the tag and adjust the release notes, and then one each for every CPU architecture supported by Git for Windows generating:
 
@@ -104,11 +106,11 @@ Add a PR comment with [the slash command `/git-artifacts`](https://github.com/gi
 - The BusyBox-based MinGit
 - The NuGet packages (x86_64-only)
 
-# Verifying that the resulting installer works
+## Verifying that the resulting installer works
 
 The idea here is to download the `Git-<version>-64-bit.exe` artifact from the workflow run, install it, and run through the "pre-flight check list" at https://github.com/git-for-windows/build-extra/blob/HEAD/installer/checklist.txt.
 
-# Kicking off the `/release` slash command that publishes the release
+## Kicking off the `/release` slash command that publishes the release
 
 This one is _really_ easy (as long as nothing is broken...): add a PR comment with [the `/release` slash command](https://github.com/git-for-windows/gfw-helper-github-app?tab=readme-ov-file#release).
 
@@ -122,7 +124,7 @@ Sadly, things are broken a lot. In those cases, the logs have to be analyzed, an
 
 - Something was pushed to the `main` branch in the meantime, and the Release Pipeline could not handle that. In this instance, the Pipeline was edited to `git pull && git push` if the `git push` failed. More complex scenarios might involve pulling a branch from a personal fork, e.g. if merge conflicts had to be resolved.
 
-# Pushing directly to `main` to close the PR and set the stage for uploading the release as a new snapshot
+## Pushing directly to `main` to close the PR and set the stage for uploading the release as a new snapshot
 
 This step is trivial: `git push origin <branch>:main` where `<branch>` is something like `rebase-to-v2.37.0`.
 
@@ -133,7 +135,7 @@ It is important to wait with pushing to `main` until there is a GitHub Release, 
 Note: The idea is to push to `main` relatively soon after the Release Pipeline finished, to keep the Pacman repository, the [snapshots](https://wingit.blob.core.windows.net/files/index.html) and the `main` branches as aligned as possible.
 
 
-# How to release a quick-fix release
+## How to release a quick-fix release
 
 Outside of the `-rc<N>` phase, just follow the process as described above. This will publish one of those `(2)` versions, e.g. v2.24.1(2). Typically this happens _very_ close after an official release e.g. when really serious bugs crept into Git for Windows unnoticed, such as Git GUI crashing before even showing the window.
 

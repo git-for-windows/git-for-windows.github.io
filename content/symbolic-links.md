@@ -3,9 +3,11 @@ title: "Symbolic Links"
 aliases:
   - "Symbolic-Links"
 ---
+# Git for Windows vs symbolic links
+
 Short version: there is no exact equivalent for POSIX symlinks on Windows, and the closest thing is unavailable for non-admins by default unless Developer Mode is enabled and a relatively recent Windows 10 version is used. Therefore, symlink emulation support is only turned on by default when that scenario is detected. Support can be enabled by the user, via the `core.symlinks=true` config setting.
 
-# Background
+## Background
 
 Starting with Windows Vista, there is support for symbolic links. These are not your grandfather's Unix symbolic links; they differ in quite a few ways:
 
@@ -22,7 +24,7 @@ For those reasons, Git for Windows disables support for symbolic links by defaul
 git clone -c core.symlinks=true <URL>
 ```
 
-# Creating symbolic links
+## Creating symbolic links
 
 By default, the `ln -s` command in *Git Bash* does *not* create symbolic links. Instead, it creates copies.
 
@@ -33,7 +35,7 @@ mklink /d this-link-points-to c:\that-directory
 mklink this-link-points-to c:\that-file
 ```
 
-# Allowing non-administrators to create symbolic links
+## Allowing non-administrators to create symbolic links
 
 The privilege of `Create symbolic links` can be assigned using local policy editors (or via policies from Active Directory in case of domain accounts). Home Editions of Windows do not have these policy editors, but the freely available [Polsedit](http://www.southsoftware.com) can be used on these editions.
 
@@ -45,7 +47,7 @@ The privilege of `Create symbolic links` can be assigned using local policy edit
 
 Note that regardless of privilege assignment, members of the Administrators group will also require UAC elevation (see the full details in the *Access Token Changes* section in this [document on UAC](https://msdn.microsoft.com/en-us/library/bb530410.aspx)). Since Windows 10 version 1703 (*Creators Update*), [enabling Developer Mode](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development) will disable this restriction and [allow creating symlinks without UAC elevation](https://blogs.windows.com/buildingapps/2016/12/02/symlinks-windows-10/) (although Git for Windows still requires UAC elevation up to and including v2.13.0).
 
-# Creating directory junctions
+## Creating directory junctions
 
 Directory junctions can be created by non-administrator users by default. Therefore, they are a popular alternative to symbolic links. To create a directory junction, use the `mklink` command with the `/j` option:
 

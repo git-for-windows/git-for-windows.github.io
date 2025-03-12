@@ -3,13 +3,15 @@ title: "Building Git"
 aliases:
   - "Building-Git"
 ---
+# Building Git on Windows
+
 We build Git for Windows using an [MSYS2](https://msys2.github.io/) based *Git for Windows SDK*. This SDK can be installed via the [SDK installer](https://gitforwindows.org/#download-sdk)
 
-# Installing a build environment
+## Installing a build environment
 
 1. Just run the [SDK installer](https://gitforwindows.org/#download-sdk).
 
-# Build Git
+## Build Git
 
 1. An initial `git clone` and `make` should have already occurred when running the [SDK installer](https://gitforwindows.org/#download-sdk).
 
@@ -33,7 +35,7 @@ Once the SDK built Git, it is *very* easy to build another revision of Git, such
 4. check out the revision that was just fetched: `git checkout FETCH_HEAD`,
 5. continue as [above](https://github.com/git-for-windows/git/wiki/Building-Git#build-git) either by `make install` or `make test`.
 
-# Updating to the newest Git for Windows version
+## Updating to the newest Git for Windows version
 
 ```bash
 cd /usr/src/git

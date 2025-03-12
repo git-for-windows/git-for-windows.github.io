@@ -3,11 +3,11 @@ title: "The difference between MINGW and MSYS2"
 aliases:
   - "The-difference-between-MINGW-and-MSYS2"
 ---
-# tl;dr
+## tl;dr
 
 MINGW refers to executables that are compiled using the MINGW GCC Compiler and target the Win32 API. MSYS2 refers to executables that are compiled by MSYS2 GCC Compiler and make use of a POSIX emulation layer.
 
-# Background
+## Background
 
 First of all, it needs to be noted that many parts of Git are not written in portable C; Git relies on a POSIX shell and Perl to be available instead.
 
@@ -31,7 +31,7 @@ MSYS2 is also *very* active, typically providing package updates multiple times 
 
 It still required a two-month effort to bring everything to a state where Git's test suite passes, many more months until the first official Git for Windows 2.x was released, and a couple of patches still await their submission to the respective upstream projects. Yet without MSYS2, the modernization of Git for Windows would simply not have happened.
 
-# Difference between MSYS2 and MINGW: going into details
+## Difference between MSYS2 and MINGW: going into details
 
 In order to support Git fully, Git for Windows needs a way to execute the shell scripts that are *still* a core part of Git.
 To do so, we use a stripped-down MSYS2 (which in turn is a modified version of Cygwin - read more [here](https://www.msys2.org/wiki/How-does-MSYS2-differ-from-Cygwin/) and [here](https://github.com/msys2/msys2/wiki/How-does-MSYS2-differ-from-Cygwin))).
@@ -48,7 +48,8 @@ Normally, we use Visual C++ compiler on Windows. When building Windows software 
 That is the difference between `<SDK>\usr\src\MSYS2-packages` and `<SDK>\usr\src\MINGW-packages`. To discern those packages from one another, the MINGW packages all start with the prefix `mingw-w64-`.
 
 
-# It was too simple
+## It was too simple
+
 To make things even more complicated, remember that you can run 32-bit executables from a 64-bit process and vice versa (provided that you are on a 64-bit Windows). This is only *partially* supported by MSYS2: while you can mix and match 32-bit/64-bit MINGW processes, the same is *not* true of MSYS2 processes, as they are limited by the "bit-ness" of the MSYS2 runtime.
 
 A 64-bit MSYS2 process always uses the 64-bit MSYS2 runtime, and this runtime needs to be shared between all child MSYS2 processes, to share information required to emulate e.g. POSIX signal handling. That means that you can install only 32-bit MSYS2 packages into a 32-bit MSYS2 setup.

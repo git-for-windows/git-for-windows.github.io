@@ -3,11 +3,13 @@ title: "Package management"
 aliases:
   - "Package-management"
 ---
+# Git for Windows' package management
+
 Modern software development relies heavily on a way to manage dependencies, i.e. to keep track of required software libraries and their versions. Examples are `apt` for Linux, `homebrew` for macOS, `maven` for Java and `pip` for Python.
 
 Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles the [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool (known from Arch Linux) for dependency management.
 
-# How to use `pacman`
+## How to use `pacman`
 
 There is a `man` page for `pacman` and the tool also sports a `--help` option. These resources are recommended to address questions not covered by the following, brief descriptions.
 
@@ -63,7 +65,7 @@ To find out what package a file belongs to, call
 pacman -Qo <file-name>
 ```
 
-# Technical details
+## Technical details
 
 ## Rebuild packages
 
@@ -135,7 +137,7 @@ Pacman repositories are served via HTTP, as static files in a single directory. 
 
 The *Git for Windows*-specific packages are served by [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/), see below. We ship MSYS2 and MINGW packages for two architectures, `i686` and `x86_64`. Pacman is configured to use these in `/etc/pacman.conf`.
 
-# Further reading
+## Further reading
 
 - [Building new package versions](Building-new-package-versions)
 - [Upgrading the `perl` component to a new version](Upgrading-the-%60perl%60-component-to-a-new-version)

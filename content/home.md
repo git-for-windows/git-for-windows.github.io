@@ -3,10 +3,12 @@ title: "Home"
 aliases:
   - "Home"
 ---
-# Introduction
+## Introduction
+
 The _Git for Windows_ wiki. It looks more technical than [our home page](https://gitforwindows.org/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
 
 ## About
+
 _Git for Windows_ is very different from _Git_ in one very important respect: As Windows does not provide the *POSIX* infrastructure Git expects, Git for Windows  always had to ship with much more than any other Git distribution: provide a `bash`, a `perl`, many *POSIX* tools such as `sed`, `awk`, `tr`, etc.
 
 Git for Windows 1.x did that by starting off from an [MSys](http://www.mingw.org/wiki/msys) installation and just packaging all the required files as-are. _MSys_ did not sport any package manager at the time, so all of the updates were quite manual, and some of the components we shipped were not even part of _MSys_ -- such as `msmtp` or `WhoUses` -- so we had to compile them from scratch, and maintain those components ourselves.
@@ -25,5 +27,6 @@ Now, keep in mind that _MSYS2_ and Linux (The original target for _Git_'s distri
 
 So if you are missing some packages - feel free to start making one. This is Open Source, after all, so everybody interested and capable enough can contribute whatever they need to address their needs. And that includes you: you could imitate e.g. [a simple `PKGBUILD` file](https://github.com/msys2/MINGW-packages/blob/HEAD/mingw-w64-assimp/PKGBUILD) to build a new package e.g. `msmtp`, the component that _Git for Windows_ 1.x uses to support `sendemail`. Then open a Pull Request so that _Git for Windows_ can ship it. Our documentation will be helpful in that endeavor: [package-management](https://github.com/git-for-windows/git/wiki/Package-management), in particular [package-management#rebuild-packages](https://github.com/git-for-windows/git/wiki/Package-management#rebuild-packages).
 
-# Start documenting
+## Start documenting
+
 If you need inspiration what you could write about: document your common work flows. Write a tutorial how to start coding _Git for Windows_, how to run the test suite. Write a tutorial how to debug a failing test. Write about something you would have wished you had known about Git for Windows a long time ago.

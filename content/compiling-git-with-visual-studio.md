@@ -3,9 +3,11 @@ title: "Compiling Git with Visual Studio"
 aliases:
   - "Compiling-Git-with-Visual-Studio"
 ---
+# Compiling Git with Visual Studio
+
 Please note: this page describes how to compile Git's source code in Visual Studio 2015 or later.
 
-# Checking out `vs/main`
+## Checking out `vs/main`
 
 > [!WARNING]  
 > The `vs/main` branch and `git.sln` is deprecated. The current approach is to open the `git` folder in VS directly, refer to the [README of the `vs/main` branch](https://github.com/git-for-windows/git/tree/vs/main).
@@ -16,7 +18,7 @@ However, as of Git for Windows v2.11.0, a much more convenient way is available:
 
 Simply open the `git.sln` file and build the solution. DO NOT upgrade Build Tools to v141 - it will not work. If you are using VS 2017 or later, you need to install Build Tools v140 manually.
 
-# Running the tests
+## Running the tests
 
 When building Git in Visual Studio, you do not actually need a full-blown Git for Windows SDK. Simply install Git for Windows, make sure that the entire solution was built, open a Git Bash and run the tests in the `t/` subdirectory.
 
@@ -43,6 +45,6 @@ prove --timer --jobs 15 ./t[0-9]*.sh
 ```
 
 
-# Browsing the code
+## Browsing the code
 
 You can also use the Sourcetrail code browser (now open source) in conjunction with Visual Studio, see [Sourcetrail code viewer](https://github.com/git-for-windows/git/wiki/Sourcetrail-code-viewer-and-linkage-to-Visual-Studio,-for-Git) page.

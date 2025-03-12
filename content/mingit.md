@@ -37,7 +37,7 @@ There is limited support in MinGit to run aliases and hooks (Git expects to be a
 
 tl;dr most aliases and hooks work in MinGit.
 
-# Experimental: BusyBox-based MinGit
+## Experimental: BusyBox-based MinGit
 
 [BusyBox](https://busybox.net) is a project providing a single executable that implements small versions of a multitude of Unix utilities such as `sed`, `awk`, and even a Unix shell called `ash`. BusyBox tries to strike a balance between size and functionality, not aiming for complete POSIX compliance. [BusyBox-w32](https://github.com/rmyorston/busybox-w32) is a pure Win32 port of BusyBox, i.e. a single `.exe` file implementing those utilities without using the MSYS2 runtime.
 

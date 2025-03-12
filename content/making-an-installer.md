@@ -3,7 +3,9 @@ title: "Making an installer"
 aliases:
   - "Making-an-installer"
 ---
-# The quick way
+# Making a Git for Windows installer
+
+## The quick way
 
 Download the [Git for Windows SDK](https://gitforwindows.org/#download-sdk), install it and run `sdk build installer`.
 
@@ -18,7 +20,7 @@ sdk cd installer
 ./release.sh -d Editor
 ```
 
-# Detailed overview
+## Detailed overview
 
 As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
 
@@ -56,7 +58,7 @@ git pull main
 
 where `<version>` is the Git version (please note that the `<version>` cannot contain dots after the numerical version: `2.7.2-hello-world` is okay while `2.7.2.hello.world` is not okay).
 
-# Why is this installer so much larger than the official installer?
+## Why is this installer so much larger than the official installer?
 
 Short version: you will need to run `make strip` in `/usr/src/git` before `make install`, and you will also need to run to call `pacman -S mingw-w64-x86_64-git-extra` afterwards (replace `x86_64` with `i686` for 32-bit builds and with `clang-aarch64` for Windows/ARM64 builds).
 

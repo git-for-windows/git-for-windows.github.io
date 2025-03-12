@@ -116,7 +116,7 @@ GDB (since version 10.1) can use the [Pygments](https://pygments.org/) Python li
 pacman -Syy mingw-w64-x86_64-python-pygments
 ~~~
 
-# Debugging with GDB in Emacs
+## Debugging with GDB in Emacs
 
 First, install `emacs` and run it:
 

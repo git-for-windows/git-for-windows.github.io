@@ -3,15 +3,17 @@ title: "Rebasing Git for Windows"
 aliases:
   - "Rebasing-Git-for-Windows"
 ---
+# Rebasing Git for Windows to a new Git version
+
 To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://github.com/git/git) *Git* release, follow this guideline.
 
-# Assumptions
+## Assumptions
 1. You want to *rebase* onto a new [upstream](https://github.com/git/git) release tagged as `v2.3.4`
 2. The latest *rebase* was done onto a [upstream](https://github.com/git/git) release tagged as `v2.3.3`
 3. the `origin/main` below means remote https://github.com/git-for-windows/git, its `main` branch.
    You may have them named differently.
 
-# Preconditions
+## Preconditions
 1. A working [Git for Windows SDK](https://gitforwindows.org/#download-sdk).
 2. A fetched build-extra repository.
     `cd /usr/src/build-extra`
@@ -24,7 +26,7 @@ To do a *rebase* of the *Git for Windows* source onto a new [upstream](https://g
     `git remote add git https://github.com/git/git`
     `git fetch git`
 
-# Starting the *rebase*
+## Starting the *rebase*
 Run the `shears.sh` script to build up the actual *rebase* script.
     `/usr/src/build-extra/shears.sh --merging --onto v2.3.4 merging-rebase`
     Note: `v2.3.4` is a `tag` in the remote `git`.
@@ -36,7 +38,7 @@ The *rebase* should start automatically and occasionally stop if it hits any mer
 Note: the `merging-rebase` argument is a special placeholder that is interpreted by the `shears.sh` script to find the commit that started the previous merging-rebase. You can find the commit yourself like this:
     `BASE="$(git rev-parse HEAD^{/^"Start the merging-rebase"})"`
 
-# Verifying the *rebase*
+## Verifying the *rebase*
 1. Generate a *diff* of the previous state.
     `git diff v2.3.3..origin/main > prev.diff`
 2. Generate a *diff* of the current state.

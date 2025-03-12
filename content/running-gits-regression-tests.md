@@ -3,7 +3,9 @@ title: "Running Git's regression tests"
 aliases:
   - "Running-Git's-regression-tests"
 ---
-# Running tests
+# Git's test suite
+
+## Running tests
 
 Git's source code ships with a lot of [regression tests](http://en.wikipedia.org/wiki/Regression_testing). This gives us a pretty good indicator of the source code's health: if a regression test starts failing for a topic branch, it is safe to assume that there is some "room for improvement" in the changes introduced by said topic branch.
 
@@ -19,7 +21,7 @@ Git's test suite can be run in various ways:
 
 It can take quite a while to run the test suite. To help, Git allows to run those tests in parallel, e.g. by passing the `-j` flag to `make`: `make -j5` would run up to five tests in parallel.
 
-# Running individual tests
+## Running individual tests
 
 When some tests fail, it is best to run them individually. This can be done using `make`, of course, a much better way is to run them via `sh`, though, allowing for more fine-grained control:
 

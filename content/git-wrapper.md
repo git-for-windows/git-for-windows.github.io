@@ -3,15 +3,17 @@ title: "Git wrapper"
 aliases:
   - "Git-wrapper"
 ---
+# What _is_ the "Git wrapper"?
+
 One of the more confusing aspects of Git for Windows is that its main entry points (`<Git>\git-bash.exe`, `<Git>\cmd\git.exe`, `<Git>\bin\bash.exe`, where `<Git>` is the location into which Git was installed, typically `C:\Program Files\Git`) are _not_ the actual binaries implementing the functionality.
 
 All of these executables are variants of the ["Git wrapper"](https://github.com/git-for-windows/MINGW-packages/blob/main/mingw-w64-git/git-wrapper.c). Its only purpose is to set a couple of environment variables and then spawn the _actual_ program. For example, `Git/bin/bash.exe` will set `MSYSTEM` and `PATH` and spawn `Git/usr/bin/bash.exe`.
 
-# Why is this needed?
+## Why is this needed?
 
 The actual programs, e.g. `bash.exe` or `git.exe`, live in `<Git>\usr\bin` and `<Git>\mingw64\bin` (or `<Git>\mingw32\bin` in 32-bit setups), and the issue is that either links dynamically to some `.dll` files (e.g. `msys-2.0.dll`). So if we were to add those directories to the `PATH` variable, 3rd-party software that links _to the same_ `.dll` files would quite possibly be broken (or Git's own programs). Even worse, some of the other `.dll` files present in those folders are in much more widespread use, e.g. OpenSSL. This has been the cause for quite a few tickets in the past, and the `<Git>\cmd` directory was added to help this, at first having Batch scripts for `git`, `git-gui` and `gitk`, and later those were turned into Visual Basic scripts, but eventually we just bit the bullet and turned them into real executables because we needed more control than scripts allowed us (e.g. to prevent ugly console windows from "flashing").
 
-# What environment variables are overridden by the Git wrapper?
+## What environment variables are overridden by the Git wrapper?
 
 - **`PATH`**
 
@@ -31,6 +33,6 @@ The actual programs, e.g. `bash.exe` or `git.exe`, live in `<Git>\usr\bin` and `
 
 For full information, read the source code of [the `setup_environment()` function of the Git wrapper](https://github.com/git-for-windows/MINGW-packages/blob/0a7407a39c3015cc7a3c296d8a0db38439c65eed/mingw-w64-git/git-wrapper.c#L116-L200).
 
-# Avoiding the Git wrapper
+## Avoiding the Git wrapper
 
 Especially when running scripts that call Git tens of thousands of times, the start-up cost for the Git wrapper might be noticed, and users might want to side-step it. To address this desire, starting with https://github.com/git-for-windows/git/pull/2506 Git for Windows supports the use case the hard-coded absolute path to `<Git>\mingw64\bin\git.exe` is used to launch Git, without the need to add it to the `PATH`.

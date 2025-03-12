@@ -3,7 +3,7 @@ title: "Updating your SDK"
 aliases:
   - "Updating-your-SDK"
 ---
-# Installing the SDK
+## Installing the SDK
 
 The [Git for Windows SDK release](https://github.com/git-for-windows/build-extra/releases/latest) is a self extracting and auto executing 7-zip archive that clones the latest version of files in [Git for Windows SDK 64 repository](https://github.com/git-for-windows/git-sdk-64) using a temporary bundled git. For the [32 bit version](https://github.com/git-for-windows/git-sdk-32) it also performs a run time optimisation on cloned DLLs (rebase).
 
@@ -17,7 +17,7 @@ The SDK contains core parts of MSYS2 Runtime, MinGW, 'pacman' and 'gnupg' packag
 keep the size small yet still allowing use of the 'pacman' package manager to initialize a full-fledged MSYS2 environment
 plus Git for Windows' packages.
 
-# Updating the installed SDK
+## Updating the installed SDK
 
 The SDK ships with the script `update-via-pacman.bat` that you can:
 

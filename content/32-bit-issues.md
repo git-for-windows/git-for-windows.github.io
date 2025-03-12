@@ -3,7 +3,9 @@ title: "32 bit issues"
 aliases:
   - "32-bit-issues"
 ---
-# What is the problem with running Git for Windows in 32-bit mode?
+# 32-bit issues
+
+## What is the problem with running Git for Windows in 32-bit mode?
 
 Note that typically, there is no problem because the solution described [here](#adjusting-msys-20dlls-address-range-manually) is executed preventively upon installation of Git for Windows.
 
@@ -13,7 +15,7 @@ The simplest solution to fix that problem if it rears its ugly head at all is to
 
 The second-simplest solution is to [reinstall Git for Windows](#reinstall-git-for-windows).
 
-# Background
+## Background
 
 Git for Windows is not just a version of Git compiled and packaged for yet another Operating System. Many parts of Git are written in script languages (e.g. POSIX shell or Perl) and therefore Git for Windows has to bundle such script interpreters as well. In particular `bash.exe` (which is used by Git for Windows to execute POSIX shell scripts) expects a POSIX environment which is not available on Windows. The Git for Windows project uses [MSYS2](https://msys2.github.io/) (essentially a [portable](https://en.wikipedia.org/wiki/Portable_application) version of [Cygwin](https://cygwin.com/)) to provide the POSIX emulation layer.
 
@@ -35,7 +37,7 @@ When there is already a `.dll` interfering with MSYS2's runtime's hard-coded add
     865 [main] sh.exe" 17588 open_stackdumpfile: Dumping stack trace to sh.exe.stackdump
 ```
 
-# Solutions
+## Solutions
 
 There are several ways how to get out of this problem:
 
@@ -75,7 +77,7 @@ usr\bin\dash.exe  -c 'cd / && /usr/bin/dash.exe /usr/bin/rebaseall'
 
 These commands need to be executed in the top-level directory, and the address (0x67000000) might need to be adjusted.
 
-# What's with this `Cwd.dll` problem?
+## What's with this `Cwd.dll` problem?
 
 Under some circumstances, `/usr/bin/rebaseall` seems not to rebase the Perl `.dll` files "enough", and the symptom is something like this:
 
