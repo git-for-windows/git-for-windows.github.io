@@ -9,7 +9,7 @@ Please state the nature of your medical emergency.
 
 ## I found a bug!
 
-Please follow [our guide lines](https://github.com/git-for-windows/git/wiki/Issue-reporting-guidelines) on reporting bugs.
+Please follow [our guide lines](./issue-reporting-guidelines.html) on reporting bugs.
 
 ## I have a question!
 

@@ -34,7 +34,7 @@ This is the environment variable used to indicate that this is not a CYGWIN comp
 see https://blogs.msdn.microsoft.com/oldnewthing/20091130-00/?p=15863 This controls what additional libraries windows will import, particularly winsock which would otherwise be multiply defined.
 
 ### MSYS2
-part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2)
+part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](./the-difference-between-mingw-and-msys2.html)
 
 ### MinGW
-part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2)
+part of the (typically needed) operating stack for getting *nix / POSIX code working. see [The-difference-between-MINGW-and-MSYS2](./the-difference-between-mingw-and-msys2.html)

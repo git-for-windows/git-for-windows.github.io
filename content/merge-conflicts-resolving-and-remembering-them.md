@@ -7,7 +7,7 @@ Work in Progress as I try and work out how to do this (06-04-2019)..
 
 When building a new release for Git-for-Windows, the full range of Windows patches the maintainer applies need to be moved ([`rebase`](https://git-scm.com/docs/git-rebase)d) from being on top of the old upstream Git, to being on top of the new upstream release.
 
-There is a [process](https://github.com/git-for-windows/git/wiki/Rebasing-Git-for-Windows), a script and the support of the merging-rebase code, but still there maybe conflicts, old and new, especially if some of the Windows code has been adopted upstream in a different form.
+There is a [process](./rebasing-git-for-windows.html), a script and the support of the merging-rebase code, but still there maybe conflicts, old and new, especially if some of the Windows code has been adopted upstream in a different form.
 
 This note looks at how to remember those resolutions, reuse them, and to learn from previous Git-for-Windows rebases.
 The magic is in the [REuse REcorded REsolution (rerere)](https://git-scm.com/docs/git-rerere) command and it's underlying database.

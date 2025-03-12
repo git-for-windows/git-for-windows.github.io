@@ -12,7 +12,7 @@ Please note: this page describes how to compile Git's source code in Visual Stud
 > [!WARNING]  
 > The `vs/main` branch and `git.sln` is deprecated. The current approach is to open the `git` folder in VS directly, refer to the [README of the `vs/main` branch](https://github.com/git-for-windows/git/tree/vs/main).
 
-Git's source code (and hence also Git for Windows' source code) is [usually built using GNU C and GNU Make in a Git for Windows SDK](https://github.com/git-for-windows/git/wiki/Building-Git).
+Git's source code (and hence also Git for Windows' source code) is [usually built using GNU C and GNU Make in a Git for Windows SDK](./building-git.html).
 
 However, as of Git for Windows v2.11.0, a much more convenient way is available: by cloning https://github.com/git-for-windows/git and checking out the `vs/main` branch, you will automatically have project definitions ready to go with Visual Studio.
 
@@ -47,4 +47,4 @@ prove --timer --jobs 15 ./t[0-9]*.sh
 
 ## Browsing the code
 
-You can also use the Sourcetrail code browser (now open source) in conjunction with Visual Studio, see [Sourcetrail code viewer](https://github.com/git-for-windows/git/wiki/Sourcetrail-code-viewer-and-linkage-to-Visual-Studio,-for-Git) page.
+You can also use the Sourcetrail code browser (now open source) in conjunction with Visual Studio, see [Sourcetrail code viewer](./sourcetrail-code-viewer-and-linkage-to-visual-studio-for-git.html) page.

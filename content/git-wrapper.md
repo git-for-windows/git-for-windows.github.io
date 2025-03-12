@@ -25,7 +25,7 @@ The actual programs, e.g. `bash.exe` or `git.exe`, live in `<Git>\usr\bin` and `
 
 - **`MSYSTEM`**
 
-  To accommodate Git's expectations where it assumes e.g. a Unix shell to be present on the `PATH`, Git for Windows ships with a subset of [MSYS2](https://msys2.github.io/) (find out about more historical context [here](https://github.com/git-for-windows/git/wiki#about)). MSYS2 can be run in two flavors, [MINGW and MSYS](https://github.com/git-for-windows/git/wiki/The-difference-between-MINGW-and-MSYS2) and the flavor Git for Windows needs is MINGW. This is specified via the `MSYSTEM` variable.
+  To accommodate Git's expectations where it assumes e.g. a Unix shell to be present on the `PATH`, Git for Windows ships with a subset of [MSYS2](https://msys2.github.io/) (find out about more historical context [here](.#about.html)). MSYS2 can be run in two flavors, [MINGW and MSYS](./the-difference-between-mingw-and-msys2.html) and the flavor Git for Windows needs is MINGW. This is specified via the `MSYSTEM` variable.
 
 - **`PLINK_PROTOCOL`**
 

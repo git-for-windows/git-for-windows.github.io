@@ -3,7 +3,7 @@ title: "Building new package versions"
 aliases:
   - "Building-new-package-versions"
 ---
-As described in [Package management](Package-management), Git for Windows' SDK is a close derivative of the [MSYS2](https://msys2.github.io/) system, and as such, its components are built using `makepkg` and `makepkg-mingw` (borrowed from Arch Linux' [`pacman`](https://wiki.archlinux.org/index.php/Pacman)).
+As described in [Package management](./package-management.html), Git for Windows' SDK is a close derivative of the [MSYS2](https://msys2.github.io/) system, and as such, its components are built using `makepkg` and `makepkg-mingw` (borrowed from Arch Linux' [`pacman`](https://wiki.archlinux.org/index.php/Pacman)).
 
 Most of those packages are actually built by the MSYS2 project and consumed by Git for Windows. However, a couple of components (including cURL and OpenSSH) _are_ built by Git for Windows, e.g. to be able to react faster to newly-available versions, or to allow for modifications specific to Git for Windows.
 
@@ -42,4 +42,4 @@ The strategy that worked best for the Git for Windows maintainer goes like this:
 9. test (`cd ../.. && sdk build`)
 10. commit, push (and open a PR unless pushing directly to `main`)
 
-Caveat: this strategy needs manual adjustments if the archive in question contains files with DOS line endings (I am looking at you, [Perl](https://github.com/git-for-windows/git/wiki/Upgrading-the-%60perl%60-component-to-a-new-version) _shakes fist_): `import-tars.perl` will happily import those verbatim, but the `bsdtar` used by `makepkg` to unpack the archive will convert them to Unix line endings, and if the patches expect DOS line endings, they won't apply.
+Caveat: this strategy needs manual adjustments if the archive in question contains files with DOS line endings (I am looking at you, [Perl](./upgrading-the-perl-component-to-a-new-version.html) _shakes fist_): `import-tars.perl` will happily import those verbatim, but the `bsdtar` used by `makepkg` to unpack the archive will convert them to Unix line endings, and if the patches expect DOS line endings, they won't apply.

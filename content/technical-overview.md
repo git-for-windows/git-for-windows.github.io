@@ -17,25 +17,25 @@ Download the [SDK](https://gitforwindows.org/#download-sdk) and run it (using "R
 
 You can open the `Git for Windows SDK` shell by double clicking `git-bash.exe` in the install folder.
 
-As the installer is made by putting together files from the Git for Windows SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
+As the installer is made by putting together files from the Git for Windows SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](./package-management.html#updating-msys2-runtime-pacman-and-bash)).
 
 ## Hacking on git
 
 If you only want an installer of the latest development version of git, then you can skip this step.
 
-The sources of git are checked out in `/usr/src/git`. [Hack in (and test)](Building-Git) the changes you want...
+The sources of git are checked out in `/usr/src/git`. [Hack in (and test)](./building-git.html) the changes you want...
 
 Afterwards you need to install git to make these changes available to the installer build: `cd /usr/src/git && make install`.
 
 If you made any documentation changes, you need to install the documentation too: `make install-html && prefix=/mingw64 make -C contrib/subtree install-html` (the second make invocation installs the `git-subtree.html` which is otherwise missing and leads to an error by the portable installer).
 
-In some cases, the change you want to make is not in git itself, but in the additional files needed to emulate the *ix environment git expects (things like `grep`, `find`, `cat`,...), or in additional helper files (e.g. `start-ssh-agent.cmd`). These files come from [Msys](https://github.com/git-for-windows/MSYS2-packages) and [Mingw](https://github.com/git-for-windows/MINGW-packages) packages. Please see the documentation for how to make [changes to these packages](Package-management#technical-details). Some files are also in the `build-extras` repo in the subdir [`mingw-w64-git-extra`](https://github.com/git-for-windows/build-extra/tree/HEAD/mingw-w64-git-extra) (the script which calls notepad as a commit message editor, diff filter for word files,...). The source code for these files are also under `/usr/src` but need to be checked out first (e.g. `cd /usr/src/MINGW-packages && git fetch && git checkout main`).
+In some cases, the change you want to make is not in git itself, but in the additional files needed to emulate the *ix environment git expects (things like `grep`, `find`, `cat`,...), or in additional helper files (e.g. `start-ssh-agent.cmd`). These files come from [Msys](https://github.com/git-for-windows/MSYS2-packages) and [Mingw](https://github.com/git-for-windows/MINGW-packages) packages. Please see the documentation for how to make [changes to these packages](./package-management.html#technical-details). Some files are also in the `build-extras` repo in the subdir [`mingw-w64-git-extra`](https://github.com/git-for-windows/build-extra/tree/HEAD/mingw-w64-git-extra) (the script which calls notepad as a commit message editor, diff filter for word files,...). The source code for these files are also under `/usr/src` but need to be checked out first (e.g. `cd /usr/src/MINGW-packages && git fetch && git checkout main`).
 
 ## Building an installer
 
 You can build both a normal setup installer and a portable one.
 
-The installers are basically created by collecting files from the `Git for Windows SDK` Msys environment, not from any checked out source code! It's therefore important to make any changed files available to the installer (the `make` calls in the "[Hacking on git](https://github.com/git-for-windows/git/wiki/Technical-overview#hacking-on-git)" step)!
+The installers are basically created by collecting files from the `Git for Windows SDK` Msys environment, not from any checked out source code! It's therefore important to make any changed files available to the installer (the `make` calls in the "[Hacking on git](./technical-overview.html#hacking-on-git)" step)!
 
 As a one time step, you need to prepare the extra files which contain the helper scripts:
 
@@ -62,8 +62,8 @@ To build a portable installer, use:
 The last line of the log shows where the installer packages were created (usually in your user directory: `c:\Users\<login-name> `).
 
 See also:
-* [Debugging git](Debugging-Git) with gdb
-* Running Git's [regression tests](Running-Git's-regression-tests)
-* MSYS/MINGW [package management](Package-management#technical-details)
-* [Updating the SDK](https://github.com/git-for-windows/git/wiki/Updating-your-SDK)
+* [Debugging git](./debugging-git.html) with gdb
+* Running Git's [regression tests](./running-gits-regression-tests.html)
+* MSYS/MINGW [package management](./package-management.html#technical-details)
+* [Updating the SDK](./updating-your-sdk.html)
 * [MSYS2](https://msys2.github.io/)

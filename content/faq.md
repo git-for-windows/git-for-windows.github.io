@@ -48,7 +48,7 @@ This depends on how you installed *Git for Windows*. The bundle installation req
 
 *Git for Windows* comes with a tool to check for updates and offer to install them. Whether or not you enabled auto-updates during installation, you can manually run `git update-git-for-windows`. (For help, run `git update-git-for-windows -h`.)
 
-For advanced users working with the *Git for Windows* SDK `pacman` is available as a package manager. See [Package management](Package-management)
+For advanced users working with the *Git for Windows* SDK `pacman` is available as a package manager. See [Package management](./package-management.html)
 
 ## How do I check the release hash and release notes
 
@@ -56,7 +56,7 @@ For hashes see https://github.com/git-for-windows/git/releases
 
 For (G4W) release notes see the [build-extra repo](https://github.com/git-for-windows/build-extra/blob/HEAD/ReleaseNotes.md), or the top level of your installation (e.g. [C:\Program Files\Git\ReleaseNotes.html](https://www.example.com/Program%20Files/Git/ReleaseNotes.html) - via manual browsing).
 
-For extracting 7z/zip archives see [page](https://github.com/git-for-windows/git/wiki/Zip-Archives---extracting-the-released-archives).
+For extracting 7z/zip archives see [page](./zip-archives-extracting-the-released-archives.html).
 
 ## Are there 'Nightly' builds of the latest and greatest
 
@@ -77,7 +77,7 @@ Finally, Git for Windows is sometimes released in "out-of-band" versions, when c
 
 ## What is the relationship between *Git for Windows* and *msysGit*?
 
-*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases). See [here](https://github.com/git-for-windows/git/wiki/Updating-your-SDK) to get a copy.
+*Git for Windows* used to be developed using the development environment called "msysGit", but roughly coinciding with Git 2.1, msysGit was superseded by a new development environment: the [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases). See [here](./updating-your-sdk.html) to get a copy.
 
 ## Some native console programs don't work when run from Git Bash. How to fix it?
 
@@ -93,7 +93,7 @@ There are several methods for working around these problems:
  * Install and use [ConEmu](https://conemu.github.io/).
 
 ## I get errors trying to check out files with long path names.
-Windows file paths are by default limited to 260 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](https://github.com/git-for-windows/git/wiki/Git-cannot-create-a-file-or-directory-with-a-long-path) for more information.
+Windows file paths are by default limited to 260 characters. Some repositories may have committed files which contain paths longer than the limit. By default, *Git for Windows* does not support long paths, and will print errors when trying to perform any operation on a long file name. Set the configuration property `core.longpaths` to true to allow certain Git operations to properly handle these files. See [this wiki page](./git-cannot-create-a-file-or-directory-with-a-long-path.html) for more information.
 
 ## The installed files are duplicated and look massive - Why?
 All the apparent copies are simply hard links - see Issue  1997 [Use symbolic links for libexec](https://github.com/git-for-windows/git/issues/1997) for more details.

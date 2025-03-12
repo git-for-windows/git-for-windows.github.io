@@ -20,7 +20,7 @@ A lot of documentation wants to be written, still. A good place is [Git for Wind
 Download [the SDK](https://gitforwindows.org/#download-sdk) and build Git. See the [CONTRIBUTING.md](https://github.com/git-for-windows/git/blob/HEAD/CONTRIBUTING.md) page/file
 
 
-Also have a look at [this page](https://github.com/git-for-windows/git/wiki/Building-Git) for tips and tricks revolving around building and debugging Git.
+Also have a look at [this page](./building-git.html) for tips and tricks revolving around building and debugging Git.
 
 Please also sign off your work, as [asked by the Git project](https://git-scm.com/docs/SubmittingPatches#sign-off)
 

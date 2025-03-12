@@ -22,7 +22,7 @@ sdk cd installer
 
 ## Detailed overview
 
-As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](https://github.com/git-for-windows/git/wiki/Package-management#updating-msys2-runtime-pacman-and-bash)).
+As the installer is made by putting together files from the Git SDK, it is advisable to update those files first. To update the packages, call `pacman -Syu` ([caveats apply](./package-management.html#updating-msys2-runtime-pacman-and-bash)).
 
 If you want to test Git changes or make an installer from your own Git fork, you need to call
 

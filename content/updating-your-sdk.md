@@ -68,7 +68,7 @@ One option is a re-install, having saved your working repositories.
 
 ### See Also:
 
-* [G4W Package Management](https://github.com/git-for-windows/git/wiki/Package-management)
+* [G4W Package Management](./package-management.html)
 * [pacman man page](https://www.archlinux.org/pacman/pacman.8.html)
 * [PKGBuild man page](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 * [makepkg man page](https://www.archlinux.org/pacman/makepkg.8.html)

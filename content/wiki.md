@@ -5,7 +5,7 @@ aliases:
 ---
 ## Introduction
 
-_Git for Windows_ originally had a wiki, meant for more technical information than was presented on [its home page](https://gitforwindows.org/). To prevent vandalism from going unnoticed for weeks, that wiki had to be shut down. It is still possible to edit these pages, though, via Pull Request in [the repository](https://github.com/git-for-windows/git-for-windows.github.io). See also [the documentation how you can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate).
+_Git for Windows_ originally had a wiki, meant for more technical information than was presented on [its home page](https://gitforwindows.org/). To prevent vandalism from going unnoticed for weeks, that wiki had to be shut down. It is still possible to edit these pages, though, via Pull Request in [the repository](https://github.com/git-for-windows/git-for-windows.github.io). See also [the documentation how you can contribute](./how-to-participate.html).
 
 ## About
 
@@ -25,7 +25,7 @@ And yes, the idea is still the same as the original one: Update the _MSYS2_ setu
 
 Now, keep in mind that _MSYS2_ and Linux (The original target for _Git_'s distribution) are very different beasts. Their distributions might include packages that are built from the same source code (i.e. the `binutils`, `gcc` or `bash` package), but the runtime is very, very different: _MSYS2_'s runtime is a stripped-down, slightly modified _Cygwin_ runtime running on top of the Windows kernel, while Linux' runtime is the Linux kernel, running as a separate OS altogether.
 
-So if you are missing some packages - feel free to start making one. This is Open Source, after all, so everybody interested and capable enough can contribute whatever they need to address their needs. And that includes you: you could imitate e.g. [a simple `PKGBUILD` file](https://github.com/msys2/MINGW-packages/blob/HEAD/mingw-w64-assimp/PKGBUILD) to build a new package e.g. `msmtp`, the component that _Git for Windows_ 1.x uses to support `sendemail`. Then open a Pull Request so that _Git for Windows_ can ship it. Our documentation will be helpful in that endeavor: [package-management](https://github.com/git-for-windows/git/wiki/Package-management), in particular [package-management#rebuild-packages](https://github.com/git-for-windows/git/wiki/Package-management#rebuild-packages).
+So if you are missing some packages - feel free to start making one. This is Open Source, after all, so everybody interested and capable enough can contribute whatever they need to address their needs. And that includes you: you could imitate e.g. [a simple `PKGBUILD` file](https://github.com/msys2/MINGW-packages/blob/HEAD/mingw-w64-assimp/PKGBUILD) to build a new package e.g. `msmtp`, the component that _Git for Windows_ 1.x uses to support `sendemail`. Then open a Pull Request so that _Git for Windows_ can ship it. Our documentation will be helpful in that endeavor: [package-management](./package-management.html), in particular [package-management#rebuild-packages](./package-management.html#rebuild-packages).
 
 ## Start documenting
 

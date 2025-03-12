@@ -33,7 +33,7 @@ Once the SDK built Git, it is *very* easy to build another revision of Git, such
  1. if you want to test a Pull Request, call `git fetch origin refs/pull/<id>/head`, where `<id>` is the number of the Pull Request (e.g. if you want to test Pull Request #606, you would call `git fetch origin refs/pull/606/head`),
  2. if you want to test a custom branch, call `git fetch <url> <branch>` instead, where `<url>` is the URL of the repository and `<branch>` is the name of the branch to test (e.g. if you wanted to test @dscho's `cool-new-feature` branch, you would call `git fetch https://github.com/dscho/git cool-new-feature`),
 4. check out the revision that was just fetched: `git checkout FETCH_HEAD`,
-5. continue as [above](https://github.com/git-for-windows/git/wiki/Building-Git#build-git) either by `make install` or `make test`.
+5. continue as [above](./building-git.html#build-git) either by `make install` or `make test`.
 
 ## Updating to the newest Git for Windows version
 
@@ -55,7 +55,7 @@ cd /usr/src/git/t
 ## See also Regression Testing
 
 Single tests, block of tests, or the whole test suite can be run, as detailed in
-[Running Git's regression-tests](https://github.com/git-for-windows/git/wiki/Running-Git's-regression-tests)
+[Running Git's regression-tests](./running-gits-regression-tests.html)
 
 
 ---

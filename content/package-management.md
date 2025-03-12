@@ -73,7 +73,7 @@ If you want to rebuild a package, the first order of business is to know which r
 
 - [build-extra](https://github.com/git-for-windows/build-extra) contains the `mingw-w64-git-extra` package information,
 - [MINGW-packages](https://github.com/git-for-windows/MINGW-packages) contains the information for the MINGW packages, i.e. packages that do not require any POSIX emulation; by convention, their package name have the `mingw-w64-` prefix, and
-- [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](Building-msys2-runtime)).
+- [MSYS2-packages](https://github.com/git-for-windows/MSYS2-packages) contains the information for all packages that require a POSIX emulation, such as Bash, OpenSSH, etc. The `MSYS2-packages` repository also contains the information of the package *providing* the POSIX emulation: [`msys2-runtime`](https://github.com/git-for-windows/msys2-runtime) (see also [Building msys2-runtime](./building-msys2-runtime.html)).
 
 To build MINGW packages, start a shell (a *MINGW* shell is recommended), clone the [`MINGW-packages`](https://github.com/git-for-windows/MINGW-packages) repository (recommended location: `/usr/src/MINGW-packages`), `cd` to the appropriate subdirectory and call
 
@@ -139,5 +139,5 @@ The *Git for Windows*-specific packages are served by [Azure Blob Storage](https
 
 ## Further reading
 
-- [Building new package versions](Building-new-package-versions)
-- [Upgrading the `perl` component to a new version](Upgrading-the-%60perl%60-component-to-a-new-version)
+- [Building new package versions](./building-new-package-versions.html)
+- [Upgrading the `perl` component to a new version](./upgrading-the-perl-component-to-a-new-version.html)

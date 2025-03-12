@@ -3,7 +3,7 @@ title: "Install or update inside MSYS2, Cygwin or Git for windows itself"
 aliases:
   - "Install-or-update-inside-MSYS2,-Cygwin-or-Git-for-windows-itself"
 ---
-## It's different from [Install inside MSYS2 proper](https://github.com/git-for-windows/git/wiki/Install-inside-MSYS2-proper)
+## It's different from [Install inside MSYS2 proper](./install-inside-msys2-proper.html)
 
 Instead of configuring and installing Git for Windows using `pacman`, this guide introduces another approach to properly install or update Git for Windows inside MSYS2, Cygwin or even Git for Windows itself. The only thing you need is a `bash` interpreter on Windows and a `curl`.
 

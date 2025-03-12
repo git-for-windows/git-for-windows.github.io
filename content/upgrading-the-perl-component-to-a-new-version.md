@@ -5,11 +5,11 @@ aliases:
 ---
 One of the many components included in Git for Windows' SDK is the `perl` package. Part of its components are included in Git for Windows' installer and Portable Git versions, to allow for running Perl scripts. The two most prominent Perl scripts in Git for Windows are, of course, `git svn` and `git send-email`.
 
-Upgrading to a new Perl version is unfortunately a bit more involved than only following the advice in [Building new package versions](Building-new-package-versions). In addition to adjusting the patches applied via the `PKGBUILD` script, the major problem with Perl is that its DLL embeds the Perl version in its file name.
+Upgrading to a new Perl version is unfortunately a bit more involved than only following the advice in [Building new package versions](./building-new-package-versions.html). In addition to adjusting the patches applied via the `PKGBUILD` script, the major problem with Perl is that its DLL embeds the Perl version in its file name.
 
 ## Making sure that the DLL has the correct version in its file name
 
-This is important, and it is a manual step required on top of [the usual adjustments to the patches](https://github.com/git-for-windows/git/wiki/Building-new-package-versions#adjusting-patches-when-they-no-longer-apply-to-new-versions): In the [`PKGBUILD`](https://github.com/msys2/MSYS2-packages/blob/HEAD/perl/PKGBUILD) file, the line `-Dlibperl=msys-perl5_<N>.dll` needs to be adjusted.
+This is important, and it is a manual step required on top of [the usual adjustments to the patches](./building-new-package-versions.html#adjusting-patches-when-they-no-longer-apply-to-new-versions): In the [`PKGBUILD`](https://github.com/msys2/MSYS2-packages/blob/HEAD/perl/PKGBUILD) file, the line `-Dlibperl=msys-perl5_<N>.dll` needs to be adjusted.
 
 ## Rebuilding dependencees
 

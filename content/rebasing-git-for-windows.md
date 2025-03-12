@@ -32,7 +32,7 @@ Run the `shears.sh` script to build up the actual *rebase* script.
     Note: `v2.3.4` is a `tag` in the remote `git`.
     See the script if you are testing changes initiated in a local branch of the git upstream.
 
-The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts (see also [Merge Conflicts Resolving and Remembering them](https://github.com/git-for-windows/git/wiki/Merge-Conflicts---Resolving-and-Remembering-them)) and then continue the rebase.
+The *rebase* should start automatically and occasionally stop if it hits any merge conflicts. Resolve those conflicts (see also [Merge Conflicts Resolving and Remembering them](./merge-conflicts-resolving-and-remembering-them.html)) and then continue the rebase.
     `git rebase --continue`
 
 Note: the `merging-rebase` argument is a special placeholder that is interpreted by the `shears.sh` script to find the commit that started the previous merging-rebase. You can find the commit yourself like this:

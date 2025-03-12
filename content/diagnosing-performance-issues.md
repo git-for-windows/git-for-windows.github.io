@@ -13,7 +13,7 @@ If the problem lies with a specific Git command, the most straight-forward way t
 
 The canonical profiling tool in GCC's tool set is [`gprof`](https://sourceware.org/binutils/docs/gprof/). However, the MINGW version of the GCC tools offered by MSYS2 has been known to produce empty output on occasion.
 
-An more convenient alternative is to use [Visual Studio's Performance Profiler](https://github.com/git-for-windows/git/wiki/Performance-profiling-with-Visual-Studio) (which is available in the free-of-cost Community version) which offers a powerful graphical user interface.
+An more convenient alternative is to use [Visual Studio's Performance Profiler](./performance-profiling-with-visual-studio.html) (which is available in the free-of-cost Community version) which offers a powerful graphical user interface.
 
 ## Trace executions in the Bash startup
 
