@@ -19,7 +19,7 @@ We use the old .sfx component that used to be hosted on http://7zsfx.info. This 
 *     `-gm2` hides the extraction dialog completely (silent mode)
 *     `-InstallPath` sets the target path (you need double backslashes)
 
-You can still see the switches in the Internet Archive: https://web.archive.org/web/20160402074100/http://www.7zsfx.info/en/switches.html. (see also this helpful StackOverflow answer: http://stackoverflow.com/a/32105548).
+You can still see the switches in the Internet Archive: https://web.archive.org/web/20160402074100/http://www.7zsfx.info/en/switches.html. (see also [this helpful StackOverflow answer](https://stackoverflow.com/a/32105548)).
 
 
 

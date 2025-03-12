@@ -116,7 +116,7 @@ This one is _really_ easy (as long as nothing is broken...): add a PR comment wi
 
 Note: The `pacman` upload always takes this long.
 
-Sadly, things are broken a lot. In those cases, the logs have to be analyzed, and the GitHub workflow definition needs to be edited (on the `release` branch of https://github.com/git-for-windows/git-for-windows-automation), and the failing jobs of the workflow run have to be rerunExamples for failures that happened in the past:
+Sadly, things are broken a lot. In those cases, the logs have to be analyzed, and the GitHub workflow definition needs to be edited (on the `release` branch of [`git-for-windows/git-for-windows-automation`](https://github.com/git-for-windows/git-for-windows-automation)), and the failing jobs of the workflow run have to be rerunExamples for failures that happened in the past:
 
 - Timeouts while uploading the GitHub Release. In that case, the partially-populated draft release has to be deleted manually (first delete the assets, or it won't delete the release), and then re-deploy.
 

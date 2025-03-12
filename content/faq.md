@@ -66,7 +66,7 @@ These often 'fix' (or attempt fixes) recent issues before a new formal release. 
 
 ## What is the release cadence of Git for Windows?
 
-Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details here: https://tinyurl.com/gitCal). Typically, Git for Windows will follow suit within a day.
+Official Git for Windows versions mainly follow Git's release cycle: every 12 weeks or so, a new major Git version is released (see details [here](https://tinyurl.com/gitCal)). Typically, Git for Windows will follow suit within a day.
 
 Other than that, Git for Windows follows the *newest* Git version's maintenance releases (read: after Git for Windows v2.15.0 was released, no new Git for Windows v2.14.x version would be released). Indicators for imminent maintenance releases of Git are:
 
@@ -148,7 +148,5 @@ Ensure also that you are using proper Build Tools (v140). It's going by default 
 Reproduced from [Git for Windows' release notes](https://github.com/git-for-windows/build-extra/blob/HEAD/ReleaseNotes.md#licenses):
 
 Git is an Open Source project covered by the GNU General Public License version 2 (some parts of it are under different licenses, compatible with the GPLv2). It was originally written by Linus Torvalds with help of a group of hackers around the net.
-
-Git for Windows also contains Embedded CAcert Root Certificates. For more information please go to https://www.cacert.org/policy/RootDistributionLicense.php.
 
 This package contains software from a number of other projects including Bash, zlib, curl, tcl/tk, perl, MSYS2 and a number of libraries and utilities from the GNU project, licensed under the GNU General Public License. Likewise, it contains Perl which is dual licensed under the GNU General Public License and the Artistic License.
