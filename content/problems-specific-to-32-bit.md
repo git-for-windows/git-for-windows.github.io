@@ -1,9 +1,9 @@
 ---
-title: "32 bit issues"
+title: "Problems specific to 32-bit"
 aliases:
   - "32-bit-issues"
 ---
-# 32-bit issues
+# Problems specific to 32-bit
 
 ## What is the problem with running Git for Windows in 32-bit mode?
 
