@@ -13,7 +13,7 @@ In [Git for Windows' discussions](https://github.com/git-for-windows/git/discuss
 
 ## Add documentation
 
-A lot of documentation wants to be written, still. A good place is [the Git for Windows wiki](https://github.com/git-for-windows/git/wiki). Tutorials, step by step instructions and general background information, etc. Even just keep the links up to date and reporting inconsistencies is helpful.
+A lot of documentation wants to be written, still. A good place is [Git for Windows' home page](https://github.com/git-for-windows/git-for-windows.github.io). Tutorials, step by step instructions and general background information, etc. Even just keep the links up to date and reporting inconsistencies is helpful.
 
 ## Fix bugs or add features in the Git code itself
 
