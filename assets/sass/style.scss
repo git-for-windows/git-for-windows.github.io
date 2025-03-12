@@ -362,3 +362,11 @@ body.page {
 		width: 65%;
 	}
 }
+.markdown-important::before {
+	content:url('img/important.svg');
+	padding-left: 0.6em;
+	padding-right: 0.2em;
+}
+.markdown-important {
+	border-left: .25em solid #f34f29;
+}
