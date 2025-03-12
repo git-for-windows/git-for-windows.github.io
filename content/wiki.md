@@ -1,11 +1,11 @@
 ---
-title: "Home"
+title: "Wiki"
 aliases:
   - "Home"
 ---
 ## Introduction
 
-The _Git for Windows_ wiki. It looks more technical than [our home page](https://gitforwindows.org/) because it is the place where *you* [can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate) to the documentation about _Git for Windows_.
+_Git for Windows_ originally had a wiki, meant for more technical information than was presented on [its home page](https://gitforwindows.org/). To prevent vandalism from going unnoticed for weeks, that wiki had to be shut down. It is still possible to edit these pages, though, via Pull Request in [the repository](https://github.com/git-for-windows/git-for-windows.github.io). See also [the documentation how you can contribute](https://github.com/git-for-windows/git/wiki/How-to-participate).
 
 ## About
 
