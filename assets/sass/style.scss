@@ -370,3 +370,11 @@ body.page {
 .markdown-important {
 	border-left: .25em solid #f34f29;
 }
+.anchor {
+	transform: translateX(-80%) scale(.6);
+	position: absolute;
+}
+
+:is(h1, h2, h3, h4):not(:hover) .anchor {
+	display: none;
+}
