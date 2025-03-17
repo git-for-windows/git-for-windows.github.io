@@ -1,4 +1,5 @@
 {{ define "main" }}
-{{ .Content }}
+{{ replace .Content "<p>[!IMPORTANT]" "<p class=\"markdown-important\">" |
+  replaceRE "(<h[1-4] id=\"([^\"]+)\"[^>]*>)" `${0}<a class="anchor" href="#${2}">&#128279;</a>` |
+  safeHTML }}
 {{ end }}
-

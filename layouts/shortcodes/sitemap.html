@@ -1,0 +1,7 @@
+<ul class="page-index">
+{{ range .Site.Pages }}
+  {{ if ne "" .Title }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+{{ end }}
+</ul>

@@ -56,7 +56,7 @@ Simply right-click on a folder in Windows Explorer to access the BASH or GUI.
 <div class="vcentercontainer detailstext">
 <div>
 
-As an open source project, Git for Windows benefits greatly from both the volunteer work of helpful developers and [good bug reports](https://github.com/git-for-windows/git/wiki/Issue-reporting-guidelines) made by Git for Windows' users.
+As an open source project, Git for Windows benefits greatly from both the volunteer work of helpful developers and [good bug reports](./issue-reporting-guidelines.html) made by Git for Windows' users.
 
 ### Governance Model
 
@@ -72,7 +72,7 @@ If you've noticed a bug or simply have an idea that you'd like to see become rea
 
 The _Git for Windows SDK_ is a build environment that includes all the tools necessary for developers who want to contribute by writing code for Git for Windows.
 
-Please look at the [technical overview](https://github.com/git-for-windows/git/wiki/Technical-overview) of the Git for Windows packaging and how to include your changes in your own custom installer.
+Please look at the [technical overview](./technical-overview.html) of the Git for Windows packaging and how to include your changes in your own custom installer.
 
 <a name="download-sdk" /><a class="button" href="https://github.com/git-for-windows/build-extra/releases/latest" target="_blank">Download <span class="gittext">Git for Windows SDK</span></a>
 

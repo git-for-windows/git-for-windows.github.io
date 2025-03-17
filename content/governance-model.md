@@ -54,7 +54,7 @@ project code. Contributors engage with the project through communication tools, 
 [Git mailing list](mailto:git@vger.kernel.org),
 [GitHub](https://github.com/git-for-windows), via [reports of issues](https://github.com/git-for-windows/git/issues)
 and via [pull requests](https://github.com/git-for-windows/git/pulls) in the issue tracker, as detailed in our
-[how to participate](https://github.com/git-for-windows/git/wiki/How-to-participate) document.
+[how to participate](./how-to-participate.html) document.
 
 Anyone can become a contributor. There is no expectation of commitment to the project, no specific
 skill requirements and no selection process. To become a contributor, a community member simply
@@ -107,11 +107,11 @@ own terms, and willing to help support other users, the community support channe
 Anyone can contribute to the project, regardless of their skills, as there are many ways to contribute.
 For instance, a contributor might be active on the project mailing list and issue tracker, or might supply
 [pull requests](https://github.com/git-for-windows/git/pulls). The various ways of contributing are described
-in more detail in our [how to participate](https://github.com/git-for-windows/git/wiki/How-to-participate) document.
+in more detail in our [how to participate](./how-to-participate.html) document.
 
 The *Git for Windows* [issue tracker](https://github.com/git-for-windows/git/issues) is the most appropriate
 place for a contributor to ask for help when making their first contribution. Please also read the projects
-[issue reporting guidelines](https://github.com/git-for-windows/git/wiki/Issue-reporting-guidelines)
+[issue reporting guidelines](./issue-reporting-guidelines.html)
 
 ## Decision-making process
 The benevolent dictatorship model does not need a formal conflict resolution process, since the
