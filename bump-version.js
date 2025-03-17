@@ -17,10 +17,10 @@ var updateVersion = (version, tag, timestamp, url) => {
 		if (err)
 			die(err);
 		data = data
-			.replace(/^(  version: ).*/, `$1${version}`)
-			.replace(/^(  tag_name: ).*/, `$1${tag}`)
-			.replace(/^(  publish_date: ).*/, `$1"${timestamp}"`)
-			.replace(/^(  url: ).*/, `$1"${url}"`);
+			.replace(/(\n  version: ).*/, `$1${version}`)
+			.replace(/(\n  tag_name: ).*/, `$1${tag}`)
+			.replace(/(\n  publish_date: ).*/, `$1"${timestamp}"`)
+			.replace(/(\n  url: ).*/, `$1"${url}"`);
 		fs.writeFileSync('hugo.yml', data);
 	});
 };
