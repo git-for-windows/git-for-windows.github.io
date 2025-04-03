@@ -1,0 +1,7 @@
+git clone https://github.com/git-for-windows/git-for-windows.github.io.git (this repo)
+Install Node.js (contains the 'npm' package manager)
+Install Grunt: npm install -g grunt-cli
+Install Node.js' dependencies: cd git-for-windows.github.io && npm install
+Run grunt to generate the files
+Run grunt connect
+Open http://localhost:4000 in your favorite browser to check the changes.
