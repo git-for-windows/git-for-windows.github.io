@@ -27,16 +27,16 @@ Simply right-click on a folder in Windows Explorer to access the BASH or GUI.
 <div class="vcentercontainer detailsimg">
 <div class="verticalgallery">
 
-<a class="fancybox-thumb" data-fancybox-group="gallery" href="img/gw1.png" title="Git BASH">
+<a href="img/gw1.png" title="Git BASH">
 	<img src="img/gw1web_thumb.png" alt="Git BASH">
 </a>
-<a class="fancybox-thumb" data-fancybox-group="gallery" href="img/gw2.png" title="Git GUI">
+<a href="img/gw2.png" title="Git GUI">
 	<img src="img/gw2web_thumb.png" alt="Git GUI">
 </a>
-<a class="fancybox-thumb" data-fancybox-group="gallery" href="img/gw3.png" title="Gitk: Exploring Commits">
+<a href="img/gw3.png" title="Gitk: Exploring Commits">
 	<img src="img/gw3web_thumb.png" alt="Gitk: Exploring Commits">
 </a>
-<a class="fancybox-thumb" data-fancybox-group="gallery" href="img/gw4.png" title="Git Credential Manager: OAuth authentication">
+<a href="img/gw4.png" title="Git Credential Manager: OAuth authentication">
 	<img src="img/gw4.png" alt="Git Credential Manager: OAuth authentication">
 </a>
 </div>
