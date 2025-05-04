@@ -25,16 +25,12 @@
 			</article>
 		</section>
 		{{ partial "footer" . }}
-		{{- $jquery := resources.Get "js/jquery-1.10.2.min.js" -}}
-		{{- $fancybox := resources.Get "js/jquery.fancybox.js" -}}
-		{{- $mousewheel := resources.Get "js/jquery.mousewheel.js" -}}
-		{{- $js := slice $jquery $fancybox $mousewheel | resources.Concat "js/pack.js" }}
+		{{- $baguettebox := resources.Get "js/baguetteBox.min.js" -}}
+		{{- $js := slice $baguettebox | resources.Concat "js/pack.js" }}
 		<script src="{{ $js.RelPermalink }}"></script>
 		<script>
-			$(document).ready(function() {
-				$(".fancybox-thumb").fancybox({
-					padding: 0
-				});
+			window.addEventListener('load', function() {
+				baguetteBox.run('.verticalgallery');
 				{{ if eq "home" .Kind -}}
 				/* Replace the download link if a Windows browser was detected */
 				try {
