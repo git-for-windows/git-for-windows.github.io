@@ -13,7 +13,7 @@ Please follow [our guide lines](./issue-reporting-guidelines.html) on reporting 
 
 ## I have a question!
 
-We have [GitHub Discussions](https://github.com/git-for-windows/git/discussions/). If, for some reason or other, you prefer a mailing list, use [the Git mailing list](mailto:git@vger.kernel.org). It is actually a Google Group which can be used as if it were a forum, too.
+We have [GitHub Discussions](https://github.com/git-for-windows/git/discussions/). If, for some reason or other, you prefer a mailing list, use [the Git mailing list](mailto:git@vger.kernel.org).
 
 ## But I really have only a quick question!
 
