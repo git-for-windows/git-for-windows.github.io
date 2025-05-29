@@ -1,0 +1,3 @@
+To https://github.com/worldcreated/azure-docs.git
+ ! [remote rejected]           main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/worldcreated/azure-docs.git'
