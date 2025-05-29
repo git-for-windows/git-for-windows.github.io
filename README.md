@@ -1,11 +1,5 @@
-[![devDependency Status](https://david-dm.org/git-for-windows/git-for-windows.github.io/dev-status.png)](https://david-dm.org/git-for-windows/git-for-windows.github.io#info=devDependencies)
 
-The Git for Windows homepage
-
-https://gitforwindows.org/
-
-
-## Developing
+h. Development
 
 Note: if you have the cautious 'Use Git from Git Bash only' setting then you may need to change from bash to cmd at step 2, adjusting the cd path at step 3.
 
