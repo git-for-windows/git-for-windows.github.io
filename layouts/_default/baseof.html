@@ -34,8 +34,9 @@
 				{{ if eq "home" .Kind -}}
 				/* Replace the download link if a Windows browser was detected */
 				try {
-					var href = $('.version > a')[0].href.match(/^(.*\/)tag(\/.*)$/);
-					var version = $('.version > a')[0].title.match(/^Version ([0-9.]*)(\(([0-9]*)?\))?/);
+					var a = document.querySelector('.version > a')
+					var href = a?.href.match(/^(.*\/)tag(\/.*)$/);
+					var version = a?.title.match(/^Version ([0-9.]*)(\(([0-9]*)?\))?/);
 					if (!href || !version || !navigator.userAgentData)
 						throw 0;
 
