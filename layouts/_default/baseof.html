@@ -45,7 +45,7 @@
 
 						var architecture = browser.architecture == "arm" ? "arm64" : "64-bit";
 						var url = href[1] + 'download' + href[2] + '/Git-' + version[1] + '-' + architecture + '.exe';
-						$('a.button:contains("Download")')[0].href = url;
+						document.getElementById("download").href = url;
 					})
 				} catch(e) {}
 				{{ end -}}
