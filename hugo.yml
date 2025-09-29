@@ -29,7 +29,7 @@ module:
     target: content
 params:
   hugo_version: 0.145.0
-  version: 2.51.0
-  tag_name: v2.51.0.windows.1
-  publish_date: "Tue, 19 Aug 2025 09:23:24 UTC"
-  url: "https://github.com/git-for-windows/git/releases/tag/v2.51.0.windows.1"
+  version: 2.51.0.2
+  tag_name: v2.51.0.windows.2
+  publish_date: "Mon, 29 Sep 2025 22:22:11 UTC"
+  url: "https://github.com/git-for-windows/git/releases/tag/v2.51.0.windows.2"
