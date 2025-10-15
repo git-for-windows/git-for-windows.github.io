@@ -17,11 +17,11 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
  1. Edit `/etc/pacman.conf` and add the Git for Windows package repositories above any others (i.e. just before `[mingw32]` on line #71 as of this writing):
 
     ```
-    [git-for-windows]
-    Server = https://wingit.blob.core.windows.net/x86-64
+    [git-for-windows-x86_64]
+    Server = https://raw.githubusercontent.com/git-for-windows/pacman-repo/refs/heads/x86_64
 
     [git-for-windows-mingw32]
-    Server = https://wingit.blob.core.windows.net/i686
+    Server = https://raw.githubusercontent.com/git-for-windows/pacman-repo/refs/heads/i686
     ```
 
     (The above is correct.  The second, MINGW-only repository is for the other architecture.)
@@ -29,7 +29,7 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
     This step can be done with the following `sed` command (make sure to do proper backup before trying it):
 
     ```
-    sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n[git-for-windows-mingw32]\nServer = https://wingit.blob.core.windows.net/i686\n\n|; }' /etc/pacman.conf
+    sed -i '/^\[mingw32\]/{ s|^|[git-for-windows-x86_64]\nServer = https://raw.githubusercontent.com/git-for-windows/pacman-repo/refs/heads/x86_64\n\n[git-for-windows-mingw32]\nServer = https://raw.githubusercontent.com/git-for-windows/pacman-repo/refs/heads/i686\n\n|; }' /etc/pacman.conf
     ```
 
     To avoid the future signature related issues, run the following commands first
