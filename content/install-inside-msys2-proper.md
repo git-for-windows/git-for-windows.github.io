@@ -16,47 +16,61 @@ Here are the steps to install the 64-bit version of Git for Windows to be run in
 
  1. Edit `/etc/pacman.conf` and add the Git for Windows package repositories above any others (i.e. just before `[mingw32]` on line #71 as of this writing):
 
-        [git-for-windows]
-        Server = https://wingit.blob.core.windows.net/x86-64
+    ```
+    [git-for-windows]
+    Server = https://wingit.blob.core.windows.net/x86-64
 
-        [git-for-windows-mingw32]
-        Server = https://wingit.blob.core.windows.net/i686
+    [git-for-windows-mingw32]
+    Server = https://wingit.blob.core.windows.net/i686
+    ```
 
     (The above is correct.  The second, MINGW-only repository is for the other architecture.)
 
     This step can be done with the following `sed` command (make sure to do proper backup before trying it):
 
-        sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n[git-for-windows-mingw32]\nServer = https://wingit.blob.core.windows.net/i686\n\n|; }' /etc/pacman.conf
+    ```
+    sed -i '/^\[mingw32\]/{ s|^|[git-for-windows]\nServer = https://wingit.blob.core.windows.net/x86-64\n\n[git-for-windows-mingw32]\nServer = https://wingit.blob.core.windows.net/i686\n\n|; }' /etc/pacman.conf
+    ```
 
     To avoid the future signature related issues, run the following commands first
 
-        rm -r /etc/pacman.d/gnupg/
-        pacman-key --init
-        pacman-key --populate msys2
+    ```
+    rm -r /etc/pacman.d/gnupg/
+    pacman-key --init
+    pacman-key --populate msys2
+    ```
 
  2. Authorize the signing key with:
 
-        curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/HEAD/git-for-windows-keyring/git-for-windows.gpg |
-        pacman-key --add - &&
-        pacman-key --lsign-key E8325679DFFF09668AD8D7B67115A57376871B1C &&
-        pacman-key --lsign-key 3B6D86A1BA7701CD0F23AED888138B9E1A9F3986
+    ```
+    curl -L https://raw.githubusercontent.com/git-for-windows/build-extra/HEAD/git-for-windows-keyring/git-for-windows.gpg |
+    pacman-key --add - &&
+    pacman-key --lsign-key E8325679DFFF09668AD8D7B67115A57376871B1C &&
+    pacman-key --lsign-key 3B6D86A1BA7701CD0F23AED888138B9E1A9F3986
+    ```
 
  3. Then synchronize with new repositories with
 
-        pacman -Syyuu
+    ```
+    pacman -Syyuu
+    ```
 
-    This installs a new `msys2-runtime` and therefore will ask you to terminate all MSYS2 processes.  Save what you need from other open MSYS2 shells and programs, exit them and confirm the Pacman prompt. 
+    This installs a new `msys2-runtime` and therefore will ask you to terminate all MSYS2 processes.  Save what you need from other open MSYS2 shells and programs, exit them and confirm the Pacman prompt.
  Double-check Task Manager and kill `pacman.exe` if it's still running after the window is closed.  Start a new MSYS2 terminal.
 
  4. Then synchronize *again* to install the rest:
 
-        pacman -Suu
+    ```
+    pacman -Suu
+    ```
 
     It might happen that some packages are downgraded, this is expected.
 
  5. And finally install the packages containing Git, its documentation and some extra things:
 
-        pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} mingw-w64-x86_64-git-extra
+    ```
+    pacman -S mingw-w64-x86_64-{git,git-doc-html,git-doc-man} mingw-w64-x86_64-git-extra
+    ```
 
 Now you can close the current shell and open a MINGW64 shell (`msys2_shell.cmd -mingw64`) to check that everything went well.  Run `git --version` and it should output something like `git version 2.31.0.windows.1` (or newer).
 
