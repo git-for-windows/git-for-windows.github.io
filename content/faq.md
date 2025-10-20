@@ -60,7 +60,7 @@ For extracting 7z/zip archives see [page](./zip-archives-extracting-the-released
 
 ## Are there 'Nightly' builds of the latest and greatest
 
-The Git for Windows builds are not quite that frequent, but there are Snapshot builds listed at https://wingit.blob.core.windows.net/files/index.html
+The Git for Windows builds are not quite that frequent, but there are [Snapshot builds](https://gitforwindows.org/git-snapshots/).
 
 These often 'fix' (or attempt fixes) recent issues before a new formal release. Check their commit notes and links to issues to see if your problem is included.
 

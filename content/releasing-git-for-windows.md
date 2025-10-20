@@ -128,11 +128,11 @@ Sadly, things are broken a lot. In those cases, the logs have to be analyzed, an
 
 This step is trivial: `git push origin <branch>:main` where `<branch>` is something like `rebase-to-v2.37.0`.
 
-This will trigger another "Git artifacts" run, which will figure out that there is a GitHub Release for that commit, download those artifacts, then trigger a run of [the `Snapshots` Release Pipeline](https://dev.azure.com/git-for-windows/git/_release?definitionId=2&view=mine&_a=releases), which will then upload [the snapshot](https://wingit.blob.core.windows.net/files/index.html).
+This will trigger another "Git artifacts" run, which will figure out that there is a GitHub Release for that commit, download those artifacts, then trigger a run of [the `Snapshots` Release Pipeline](https://dev.azure.com/git-for-windows/git/_release?definitionId=2&view=mine&_a=releases), which will then upload [the snapshot](https://gitforwindows.org/git-snapshots/).
 
 It is important to wait with pushing to `main` until there is a GitHub Release, otherwise the "Git artifacts" Pipeline would build _another_ set of artifacts and upload those, but we do want to use the same artifacts as were uploaded to GitHub Releases.
 
-Note: The idea is to push to `main` relatively soon after the Release Pipeline finished, to keep the Pacman repository, the [snapshots](https://wingit.blob.core.windows.net/files/index.html) and the `main` branches as aligned as possible.
+Note: The idea is to push to `main` relatively soon after the Release Pipeline finished, to keep the Pacman repository, the [snapshots](https://gitforwindows.org/git-snapshots/) and the `main` branches as aligned as possible.
 
 
 ## How to release a quick-fix release
