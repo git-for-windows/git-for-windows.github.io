@@ -29,6 +29,10 @@ elif [ $agent_run_state = 1 ]; then
   ssh-add ~/.ssh/id_rsa
 fi
 ```
+**WARNING**
+
+ Starting with Git 2.51.0, `ssh-agent -s` will create the agent socket in the user home folder with causes issues if it contains spaces. A workaround is to
+replace in the previous sequence `ssh-agent -s` by `ssh-agent -T` which causes the socket to be created into the tmp folder.
 
 To close on shell exit, put in `~/.bash_logout`:
 
