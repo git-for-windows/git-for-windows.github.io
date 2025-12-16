@@ -7,7 +7,7 @@ aliases:
 
 Modern software development relies heavily on a way to manage dependencies, i.e. to keep track of required software libraries and their versions. Examples are `apt` for Linux, `homebrew` for macOS, `maven` for Java and `pip` for Python.
 
-Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles the [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool (known from Arch Linux) for dependency management.
+While Git for Windows is based on [MSYS2](https://msys2.github.io/) which bundles the [Pacman](https://wiki.archlinux.org/index.php/Pacman) tool (known from Arch Linux) for dependency management, the `pacman.exe` command is only bundled with the Git for Windows SDK, not the normal installer.
 
 ## How to use `pacman`
 
