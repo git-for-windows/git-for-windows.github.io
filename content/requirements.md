@@ -7,7 +7,9 @@ This page lists the prerequisites required to run [Git for Windows](https://gitf
 
 ## Windows version
 
-Git for Windows requires Windows 8.1 or later on i686 and x86_64 CPU architectures. The last version to support Windows 7, 8, Server 2008 R2 and Server 2012 was [v2.46.2](https://github.com/git-for-windows/git/releases/tag/v2.46.2.windows.1). The last version to support Windows Vista and Server 2008 was [v2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1). The last version of Git for Windows to support Windows XP and Windows Server 2003 is [v2.10.0](https://github.com/git-for-windows/git/releases/tag/v2.10.0.windows.1).
+Git for Windows requires Windows 8.1 or later on a 64-bit CPU (x64 or amd64). The last version to support Windows 7, 8, Server 2008 R2 and Server 2012 was [v2.46.2](https://github.com/git-for-windows/git/releases/tag/v2.46.2.windows.1). The last version to support Windows Vista and Server 2008 was [v2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1). The last version of Git for Windows to support Windows XP and Windows Server 2003 is [v2.10.0](https://github.com/git-for-windows/git/releases/tag/v2.10.0.windows.1).
+
+The last version with full 32-bit (i686) support was [v2.40.x](https://github.com/git-for-windows/git/releases/tag/v2.40.1.windows.1). Since then, the only official 32-bit artifact is [MinGit](https://gitforwindows.org/mingit.html), a minimal subset intended for third-party applications. Full 32-bit installers and Portable Git are no longer provided. For details, see the [32-bit support timeline](https://gitforwindows.org/32-bit.html).
 
 Why?
 
