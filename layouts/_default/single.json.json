@@ -1,0 +1,2 @@
+{{- $diagram_list := where .Site.Pages "RawContent" "like" "```graphviz" -}}
+{{- $diagram_list | jsonify -}}

@@ -10,6 +10,9 @@ markup:
     renderer:
       unsafe: true
 mediaTypes:
+  application/json:
+    suffixes:
+    - json
   application/vnd.curl:
     suffixes:
       - url
