@@ -203,16 +203,14 @@ For a detailed guide on managing conflicts in Git for Windows, see our dedicated
 
 You can change this behavior at any time without reinstalling Git by running one of the following commands:
 
-```sh
-# Option 1: Merge
-git config --global pull.rebase false
+**- Merge:**
+* `git config --global pull.rebase false`
 
-# Option 2: Rebase
-git config --global pull.rebase true
+**- Rebase:**
+* `git config --global pull.rebase true`
 
-# Option 3: Fast-forward only (Default)
-git config --global pull.ff only
-```
+**- Fast-forward only:**
+* `git config --global pull.ff only`
 
 ## Related resources
 
