@@ -18,25 +18,81 @@ Behind the scenes, `git pull` is a two-step command. It first runs `git fetch` t
 
 If you haven't made any local changes since your last pull, Git simply moves your branch pointer forward to match the remote. This is known as a fast-forward. **In a fast-forward scenario, all three installer options behave identically.**
 
-```text
-Before pull:
-  A---B---C  (local)
-  A---B---C---D---E   (remote)
+**Before pull:**
+```graphviz
+digraph ff_before_local {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
 
-After git pull (fast-forwarded):
-  A---B---C---D---E   (local syncs with remote)
+  A1 [label="A"]; B1 [label="B"]; C1 [label="C"];
+  A1 -> B1 -> C1;
+
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  local_lbl [label="(local)"];
+  C1 -> local_lbl [style="invis"];
+}
+```
+
+```graphviz
+digraph ff_before_remote {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A2 [label="A"]; B2 [label="B"]; C2 [label="C"]; D2 [label="D"]; E2 [label="E"];
+  A2 -> B2 -> C2 -> D2 -> E2;
+
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  remote_lbl [label="(remote)"];
+  E2 -> remote_lbl [style="invis"];
+}
+```
+
+**After `git pull` (fast-forwarded):**
+```graphviz
+digraph ff_after {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A -> B -> C -> D -> E;
+  
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  sync_lbl [label="(local syncs with remote)"];
+  E -> sync_lbl [style="invis"];
+}
 ```
 
 ### Divergence
 
 If you have made local changes but the remote repository has also been modified, then your histories have diverged. 
 
-```text
-        X---Y---Z   (local)
-       /
-  A---B
-       \
-        C---D---E   (remote)
+```graphviz
+digraph divergence {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A -> B;
+  B -> X -> Y -> Z;
+  B -> C -> D -> E;
+
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  local_lbl [label="(local)"];
+  remote_lbl [label="(remote)"];
+  
+  Z -> local_lbl [style="invis"];
+  E -> remote_lbl [style="invis"];
+}
 ``` 
 
 ## The three installer options
@@ -49,12 +105,27 @@ When histories diverge, a fast-forward is no longer possible. This is where the 
 
 Git automatically creates a new **merge commit** to combine branches. This preserves the exact timeline of parallel work.
 
-```text
-        X---Y---Z
-       /         \
-  A---B           M   (merge commit)
-       \         /
-        C---D---E
+```graphviz
+digraph merge {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A -> B;
+  B -> X -> Y -> Z;
+  B -> C -> D -> E;
+  
+  M [fillcolor="#d9ead3", color="#38761d"];
+  
+  Z -> M;
+  E -> M;
+
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  merge_lbl [label="(merge commit)"];
+  M -> merge_lbl [style="invis"];
+}
 ```
 
 ### Option 2: Rebase
@@ -63,16 +134,49 @@ Git automatically creates a new **merge commit** to combine branches. This prese
 
 Git temporarily sets your local commits aside, updates your branch to match the remote, and rewrites your commits on top of the remote branch, keeping a single linear timeline.
 
-```text
-Before pull:
-        X---Y---Z   (local)
-       /
-  A---B
-       \ 
-        C---D---E   (remote)
-        
-After git pull --rebase:
-        A---B---C---D---E---X'---Y'---Z'
+**Before pull:**
+```graphviz
+digraph divergence {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A -> B;
+  B -> X -> Y -> Z;
+  B -> C -> D -> E;
+
+  node [shape="plaintext", style="", fillcolor="transparent", fontcolor="white", fontname="Courier", fontsize="14", fixedsize="false", width=""];
+  local_lbl [label="(local)"];
+  remote_lbl [label="(remote)"];
+  
+  Z -> local_lbl [style="invis"];
+  E -> remote_lbl [style="invis"];
+}
+```
+
+**After `git pull --rebase`:**
+```graphviz
+digraph rebase_after {
+  rankdir="LR";
+  bgcolor="transparent";
+  margin="0"; pad="0.05";
+  node [shape="circle", style="filled", fillcolor="#f0f0f0", color="#666666", fontname="sans-serif", width="0.4", fixedsize="true"];
+  edge [color="#666666", penwidth="2"];
+
+  A -> B -> C -> D -> E;
+  
+  X_prime [label="X'"];
+  Y_prime [label="Y'"];
+  Z_prime [label="Z'"];
+  
+  E -> X_prime -> Y_prime -> Z_prime;
+
+  node [style="dashed,filled", fillcolor="#f9f9f9", color="#cccccc", fontcolor="#999999"];
+  edge [style="dashed", color="#cccccc", penwidth="1"];
+  B -> X -> Y -> Z;
+}
 ```
 
 *Note: Rebasing changes the IDs (SHAs) of your local commits.*
