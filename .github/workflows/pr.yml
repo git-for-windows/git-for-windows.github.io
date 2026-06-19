@@ -17,6 +17,8 @@ jobs:
         sudo dpkg -i /tmp/hugo.deb
     - name: run Hugo to build the pages
       run: hugo
+    - uses: actions/setup-node@v6
+    - run: npm install && node ./script/graphviz-ssr.js
     - name: build tar archive
       run: cd public && tar czvf ../pages.tar.gz *
     - name: Upload build artifact

@@ -41,6 +41,9 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_RELATIVEURLS: false
         run: hugo config && hugo --minify --baseURL '${{ steps.pages.outputs.base_url }}/'
+      - uses: actions/setup-node@v6
+      - name: pre-render the Graphviz diagrams
+        run: npm install && node ./script/graphviz-ssr.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public

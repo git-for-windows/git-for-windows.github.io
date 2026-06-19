@@ -53,4 +53,37 @@
 			});
 		</script>
 	</body>
+{{- if .Store.Get "hasGraphviz" }}
+  <script src="{{ relURL "js/viz-global.js" }}"> </script>
+  <script type="text/javascript">
+    let vizInstance
+    window.addEventListener("DOMContentLoaded", async () => {
+      [...document.querySelectorAll("pre[class=graphviz]")].forEach(async (x) => {
+        if (!vizInstance) vizInstance = await Viz.instance()
+        if (x.style.display === 'none') return
+        const options = {
+          format: "svg",
+          graphAttributes: {
+            bgcolor: "transparent",
+          },
+          engine: x.getAttribute("engine") || "dot",
+        }
+        const svg = vizInstance.renderString(x.innerText, options)
+        const wrapper = document.createElement('div')
+        wrapper.className = 'graphviz-wrapper'
+        wrapper.style.overflowX = 'auto'
+        const img = document.createElement('img')
+        img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg.substring(svg.indexOf('<svg')))
+        const alt = x.getAttribute('alt')
+        if (alt) { img.setAttribute('alt', alt) }
+        img.style.width = 'auto'
+        img.style.height = 'auto'
+        img.style.maxWidth = 'none'
+        wrapper.appendChild(img)
+        x.parentNode.insertBefore(wrapper, x)
+        x.style.display = 'none'
+      })
+    })
+  </script>
+{{- end }}
 </html>
