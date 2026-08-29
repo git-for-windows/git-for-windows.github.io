@@ -37,17 +37,42 @@
 					var a = document.querySelector('.version > a')
 					var href = a?.href.match(/^(.*\/)tag(\/.*)$/);
 					var version = a?.title.match(/^Version ([0-9.]*)(\(([0-9]*)?\))?/);
-					if (!href || !version || !navigator.userAgentData)
-						throw 0;
+					if (!href || !version) throw 0;
 
-					navigator.userAgentData.getHighEntropyValues(["architecture", "platform", "bitness"])
-					.then(function(browser) {
-						if (browser.platform != "Windows" || browser.bitness != "64") return;
-
-						var architecture = browser.architecture == "arm" ? "arm64" : "64-bit";
+					const setDownloadURL = (architecture) => {
 						var url = href[1] + 'download' + href[2] + '/Git-' + version[1] + '-' + architecture + '.exe';
 						document.getElementById("download").href = url;
-					})
+					};
+					if (!navigator.userAgentData) {
+						if (!navigator.userAgent?.includes('Windows')) throw 0;
+						/*
+						 * Infinity - Infinity is an invalid floating-point operation. On x86,
+						 * that operation conventionally produces the “real indefinite” negative
+						 * NaN, whose float32 representation is 0xffc00000. ARM64 normally
+						 * produces positive canonical NaN, 0x7fc00000.
+						 *
+						 * This trick was found by Marat Dukhan, as per
+						 * https://github.com/google/XNNPACK/commit/466b52379d (Use GEMM/IGEMM
+						 * micro-kernels with Swizzle on WAsm SIMD, 2019-10-09).
+						 */
+						const architecture = {
+							"ffc00000": "64-bit",
+							"7fc00000": "arm64",
+						}[
+							(new Uint32Array((new Float32Array([Infinity - Infinity])).buffer))[0]
+							.toString(16)
+							.padStart(8, "0")
+						];
+						if (!architecture) throw 0;
+						setDownloadURL(architecture);
+					} else {
+						navigator.userAgentData.getHighEntropyValues(["architecture", "platform", "bitness"])
+						.then(function(browser) {
+							if (browser.platform != "Windows" || browser.bitness != "64") return;
+
+							setDownloadURL(browser.architecture == "arm" ? "arm64" : "64-bit");
+						})
+					}
 				} catch(e) {}
 				{{ end -}}
 			});
