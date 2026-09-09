@@ -59,7 +59,9 @@
 							"ffc00000": "64-bit",
 							"7fc00000": "arm64",
 						}[
-							(new Uint32Array((new Float32Array([Infinity - Infinity])).buffer))[0]
+							(new Uint32Array((new Float32Array([
+								window.Infinity - window.Infinity
+							 ])).buffer))[0]
 							.toString(16)
 							.padStart(8, "0")
 						];
